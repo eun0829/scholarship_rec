@@ -1,0 +1,125 @@
+{
+ "idx": "9088",
+ "title": "한국장학재단 지역인재장학금 (2026년 2학기)",
+ "state": "모집마감",
+ "org": "한국장학재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9088",
+ "data": {
+  "category": "NATIONAL",
+  "scholarship_name": "지역인재장학금 (2026년 2학기)",
+  "foundation": "한국장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-05-22",
+  "apply_end": "2026-06-22",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "등록금 필수경비 전액 지원",
+  "apply_how": "한국장학재단 온라인 접수",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 9.0,
+   "eligible_types": [
+    "기초~기준중위소득 130% (전 학기 지원)",
+    "기준중위소득 130% 초과~학자금 지원 9구간 (1년 지원)"
+   ],
+   "notes": "기준중위소득 130% 이하는 전 학기, 초과~9구간은 1년(2학기) 지원",
+   "basis": "BRACKET"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "SCHOOL_LOCATION",
+     "areas": [
+      "비수도권"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "신규선발 (성적우수 / 특성화 / 계속지원) 유형: 선발 조건은 공고문 확인"
+  ],
+  "variants": [],
+  "exclusions": [
+   "국가장학금을 미신청하거나 학자금 지원구간 산정이 완료되지 않을 경우 장학금 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": "세부 선발기준은 대학에 따라 상이할 수 있음",
+   "priority": []
+  },
+  "summary": "비수도권 지역인재장학금 참여대학 재학생 대상, 등록금 필수경비 전액 지원",
+  "uncertain": [
+   {
+    "field": "other",
+    "reason": "신규선발(성적우수/특성화/계속지원) 유형별 선발조건이 공고문 확인으로만 안내되어 성적 등 세부 기준이 빠져 있음",
+    "level": "verify"
+   }
+  ],
+  "transfer": {
+   "mode": "ALLOWED"
+  },
+  "school": {
+   "programs": [
+    "LOCAL_TALENT"
+   ]
+  },
+  "prerequisites": [
+   {
+    "type": "NATIONAL_SCHOLARSHIP_APPLIED",
+    "text": "국가장학금 신청 필수"
+   },
+   {
+    "type": "BRACKET_CALCULATED",
+    "text": "학자금 지원구간 산정 완료"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "국가장학금을 미신청하거나 학자금 지원구간 산정이 완료되지 않을 경우 장학금 선발 제외"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "신규선발 (성적우수 / 특성화 / 계속지원) 유형: 선발 조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "계속지원을 위한 성적 유지 노력 필수 (관련 내용 공고문 확인)",
+    "section": "기타사항",
+    "source": "본문",
+    "kind": "BENEFIT_LIMIT"
+   }
+  ]
+ }
+}

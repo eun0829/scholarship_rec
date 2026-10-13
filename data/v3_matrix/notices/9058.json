@@ -1,0 +1,115 @@
+{
+ "idx": "9058",
+ "title": "서울미래인재재단 해외교환학생장학",
+ "state": "모집마감",
+ "org": "서울미래인재재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9058",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "서울미래인재재단 해외교환학생장학",
+  "foundation": "서울미래인재재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-05-18",
+  "apply_end": "2026-05-27",
+  "org_deadline": null,
+  "recruit_count": "총 60명 (아시아 15명, 비아시아 45명)",
+  "amount": "최대 550만원 (아시아 400만원, 비아시아 550만원)",
+  "apply_how": "재단 홈페이지 온라인 접수",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학",
+    "휴학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 85.0,
+   "scale": 100.0,
+   "basis": "CUMULATIVE",
+   "alternatives": [],
+   "notes": "전체 학년 평점 평균 백분위 85점 이상",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 4.0,
+   "eligible_types": [
+    "기초수급자",
+    "차상위계층",
+    "학자금 지원구간 1~4구간"
+   ],
+   "notes": null,
+   "basis": "BRACKET"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "SCHOOL_LOCATION",
+     "areas": [
+      "서울특별시"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "2026년도 서울미래인재재단 학업장려금성 장학금과 중복 수혜 불가"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "서울 소재 대학 재·휴학생 중 2026년 2학기 교환학생 선정(예정)자, 수급자·차상위 또는 1~4구간 대상, 최대 550만원",
+  "uncertain": [],
+  "special_groups": [
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   }
+  ],
+  "prerequisites": [
+   {
+    "type": "EXCHANGE_SELECTED",
+    "text": "2026년 2학기 국내 소속 대학 파견 해외 교환학생 선정(예정)자"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "2026년도 서울미래인재재단 학업장려금성 장학금과 중복 수혜 불가"
+   }
+  ],
+  "obligations": [
+   "장학증서 수여식 필참",
+   "출국 직후 현지 체류정보 제출",
+   "교환학생 중 서울 EX-체인저스 활동 2회 필수 참석",
+   "성장보고서(1회) 및 장학생 수기 제출",
+   "교환학생 후 26년 2학기 파견교 또는 소속 대학 성적표 제출"
+  ]
+ }
+}

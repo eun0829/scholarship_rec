@@ -1,0 +1,158 @@
+{
+  "elig": {
+    "schema_version": 3,
+    "registry_version": 1,
+    "processed_items": [
+      "GL",
+      "LTERM",
+      "CR",
+      "GC",
+      "GN",
+      "SP",
+      "GCP",
+      "YEAR",
+      "SEM",
+      "SLEFT",
+      "GRD",
+      "LV",
+      "GRAD",
+      "ENT",
+      "TRF",
+      "DEG",
+      "MAJ",
+      "MAJG",
+      "RES",
+      "RESP",
+      "RESY",
+      "HSL",
+      "SLOC",
+      "INC",
+      "BASIC",
+      "NEAR",
+      "DIS",
+      "SPAR",
+      "DEF",
+      "MUL",
+      "VET",
+      "MCH",
+      "SPECIAL",
+      "AGE",
+      "GEN",
+      "NAT",
+      "LANG",
+      "NSA",
+      "SCH_TYPE",
+      "SPART"
+    ],
+    "category": "OUT",
+    "scholarship_name": "2027년도 대산장학생(농업리더장학생)",
+    "foundation": "대산농촌재단",
+    "apply_type": "DIRECT",
+    "apply_start": null,
+    "apply_end": "2026-11-11",
+    "org_deadline": null,
+    "recruit_count": "5명",
+    "amount": "등록금 전액(4학기 범위 내, 졸업 시까지) + 차세대 농업인재 양성프로그램",
+    "apply_how": "지원서를 재단 홈페이지에서 받아 작성 후 dsa@dsa.or.kr 로 이메일 제출",
+    "target_levels": [
+      "UNIV"
+    ],
+    "grades": [],
+    "enrollment": {
+      "required_status": [
+        "재학"
+      ],
+      "excluded_status": [],
+      "min_remaining_semesters": null,
+      "notes": null
+    },
+    "gpa": {
+      "min": 3.5,
+      "scale": 4.5,
+      "basis": "CUMULATIVE",
+      "alternatives": [
+        {
+          "min": 3.3,
+          "scale": 4.3
+        }
+      ],
+      "notes": "직전 학기까지 누계 평균 평점",
+      "scale_stated": true
+    },
+    "credits": {
+      "min_last_semester": null,
+      "min_completed_semesters": null,
+      "notes": null
+    },
+    "income": {
+      "max_bracket": null,
+      "eligible_types": [],
+      "notes": null
+    },
+    "region": {
+      "residence": [],
+      "school_location": [],
+      "notes": null
+    },
+    "majors": [],
+    "nationality": null,
+    "special_status": [],
+    "other_conditions": [
+      "졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 투철한 의지와 실천 계획을 세운 학생"
+    ],
+    "variants": [],
+    "exclusions": [],
+    "documents": [
+      "대산농업리더장학생 지원서 (소정양식, 재단 홈페이지에서 다운로드)",
+      "재학증명서 (2차 제출(면접 시, 서류전형 합격자))",
+      "성적증명서 (2차 제출(면접 시, 서류전형 합격자))",
+      "가족관계증명서 (2차 제출(면접 시, 서류전형 합격자))",
+      "영농현황 자료(본인 또는 보호자) (해당자에 한함, 2차 제출)",
+      "영농교육 수료증명서(본인) (해당자에 한함, 2차 제출)"
+    ],
+    "selection": {
+      "method": "1단계 서류심사, 2단계 면접심사(11.27 예정, 서류 통과자 개별통보)",
+      "priority": [
+        "영농기반이 있는 영농희망자 우대",
+        "농학계열 재학생 우대"
+      ]
+    },
+    "summary": "국내 4년제 2학년 2학기 이상, 누계 3.5/4.5 이상 농업리더 희망 학생 등록금 전액 지원(5명)",
+    "completed_terms": {
+      "min": 3
+    },
+    "school": {
+      "types": [
+        "UNIV4"
+      ]
+    },
+    "review_criteria": [
+      "졸업 후 농업계 종사 및 농업리더 성장 의지와 실천계획"
+    ],
+    "unmodeled_conditions": [
+      {
+        "text": "졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 투철한 의지와 실천 계획을 세운 학생",
+        "section": "지원자격",
+        "source": "첨부2",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "등록금 전액(4학기 범위 내에서 졸업 시까지)",
+        "section": "지원내용",
+        "source": "첨부2",
+        "kind": "BENEFIT_LIMIT"
+      }
+    ]
+  },
+  "review": {
+    "uncertain": [],
+    "evidence": {
+      "apply_end": "본문, 첨부1, 첨부2",
+      "gpa": "첨부1, 첨부2",
+      "enrollment": "첨부1, 첨부2",
+      "apply_type": "첨부2"
+    },
+    "issues": [],
+    "attachment_problems": []
+  }
+}

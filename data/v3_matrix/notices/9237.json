@@ -1,0 +1,98 @@
+{
+ "idx": "9237",
+ "title": "안중근의사숭모회 장학생 모집",
+ "state": "모집마감",
+ "org": "안중근의사숭모회",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9237",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "안중근의사숭모회 장학생",
+  "foundation": "안중근의사숭모회",
+  "apply_type": "SCHOOL",
+  "apply_start": "2026-08-31",
+  "apply_end": "2026-09-15",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "최대 300만원",
+  "apply_how": "소속대학 장학담당 부서 접수, 지도교수 추천 필요",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [
+   2,
+   3
+  ],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 3.6,
+   "scale": null,
+   "basis": "CUMULATIVE",
+   "alternatives": [],
+   "notes": null,
+   "scale_stated": false
+  },
+  "credits": {
+   "min_last_semester": 15.0,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "2026년 2학기 기업 및 타 재단 장학금 중복수혜를 받는 자 선발 제외 (국가장학금 제외)"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "2026년 2학기 2-2~3-2 재학생 대상, 지도교수 추천 후 학교 접수, 최대 300만원",
+  "uncertain": [
+   {
+    "field": "apply_end",
+    "reason": "신청기간 표는 9/15까지이나 실제 마감은 대학별 추천 마감일(예: 국민대 9.11, 숭실대 9.15)로 다름",
+    "level": "note"
+   }
+  ],
+  "completed_terms": {
+   "min": 3,
+   "max": 5
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PROFESSOR"
+   ]
+  },
+  "deadline_kind": "SCHOOL_VARIES",
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "2026년 2학기 기업 및 타 재단 장학금 중복수혜를 받는 자 선발 제외 (국가장학금 제외)"
+   }
+  ],
+  "review_criteria": [
+   "안중근 의사 및 우리나라 역사에 관심이 많으며, 역사 관련 활동 실적이 있거나 향후 안중근 의사 관련 홍보 및 참여 활동 계획이 있는 자"
+  ]
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "idx": "9053",
+ "title": "노원교육복지재단 장학 (2026년)",
+ "state": "모집마감",
+ "org": "노원교육복지재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9053",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "노원교육복지재단 장학",
+  "foundation": "노원교육복지재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-05-11",
+  "apply_end": "2026-05-22",
+  "org_deadline": null,
+  "recruit_count": "28명",
+  "amount": "최대 200만원",
+  "apply_how": "추천 기관(동 주민센터·사회복지 유관기관 등)을 통해 접수, 기관이 이메일(contact@example.com)로 제출",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 3.5,
+   "scale": 4.5,
+   "basis": "CUMULATIVE",
+   "alternatives": [],
+   "notes": null,
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "기준중위소득 120% 이내, 가구 총 재산 409,000,000원 이하",
+   "basis": "MEDIAN_PERCENT",
+   "max_median_percent": 120,
+   "max_asset_krw": 409000000
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "서울특별시 노원구"
+     ]
+    }
+   ]
+  },
+  "majors": [
+   "의과대학"
+  ],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "2026년도 타 기관 장학금 수혜자 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "노원구 거주 만 29세 이하 의과대학생 대상, 전체 평점 3.5/4.5 이상, 최대 200만원, 28명 선발",
+  "uncertain": [
+   {
+    "field": "apply_end",
+    "reason": "신청기간 마감일이 학생의 추천 기관 접수 기한인지 재단 제출 기한인지 불분명함",
+    "level": "verify"
+   }
+  ],
+  "age": {
+   "max": 29
+  },
+  "major_groups": [
+   "MEDICAL"
+  ],
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRINCIPAL",
+    "AGENCY"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "2026년도 타 기관 장학금 수혜자 선발 제외"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "본인이 추천 기관을 통해 접수, 기관은 이메일로 접수",
+    "section": "접수방법",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

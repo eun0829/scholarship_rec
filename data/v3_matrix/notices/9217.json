@@ -1,0 +1,228 @@
+{
+ "idx": "9217",
+ "title": "인천시 SK행복 장학",
+ "state": "마감임박",
+ "org": "인천인재평생교육진흥원",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9217",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "인천시 SK행복 장학",
+  "foundation": "인천인재평생교육진흥원",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-10",
+  "apply_end": "2026-10-08",
+  "org_deadline": null,
+  "recruit_count": "68",
+  "amount": "최대 100만원",
+  "apply_how": "온라인 접수 (itle.or.kr)",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "부모 또는 본인이 해당 동에 주민등록",
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "인천광역시 서구 신현원창동",
+      "인천광역시 서구 석남1동",
+      "인천광역시 서구 석남2동",
+      "인천광역시 서구 석남3동",
+      "인천광역시 서구 가정1동",
+      "인천광역시 서구 가좌1동",
+      "인천광역시 서구 가좌2동",
+      "인천광역시 서구 가좌3동"
+     ]
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "인천광역시 서구 신현원창동",
+      "인천광역시 서구 석남1동",
+      "인천광역시 서구 석남2동",
+      "인천광역시 서구 석남3동",
+      "인천광역시 서구 가정1동",
+      "인천광역시 서구 가좌1동",
+      "인천광역시 서구 가좌2동",
+      "인천광역시 서구 가좌3동"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "고등학생: ~2024년 입학자 직전학기 전 과목 내신 평균 등급 6등급 이내",
+   "고등학생: ~2025년 입학 직전학기 전 과목 내신 평균 등급 4등급 이내"
+  ],
+  "variants": [
+   {
+    "name": "고등학생",
+    "amount": null,
+    "target_levels": [
+     "HIGH"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "대학생",
+    "amount": null,
+    "target_levels": [
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 2.5,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [
+      {
+       "min": 2.3,
+       "scale": 4.3
+      }
+     ],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": 6.0,
+     "eligible_types": [
+      "학자금 지원구간"
+     ],
+     "notes": null,
+     "basis": "BRACKET",
+     "bracket_term": "CURRENT_TERM"
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "transfer": {
+     "mode": "USE_PREV_SCHOOL"
+    }
+   }
+  ],
+  "exclusions": [
+   "동일연도 인천인재평생교육진흥원에서 실시하는 장학금 중복 수혜 불가",
+   "전년도, 동일연도 인천인재평생교육진흥원 해외 프로그램(연수, 배낭연수, 봉사) 장학생 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "인천 서구 일부 동 거주 저소득·특수계층 고교생·대학생 대상 최대 100만원 장학금 (10/8 마감)",
+  "uncertain": [
+   {
+    "field": "special_groups",
+    "reason": "특수계층(수급자·차상위·한부모·중증장애인)과 소득기준(6구간)이 중복 요건인지 택일인지, 본인/가족 구분이 불명확함",
+    "level": "verify"
+   }
+  ],
+  "special_groups": [
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "SINGLE_PARENT",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "DISABLED",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "동일연도 인천인재평생교육진흥원에서 실시하는 장학금 중복 수혜 불가"
+   },
+   {
+    "type": "OTHER",
+    "text": "전년도, 동일연도 인천인재평생교육진흥원 해외 프로그램(연수, 배낭연수, 봉사) 장학생 선발 제외"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "고등학생: ~2024년 입학자 직전학기 전 과목 내신 평균 등급 6등급 이내",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "고등학생: ~2025년 입학 직전학기 전 과목 내신 평균 등급 4등급 이내",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

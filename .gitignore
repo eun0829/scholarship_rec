@@ -1,0 +1,48 @@
+# 환경변수 및 API 키
+.env
+.env.*
+!.env.example
+
+# Python 가상환경 및 캐시
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# 암호화 파일 및 인증서
+*.enc
+*.encrypted
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# 비밀정보 파일 및 폴더
+secrets.env
+secrets/
+secret/
+credentials/
+
+# 로그 파일
+*.log
+
+# 생성된 결과물 및 실행 폴더
+out/
+out_*/
+v3_trial/
+v3_trial_*/
+
+# 학생 개인정보 및 로컬 테스트 데이터
+sample_student.txt
+student_1st.txt
+answers_2nd.txt
+files.txt
+
+# 생성 결과 JSON
+result*.json
+
+# OS 파일
+.DS_Store
+Thumbs.db

@@ -1,0 +1,137 @@
+{
+ "idx": "9066",
+ "title": "대전시 인재육성장학 (2026년 상반기)",
+ "state": "모집마감",
+ "org": "대전청년내일재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9066",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "대전시 인재육성장학 (2026년 상반기)",
+  "foundation": "대전청년내일재단",
+  "apply_type": "UNKNOWN",
+  "apply_start": "2026-04-08",
+  "apply_end": "2026-05-29",
+  "org_deadline": null,
+  "recruit_count": "65명",
+  "amount": "1인당 최대 200만원",
+  "apply_how": "온라인 접수 (daejeonyouthportal.kr), 학교장·총장 추천 필요",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "ENTRANCE",
+   "alternatives": [],
+   "notes": "수학·과학 관련 과목의 고교 성적이 기준에 부합하는 자 (상세 공고문 확인)",
+   "scale_stated": false
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "대전광역시"
+     ],
+     "min_years": 1,
+     "years_basis": "신청일 1년 전부터 계속 거주"
+    },
+    {
+     "type": "SCHOOL_LOCATION",
+     "areas": [
+      "대전광역시"
+     ]
+    },
+    {
+     "type": "GRADUATED_SCHOOL",
+     "areas": [
+      "대전광역시"
+     ]
+    }
+   ]
+  },
+  "majors": [
+   "공학계열",
+   "자연계열"
+  ],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "대전시 소재 고등학교 졸업자"
+  ],
+  "variants": [],
+  "exclusions": [
+   "재단 상반기 장학금 간 중복 신청 불가"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "대전 거주·대전 소재 4년제 공학·자연계열 신입생 대상, 최대 200만원 지원 (65명)",
+  "uncertain": [
+   {
+    "field": "apply_type",
+    "reason": "온라인 접수이나 학교장·총장 추천 필요 문구가 있어 학교 경유 여부가 불분명함",
+    "level": "verify"
+   },
+   {
+    "field": "gpa",
+    "reason": "고교 수학·과학 성적 기준이 '상세내용 공고문 확인'으로만 안내되어 구체 기준을 알 수 없음",
+    "level": "verify"
+   }
+  ],
+  "new_student_only": true,
+  "major_groups": [
+   "ENGINEERING",
+   "NATURAL"
+  ],
+  "school": {
+   "types": [
+    "UNIV4"
+   ]
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRINCIPAL",
+    "PRESIDENT"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "재단 상반기 장학금 간 중복 신청 불가"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "대전시 소재 고등학교 졸업자",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

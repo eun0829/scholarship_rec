@@ -1,0 +1,484 @@
+{
+ "idx": "9210",
+ "title": "춘천시 봄내장학 (2026년 하반기)",
+ "state": "모집마감",
+ "org": "춘천시민장학복지재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9210",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "춘천시 봄내장학 (2026년 하반기)",
+  "foundation": "춘천시민장학복지재단",
+  "apply_type": "HYBRID",
+  "apply_start": "2026-09-28",
+  "apply_end": "2026-10-07",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "최대 100만원 (고등학생 50만원, 대학생 100만원)",
+  "apply_how": "온라인 신청 후 서류 방문·우편 접수(애향은 행정복지센터), 유형별 추천 필요",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "본인 또는 부모 춘천시 1년 이상 거주 (주소이전·세인트존스대학교 예외, 유형별 적용)"
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "애향: 선발 조건은 공고문 확인 (저소득자녀/통리반장자녀/시정유공본인·자녀/환경공원주변자녀)",
+   "성적우수: 선발 조건은 공고문 확인",
+   "특기: 선발 조건은 공고문 확인",
+   "주소이전: 선발 조건은 공고문 확인",
+   "원격대학: 선발 조건은 공고문 확인",
+   "성적향상: 선발 조건은 공고문 확인",
+   "세인트존스대학교: 선발 조건은 공고문 확인",
+   "자원봉사 우수: 선발 조건은 공고문 확인"
+  ],
+  "variants": [
+   {
+    "name": "애향",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "성적우수",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "특기",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "주소이전",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "원격대학",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "성적향상",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "세인트존스대학교",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "자원봉사 우수",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": []
+   }
+  ],
+  "exclusions": [
+   "직전학기 본 재단 장학생의 경우 신청 제외 (저소득유형만 예외적으로 가능)",
+   "타 장학금 or 재단 장학금 간 중복신청 불가"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "춘천시 1년 이상 거주 고교생·대학생 대상 지자체 장학금, 유형별 최대 100만원",
+  "uncertain": [
+   {
+    "field": "gpa",
+    "reason": "8개 유형별 선발조건(성적·소득 등)이 공고문에만 있고 본문에 없어 확인 필요",
+    "level": "verify"
+   },
+   {
+    "field": "apply_type",
+    "reason": "유형별로 추천자(학교장·총장·학장·지자체장)와 접수처(행정복지센터/재단)가 달라 신청 방식이 유형마다 다를 수 있음",
+    "level": "verify"
+   }
+  ],
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRINCIPAL",
+    "PRESIDENT",
+    "DEAN",
+    "OTHER"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "PRIOR_RECENT",
+    "text": "직전학기 본 재단 장학생의 경우 신청 제외 (저소득유형만 예외적으로 가능)"
+   },
+   {
+    "type": "CONCURRENT_ANY",
+    "text": "타 장학금 or 재단 장학금 간 중복신청 불가"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "애향: 선발 조건은 공고문 확인 (저소득자녀/통리반장자녀/시정유공본인·자녀/환경공원주변자녀)",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "성적우수: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "특기: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "주소이전: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "원격대학: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "성적향상: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "세인트존스대학교: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "자원봉사 우수: 선발 조건은 공고문 확인",
+    "section": "유형별신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

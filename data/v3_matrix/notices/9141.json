@@ -1,0 +1,103 @@
+{
+ "idx": "9141",
+ "title": "이영주한중인재양성장학재단 장학",
+ "state": "모집마감",
+ "org": "이영주한중인재양성장학재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9141",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "이영주한중인재양성장학재단 장학",
+  "foundation": "이영주한중인재양성장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-07-15",
+  "apply_end": "2026-08-14",
+  "org_deadline": null,
+  "recruit_count": "5",
+  "amount": "최대 200만원 (연 200만원, 학기당 100만원)",
+  "apply_how": "이메일 접수(contact@example.com), 지도교수 추천 필요",
+  "target_levels": [
+   "UNIV",
+   "GRAD"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학",
+    "입학예정"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 85.0,
+   "scale": 100.0,
+   "basis": "CUMULATIVE",
+   "alternatives": [],
+   "notes": "전년도 기준 전체 학년 백분위 성적 85점 이상",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "SCHOOL_LOCATION",
+     "areas": [
+      "중국"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": "내국인",
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "중국 대학(원) 재학·입학예정 한국 국적자 대상, 백분위 85점·HSK 5급 이상, 연 200만원 지급",
+  "uncertain": [
+   {
+    "field": "gpa",
+    "reason": "'전년도 기준 전체 학년 백분위'라 직전 1년 성적인지 전체 누적 성적인지 불분명함",
+    "level": "verify"
+   }
+  ],
+  "language_requirements": [
+   {
+    "exam": "HSK",
+    "level": "5급"
+   }
+  ],
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PROFESSOR"
+   ]
+  },
+  "deadline_kind": "FOUNDATION",
+  "obligations": [
+   "장학금 수여식 필참",
+   "한중 관련 소논문 제출 (한 학기 1회)",
+   "한중미래리더 포럼 참여",
+   "활동사항 재단 홈페이지 업로드 (사진첨부, 한 학기 2회)"
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>로그인 (테스트용 최소본)</title></head><body>
+<form id="loginForm" name="loginForm">
+		<input type="hidden" id="facebookhiddenid" name="facebookhiddenid" />
+		<input type="hidden" id="naverhiddenid" name="naverhiddenid" />
+		<input type="hidden" id="kakaohiddenid" name="kakaohiddenid" />
+		<input type="hidden" id="pageReferer" name="pageReferer" value=''/>
+		<div class="login_box2">
+			<div class="login_item">
+				<input type="text" id="mbr_id" name="mbr_id" placeholder="이메일을 입력해주세요." >
+			</div>
+			<div class="login_item">
+				<input type="password" id="pwd_in" name="pwd_in" placeholder="비밀번호를 입력해주세요.">
+			</div>	
+			<input type="button" class="btn_login" onclick="dlogin();" value="로그인"/>
+			
+			<div class="login_item">
+				<label for="login_id_save"><input type="checkbox" name="login_id_save" id="login_id_save" value="Y" class="chk">아이디 저장 </label>
+				<label for="auto_login"><input type="checkbox" name="auto_login" id="auto_login" value="Y" class="chk">로그인 상태 유지 </label></span>
+			</div>
+		</div>
+		<div class="login_box2">
+			<div class="btn_sns">
+				<a href="#" onclick="javascript:facebooklogin('login');">페이스북으로 로그인</a>
+				<span class="ico_sns"><img src="/web/images/common/ico_sns_f.png" alt=""/></span>
+			</div>
+			<div class="btn_sns">
+				<a href="#" onclick="naverLoginAPI();" >네이버로 로그인</a>
+				<span class="ico_sns" ><img src="/web/images/common/ico_sns_n.png" alt="" /></span>
+			</div>
+			<div class="btn_sns">
+				<a href='#' onclick="kakaoLogin();">카카오톡으로 로그인</a>
+				<span class="ico_sns"><img src="/web/images/common/ico_sns_k.png" alt="" /></span>
+			</div>
+			<div class="log_search mgt10 txt_c">
+				<a href="sch_id.html">아이디 찾기</a>
+				<span class="bar">ㅣ</span>
+				<a href="sch_password.html">비밀번호 찾기</a>
+				<span class="bar">ㅣ</span>
+				<a href="javascript:location.href='/member/signin.html'">회원가입 하기</a>
+			</div>
+		</div>
+		</form>
+<script>
+function dlogin(){
+	
+	var _form = $("#loginForm");
+	
+	var id = $('#mbr_id').val();
+	if(!id) { alert("아이디를 입력하세요"); return; }
+	
+	var pw = $('#pwd_in').val();
+	if(!pw) { alert("비밀번호를 입력하세요"); return; }
+
+	var idsaveCheck = $('#login_id_save').val();
+	var autoLogin = ($("#auto_login").is(":checked")) ? "Y" : "N";
+	var pageReferer = $('#pageReferer').val();
+	
+	var url = "/process/checkuser.html";
+
+	$.ajax({
+		dataType:'json',
+		type: 'post',
+		async: true,
+		url: url,
+		data: {
+			mode:'login',
+			userid:id,
+			idsaveCheck:idsaveCheck,
+			autoLogin:autoLogin,
+			pageReferer:pageReferer,
+			userpw:pw
+		},
+		success: function(data) {
+			if(data.result==true){
+				if(data.checkyn=='Y') {
+					location.href = data.pageLink;
+				} else {
+					alert("로그인 정보가 일치하지 않습니다");
+					location.reload();
+					return;
+				}
+			}
+		},
+		error: function(data, status, err) {
+			alert('Disconnected from the server');
+		}
+	});
+}
+</script></body></html>

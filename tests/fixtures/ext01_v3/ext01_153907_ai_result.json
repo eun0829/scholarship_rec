@@ -1,0 +1,358 @@
+{
+  "elig": {
+    "schema_version": 3,
+    "registry_version": 1,
+    "processed_items": [
+      "GL",
+      "LTERM",
+      "CR",
+      "GC",
+      "GN",
+      "SP",
+      "GCP",
+      "YEAR",
+      "SEM",
+      "SLEFT",
+      "GRD",
+      "LV",
+      "GRAD",
+      "ENT",
+      "TRF",
+      "DEG",
+      "MAJ",
+      "MAJG",
+      "RES",
+      "RESP",
+      "RESY",
+      "HSL",
+      "SLOC",
+      "INC",
+      "BASIC",
+      "NEAR",
+      "DIS",
+      "SPAR",
+      "DEF",
+      "MUL",
+      "VET",
+      "MCH",
+      "SPECIAL",
+      "AGE",
+      "GEN",
+      "NAT",
+      "LANG",
+      "NSA",
+      "SCH_TYPE",
+      "SPART"
+    ],
+    "category": "OUT",
+    "scholarship_name": "2026년 하반기 은평구민 장학생",
+    "foundation": "재단법인 은평구민장학재단",
+    "apply_type": "HYBRID",
+    "apply_start": "2026-10-12",
+    "apply_end": "2026-10-28",
+    "org_deadline": null,
+    "recruit_count": null,
+    "amount": "일반 최대 200만원(등록금), 특기 30~50만원, 나비 10만원",
+    "apply_how": "등기우편(도착일 기준)·방문 접수, 일반·특기는 학교 추천(직인) 필요",
+    "target_levels": [
+      "ELEM",
+      "MIDDLE",
+      "HIGH",
+      "UNIV"
+    ],
+    "grades": [],
+    "enrollment": {
+      "required_status": [],
+      "excluded_status": [],
+      "min_remaining_semesters": null,
+      "notes": null
+    },
+    "gpa": {
+      "min": null,
+      "scale": null,
+      "basis": "UNKNOWN",
+      "alternatives": [],
+      "notes": null
+    },
+    "credits": {
+      "min_last_semester": null,
+      "min_completed_semesters": null,
+      "notes": null
+    },
+    "income": {
+      "max_bracket": null,
+      "eligible_types": [],
+      "notes": null
+    },
+    "region": {
+      "residence": [],
+      "school_location": [],
+      "notes": "학업 사유로 타 지역 거주 시 예외 인정(추가 서류 제출)",
+      "mode": "ALL",
+      "requirements": [
+        {
+          "type": "RESIDENCE_SELF",
+          "areas": [
+            "서울특별시 은평구"
+          ],
+          "min_years": 2,
+          "years_basis": "공고일 현재 계속 거주"
+        }
+      ]
+    },
+    "majors": [],
+    "nationality": null,
+    "special_status": [],
+    "other_conditions": [
+      "2026년 2학기 재학 중인 대학생",
+      "일반: 2026년 1학기 평균 평점 4.5만점에 3.0 이상 / 휴학생은 직전 학기 성적 제출",
+      "특기: 2026.1.1~6.30 전국규모 이상 대회 3위권 이내 개인 입상(단체 제외)",
+      "나비: 특성화고등학교 재학 중인 고등학생",
+      "나비: 자격증 3개 이상 취득자(취득기간 2025.9.1~2026.8.31)",
+      "기초생활수급자의 경우 학교 또는 한국장학재단에서 지급되는 장학금을 우선 신청바람"
+    ],
+    "variants": [
+      {
+        "name": "일반",
+        "amount": "최대 200만원(2026년 2학기 등록금)",
+        "target_levels": [
+          "UNIV"
+        ],
+        "gpa": {
+          "min": 3.0,
+          "scale": 4.5,
+          "basis": "LAST_SEMESTER",
+          "alternatives": [],
+          "notes": null
+        },
+        "credits": {
+          "min_last_semester": null,
+          "min_completed_semesters": null,
+          "notes": null
+        },
+        "income": {
+          "max_bracket": 8.0,
+          "eligible_types": [
+            "학자금 지원구간 8구간 이내"
+          ],
+          "notes": null,
+          "basis": "BRACKET",
+          "bracket_term": "CURRENT_TERM"
+        },
+        "region": {
+          "residence": [],
+          "school_location": [],
+          "notes": null
+        },
+        "other_conditions": [],
+        "apply_type": "SCHOOL"
+      },
+      {
+        "name": "특기",
+        "amount": "초 30만원, 중 40만원, 고 50만원",
+        "target_levels": [
+          "ELEM",
+          "MIDDLE",
+          "HIGH"
+        ],
+        "gpa": {
+          "min": null,
+          "scale": null,
+          "basis": "UNKNOWN",
+          "alternatives": [],
+          "notes": null
+        },
+        "credits": {
+          "min_last_semester": null,
+          "min_completed_semesters": null,
+          "notes": null
+        },
+        "income": {
+          "max_bracket": null,
+          "eligible_types": [
+            "기준중위소득 180% 이하"
+          ],
+          "notes": null,
+          "basis": "MEDIAN_PERCENT",
+          "max_median_percent": 180
+        },
+        "region": {
+          "residence": [],
+          "school_location": [],
+          "notes": null
+        },
+        "other_conditions": [],
+        "apply_type": "SCHOOL"
+      },
+      {
+        "name": "나비",
+        "amount": "1인 100,000원",
+        "target_levels": [
+          "HIGH"
+        ],
+        "gpa": {
+          "min": null,
+          "scale": null,
+          "basis": "UNKNOWN",
+          "alternatives": [],
+          "notes": null
+        },
+        "credits": {
+          "min_last_semester": null,
+          "min_completed_semesters": null,
+          "notes": null
+        },
+        "income": {
+          "max_bracket": null,
+          "eligible_types": [],
+          "notes": null
+        },
+        "region": {
+          "residence": [],
+          "school_location": [],
+          "notes": null
+        },
+        "other_conditions": [],
+        "apply_type": "DIRECT"
+      }
+    ],
+    "exclusions": [
+      "등록금성 장학금 중복 지원을 받은 경우 초과금액 반납 의무(일반: 차액 지급)"
+    ],
+    "documents": [
+      "신청서",
+      "개인정보 수집·이용·제공 및 조회 동의서",
+      "주민등록초본",
+      "주민등록등본",
+      "재학증명서",
+      "성적증명서",
+      "학자금 지원구간 통지서",
+      "등록금 납부 입증 서류",
+      "통장 사본"
+    ],
+    "selection": {
+      "method": "장학생 선정심사위원회 심의에 따른 선발",
+      "priority": [
+        "장애인(본인) 가점 15",
+        "군인·소방관·경찰관 부모 가점 10",
+        "다문화 가정 가점 10"
+      ]
+    },
+    "summary": "은평구 2년 이상 거주 초·중·고·대학생 대상 은평구민장학재단 장학금(일반·특기·나비), 10/28 마감",
+    "special_groups": [
+      {
+        "code": "DISABLED",
+        "scope": "SELF",
+        "mode": "PREFERRED"
+      },
+      {
+        "code": "MULTICULTURAL",
+        "scope": "FAMILY",
+        "mode": "PREFERRED"
+      },
+      {
+        "code": "OTHER",
+        "scope": "FAMILY",
+        "mode": "PREFERRED",
+        "text": "부모 군인·소방관·경찰관"
+      }
+    ],
+    "school": {
+      "excluded_types": [
+        "CYBER",
+        "OPEN_UNIV"
+      ]
+    },
+    "recommendation": {
+      "required": true,
+      "from": [
+        "PRESIDENT",
+        "PRINCIPAL"
+      ]
+    },
+    "deadline_kind": "FOUNDATION",
+    "exclusion_items": [
+      {
+        "type": "CONCURRENT_TUITION",
+        "text": "등록금성 장학금 중복 지원을 받은 경우 초과금액 반납 의무(일반: 차액 지급)"
+      }
+    ],
+    "obligations": [
+      "장학증서 수여식 참석"
+    ],
+    "unmodeled_conditions": [
+      {
+        "text": "2026년 2학기 재학 중인 대학생",
+        "section": "일반 장학생 신청 자격",
+        "source": "첨부1",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "일반: 2026년 1학기 평균 평점 4.5만점에 3.0 이상 / 휴학생은 직전 학기 성적 제출",
+        "section": "일반 장학생 신청 자격",
+        "source": "첨부1",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "특기: 2026.1.1~6.30 전국규모 이상 대회 3위권 이내 개인 입상(단체 제외)",
+        "section": "특기 장학생 신청 자격",
+        "source": "첨부1",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "나비: 특성화고등학교 재학 중인 고등학생",
+        "section": "나비 장학생 신청 자격",
+        "source": "첨부1",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "나비: 자격증 3개 이상 취득자(취득기간 2025.9.1~2026.8.31)",
+        "section": "나비 장학생 신청 자격",
+        "source": "첨부1",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "학점은행제, 사이버(원격)대학, 방송통신대학은 신청대상에서 제외",
+        "section": "기타 사항",
+        "source": "첨부1",
+        "kind": "EXCLUSION"
+      },
+      {
+        "text": "기초생활수급자의 경우 학교 또는 한국장학재단에서 지급되는 장학금을 우선 신청바람",
+        "section": "기타 사항",
+        "source": "첨부1",
+        "kind": "ELIGIBILITY"
+      },
+      {
+        "text": "공고일 기준 1년 이상 거래 중인 신청 학생 명의 계좌(통장 사본)",
+        "section": "제출 서류",
+        "source": "첨부1",
+        "kind": "PROCEDURE"
+      },
+      {
+        "text": "팩스/스캔본 접수 불가, 서류 미비 시 심사 제외",
+        "section": "신청 방법",
+        "source": "본문",
+        "kind": "PROCEDURE"
+      }
+    ]
+  },
+  "review": {
+    "uncertain": [
+      {
+        "field": "apply_type",
+        "reason": "일반·특기는 학교 직인 추천서가 필요하나 나비는 학교장 추천 불요로 유형별 신청 방식이 다름",
+        "level": "note"
+      }
+    ],
+    "evidence": {
+      "apply_end": "본문",
+      "region": "본문",
+      "gpa": "첨부1",
+      "income": "첨부1",
+      "apply_type": "첨부1"
+    },
+    "issues": [],
+    "attachment_problems": []
+  }
+}

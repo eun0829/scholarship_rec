@@ -1,0 +1,1639 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "장학금 추천 API",
+  "version": "1.0.0",
+  "description": "학생 프로필을 받아 장학금 공고와 비교한 판정(충족·조건부·미달)과 후속 질문을 돌려준다. 서버는 학생 정보를 저장하지 않는다. 설명: docs/api_contract_v1.md, docs/result_format_v1.md"
+ },
+ "security": [
+  {
+   "ApiKey": []
+  }
+ ],
+ "paths": {
+  "/v1/recommend": {
+   "post": {
+    "operationId": "recommend",
+    "summary": "판정과 후속 질문 (1차와 이어 답하는 호출 모두)",
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RecommendRequest"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "판정 결과",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RecommendResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "요청 형식 오류(INVALID_REQUEST) 또는 프로필 항목 간 모순(INVALID_PROFILE)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "API 키 없음 또는 불일치(UNAUTHORIZED)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "413": {
+      "description": "요청이 너무 큼(PAYLOAD_TOO_LARGE)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "서버 오류(INTERNAL, SERVER_CONFIG)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     },
+     "503": {
+      "description": "공고 DB를 읽을 수 없음(UNAVAILABLE)",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Error"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/health": {
+   "get": {
+    "operationId": "health",
+    "summary": "상태 점검 (6-B 에서 구현)",
+    "responses": {
+     "200": {
+      "description": "상태",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Health"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/meta": {
+   "get": {
+    "operationId": "meta",
+    "summary": "버전과 한도 (6-B 에서 구현)",
+    "responses": {
+     "200": {
+      "description": "정보",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Meta"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "securitySchemes": {
+   "ApiKey": {
+    "type": "apiKey",
+    "in": "header",
+    "name": "X-API-Key"
+   }
+  },
+  "schemas": {
+   "variant": {
+    "type": "object",
+    "required": [
+     "name",
+     "verdict",
+     "verdict_label",
+     "to_confirm"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "verdict": {
+      "enum": [
+       "MATCH",
+       "CONDITIONAL",
+       "NO_MATCH"
+      ]
+     },
+     "verdict_label": {
+      "enum": [
+       "충족",
+       "조건부",
+       "미달"
+      ]
+     },
+     "amount": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "apply_start": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "apply_end": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "expired": {
+      "type": "boolean"
+     },
+     "preferences": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/preference"
+      }
+     },
+     "to_confirm": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "unmatched_variant": {
+    "type": "object",
+    "required": [
+     "name",
+     "reason"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    }
+   },
+   "preference": {
+    "type": "object",
+    "required": [
+     "code",
+     "label",
+     "applies"
+    ],
+    "properties": {
+     "code": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "applies": {
+      "type": [
+       "boolean",
+       "null"
+      ]
+     }
+    }
+   },
+   "prerequisite": {
+    "type": "object",
+    "required": [
+     "type",
+     "label",
+     "status"
+    ],
+    "properties": {
+     "type": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "text": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "status": {
+      "enum": [
+       "MET",
+       "TODO",
+       "UNMET",
+       "UNKNOWN"
+      ]
+     }
+    }
+   },
+   "school_program": {
+    "type": "object",
+    "required": [
+     "program",
+     "label",
+     "school"
+    ],
+    "properties": {
+     "program": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "school": {
+      "enum": [
+       "PARTICIPATES",
+       "NOT",
+       "UNKNOWN"
+      ]
+     }
+    }
+   },
+   "note": {
+    "type": "object",
+    "required": [
+     "kind",
+     "label",
+     "text"
+    ],
+    "properties": {
+     "kind": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "text": {
+      "type": "string"
+     }
+    }
+   },
+   "warning": {
+    "type": "object",
+    "required": [
+     "code",
+     "message"
+    ],
+    "properties": {
+     "code": {
+      "type": "string"
+     },
+     "message": {
+      "type": "string"
+     }
+    }
+   },
+   "item": {
+    "type": "object",
+    "required": [
+     "id",
+     "src_cd",
+     "src_id",
+     "title",
+     "verdict",
+     "verdict_label",
+     "days_left",
+     "to_confirm",
+     "matched_variants",
+     "unmatched_variants",
+     "passed",
+     "fail_reasons",
+     "warnings",
+     "assumptions",
+     "prerequisites",
+     "preferences",
+     "school_programs",
+     "notes",
+     "schema_version"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "src_cd": {
+      "type": "string"
+     },
+     "src_id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "scholarship_name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "foundation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "url": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "summary": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "apply_start": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "apply_end": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "days_left": {
+      "type": "integer"
+     },
+     "org_deadline": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "apply_how": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "amount": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "status": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "schema_version": {
+      "type": "integer"
+     },
+     "verdict": {
+      "enum": [
+       "MATCH",
+       "CONDITIONAL",
+       "NO_MATCH"
+      ]
+     },
+     "verdict_label": {
+      "enum": [
+       "충족",
+       "조건부",
+       "미달"
+      ]
+     },
+     "best_variant": {
+      "type": [
+       "object",
+       "null"
+      ]
+     },
+     "tier": {
+      "enum": [
+       "HIGH",
+       "PARTIAL",
+       "CHECK",
+       "NONE"
+      ]
+     },
+     "tier_label": {
+      "type": "string"
+     },
+     "to_confirm": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "passed": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "fail_reasons": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "assumptions": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "merged_from": {
+      "type": "array"
+     },
+     "matched_variants": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/variant"
+      }
+     },
+     "unmatched_variants": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/unmatched_variant"
+      }
+     },
+     "warnings": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/warning"
+      }
+     },
+     "prerequisites": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/prerequisite"
+      }
+     },
+     "preferences": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/preference"
+      }
+     },
+     "school_programs": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/school_program"
+      }
+     },
+     "notes": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/note"
+      }
+     }
+    }
+   },
+   "excluded": {
+    "type": "object",
+    "required": [
+     "id",
+     "src_id",
+     "title",
+     "reasons"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "src_cd": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "src_id": {
+      "type": "string"
+     },
+     "title": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "url": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "reasons": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "question": {
+    "type": "object",
+    "required": [
+     "code",
+     "label",
+     "question",
+     "type",
+     "sensitive",
+     "skippable",
+     "resolves",
+     "resolves_count",
+     "answer"
+    ],
+    "properties": {
+     "code": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "question": {
+      "type": "string"
+     },
+     "type": {
+      "type": "string"
+     },
+     "sensitive": {
+      "type": "boolean"
+     },
+     "skippable": {
+      "type": "boolean"
+     },
+     "resolves": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "resolves_count": {
+      "type": "integer"
+     },
+     "answer": {
+      "type": "object",
+      "required": [
+       "keys",
+       "text"
+      ],
+      "properties": {
+       "keys": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "text": {
+        "type": "string"
+       },
+       "format": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   },
+   "data_gap": {
+    "type": "object",
+    "required": [
+     "code",
+     "label",
+     "resolves_count",
+     "resolves"
+    ],
+    "properties": {
+     "code": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "field": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "resolves_count": {
+      "type": "integer"
+     },
+     "resolves": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "document_only": {
+    "type": "object",
+    "required": [
+     "id",
+     "title",
+     "count",
+     "items"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "count": {
+      "type": "integer"
+     },
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "follow_up": {
+    "type": "object",
+    "required": [
+     "round",
+     "max_rounds",
+     "max_questions",
+     "done",
+     "done_reason",
+     "questions",
+     "remaining",
+     "data_gap",
+     "document_only"
+    ],
+    "properties": {
+     "round": {
+      "type": "integer"
+     },
+     "max_rounds": {
+      "type": "integer"
+     },
+     "max_questions": {
+      "type": "integer"
+     },
+     "done": {
+      "type": "boolean"
+     },
+     "done_reason": {
+      "enum": [
+       "NO_QUESTIONS",
+       "ALL_DECLINED",
+       "MAX_ROUNDS",
+       null
+      ]
+     },
+     "remaining": {
+      "type": "integer"
+     },
+     "questions": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/question"
+      }
+     },
+     "data_gap": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/data_gap"
+      }
+     },
+     "document_only": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/document_only"
+      }
+     }
+    }
+   },
+   "change": {
+    "type": "object",
+    "required": [
+     "id",
+     "from",
+     "to",
+     "from_label",
+     "to_label",
+     "reason"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "src_cd": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "src_id": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "title": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "url": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "from": {
+      "enum": [
+       "MATCH",
+       "CONDITIONAL",
+       "NO_MATCH"
+      ]
+     },
+     "to": {
+      "enum": [
+       "MATCH",
+       "CONDITIONAL",
+       "NO_MATCH"
+      ]
+     },
+     "from_label": {
+      "enum": [
+       "충족",
+       "조건부",
+       "미달"
+      ]
+     },
+     "to_label": {
+      "enum": [
+       "충족",
+       "조건부",
+       "미달"
+      ]
+     },
+     "reason": {
+      "type": "string"
+     }
+    }
+   },
+   "change_summary": {
+    "type": "object",
+    "required": [
+     "changed",
+     "to_match",
+     "to_conditional",
+     "to_no_match",
+     "unchanged",
+     "reduced_confirms"
+    ],
+    "properties": {
+     "changed": {
+      "type": "integer"
+     },
+     "to_match": {
+      "type": "integer"
+     },
+     "to_conditional": {
+      "type": "integer"
+     },
+     "to_no_match": {
+      "type": "integer"
+     },
+     "unchanged": {
+      "type": "integer"
+     },
+     "reduced_confirms": {
+      "type": "integer"
+     }
+    }
+   },
+   "answers": {
+    "type": "object",
+    "required": [
+     "applied",
+     "warnings",
+     "declined"
+    ],
+    "properties": {
+     "applied": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "warnings": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "declined": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "RecommendResponse": {
+    "type": "object",
+    "required": [
+     "result_version",
+     "today",
+     "profile_notes",
+     "counts",
+     "recommended",
+     "conditional",
+     "excluded",
+     "round",
+     "answers",
+     "follow_up",
+     "changes",
+     "change_summary"
+    ],
+    "properties": {
+     "result_version": {
+      "const": 1
+     },
+     "today": {
+      "type": "string"
+     },
+     "profile_notes": {
+      "type": "object",
+      "required": [
+       "dropped_sensitive_keys",
+       "ignored_keys",
+       "assumptions"
+      ],
+      "properties": {
+       "dropped_sensitive_keys": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "ignored_keys": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "assumptions": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "counts": {
+      "type": "object",
+      "required": [
+       "candidates",
+       "after_filter",
+       "after_dedupe",
+       "match",
+       "conditional",
+       "no_match"
+      ],
+      "properties": {
+       "candidates": {
+        "type": "integer"
+       },
+       "after_filter": {
+        "type": "integer"
+       },
+       "after_dedupe": {
+        "type": "integer"
+       },
+       "match": {
+        "type": "integer"
+       },
+       "conditional": {
+        "type": "integer"
+       },
+       "no_match": {
+        "type": "integer"
+       }
+      }
+     },
+     "recommended": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/item"
+      }
+     },
+     "conditional": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/item"
+      }
+     },
+     "excluded": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/excluded"
+      }
+     },
+     "round": {
+      "type": "integer"
+     },
+     "answers": {
+      "$ref": "#/components/schemas/answers"
+     },
+     "follow_up": {
+      "$ref": "#/components/schemas/follow_up"
+     },
+     "changes": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/change"
+      }
+     },
+     "change_summary": {
+      "$ref": "#/components/schemas/change_summary"
+     },
+     "request_id": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "profile_warnings": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "contract_violations": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "Profile": {
+    "type": "object",
+    "description": "학생 프로필. 알 수 없는 키는 무시하고 `profile_notes.ignored_keys` 로 알린다. 이름·학번·연락처 같은 개인정보 키는 받지 않고 `profile_notes.dropped_sensitive_keys` 로 알린다.",
+    "properties": {
+     "level": {
+      "type": "string",
+      "description": "과정",
+      "example": "UNIV",
+      "enum": [
+       "UNIV",
+       "GRAD"
+      ],
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "status": {
+      "type": "string",
+      "description": "학적 상태",
+      "example": "ENROLLED",
+      "enum": [
+       "ENROLLED",
+       "LEAVE",
+       "GRADUATED"
+      ],
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "grade": {
+      "type": "integer",
+      "description": "학년",
+      "example": 4,
+      "minimum": 1,
+      "maximum": 6,
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "semesters_completed": {
+      "type": "integer",
+      "description": "등록(이수)한 학기 수. 신입생은 0",
+      "example": 7,
+      "minimum": 0,
+      "maximum": 30,
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "entry_year": {
+      "type": "integer",
+      "description": "입학년도",
+      "example": 2021,
+      "minimum": 1990,
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "admission_type": {
+      "type": "string",
+      "description": "입학 구분 (신입학 / 편입학)",
+      "example": "NEW",
+      "enum": [
+       "NEW",
+       "TRANSFER"
+      ],
+      "x-source": "school_db",
+      "x-tier": "권장"
+     },
+     "major": {
+      "type": "string",
+      "description": "학과 이름",
+      "example": "전자공학부",
+      "minLength": 1,
+      "maxLength": 100,
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "major_group": {
+      "type": "string",
+      "description": "학과가 속한 계열 (학교 시스템의 분류를 표준 코드로 전달)",
+      "example": "ENGINEERING",
+      "enum": [
+       "ENGINEERING",
+       "NATURAL",
+       "MEDICAL",
+       "ARTS_PE",
+       "HUMANITIES",
+       "SOCIAL",
+       "EDUCATION",
+       "AGRICULTURE"
+      ],
+      "x-source": "school_db",
+      "x-tier": "권장"
+     },
+     "nationality": {
+      "type": "string",
+      "description": "국적 (내국인 / 외국인 / 재외동포). 다른 값은 받지 않는다",
+      "example": "KR",
+      "enum": [
+       "KR",
+       "FOREIGN",
+       "OVERSEAS_KR"
+      ],
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "gender": {
+      "type": "string",
+      "description": "성별",
+      "example": "M",
+      "enum": [
+       "M",
+       "F"
+      ],
+      "x-source": "school_db",
+      "x-tier": "선택"
+     },
+     "gpa_last": {
+      "type": "number",
+      "description": "직전학기 평점. 만점은 gpa_scale 로 함께 보낸다",
+      "example": 3.79,
+      "minimum": 0,
+      "maximum": 5.0,
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "gpa_scale": {
+      "type": "number",
+      "description": "평점 만점. **성적 값(gpa_last, gpa_cumulative)과 함께 보낸다.** 보내지 않으면 4.5로 가정하고 결과의 profile_notes.assumptions 에 알린다",
+      "example": 4.5,
+      "enum": [
+       4.5,
+       4.3,
+       4.0,
+       5.0
+      ]
+     },
+     "gpa_last_term": {
+      "type": "string",
+      "description": "직전학기 `YYYY-N`",
+      "example": "2026-1",
+      "pattern": "^(199[0-9]|20[0-9]{2})-[12]$",
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "credits_last": {
+      "type": "number",
+      "description": "직전학기 취득학점",
+      "example": 15,
+      "minimum": 0,
+      "maximum": 60,
+      "x-source": "school_db",
+      "x-tier": "필수"
+     },
+     "gpa_cumulative": {
+      "type": "number",
+      "description": "누적(전체) 평점. 만점은 gpa_scale 로 함께 보낸다",
+      "example": 3.62,
+      "minimum": 0,
+      "maximum": 5.0,
+      "x-source": "school_db",
+      "x-tier": "권장"
+     },
+     "term_history": {
+      "type": "array",
+      "description": "학기별 성적, 최근 학기부터: `[{term, gpa, credits}]`",
+      "example": [
+       {
+        "term": "2026-1",
+        "gpa": 3.79,
+        "credits": 15
+       },
+       {
+        "term": "2025-2",
+        "gpa": 3.11,
+        "credits": 18
+       }
+      ],
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+       "type": "object",
+       "required": [
+        "term",
+        "gpa",
+        "credits"
+       ],
+       "properties": {
+        "term": {
+         "type": "string",
+         "pattern": "^(199[0-9]|20[0-9]{2})-[12]$"
+        },
+        "gpa": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 5.0
+        },
+        "credits": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 60
+        }
+       }
+      },
+      "x-source": "school_db",
+      "x-tier": "권장"
+     },
+     "gpa_percent": {
+      "type": "number",
+      "description": "직전학기 100점 환산 점수 (공고가 100점제일 때만 쓰임). 0~100",
+      "example": 88,
+      "minimum": 0,
+      "maximum": 100,
+      "x-source": "school_db",
+      "x-tier": "권장"
+     },
+     "gpa_cumulative_percent": {
+      "type": "number",
+      "description": "누적(전체) 100점 환산 점수 (공고의 전체 평점 기준이 100점제일 때만 쓰임). 0~100",
+      "example": 85,
+      "minimum": 0,
+      "maximum": 100,
+      "x-source": "school_db",
+      "x-tier": "권장"
+     },
+     "income_bracket": {
+      "type": "integer",
+      "description": "학자금 지원구간(소득분위) 0~10. **민감: 학생 동의 후에만 보낸다**",
+      "example": 2,
+      "minimum": 0,
+      "maximum": 10,
+      "x-source": "school_db",
+      "x-tier": "필수",
+      "x-sensitive": true
+     },
+     "residence_sido": {
+      "type": "string",
+      "description": "본인 주민등록 시·도. 공식 이름: `서울특별시`, `부산광역시`, `대구광역시`, `인천광역시`, `광주광역시`, `대전광역시`, `울산광역시`, `세종특별자치시`, `경기도`, `강원특별자치도`, `충청북도`, `충청남도`, `전북특별자치도`, `전라남도`, `경상북도`, `경상남도`, `제주특별자치도`. 약칭·옛 이름(`경기`, `강원도`)은 공식 이름으로 바꿔 받지만 오타는 거절한다",
+      "example": "경기도",
+      "enum": [
+       "서울특별시",
+       "부산광역시",
+       "대구광역시",
+       "인천광역시",
+       "광주광역시",
+       "대전광역시",
+       "울산광역시",
+       "세종특별자치시",
+       "경기도",
+       "강원특별자치도",
+       "충청북도",
+       "충청남도",
+       "전북특별자치도",
+       "전라남도",
+       "경상북도",
+       "경상남도",
+       "제주특별자치도"
+      ],
+      "x-source": "student",
+      "x-tier": "필수"
+     },
+     "residence_sigungu": {
+      "type": "string",
+      "description": "본인 주민등록 시·군·구 (읍·면·동까지 적어도 된다: `수원시 장안구 연무동`)",
+      "example": "수원시",
+      "minLength": 1,
+      "maxLength": 40,
+      "x-source": "student",
+      "x-tier": "필수"
+     },
+     "residence_years": {
+      "type": "number",
+      "description": "거주 기간(년). 구간으로 받았으면 하한 (`3년 이상` -> 3). 소수 가능(0.5)",
+      "example": 3,
+      "minimum": 0,
+      "maximum": 100,
+      "x-source": "student",
+      "x-tier": "권장"
+     },
+     "residence_years_upper": {
+      "type": "number",
+      "description": "거주 기간 구간의 상한(포함). `1~3년` -> 3. 정확한 값이면 보내지 않는다",
+      "example": 3,
+      "minimum": 0,
+      "maximum": 100
+     },
+     "residence_years_open": {
+      "type": "boolean",
+      "description": "`N년 이상`처럼 상한이 없으면 true",
+      "example": true
+     },
+     "parent_residence_sido": {
+      "type": "string",
+      "description": "부모 주민등록 시·도 (`residence_sido` 와 같은 공식 이름)",
+      "example": "경기도",
+      "enum": [
+       "서울특별시",
+       "부산광역시",
+       "대구광역시",
+       "인천광역시",
+       "광주광역시",
+       "대전광역시",
+       "울산광역시",
+       "세종특별자치시",
+       "경기도",
+       "강원특별자치도",
+       "충청북도",
+       "충청남도",
+       "전북특별자치도",
+       "전라남도",
+       "경상북도",
+       "경상남도",
+       "제주특별자치도"
+      ],
+      "x-source": "student",
+      "x-tier": "권장"
+     },
+     "parent_residence_sigungu": {
+      "type": "string",
+      "description": "부모 주민등록 시·군·구",
+      "example": "수원시",
+      "minLength": 1,
+      "maxLength": 40,
+      "x-source": "student",
+      "x-tier": "권장"
+     },
+     "hs_sido": {
+      "type": "string",
+      "description": "졸업한 고등학교가 있는 시·도 (`residence_sido` 와 같은 공식 이름)",
+      "example": "경기도",
+      "enum": [
+       "서울특별시",
+       "부산광역시",
+       "대구광역시",
+       "인천광역시",
+       "광주광역시",
+       "대전광역시",
+       "울산광역시",
+       "세종특별자치시",
+       "경기도",
+       "강원특별자치도",
+       "충청북도",
+       "충청남도",
+       "전북특별자치도",
+       "전라남도",
+       "경상북도",
+       "경상남도",
+       "제주특별자치도"
+      ],
+      "x-source": "student",
+      "x-tier": "권장"
+     },
+     "hs_sigungu": {
+      "type": "string",
+      "description": "졸업한 고등학교가 있는 시·군·구",
+      "example": "안양시",
+      "minLength": 1,
+      "maxLength": 40,
+      "x-source": "student",
+      "x-tier": "권장"
+     },
+     "age": {
+      "type": "integer",
+      "description": "만 나이",
+      "example": 24,
+      "minimum": 0,
+      "maximum": 100,
+      "x-source": "student",
+      "x-tier": "권장"
+     },
+     "special_codes": {
+      "type": "array",
+      "description": "해당하는 신분 코드 목록. **민감: 학생 동의 후에만 보낸다**",
+      "example": [
+       "DISABLED"
+      ],
+      "items": {
+       "type": "string",
+       "enum": [
+        "BASIC_LIVELIHOOD",
+        "NEAR_POOR",
+        "DISABLED",
+        "SINGLE_PARENT",
+        "DEFECTOR",
+        "MULTICULTURAL",
+        "VETERAN",
+        "MULTI_CHILD"
+       ]
+      },
+      "uniqueItems": true,
+      "x-source": "student",
+      "x-tier": "선택",
+      "x-sensitive": true
+     },
+     "special_complete": {
+      "type": "boolean",
+      "description": "신분 항목에 모두 답했으면 true (목록에 없는 신분은 해당 없음으로 본다). 일부만 답했으면 false 또는 보내지 않는다",
+      "example": true
+     },
+     "is_basic_livelihood": {
+      "type": "boolean",
+      "description": "기초생활수급자 여부 (special_codes 와 같은 뜻의 개별 답. 둘 중 하나만 써도 된다)",
+      "example": false,
+      "x-source": "student",
+      "x-tier": "권장",
+      "x-sensitive": true
+     },
+     "is_near_poor": {
+      "type": "boolean",
+      "description": "차상위계층 여부 (개별 답)",
+      "example": false,
+      "x-source": "student",
+      "x-tier": "권장",
+      "x-sensitive": true
+     },
+     "is_single_parent": {
+      "type": "boolean",
+      "description": "한부모가정 여부 (개별 답)",
+      "example": false,
+      "x-source": "student",
+      "x-tier": "선택",
+      "x-sensitive": true
+     },
+     "degree_held": {
+      "type": "boolean",
+      "description": "학위 소지 여부",
+      "example": false,
+      "x-source": "student",
+      "x-tier": "선택"
+     },
+     "national_scholarship_applied": {
+      "type": "boolean",
+      "description": "이번 학기 국가장학금 신청 여부",
+      "example": true,
+      "x-source": "student",
+      "x-tier": "선택"
+     },
+     "language_scores": {
+      "type": "object",
+      "description": "어학 성적 `{시험 이름: 점수 또는 등급 숫자}` (값은 숫자). 독일어 같은 유럽언어기준(CEFR) 등급은 언어 이름을 키로, A1=1 A2=2 B1=3 B2=4 C1=5 C2=6 으로 보낸다. 성적이 없으면 빈 객체 `{}` (보내지 않으면 '답하지 않음')",
+      "example": {
+       "TOEIC": 780,
+       "HSK": 5,
+       "독일어": 3
+      },
+      "additionalProperties": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1000
+      },
+      "x-source": "student",
+      "x-tier": "선택"
+     }
+    },
+    "additionalProperties": true
+   },
+   "RecommendRequest": {
+    "type": "object",
+    "required": [
+     "profile"
+    ],
+    "properties": {
+     "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]{1,64}$",
+      "description": "호출하는 쪽이 정하는 요청 번호 (응답과 오류에 그대로 돌려준다). 학번 등 학생을 알 수 있는 값을 쓰지 않는다"
+     },
+     "profile": {
+      "$ref": "#/components/schemas/Profile"
+     },
+     "answers": {
+      "$ref": "#/components/schemas/Profile",
+      "description": "이번 회차에 학생이 새로 답한 값 (후속 질문의 answer.keys). profile 의 같은 키를 덮어쓴다"
+     },
+     "answers_text": {
+      "type": "string",
+      "maxLength": 5000,
+      "description": "답을 `- 라벨: 값` 줄로 보낼 때 (개발·시험용)"
+     },
+     "declined": {
+      "type": "array",
+      "maxItems": 60,
+      "items": {
+       "type": "string",
+       "maxLength": 24
+      },
+      "description": "학생이 건너뛴 항목 코드. 다시 묻지 않는다"
+     },
+     "round": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 1,
+      "description": "몇 번째 질문 회차인지. 질문은 최대 3회"
+     },
+     "max_questions": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5,
+      "description": "한 번에 묻는 최대 질문 수"
+     },
+     "today": {
+      "type": "string",
+      "format": "date",
+      "description": "판정 기준일 (시험용. 보내지 않으면 서버의 오늘)"
+     },
+     "strict": {
+      "type": "boolean",
+      "default": false,
+      "description": "true 면 응답에 `contract_violations`(계약과 한 글자라도 다른 입력의 목록)를 담는다. 판정은 평소처럼 이루어진다. 포털의 변환 코드를 시험할 때 쓴다"
+     }
+    },
+    "description": "profile 항목 수는 최대 100개. 알 수 없는 최상위 키는 무시하고 `profile_warnings` 로 알린다."
+   },
+   "Error": {
+    "type": "object",
+    "required": [
+     "error"
+    ],
+    "properties": {
+     "error": {
+      "type": "object",
+      "required": [
+       "code",
+       "message",
+       "fields",
+       "request_id"
+      ],
+      "properties": {
+       "code": {
+        "enum": [
+         "INTERNAL",
+         "INVALID_PROFILE",
+         "INVALID_REQUEST",
+         "PAYLOAD_TOO_LARGE",
+         "SERVER_CONFIG",
+         "UNAUTHORIZED",
+         "UNAVAILABLE"
+        ]
+       },
+       "message": {
+        "type": "string"
+       },
+       "request_id": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "fields": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "required": [
+          "field",
+          "message"
+         ],
+         "properties": {
+          "field": {
+           "type": "string"
+          },
+          "message": {
+           "type": "string"
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   },
+   "Health": {
+    "type": "object",
+    "required": [
+     "status",
+     "api_version"
+    ],
+    "properties": {
+     "status": {
+      "enum": [
+       "ok",
+       "degraded"
+      ]
+     },
+     "api_version": {
+      "type": "string"
+     },
+     "notices_as_of": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "공고 목록을 마지막으로 읽은 시각 (ISO 8601)"
+     }
+    }
+   },
+   "Meta": {
+    "type": "object",
+    "required": [
+     "api_version",
+     "result_version",
+     "max_questions",
+     "max_rounds"
+    ],
+    "properties": {
+     "api_version": {
+      "type": "string"
+     },
+     "result_version": {
+      "type": "integer"
+     },
+     "notices_as_of": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "max_questions": {
+      "type": "integer"
+     },
+     "max_rounds": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ }
+}

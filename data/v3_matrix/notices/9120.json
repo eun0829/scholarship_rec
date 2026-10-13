@@ -1,0 +1,118 @@
+{
+ "idx": "9120",
+ "title": "제 17기 OK배정장학금",
+ "state": "모집마감",
+ "org": "OK배정장학재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9120",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "제 17기 OK배정장학금",
+  "foundation": "OK배정장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-06-22",
+  "apply_end": "2026-07-20",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "매월 85~200만원 지급(최대 200만원), 26년 9월~졸업 시까지",
+  "apply_how": "온라인 접수(okscholarship.or.kr), 제출서류는 공고문 확인",
+  "target_levels": [
+   "UNIV",
+   "GRAD"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 4.0,
+   "scale": 4.5,
+   "basis": "CUMULATIVE",
+   "alternatives": [
+    {
+     "min": 3.7,
+     "scale": 4.3
+    }
+   ],
+   "notes": "석사/석박통합은 석사(석박통합)·학부, 박사는 석사·박사 각각 전체 평점 기준 충족",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 8.0,
+   "eligible_types": [
+    "학자금 지원구간 8구간 이내"
+   ],
+   "notes": null,
+   "basis": "BRACKET"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "대학생 : 2개 학기 이상 성적증명서 제출이 가능한 자",
+   "석사/석박통합 : 1개 학기 이상 성적증명서 제출이 가능한 자",
+   "박사 : 입학 예정자 이상",
+   "대학생 : 26-1학기 등록금 전액을 교내·외 장학금으로 해결",
+   "석사/석박통합, 박사 : 26-1학기 등록금 전액을 교내·외 장학금 or 연구 or 조교비 or 연구실 근로비로 해결"
+  ],
+  "variants": [],
+  "exclusions": [],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "정규학기 2학기 이상 남은 대학생·대학원생 대상, 전체평점 4.0/4.5 이상·8분위 이내, 최대 월 200만원",
+  "uncertain": [],
+  "remaining_terms": {
+   "min": 2
+  },
+  "obligations": [
+   "장학증서 수여식 필참"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "대학생 : 2개 학기 이상 성적증명서 제출이 가능한 자",
+    "section": "지원대상",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "석사/석박통합 : 1개 학기 이상 성적증명서 제출이 가능한 자",
+    "section": "지원대상",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "박사 : 입학 예정자 이상",
+    "section": "지원대상",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "대학생 : 26-1학기 등록금 전액을 교내·외 장학금으로 해결",
+    "section": "기타조건",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "석사/석박통합, 박사 : 26-1학기 등록금 전액을 교내·외 장학금 or 연구 or 조교비 or 연구실 근로비로 해결",
+    "section": "기타조건",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

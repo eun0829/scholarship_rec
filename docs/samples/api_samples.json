@@ -1,0 +1,3441 @@
+{
+ "meta": {
+  "school": "시흥",
+  "today": "2026-10-11",
+  "notices": 20,
+  "note": "고정한 공고 20건 기준. 공고가 바뀌면 판정 개수는 달라진다. 필드 구조와 호출 흐름을 맞춰 보는 용도"
+ },
+ "students": [
+  {
+   "name": "s01",
+   "description": "기준 학생: 수원 4학년 공학 (성적 우수, 소득 2구간, 신분 없음)",
+   "first_request": {
+    "request_id": "s01",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 4,
+     "semesters_completed": 7,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2021,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 4,
+    "semesters_completed": 7,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2021,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 11,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 5,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s02",
+   "description": "서울 서초구 3학년 공학 (본인·부모 서초구 3년 이상): 9212 지역 충족, 9071 부모 지역 아님",
+   "first_request": {
+    "request_id": "s02",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.2,
+     "gpa_last_term": "2026-1",
+     "credits_last": 16.0,
+     "gpa_cumulative": 3.4,
+     "gpa_percent": 78.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "서울특별시",
+     "residence_sigungu": "서초구",
+     "income_bracket": 5,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.2,
+    "gpa_last_term": "2026-1",
+    "credits_last": 16.0,
+    "gpa_cumulative": 3.4,
+    "gpa_percent": 78.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "서울특별시",
+    "residence_sigungu": "서초구",
+    "parent_residence_sido": "서울특별시",
+    "parent_residence_sigungu": "서초구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "서울특별시",
+    "hs_sigungu": "서초구",
+    "income_bracket": 5,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 12,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 6,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s03",
+   "description": "노원구 의예과 3학년 만 28세, 누적 3.8: 9053 모두 충족(소득 문장 제외)",
+   "first_request": {
+    "request_id": "s03",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.9,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.8,
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "의예과",
+     "major_group": "MEDICAL",
+     "residence_sido": "서울특별시",
+     "residence_sigungu": "노원구",
+     "income_bracket": 3,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.9,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.8,
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "의예과",
+    "major_group": "MEDICAL",
+    "residence_sido": "서울특별시",
+    "residence_sigungu": "노원구",
+    "parent_residence_sido": "서울특별시",
+    "parent_residence_sigungu": "노원구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "서울특별시",
+    "hs_sigungu": "노원구",
+    "income_bracket": 3,
+    "age": 28,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 11,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "AGE",
+     "HSL",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 5,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "AGE",
+     "HSL",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s04",
+   "description": "노원구 의예과 만 29세 + 누적 3.5/4.5 정확히 경계: 나이·성적 경계값",
+   "first_request": {
+    "request_id": "s04",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.5,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.5,
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "의예과",
+     "major_group": "MEDICAL",
+     "residence_sido": "서울특별시",
+     "residence_sigungu": "노원구",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.5,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.5,
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "의예과",
+    "major_group": "MEDICAL",
+    "residence_sido": "서울특별시",
+    "residence_sigungu": "노원구",
+    "parent_residence_sido": "서울특별시",
+    "parent_residence_sigungu": "노원구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "서울특별시",
+    "hs_sigungu": "노원구",
+    "income_bracket": 2,
+    "age": 29,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 11,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "AGE",
+     "HSL",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 5,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "AGE",
+     "HSL",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s05",
+   "description": "노원구 의예과 만 30세(나이 초과): 9053·9096 나이 미달",
+   "first_request": {
+    "request_id": "s05",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.9,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "의예과",
+     "major_group": "MEDICAL",
+     "residence_sido": "서울특별시",
+     "residence_sigungu": "노원구",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.9,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "의예과",
+    "major_group": "MEDICAL",
+    "residence_sido": "서울특별시",
+    "residence_sigungu": "노원구",
+    "parent_residence_sido": "서울특별시",
+    "parent_residence_sigungu": "노원구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "서울특별시",
+    "hs_sigungu": "노원구",
+    "income_bracket": 2,
+    "age": 30,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 11,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "AGE",
+     "HSL",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 4,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "AGE",
+     "HSL",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s06",
+   "description": "거창군 거주 3년 이상 + 직전학기 정확히 12학점·2.5/4.5 경계, 만 29세 2학년: 9096 충족",
+   "first_request": {
+    "request_id": "s06",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 2.5,
+     "gpa_last_term": "2026-1",
+     "credits_last": 12.0,
+     "gpa_cumulative": 2.9,
+     "gpa_percent": 70.0,
+     "gpa_cumulative_percent": 80.0,
+     "grade": 2,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2024,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "SOCIAL",
+     "residence_sido": "경상남도",
+     "residence_sigungu": "거창군",
+     "income_bracket": 4,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 2.5,
+    "gpa_last_term": "2026-1",
+    "credits_last": 12.0,
+    "gpa_cumulative": 2.9,
+    "gpa_percent": 70.0,
+    "gpa_cumulative_percent": 80.0,
+    "grade": 2,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2024,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "SOCIAL",
+    "residence_sido": "경상남도",
+    "residence_sigungu": "거창군",
+    "parent_residence_sido": "경상남도",
+    "parent_residence_sigungu": "창원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경상남도",
+    "hs_sigungu": "창원시",
+    "income_bracket": 4,
+    "age": 29,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 9,
+     "no_match": 11
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 4,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s07",
+   "description": "거창군 거주 '1~3년' + 거창 고교 졸업 + 부모 서울: 3년 요건 경계(모호), 졸업은 3년 재학 확인 불가",
+   "first_request": {
+    "request_id": "s07",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.3,
+     "gpa_last_term": "2026-1",
+     "credits_last": 18.0,
+     "gpa_cumulative": 3.62,
+     "gpa_percent": 88.0,
+     "grade": 2,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2024,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "HUMANITIES",
+     "residence_sido": "경상남도",
+     "residence_sigungu": "거창군",
+     "income_bracket": 6,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.3,
+    "gpa_last_term": "2026-1",
+    "credits_last": 18.0,
+    "gpa_cumulative": 3.62,
+    "gpa_percent": 88.0,
+    "grade": 2,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2024,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "HUMANITIES",
+    "residence_sido": "경상남도",
+    "residence_sigungu": "거창군",
+    "parent_residence_sido": "서울특별시",
+    "parent_residence_sigungu": "강남구",
+    "residence_years": 1.0,
+    "residence_years_upper": 3.0,
+    "hs_sido": "경상남도",
+    "hs_sigungu": "거창군",
+    "income_bracket": 6,
+    "age": 22,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 10,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 5,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s08",
+   "description": "대전 신입생(이수 0학기, 성적 없음) 공학: 9066 지역·계열 충족, 성적 면제",
+   "first_request": {
+    "request_id": "s08",
+    "profile": {
+     "grade": 1,
+     "semesters_completed": 0,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2026,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "대전광역시",
+     "residence_sigungu": "유성구",
+     "income_bracket": 6,
+     "gender": "F",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "grade": 1,
+    "semesters_completed": 0,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2026,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "대전광역시",
+    "residence_sigungu": "유성구",
+    "parent_residence_sido": "대전광역시",
+    "parent_residence_sigungu": "유성구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "대전광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 6,
+    "age": 19,
+    "gender": "F",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 11,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 5,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s09",
+   "description": "대전 신입생 인문계열: 9066 계열 미달",
+   "first_request": {
+    "request_id": "s09",
+    "profile": {
+     "grade": 1,
+     "semesters_completed": 0,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2026,
+     "admission_type": "NEW",
+     "major": "국어국문학과",
+     "major_group": "HUMANITIES",
+     "residence_sido": "대전광역시",
+     "residence_sigungu": "유성구",
+     "income_bracket": 6,
+     "gender": "F",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "grade": 1,
+    "semesters_completed": 0,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2026,
+    "admission_type": "NEW",
+    "major": "국어국문학과",
+    "major_group": "HUMANITIES",
+    "residence_sido": "대전광역시",
+    "residence_sigungu": "유성구",
+    "parent_residence_sido": "대전광역시",
+    "parent_residence_sigungu": "유성구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "대전광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 6,
+    "age": 19,
+    "gender": "F",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 11,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 5,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s10",
+   "description": "대전 거주 4학년 자연계열(신입생 아님): 9066 '신입생' 조건 미달",
+   "first_request": {
+    "request_id": "s10",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 4,
+     "semesters_completed": 7,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2021,
+     "admission_type": "NEW",
+     "major": "화학과",
+     "major_group": "NATURAL",
+     "residence_sido": "대전광역시",
+     "residence_sigungu": "유성구",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 4,
+    "semesters_completed": 7,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2021,
+    "admission_type": "NEW",
+    "major": "화학과",
+    "major_group": "NATURAL",
+    "residence_sido": "대전광역시",
+    "residence_sigungu": "유성구",
+    "parent_residence_sido": "대전광역시",
+    "parent_residence_sigungu": "유성구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "대전광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 10,
+     "no_match": 10
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 4,
+     "no_match": 16
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s11",
+   "description": "인천 서구 석남1동 3학년 + 한부모 + 소득 5: 9217 동 단위 일치·신분 충족·소득 6구간 이내",
+   "first_request": {
+    "request_id": "s11",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.1,
+     "gpa_percent": 75.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "인천광역시",
+     "residence_sigungu": "서구 석남1동",
+     "income_bracket": 5,
+     "gender": "F",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.1,
+    "gpa_percent": 75.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "인천광역시",
+    "residence_sigungu": "서구 석남1동",
+    "parent_residence_sido": "인천광역시",
+    "parent_residence_sigungu": "서구 석남1동",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "인천광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 5,
+    "age": 22,
+    "gender": "F",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [
+     "SINGLE_PARENT"
+    ],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": true,
+    "special_status": [
+     "한부모"
+    ]
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 12,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 6,
+     "no_match": 13
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s12",
+   "description": "인천 서구 검단동(공고 동 목록에 없음) + 기초수급자 소득 1: 9217 동 단위 불일치(코드는 세부 지역 미판정)",
+   "first_request": {
+    "request_id": "s12",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.1,
+     "gpa_percent": 75.0,
+     "gpa_cumulative_percent": 86.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "인천광역시",
+     "residence_sigungu": "서구 검단동",
+     "income_bracket": 1,
+     "gender": "F",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.1,
+    "gpa_percent": 75.0,
+    "gpa_cumulative_percent": 86.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "인천광역시",
+    "residence_sigungu": "서구 검단동",
+    "parent_residence_sido": "인천광역시",
+    "parent_residence_sigungu": "서구 검단동",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "인천광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 1,
+    "age": 22,
+    "gender": "F",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [
+     "BASIC_LIVELIHOOD"
+    ],
+    "special_complete": true,
+    "is_basic_livelihood": true,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": [
+     "기초수급자"
+    ]
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 12,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 7,
+     "no_match": 13
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s13",
+   "description": "인천 계양구 + 한부모 + 소득 8, 백분위 65지만 평점 3.0(C 이상): 9217 지역 미달, 9163 '70점 또는 C학점' 대체 기준",
+   "first_request": {
+    "request_id": "s13",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.1,
+     "gpa_percent": 65.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "인천광역시",
+     "residence_sigungu": "계양구",
+     "income_bracket": 8,
+     "gender": "F",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.1,
+    "gpa_percent": 65.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "인천광역시",
+    "residence_sigungu": "계양구",
+    "parent_residence_sido": "인천광역시",
+    "parent_residence_sigungu": "계양구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "인천광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 8,
+    "age": 22,
+    "gender": "F",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [
+     "SINGLE_PARENT"
+    ],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": true,
+    "special_status": [
+     "한부모"
+    ]
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 12,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 6,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s14",
+   "description": "인천 서구 석남2동 + 한부모 + 소득 8구간(6구간 초과): 9217 신분은 충족, 소득은 초과 -> '그리고/또는' 모호",
+   "first_request": {
+    "request_id": "s14",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.1,
+     "gpa_percent": 75.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "인천광역시",
+     "residence_sigungu": "서구 석남2동",
+     "income_bracket": 8,
+     "gender": "F",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.1,
+    "gpa_percent": 75.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "인천광역시",
+    "residence_sigungu": "서구 석남2동",
+    "parent_residence_sido": "인천광역시",
+    "parent_residence_sigungu": "서구 석남2동",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "인천광역시",
+    "hs_sigungu": "서구",
+    "income_bracket": 8,
+    "age": 22,
+    "gender": "F",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [
+     "SINGLE_PARENT"
+    ],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": true,
+    "special_status": [
+     "한부모"
+    ]
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 12,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 7,
+     "no_match": 13
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s15",
+   "description": "삼척시 원덕읍 거주 3년 이상 + 원덕읍 고교 졸업: 9181 충족",
+   "first_request": {
+    "request_id": "s15",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 2,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2024,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "SOCIAL",
+     "residence_sido": "강원특별자치도",
+     "residence_sigungu": "삼척시 원덕읍",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 2,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2024,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "SOCIAL",
+    "residence_sido": "강원특별자치도",
+    "residence_sigungu": "삼척시 원덕읍",
+    "parent_residence_sido": "강원특별자치도",
+    "parent_residence_sigungu": "삼척시 원덕읍",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "강원특별자치도",
+    "hs_sigungu": "삼척시 원덕읍",
+    "income_bracket": 2,
+    "age": 21,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 10,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 5,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s16",
+   "description": "삼척시 근덕면(원덕읍 아님): 9181 동·읍 단위 불일치(코드는 세부 지역 미판정)",
+   "first_request": {
+    "request_id": "s16",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 2,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2024,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "SOCIAL",
+     "residence_sido": "강원특별자치도",
+     "residence_sigungu": "삼척시 근덕면",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 2,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2024,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "SOCIAL",
+    "residence_sido": "강원특별자치도",
+    "residence_sigungu": "삼척시 근덕면",
+    "parent_residence_sido": "강원특별자치도",
+    "parent_residence_sigungu": "삼척시 근덕면",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "강원특별자치도",
+    "hs_sigungu": "삼척시 근덕면",
+    "income_bracket": 2,
+    "age": 21,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 10,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 5,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s17",
+   "description": "광주 동구 본인·부모 '1~3년' 2학년: 9178 본인과 부모 1년 이상(하한 충족)",
+   "first_request": {
+    "request_id": "s17",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 2,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2024,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "NATURAL",
+     "residence_sido": "광주광역시",
+     "residence_sigungu": "동구",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 2,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2024,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "NATURAL",
+    "residence_sido": "광주광역시",
+    "residence_sigungu": "동구",
+    "parent_residence_sido": "광주광역시",
+    "parent_residence_sigungu": "동구",
+    "residence_years": 1.0,
+    "residence_years_upper": 3.0,
+    "hs_sido": "광주광역시",
+    "hs_sigungu": "동구",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 11,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 5,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s18",
+   "description": "광주 동구 본인 + 부모는 북구: 9178 '본인과 부모 모두' 미달",
+   "first_request": {
+    "request_id": "s18",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 4,
+     "semesters_completed": 7,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2021,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "EDUCATION",
+     "residence_sido": "광주광역시",
+     "residence_sigungu": "동구",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 4,
+    "semesters_completed": 7,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2021,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "EDUCATION",
+    "residence_sido": "광주광역시",
+    "residence_sigungu": "동구",
+    "parent_residence_sido": "광주광역시",
+    "parent_residence_sigungu": "북구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "광주광역시",
+    "hs_sigungu": "동구",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 11,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 4,
+     "no_match": 16
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s19",
+   "description": "춘천시 본인·부모 3학년: 9210 지역 충족, 유형 조건은 공고문",
+   "first_request": {
+    "request_id": "s19",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ARTS_PE",
+     "residence_sido": "강원특별자치도",
+     "residence_sigungu": "춘천시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ARTS_PE",
+    "residence_sido": "강원특별자치도",
+    "residence_sigungu": "춘천시",
+    "parent_residence_sido": "강원특별자치도",
+    "parent_residence_sigungu": "춘천시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "강원특별자치도",
+    "hs_sigungu": "춘천시",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 10,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 4,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "RESY",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s20",
+   "description": "외국인 유학생(서울 성북구): 9141 한국 국적 미달, 9211 외국인 유학생 유형",
+   "first_request": {
+    "request_id": "s20",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2023,
+     "admission_type": "NEW",
+     "major": "경영학과",
+     "major_group": "HUMANITIES",
+     "residence_sido": "서울특별시",
+     "residence_sigungu": "성북구",
+     "gender": "F",
+     "nationality": "FOREIGN"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2023,
+    "admission_type": "NEW",
+    "major": "경영학과",
+    "major_group": "HUMANITIES",
+    "residence_sido": "서울특별시",
+    "residence_sigungu": "성북구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "age": 23,
+    "gender": "F",
+    "nationality": "FOREIGN",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 10,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 9,
+     "no_match": 10
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": [
+     "RESP",
+     "HSL"
+    ]
+   }
+  },
+  {
+   "name": "s21",
+   "description": "휴학 중인 3학년(학적 휴학): 재학 요건 공고 미달 (9195·9144·9212·9237)",
+   "first_request": {
+    "request_id": "s21",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.79,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.62,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.79,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.11,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.4,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 4,
+     "status": "LEAVE",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.79,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.62,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.79,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.11,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.4,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 4,
+    "status": "LEAVE",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 8,
+     "no_match": 12
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 4,
+     "no_match": 16
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s22",
+   "description": "편입생(2025 편입, 이수 3학기) 3학년: 편입 전 학교 성적 모드·면제 조건",
+   "first_request": {
+    "request_id": "s22",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.4,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.4,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.4,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.4,
+       "credits": 18.0
+      }
+     ],
+     "gpa_percent": 88.0,
+     "grade": 3,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2025,
+     "admission_type": "TRANSFER",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.4,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.4,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.4,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.4,
+      "credits": 18.0
+     }
+    ],
+    "gpa_percent": 88.0,
+    "grade": 3,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2025,
+    "admission_type": "TRANSFER",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 25,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 12,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 6,
+     "no_match": 14
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s23",
+   "description": "2학년 2학기(3학년 진급 예정, 이수 3학기) 자연계열, 4개 학기 평균 3.7: 9144 '3학년 진급' 해석, 9237 대상 학기",
+   "first_request": {
+    "request_id": "s23",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 3.9,
+     "gpa_last_term": "2026-1",
+     "credits_last": 18.0,
+     "gpa_cumulative": 3.7,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.9,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.7,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.6,
+       "credits": 17.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.5,
+       "credits": 16.0
+      }
+     ],
+     "gpa_percent": 93.0,
+     "grade": 2,
+     "semesters_completed": 3,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2024,
+     "admission_type": "NEW",
+     "major": "물리학과",
+     "major_group": "NATURAL",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 3.9,
+    "gpa_last_term": "2026-1",
+    "credits_last": 18.0,
+    "gpa_cumulative": 3.7,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.9,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.7,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.6,
+      "credits": 17.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.5,
+      "credits": 16.0
+     }
+    ],
+    "gpa_percent": 93.0,
+    "grade": 2,
+    "semesters_completed": 3,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2024,
+    "admission_type": "NEW",
+    "major": "물리학과",
+    "major_group": "NATURAL",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 21,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 11,
+     "no_match": 8
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 6,
+     "no_match": 13
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s24",
+   "description": "3학년 1학기(이수 4학기) 공학, 4개 학기 평균 3.9: 9144 학년 3 / 9237 대상 학기",
+   "first_request": {
+    "request_id": "s24",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 4.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 18.0,
+     "gpa_cumulative": 3.9,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 4.0,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.9,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.9,
+       "credits": 18.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.8,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 95.0,
+     "grade": 3,
+     "semesters_completed": 4,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2023,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 4.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 18.0,
+    "gpa_cumulative": 3.9,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 4.0,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.9,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.9,
+      "credits": 18.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.8,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 95.0,
+    "grade": 3,
+    "semesters_completed": 4,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2023,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 22,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 12,
+     "no_match": 7
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 6,
+     "no_match": 13
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s25",
+   "description": "4학년 낮은 성적(직전 1.9, 9학점) + 장애 + 기초수급자 소득 0: 성적 미달·신분 충족",
+   "first_request": {
+    "request_id": "s25",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 1.9,
+     "gpa_last_term": "2026-1",
+     "credits_last": 9.0,
+     "gpa_cumulative": 2.3,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 1.9,
+       "credits": 9.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 2.4,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 2.5,
+       "credits": 16.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 2.6,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 62.0,
+     "grade": 4,
+     "semesters_completed": 7,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2021,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 0,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 1.9,
+    "gpa_last_term": "2026-1",
+    "credits_last": 9.0,
+    "gpa_cumulative": 2.3,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 1.9,
+      "credits": 9.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 2.4,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 2.5,
+      "credits": 16.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 2.6,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 62.0,
+    "grade": 4,
+    "semesters_completed": 7,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2021,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 0,
+    "age": 26,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [
+     "BASIC_LIVELIHOOD",
+     "DISABLED"
+    ],
+    "special_complete": true,
+    "is_basic_livelihood": true,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": [
+     "기초수급자",
+     "장애"
+    ]
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 6,
+     "no_match": 14
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 4,
+     "no_match": 16
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s26",
+   "description": "3학년 고성적(직전 4.4, 누적 4.3) 남은 학기 3, 소득 8: 9120 충족 쪽",
+   "first_request": {
+    "request_id": "s26",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 4.4,
+     "gpa_last_term": "2026-1",
+     "credits_last": 18.0,
+     "gpa_cumulative": 4.3,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 4.4,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 4.3,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 4.2,
+       "credits": 18.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 4.3,
+       "credits": 17.0
+      }
+     ],
+     "gpa_percent": 96.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 8,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 4.4,
+    "gpa_last_term": "2026-1",
+    "credits_last": 18.0,
+    "gpa_cumulative": 4.3,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 4.4,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 4.3,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 4.2,
+      "credits": 18.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 4.3,
+      "credits": 17.0
+     }
+    ],
+    "gpa_percent": 96.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 8,
+    "age": 22,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 1,
+     "conditional": 13,
+     "no_match": 6
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 1,
+     "conditional": 7,
+     "no_match": 12
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s27",
+   "description": "만점 4.3 학교 3학년(직전 3.0/4.3, 백분위 65): 만점 다른 공고 비교, 9163 'C학점 이상' 대체 기준",
+   "first_request": {
+    "request_id": "s27",
+    "profile": {
+     "gpa_scale": 4.3,
+     "gpa_last": 3.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 15.0,
+     "gpa_cumulative": 3.5,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 3.0,
+       "credits": 15.0
+      },
+      {
+       "term": "2025-2",
+       "gpa": 3.4,
+       "credits": 18.0
+      },
+      {
+       "term": "2025-1",
+       "gpa": 3.6,
+       "credits": 17.0
+      },
+      {
+       "term": "2024-2",
+       "gpa": 3.7,
+       "credits": 16.0
+      }
+     ],
+     "gpa_percent": 65.0,
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 7,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.3,
+    "gpa_last": 3.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 15.0,
+    "gpa_cumulative": 3.5,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 3.0,
+      "credits": 15.0
+     },
+     {
+      "term": "2025-2",
+      "gpa": 3.4,
+      "credits": 18.0
+     },
+     {
+      "term": "2025-1",
+      "gpa": 3.6,
+      "credits": 17.0
+     },
+     {
+      "term": "2024-2",
+      "gpa": 3.7,
+      "credits": 16.0
+     }
+    ],
+    "gpa_percent": 65.0,
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 7,
+    "age": 23,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 13,
+     "no_match": 7
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 7,
+     "no_match": 13
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s28",
+   "description": "서울 성북구 석사 1학기 대학원생 공학: 대학생 전용 공고 미달, 대학·대학원 공고는 확인",
+   "first_request": {
+    "request_id": "s28",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 4.2,
+     "gpa_last_term": "2026-1",
+     "credits_last": 9.0,
+     "gpa_cumulative": 4.2,
+     "term_history": [
+      {
+       "term": "2026-1",
+       "gpa": 4.2,
+       "credits": 9.0
+      }
+     ],
+     "gpa_percent": 94.0,
+     "grade": 1,
+     "semesters_completed": 1,
+     "status": "ENROLLED",
+     "level": "GRAD",
+     "entry_year": 2026,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "서울특별시",
+     "residence_sigungu": "성북구",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 4.2,
+    "gpa_last_term": "2026-1",
+    "credits_last": 9.0,
+    "gpa_cumulative": 4.2,
+    "term_history": [
+     {
+      "term": "2026-1",
+      "gpa": 4.2,
+      "credits": 9.0
+     }
+    ],
+    "gpa_percent": 94.0,
+    "grade": 1,
+    "semesters_completed": 1,
+    "status": "ENROLLED",
+    "level": "GRAD",
+    "entry_year": 2026,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "서울특별시",
+    "residence_sigungu": "성북구",
+    "parent_residence_sido": "서울특별시",
+    "parent_residence_sigungu": "성북구",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 26,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 1,
+     "no_match": 19
+    },
+    "question_codes": []
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 1,
+     "no_match": 19
+    },
+    "rounds": 1,
+    "asked_codes": [],
+    "declined": []
+   }
+  },
+  {
+   "name": "s29",
+   "description": "졸업 직전 4학년(이수 8학기, 남은 학기 0): 9120 남은 학기 미달, 9237 대상 학기 초과",
+   "first_request": {
+    "request_id": "s29",
+    "profile": {
+     "gpa_scale": 4.5,
+     "gpa_last": 4.0,
+     "gpa_last_term": "2026-1",
+     "credits_last": 18.0,
+     "gpa_cumulative": 3.9,
+     "gpa_percent": 88.0,
+     "grade": 4,
+     "semesters_completed": 8,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2021,
+     "admission_type": "NEW",
+     "major": "전자공학부",
+     "major_group": "ENGINEERING",
+     "residence_sido": "경기도",
+     "residence_sigungu": "수원시",
+     "income_bracket": 2,
+     "gender": "M",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "gpa_scale": 4.5,
+    "gpa_last": 4.0,
+    "gpa_last_term": "2026-1",
+    "credits_last": 18.0,
+    "gpa_cumulative": 3.9,
+    "gpa_percent": 88.0,
+    "grade": 4,
+    "semesters_completed": 8,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2021,
+    "admission_type": "NEW",
+    "major": "전자공학부",
+    "major_group": "ENGINEERING",
+    "residence_sido": "경기도",
+    "residence_sigungu": "수원시",
+    "parent_residence_sido": "경기도",
+    "parent_residence_sigungu": "수원시",
+    "residence_years": 3.0,
+    "residence_years_open": true,
+    "hs_sido": "경기도",
+    "hs_sigungu": "안양시",
+    "income_bracket": 2,
+    "age": 24,
+    "gender": "M",
+    "nationality": "KR",
+    "national_scholarship_applied": true,
+    "special_codes": [],
+    "special_complete": true,
+    "is_basic_livelihood": false,
+    "is_near_poor": false,
+    "is_single_parent": false,
+    "special_status": []
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 11,
+     "no_match": 9
+    },
+    "question_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 5,
+     "no_match": 15
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": []
+   }
+  },
+  {
+   "name": "s30",
+   "description": "정보가 거의 없는 학생(학년·이수학기 외 성적·소득·신분·지역·나이 없음): 모르면 탈락시키지 않는지",
+   "first_request": {
+    "request_id": "s30",
+    "profile": {
+     "grade": 3,
+     "semesters_completed": 5,
+     "status": "ENROLLED",
+     "level": "UNIV",
+     "entry_year": 2022,
+     "major": "경영학과",
+     "nationality": "KR"
+    },
+    "today": "2026-10-11"
+   },
+   "full_profile": {
+    "grade": 3,
+    "semesters_completed": 5,
+    "status": "ENROLLED",
+    "level": "UNIV",
+    "entry_year": 2022,
+    "major": "경영학과",
+    "nationality": "KR"
+   },
+   "expected_first": {
+    "counts": {
+     "match": 0,
+     "conditional": 16,
+     "no_match": 4
+    },
+    "question_codes": [
+     "RESP",
+     "RES",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   },
+   "expected_final": {
+    "counts": {
+     "match": 0,
+     "conditional": 16,
+     "no_match": 4
+    },
+    "rounds": 2,
+    "asked_codes": [
+     "RESP",
+     "RES",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ],
+    "declined": [
+     "RESP",
+     "RES",
+     "HSL",
+     "AGE",
+     "SPECIAL"
+    ]
+   }
+  }
+ ]
+}

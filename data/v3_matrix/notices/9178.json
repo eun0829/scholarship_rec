@@ -1,0 +1,215 @@
+{
+ "idx": "9178",
+ "title": "광주광역시 동구 인재육성장학 (2026년)",
+ "state": "모집마감",
+ "org": "광주 동구 인재육성장학회",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9178",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "광주광역시 동구 인재육성장학 (2026년)",
+  "foundation": "광주 동구 인재육성장학회",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-08-03",
+  "apply_end": "2026-08-31",
+  "org_deadline": null,
+  "recruit_count": "총 81명",
+  "amount": "최대 200만원 (고등학생 50만원, 대학생 50만원~200만원)",
+  "apply_how": "거주지 동 행정복지센터 방문 접수",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "광주광역시 동구"
+     ],
+     "min_years": 1
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "광주광역시 동구"
+     ],
+     "min_years": 1
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "성적우수: 선발조건은 공고문 확인",
+   "저소득: 선발조건은 공고문 확인",
+   "특정분야: 선발조건은 공고문 확인"
+  ],
+  "variants": [
+   {
+    "name": "성적우수",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "저소득",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "특정분야",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   }
+  ],
+  "exclusions": [
+   "타 장학금 수령하여 지원가능 금액이 50만원 미만인 경우 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "광주 동구에 본인·부모가 1년 이상 거주하는 고등학생·대학생 대상 인재육성장학금(최대 200만원)",
+  "uncertain": [
+   {
+    "field": "selection",
+    "reason": "성적우수/저소득/특정분야 유형별 선발조건이 본문에 없고 공고문 확인이 필요함",
+    "level": "verify"
+   },
+   {
+    "field": "gpa",
+    "reason": "성적우수 유형의 성적 기준이 본문에 없음",
+    "level": "verify"
+   },
+   {
+    "field": "income",
+    "reason": "저소득 유형의 소득 기준이 본문에 없음",
+    "level": "verify"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_ANY",
+    "text": "타 장학금 수령하여 지원가능 금액이 50만원 미만인 경우 선발 제외"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "성적우수: 선발조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "저소득: 선발조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "특정분야: 선발조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

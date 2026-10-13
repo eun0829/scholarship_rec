@@ -1,0 +1,112 @@
+{
+ "idx": "9181",
+ "title": "원덕읍 향토장학 (2026년)",
+ "state": "모집마감",
+ "org": "원덕읍향토장학회",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9181",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "원덕읍 향토장학 (2026년)",
+  "foundation": "원덕읍향토장학회",
+  "apply_type": "HYBRID",
+  "apply_start": "2026-08-18",
+  "apply_end": "2026-08-31",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": null,
+  "apply_how": "방문·우편·학교 경유 접수, 원덕읍향토장학회 (삼척시 원덕읍 삼척로 440)",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "본인 또는 부모 중 1인 이상 원덕읍 3년 이상 거주, 또는 원덕읍 관내 중·고교 졸업",
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "강원특별자치도 삼척시 원덕읍"
+     ],
+     "min_years": 3
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "강원특별자치도 삼척시 원덕읍"
+     ],
+     "min_years": 3
+    },
+    {
+     "type": "GRADUATED_SCHOOL",
+     "areas": [
+      "강원특별자치도 삼척시 원덕읍"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "원덕고, 원덕중, 임원중, 호산초, 임원초 재학생은 주소와 관계없이 학교장 추천 (개인신청 불가)"
+  ],
+  "variants": [],
+  "exclusions": [
+   "삼척향토장학재단, 삼척시도계장학재단의 2026년도 장학금 기수령자 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "원덕읍 3년 이상 거주 또는 관내 중·고교 졸업 학생 대상 향토장학금, 8/31까지 신청",
+  "uncertain": [
+   {
+    "field": "region",
+    "reason": "거주 요건과 졸업학교 요건이 '또는'인지 '및'인지 명시되지 않아 ANY로 해석함",
+    "level": "verify"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "삼척향토장학재단, 삼척시도계장학재단의 2026년도 장학금 기수령자 선발 제외"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "원덕고, 원덕중, 임원중, 호산초, 임원초 재학생은 주소와 관계없이 학교장 추천 (개인신청 불가)",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

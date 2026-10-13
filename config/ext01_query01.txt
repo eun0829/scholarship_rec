@@ -1,0 +1,23 @@
+-- ext01_query01.txt : 외부01 장학공지 '본문' 조회 (홈페이지 DB)
+--
+-- [수정 규칙]
+--  * SELECT 에 반드시 있어야 하는 컬럼(이름 또는 별칭): BBS_ARTCL_SEQ, SJ, CN, RGSDE
+--    (있으면 사용: ANNYMTY_WRITER = 작성 부서). 컬럼 순서는 상관없습니다.
+--  * 사용할 수 있는 바인드 변수: :setup (게시판 번호, .env 의 EXT01_BBS_SETUP_SEQ), :days (최근 N일, --days 옵션)
+--  * {DATE_COND} : RGSDE 컬럼 타입(DATE / 문자열)에 맞춰 자동으로 '최근 :days 일' 조건으로 바뀝니다.
+--                  직접 날짜 조건을 쓰고 싶으면 {DATE_COND} 대신 직접 쓰세요.
+--  * 공개/승인 같은 조건은 WHERE 에 AND 로 이어서 추가하세요.
+--  * 문장 끝의 ; 는 있어도 없어도 됩니다. SQL 문장은 하나만 두세요.
+--  * 이 파일은 실행할 때마다 다시 읽습니다 (저장하면 바로 적용). 확인: python run_ext01.py --show-sql
+-- 쿼리02(첨부)의 서브쿼리 WHERE 조건은 이 쿼리와 같게 유지하세요 (같은 공고 범위여야 합니다).
+
+SELECT    a.BBS_ARTCL_SEQ,
+          a.SJ,
+          a.CN,
+          a.RGSDE,
+          a.ANNYMTY_WRITER
+FROM      HOME.APP_BBS_ARTCL a
+WHERE     a.BBS_SETUP_SEQ = :setup
+AND       a.TRASH_YN = 'N'
+AND       {DATE_COND}
+ORDER BY  a.BBS_ARTCL_SEQ DESC

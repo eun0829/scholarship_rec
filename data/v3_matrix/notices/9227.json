@@ -1,0 +1,203 @@
+{
+ "idx": "9227",
+ "title": "선원가족장학 (2026년 하반기)",
+ "state": "모집중",
+ "org": "한국선원복지고용센터",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9227",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "선원가족장학 (2026년 하반기)",
+  "foundation": "한국선원복지고용센터",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-10-23",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "고등학생 120만원, 대학생 최대 350만원",
+  "apply_how": "방문 또는 우편 접수 (한국선원복지고용센터 복지지원팀, 부산 중구)",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "2025년도 선원월평균임금 이하",
+   "basis": "WAGE_REF"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "선원법 적용 선박에 승선 및 하선한 선원 및 그 가족 (배우자, 부모, 자녀)",
+   "선원이 손자, 손녀를 직접 부양할 경우도 포함 (부모가 없는 경우에 한함)",
+   "승무경력 : 총 경력 3년 이상으로 하선 후 1년 이내 (연근해어선 부원은 1년 이상)",
+   "고등학생(무상교육대상자): 직전학기 성적 교내 상위 10%"
+  ],
+  "variants": [
+   {
+    "name": "고등학생(유상교육대상자)",
+    "amount": "연간 120만원",
+    "target_levels": [
+     "HIGH"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "고등학생(무상교육대상자)",
+    "amount": "연간 120만원",
+    "target_levels": [
+     "HIGH"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": "직전학기 성적 교내 상위 10%"
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "대학생",
+    "amount": "최대 350만원",
+    "target_levels": [
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 2.0,
+     "scale": null,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": false
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   }
+  ],
+  "exclusions": [
+   "고등학생 연간 120만원, 대학생 1학기 등록금 범위 초과하여 사내 학자금 및 타 기관 장학금을 지원받는 자 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "선원·가족 대상 장학금. 고등학생 120만원, 대학생 최대 350만원(직전학기 평점 2.0 이상)",
+  "uncertain": [
+   {
+    "field": "income",
+    "reason": "기준인 '2025년도 선원월평균임금'의 구체적 금액이 공고에 없음",
+    "level": "verify"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "고등학생 연간 120만원, 대학생 1학기 등록금 범위 초과하여 사내 학자금 및 타 기관 장학금을 지원받는 자 선발 제외"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "선원법 적용 선박에 승선 및 하선한 선원 및 그 가족 (배우자, 부모, 자녀)",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "선원이 손자, 손녀를 직접 부양할 경우도 포함 (부모가 없는 경우에 한함)",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "승무경력 : 총 경력 3년 이상으로 하선 후 1년 이내 (연근해어선 부원은 1년 이상)",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "고등학생(무상교육대상자): 직전학기 성적 교내 상위 10%",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

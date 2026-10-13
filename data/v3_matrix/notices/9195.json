@@ -1,0 +1,283 @@
+{
+ "idx": "9195",
+ "title": "국가장학금 (2026년 2학기 2차)",
+ "state": "모집마감",
+ "org": "한국장학재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9195",
+ "data": {
+  "category": "NATIONAL",
+  "scholarship_name": "국가장학금 (2026년 2학기 2차)",
+  "foundation": "한국장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-08-12",
+  "apply_end": "2026-09-09",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "Ⅰ유형: 소득구간별 차등(최대 입학금·수업료 전액), Ⅱ유형: 대학별(10만원 이상)",
+  "apply_how": "한국장학재단 온라인 접수",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": "신입생·편입생·재입학생·복학생도 신청 가능"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 9.0,
+   "eligible_types": [
+    "학자금 지원구간"
+   ],
+   "notes": null,
+   "basis": "BRACKET"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "국가장학금Ⅱ유형 : 대학별 선발 기준에 따름"
+  ],
+  "variants": [
+   {
+    "name": "국가장학금Ⅰ유형(일반)",
+    "amount": "소득구간별 차등, 입학금·수업료 전액",
+    "target_levels": [],
+    "gpa": {
+     "min": 80.0,
+     "scale": 100.0,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "국가장학금Ⅰ유형(수급자·차상위)",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": 70.0,
+     "scale": 100.0,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "special_groups": [
+     {
+      "code": "BASIC_LIVELIHOOD",
+      "scope": "SELF",
+      "mode": "REQUIRED"
+     },
+     {
+      "code": "NEAR_POOR",
+      "scope": "SELF",
+      "mode": "REQUIRED"
+     }
+    ]
+   },
+   {
+    "name": "다자녀 국가장학금",
+    "amount": "소득구간별 차등, 학기당 최대 등록금 전액",
+    "target_levels": [],
+    "gpa": {
+     "min": 80.0,
+     "scale": 100.0,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": "수급자 및 차상위층 70점",
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "special_groups": [
+     {
+      "code": "MULTI_CHILD",
+      "scope": "FAMILY",
+      "mode": "REQUIRED"
+     }
+    ]
+   },
+   {
+    "name": "국가장학금Ⅱ유형",
+    "amount": "대학별 상이(최소 10만원 이상)",
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "지역인재장학금",
+    "amount": "기간 내 입학금·수업료 전액",
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "ENTRANCE",
+     "alternatives": [],
+     "notes": "내신 or 수능 일반대 3등급, 전문대 4등급 이내"
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   }
+  ],
+  "exclusions": [],
+  "documents": [],
+  "selection": {
+   "method": "국가장학금Ⅱ유형은 대학별 선발 기준에 따름",
+   "priority": []
+  },
+  "summary": "국가장학금 Ⅰ·Ⅱ유형, 다자녀, 지역인재 신청 (소득 9분위 이하, 9/9까지)",
+  "uncertain": [
+   {
+    "field": "other",
+    "reason": "국가장학금 지원 가능 대학은 공고문에서 확인해야 함",
+    "level": "note"
+   }
+  ],
+  "waivers": [
+   {
+    "when": {
+     "student": [
+      "NEW_STUDENT",
+      "TRANSFER",
+      "REENTRY"
+     ]
+    },
+    "skip": [
+     "gpa",
+     "credits"
+    ]
+   },
+   {
+    "when": {
+     "special": [
+      "DISABLED"
+     ]
+    },
+    "skip": [
+     "gpa",
+     "credits"
+    ]
+   }
+  ],
+  "school": {
+   "types": [
+    "UNIV4",
+    "COLLEGE"
+   ],
+   "programs": [
+    "NATIONAL_SCHOLARSHIP"
+   ]
+  },
+  "unmodeled_conditions": [
+   {
+    "text": "국가장학금Ⅱ유형 : 대학별 선발 기준에 따름",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

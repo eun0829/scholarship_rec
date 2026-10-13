@@ -1,0 +1,117 @@
+{
+ "idx": "9096",
+ "title": "거창군 지역출신 대학생 등록금 지원 (2026년 1학기)",
+ "state": "모집마감",
+ "org": "거창군장학회",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9096",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "거창군 지역출신 대학생 등록금 지원 (2026년 1학기)",
+  "foundation": "거창군장학회",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-05-15",
+  "apply_end": "2026-06-15",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "학기당 본인부담 등록금 최대 100만원 한도 내 지원",
+  "apply_how": "주소지 기준 읍·면 행정복지센터 방문 또는 우편 접수",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 2.5,
+   "scale": 4.5,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [],
+   "notes": null,
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": 12.0,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "경상남도 거창군"
+     ],
+     "min_years": 3,
+     "years_basis": "현재까지 3년 이상 계속 거주"
+    },
+    {
+     "type": "GRADUATED_SCHOOL",
+     "areas": [
+      "경상남도 거창군"
+     ],
+     "years_basis": "거창군 소재 중학교 또는 고등학교 3년 재학 후 졸업"
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "경상남도 거창군"
+     ],
+     "min_years": 3,
+     "years_basis": "부모 중 1명이 3년 이상 계속 거주"
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "장학금 수혜 등으로 본인 부담 등록금이 1만원 미만인 자 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "거창군 출신(거주·졸업) 만 30세 미만 대학생·전문대생, 학기당 본인부담 등록금 최대 100만원 지원",
+  "uncertain": [],
+  "age": {
+   "max": 29
+  },
+  "school": {
+   "types": [
+    "UNIV4",
+    "COLLEGE"
+   ],
+   "programs": [
+    "NATIONAL_SCHOLARSHIP"
+   ]
+  },
+  "prerequisites": [
+   {
+    "type": "NATIONAL_SCHOLARSHIP_APPLIED",
+    "text": "한국장학재단 국가장학금 해당 학기 신청자"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "장학금 수혜 등으로 본인 부담 등록금이 1만원 미만인 자 선발 제외"
+   }
+  ]
+ }
+}

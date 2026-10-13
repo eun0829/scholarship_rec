@@ -1,0 +1,245 @@
+{
+ "idx": "9211",
+ "title": "대전시 인재육성장학 (2026년 하반기)",
+ "state": "마감임박",
+ "org": "대전청년내일재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9211",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "대전시 인재육성장학 (2026년 하반기)",
+  "foundation": "대전청년내일재단",
+  "apply_type": "HYBRID",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-10-07",
+  "org_deadline": null,
+  "recruit_count": "총 790명",
+  "amount": "최대 200만원 (유형별 금액 상이)",
+  "apply_how": "과학·성취 장학은 온라인 접수, 외국인 유학생 장학은 학교 경유 접수",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "외국인 유학생: 선발 조건은 공고문 확인",
+   "성취 장학(고등학생): 선발 조건은 공고문 확인",
+   "성취 장학(대학생): 선발 조건은 공고문 확인",
+   "과학 장학: 선발 조건은 공고문 확인"
+  ],
+  "variants": [
+   {
+    "name": "외국인 유학생",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "apply_start": "2026-09-01",
+    "apply_end": "2026-09-23",
+    "apply_type": "SCHOOL",
+    "nationality": "외국인"
+   },
+   {
+    "name": "성취 장학(고등학생)",
+    "amount": null,
+    "target_levels": [
+     "HIGH"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "apply_start": "2026-09-01",
+    "apply_end": "2026-09-23",
+    "apply_type": "DIRECT"
+   },
+   {
+    "name": "성취 장학(대학생)",
+    "amount": null,
+    "target_levels": [
+     "UNIV"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "apply_start": "2026-09-01",
+    "apply_end": "2026-09-08",
+    "apply_type": "DIRECT"
+   },
+   {
+    "name": "과학 장학",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "apply_start": "2026-09-15",
+    "apply_end": "2026-10-07",
+    "apply_type": "DIRECT"
+   }
+  ],
+  "exclusions": [
+   "2026년 재단 상반기 장학생으로 선발된 자는 하반기 장학금 신청 및 선발 불가"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "대전 인재육성장학: 고등학생·대학생 대상, 유형별 최대 200만원, 총 790명 선발",
+  "uncertain": [
+   {
+    "field": "apply_end",
+    "reason": "요약표의 3차 신청기간(2026-09-01~2026-10-08)이 유형별 신청기간과 맞지 않고, 성취 장학(대학생) 기간(~09-08)은 표에 없음",
+    "level": "verify"
+   },
+   {
+    "field": "unmodeled_conditions",
+    "reason": "유형별 선발 조건(성적·소득·지역 등)이 본문에 없고 공고문에만 있음",
+    "level": "verify"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "PRIOR_RECENT",
+    "text": "2026년 재단 상반기 장학생으로 선발된 자는 하반기 장학금 신청 및 선발 불가"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "외국인 유학생: 선발 조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "성취 장학(고등학생): 선발 조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "성취 장학(대학생): 선발 조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "과학 장학: 선발 조건은 공고문 확인",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

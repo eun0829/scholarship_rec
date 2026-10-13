@@ -1,0 +1,21 @@
+# [COMMON]
+requests>=2.25
+lxml>=4.6
+beautifulsoup4>=4.9
+# Oracle 11g needs thick mode (Instant Client)
+oracledb>=1.4
+# attachment extraction
+# HWP (5.0)
+pyhwp>=0.1b15
+# pyhwp dependency that is NOT installed automatically with the legacy setup.py install
+six>=1.12
+# PDF
+PyMuPDF>=1.23
+# DOCX
+python-docx>=0.8
+# XLSX
+openpyxl>=3.0
+# image preprocessing
+Pillow>=9.0
+# tests
+pytest>=7.0

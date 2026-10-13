@@ -1,0 +1,154 @@
+{
+ "idx": "9163",
+ "title": "인천광역시 중소기업 노동자 자녀 장학금 지원사업",
+ "state": "모집마감",
+ "org": "인천시",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9163",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "인천광역시 중소기업 노동자 자녀 장학금 지원사업",
+  "foundation": "인천시",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-07-27",
+  "apply_end": "2026-08-21",
+  "org_deadline": null,
+  "recruit_count": "100명",
+  "amount": "1인당 최대 100만원",
+  "apply_how": "이메일 접수 (contact@example.com)",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "PARENT_WORKPLACE",
+     "areas": [
+      "인천광역시"
+     ]
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "인천광역시"
+     ],
+     "min_years": 1
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "부 or 모가 중소기업에 근무"
+  ],
+  "variants": [
+   {
+    "name": "재학생",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": 70.0,
+     "scale": 100.0,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": "직전 학기 평균 70점 이상 또는 평균 C학점 이상"
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   },
+   {
+    "name": "신입생",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "ENTRANCE",
+     "alternatives": [],
+     "notes": "입학성적(수시 또는 정시 전형) 상위 50% 이내"
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": []
+   }
+  ],
+  "exclusions": [],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "인천 중소기업 근로자 자녀 대학생 100명 선발, 최대 100만원, 8/21까지 이메일 접수",
+  "uncertain": [],
+  "special_groups": [
+   {
+    "code": "WORKER_CHILD",
+    "scope": "FAMILY",
+    "mode": "REQUIRED"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "부 or 모가 중소기업에 근무",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

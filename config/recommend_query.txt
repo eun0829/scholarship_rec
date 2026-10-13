@@ -1,0 +1,19 @@
+-- recommend_query.txt : 추천 후보 공고 조회 (저장 DB)
+--
+-- [수정 규칙]
+--  * SELECT 에 반드시 있어야 하는 컬럼(이름 또는 별칭): SRC_CD, SRC_ID, TITLE, APPLY_END, ELIG_JSON
+--    (있으면 사용: ORIGIN_URL, POSTED_DATE, CATEGORY_CD, APPLY_TYPE_CD, APPLY_START, ORG_DEADLINE, SUMMARY, STATUS_CD, UNCERTAIN_JSON). 순서는 상관없습니다.
+--  * 사용할 수 있는 바인드 변수: :today (기준일, DATE)
+--  * 어떤 구분(교외 OUT / 교내 IN / 국가 NATIONAL)을 추천할지는 .env 의 RECOMMEND_CATEGORIES 로 정합니다 (기본: OUT). 안내(INFO)·대출(LOAN)·기타(ETC)는 여기서 항상 빠집니다.
+--  * 마감일(APPLY_END)이 없는 공고는 후보에서 빠집니다 (APPLY_END >= :today 조건).
+--  * 검수 대기(NEED_REVIEW) 공고를 빼려면 STATUS_CD 조건에서 'NEED_REVIEW' 를 지우거나 .env 의 RECOMMEND_INCLUDE_NEED_REVIEW=false 로 설정하세요.
+--  * 이 파일은 실행할 때마다 다시 읽습니다 (저장하면 바로 적용).
+
+SELECT    SRC_CD, SRC_ID, TITLE, ORIGIN_URL, POSTED_DATE, CATEGORY_CD, APPLY_TYPE_CD,
+          APPLY_START, APPLY_END, ORG_DEADLINE, SUMMARY, STATUS_CD, ELIG_JSON, UNCERTAIN_JSON
+FROM      SCHOLARSHIP_NOTICE
+WHERE     USE_YN = 'Y'
+AND       CATEGORY_CD IN ('OUT', 'IN', 'NATIONAL')
+AND       STATUS_CD IN ('EXTRACTED', 'NEED_REVIEW')
+AND       APPLY_END >= :today
+ORDER BY  APPLY_END

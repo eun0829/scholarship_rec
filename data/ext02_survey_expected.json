@@ -1,0 +1,658 @@
+{
+ "_설명": "드림스폰 최근 공고 61건(2026년 하반기, idx 8953~9239)을 본문(고정 7개 항목)으로 직접 읽고 대학생 기준 조건을 분류한 결과. 스키마 v3 시험 추출(run_v3_trial.py)에서 AI 결과와 항목별로 대조하는 기준입니다. 첨부 공고문은 읽지 않았고 분류는 담당자 검수 전입니다.",
+ "codes": {
+  "GL": "직전학기 평점",
+  "CR": "직전학기 취득학점",
+  "GC": "누적(전체) 평점",
+  "GN": "직전 N개 학기 평균 평점(N=2,4, 최근 1년)",
+  "SP": "백분위·100점제 기준",
+  "SL": "문자 학점 기준(B+, C학점 등)",
+  "YEAR": "학년",
+  "SEM": "몇 학기째·이수 학기 수",
+  "SLEFT": "졸업까지 남은 학기",
+  "GRD": "졸업(예정)·졸업학기 여부",
+  "LV": "휴학·복학 상태",
+  "GRAD": "대학원생(석·박사) 여부",
+  "ENT": "신입생·입학연도",
+  "TRF": "편입 여부",
+  "DEG": "학위 소지·졸업(예정)자",
+  "RES": "본인 주민등록 시·군·구",
+  "RESP": "부모 주민등록 시·군·구",
+  "RESY": "해당 지역 거주 기간",
+  "HSL": "졸업 고등학교 소재지",
+  "HSG": "고교 졸업 시점",
+  "INC": "소득구간·분위(한국장학재단)",
+  "BASIC": "기초생활수급·차상위",
+  "SPAR": "한부모 가정",
+  "DIS": "장애(본인 또는 가족)",
+  "DEF": "북한이탈주민(새터민)",
+  "MUL": "다문화 가정",
+  "VET": "국가유공자(본인·자녀)",
+  "MCH": "다자녀 가정",
+  "MAJ": "학과·전공 계열",
+  "AGE": "만 나이",
+  "GEN": "성별",
+  "NAT": "국적·재외동포·유학생 구분",
+  "LANG": "어학 성적(시험·등급)",
+  "NSA": "국가장학금 신청 여부",
+  "SLOC": "학교 소재지(시·도, 수도권 여부)",
+  "SCH_TYPE": "학교 종류(4년제·전문대·농업계·사이버 등)",
+  "SPART": "사업 참여 대학 여부(국가장학금·지역인재·주거안정)",
+  "GR": "입학성적·내신·수능(신입생 전용)",
+  "REC": "추천서·추천 필요(교수, 총장, 학교장, 기관)",
+  "ROUTE": "학교 경유·소속 대학 접수",
+  "OBL": "선발 후 의무(수여식, 봉사, 보고서, 취업 의무)",
+  "CONC": "다른 장학금 중복 수혜 제한",
+  "PRIOR": "해당 재단·장학 과거 수혜 이력 제한",
+  "ESSAY": "인재상·서술·에세이 등 심사 항목",
+  "VAR": "유형별·상세 조건이 공고문(첨부)에만 있음",
+  "NODATA": "본문에 신청자격 정보 없음",
+  "OVS": "해외 대학 입학허가·교환학생 선정 등",
+  "ACT": "경력·연구 실적 요구",
+  "AST": "가구 재산 기준",
+  "INCM": "기준중위소득 % 기준",
+  "INCO": "직업 기준 소득(예: 선원 월평균임금)",
+  "INCT": "'경제적 어려움' 서술형 소득 조건",
+  "PWORK": "부모의 직업·근무지(선원, 기업 근무 등)",
+  "WCH": "근로자 자녀 유형",
+  "REALRES": "실거주(학교 인근 거주 증빙 등)",
+  "DONG": "읍·면·동 단위 거주 조건",
+  "TUITION": "본인부담 등록금·장학금 수혜액 기준",
+  "SCALE_UNSPEC": "공고에 평점 만점 단위가 없음"
+ },
+ "notices": {
+  "9239": [
+   "CONC",
+   "GN",
+   "INC",
+   "MAJ",
+   "YEAR"
+  ],
+  "9237": [
+   "CONC",
+   "CR",
+   "ESSAY",
+   "GC",
+   "REC",
+   "ROUTE",
+   "SCALE_UNSPEC",
+   "SEM",
+   "YEAR"
+  ],
+  "9236": [
+   "CR",
+   "ESSAY",
+   "GEN",
+   "GL",
+   "SCH_TYPE",
+   "SEM",
+   "YEAR"
+  ],
+  "9235": [
+   "GRAD",
+   "LANG",
+   "OVS",
+   "SEM"
+  ],
+  "9227": [
+   "CONC",
+   "GL",
+   "INCO",
+   "PWORK",
+   "SCALE_UNSPEC"
+  ],
+  "9218": [
+   "CR",
+   "ESSAY",
+   "GL",
+   "PRIOR",
+   "REC",
+   "ROUTE",
+   "SCH_TYPE",
+   "SLOC"
+  ],
+  "9217": [
+   "BASIC",
+   "CONC",
+   "DIS",
+   "DONG",
+   "GL",
+   "INC",
+   "PRIOR",
+   "RES",
+   "RESP",
+   "SPAR",
+   "TRF"
+  ],
+  "9213": [
+   "GRAD",
+   "LV",
+   "OBL",
+   "SLOC"
+  ],
+  "9212": [
+   "CONC",
+   "CR",
+   "GL",
+   "MAJ",
+   "OBL",
+   "RES",
+   "RESP",
+   "RESY",
+   "YEAR"
+  ],
+  "9211": [
+   "NAT",
+   "PRIOR",
+   "ROUTE",
+   "VAR"
+  ],
+  "9210": [
+   "CONC",
+   "INCT",
+   "PRIOR",
+   "PWORK",
+   "REC",
+   "RES",
+   "RESP",
+   "RESY",
+   "VAR"
+  ],
+  "9207": [
+   "DEF",
+   "ESSAY",
+   "INCT",
+   "MAJ",
+   "REC"
+  ],
+  "9196": [
+   "AGE",
+   "BASIC",
+   "SLOC",
+   "SPART",
+   "VAR"
+  ],
+  "9195": [
+   "BASIC",
+   "CR",
+   "DIS",
+   "ENT",
+   "GL",
+   "GR",
+   "INC",
+   "MCH",
+   "SP",
+   "SPART",
+   "TRF"
+  ],
+  "9181": [
+   "CONC",
+   "DONG",
+   "HSL",
+   "REC",
+   "RES",
+   "RESP",
+   "RESY",
+   "ROUTE"
+  ],
+  "9178": [
+   "CONC",
+   "RES",
+   "RESP",
+   "RESY",
+   "VAR"
+  ],
+  "9177": [
+   "ENT",
+   "HSG",
+   "RES",
+   "RESP",
+   "RESY"
+  ],
+  "9169": [
+   "CONC",
+   "ESSAY",
+   "GL",
+   "INC",
+   "INCT",
+   "REC",
+   "ROUTE"
+  ],
+  "9164": [
+   "CONC",
+   "SEM",
+   "TRF"
+  ],
+  "9163": [
+   "ENT",
+   "GL",
+   "GR",
+   "PWORK",
+   "RESP",
+   "RESY",
+   "SL",
+   "SP"
+  ],
+  "9158": [
+   "OBL",
+   "VAR"
+  ],
+  "9157": [
+   "CONC",
+   "CR",
+   "GL",
+   "INC",
+   "MAJ",
+   "OBL",
+   "REC",
+   "ROUTE",
+   "SCH_TYPE"
+  ],
+  "9156": [
+   "CONC",
+   "OBL",
+   "PRIOR",
+   "RES",
+   "RESP",
+   "RESY",
+   "YEAR"
+  ],
+  "9154": [
+   "CONC",
+   "CR",
+   "GL",
+   "OBL",
+   "RESP",
+   "RESY",
+   "SP"
+  ],
+  "9146": [
+   "CONC",
+   "GL",
+   "PRIOR",
+   "RES",
+   "RESP",
+   "RESY"
+  ],
+  "9144": [
+   "CONC",
+   "GN",
+   "MAJ",
+   "OBL",
+   "PRIOR",
+   "SP",
+   "YEAR"
+  ],
+  "9143": [
+   "AGE",
+   "ESSAY",
+   "REC"
+  ],
+  "9142": [
+   "CONC",
+   "GC",
+   "INC",
+   "OBL",
+   "ROUTE",
+   "SL",
+   "SLEFT",
+   "YEAR"
+  ],
+  "9141": [
+   "GC",
+   "GRAD",
+   "LANG",
+   "NAT",
+   "OBL",
+   "REC",
+   "SLOC",
+   "SP"
+  ],
+  "9140": [
+   "ACT",
+   "GRAD",
+   "LANG",
+   "OBL",
+   "OVS",
+   "REC"
+  ],
+  "9128": [
+   "DIS",
+   "REC",
+   "RES"
+  ],
+  "9124": [
+   "NAT",
+   "RES",
+   "RESP",
+   "RESY"
+  ],
+  "9123": [
+   "ESSAY",
+   "OBL"
+  ],
+  "9122": [
+   "ESSAY",
+   "INCT",
+   "PRIOR",
+   "REC"
+  ],
+  "9120": [
+   "GC",
+   "GRAD",
+   "INC",
+   "OBL",
+   "SEM",
+   "SLEFT",
+   "TUITION"
+  ],
+  "9117": [
+   "CONC",
+   "ENT",
+   "GL",
+   "HSL",
+   "INC",
+   "OBL",
+   "RES",
+   "SLOC"
+  ],
+  "9115": [
+   "CONC",
+   "ESSAY",
+   "GC",
+   "OBL",
+   "YEAR"
+  ],
+  "9113": [
+   "CONC",
+   "OBL",
+   "REC",
+   "ROUTE",
+   "VAR",
+   "WCH"
+  ],
+  "9112": [
+   "CONC",
+   "GL",
+   "OBL",
+   "SCH_TYPE",
+   "YEAR"
+  ],
+  "9109": [
+   "ENT",
+   "HSL",
+   "MCH",
+   "MUL",
+   "PRIOR",
+   "RES",
+   "RESP",
+   "RESY",
+   "SCH_TYPE",
+   "VAR",
+   "WCH"
+  ],
+  "9104": [
+   "NODATA"
+  ],
+  "9098": [
+   "BASIC",
+   "DIS",
+   "ESSAY",
+   "INCT",
+   "OBL",
+   "PRIOR",
+   "REC",
+   "SCH_TYPE"
+  ],
+  "9096": [
+   "AGE",
+   "CONC",
+   "CR",
+   "GL",
+   "HSL",
+   "NSA",
+   "RES",
+   "RESP",
+   "RESY",
+   "SPART",
+   "TUITION"
+  ],
+  "9092": [
+   "GN",
+   "GRD",
+   "HSL",
+   "LV",
+   "OBL",
+   "PRIOR"
+  ],
+  "9089": [
+   "AGE",
+   "BASIC",
+   "SLOC",
+   "SPART",
+   "VAR"
+  ],
+  "9088": [
+   "INC",
+   "INCM",
+   "NSA",
+   "SLOC",
+   "SPART",
+   "VAR"
+  ],
+  "9082": [
+   "BASIC",
+   "ENT",
+   "GL",
+   "GR",
+   "RES",
+   "RESP",
+   "SL"
+  ],
+  "9076": [
+   "CONC",
+   "CR",
+   "GL",
+   "OBL",
+   "SCH_TYPE",
+   "SEM",
+   "SP",
+   "YEAR"
+  ],
+  "9072": [
+   "DEG",
+   "ESSAY",
+   "GRAD",
+   "MAJ",
+   "OVS",
+   "PRIOR"
+  ],
+  "9071": [
+   "CR",
+   "ENT",
+   "GL",
+   "GR",
+   "RESP",
+   "RESY",
+   "SCALE_UNSPEC",
+   "SL",
+   "VAR"
+  ],
+  "9069": [
+   "AGE",
+   "DEG",
+   "GRAD",
+   "LANG",
+   "OVS",
+   "PRIOR",
+   "REC",
+   "SLEFT"
+  ],
+  "9066": [
+   "CONC",
+   "ENT",
+   "GR",
+   "HSL",
+   "MAJ",
+   "REC",
+   "RES",
+   "RESY",
+   "SCH_TYPE",
+   "SLOC"
+  ],
+  "9063": [
+   "ACT",
+   "DEG",
+   "GRAD",
+   "MAJ",
+   "OBL",
+   "PRIOR",
+   "REC",
+   "ROUTE"
+  ],
+  "9059": [
+   "BASIC",
+   "CONC",
+   "MAJ",
+   "OBL",
+   "VAR",
+   "YEAR"
+  ],
+  "9058": [
+   "BASIC",
+   "CONC",
+   "GC",
+   "INC",
+   "OBL",
+   "OVS",
+   "SLOC",
+   "SP"
+  ],
+  "9053": [
+   "AGE",
+   "AST",
+   "CONC",
+   "GC",
+   "INCM",
+   "MAJ",
+   "REC",
+   "RES"
+  ],
+  "9052": [
+   "OBL",
+   "RES",
+   "RESP",
+   "RESY",
+   "VAR"
+  ],
+  "9051": [
+   "INC",
+   "OBL",
+   "REALRES",
+   "RES",
+   "RESP",
+   "RESY",
+   "SLOC"
+  ],
+  "9045": [
+   "DIS",
+   "LANG",
+   "NAT",
+   "SP",
+   "SPAR",
+   "VET",
+   "YEAR"
+  ],
+  "9043": [
+   "CONC",
+   "GN",
+   "HSL",
+   "TUITION",
+   "YEAR"
+  ],
+  "8953": [
+   "AGE",
+   "CONC",
+   "GN",
+   "HSL",
+   "INC",
+   "PRIOR",
+   "RES",
+   "RESP",
+   "YEAR"
+  ]
+ },
+ "corrections": [
+  {
+   "idx": "9163",
+   "code": "RES",
+   "change": "기대에서 제외",
+   "reason": "부모만 거주 조건이 있고 학생 본인의 주민등록 조건은 없음",
+   "evidence": "부 or 모가 인천시 1년 이상 계속 거주"
+  },
+  {
+   "idx": "9154",
+   "code": "RES",
+   "change": "기대에서 제외",
+   "reason": "부모만 거주 조건이 있고 학생 본인의 주민등록 조건은 없음",
+   "evidence": "부 or 모가 1년 이상 정읍시 계속 거주"
+  },
+  {
+   "idx": "9071",
+   "code": "RES",
+   "change": "기대에서 제외",
+   "reason": "부모만 거주 조건이 있고 학생 본인의 주민등록 조건은 없음",
+   "evidence": "부 or 모가 3년 이상 경기도 연속 거주"
+  },
+  {
+   "idx": "9088",
+   "code": "ENT",
+   "change": "기대에서 제외",
+   "reason": "'…도 신청 가능' 같은 허용 문구는 판정에 필요한 제한 조건이 아님",
+   "evidence": "신입생, 편입생, 재입학생, 복학생도 신청 가능"
+  },
+  {
+   "idx": "9088",
+   "code": "TRF",
+   "change": "기대에서 제외",
+   "reason": "'…도 신청 가능' 같은 허용 문구는 판정에 필요한 제한 조건이 아님",
+   "evidence": "신입생, 편입생, 재입학생, 복학생도 신청 가능"
+  },
+  {
+   "idx": "9088",
+   "code": "LV",
+   "change": "기대에서 제외",
+   "reason": "'…도 신청 가능' 같은 허용 문구는 판정에 필요한 제한 조건이 아님",
+   "evidence": "신입생, 편입생, 재입학생, 복학생도 신청 가능"
+  },
+  {
+   "idx": "9088",
+   "code": "BASIC",
+   "change": "기대에서 제외",
+   "reason": "'기초'는 신분이 아니라 소득 범위의 하한 표기(INCM 으로 분류됨)",
+   "evidence": "기초 ~ 기준중위소득 130% : 전 학기 지원"
+  },
+  {
+   "idx": "9195",
+   "code": "LV",
+   "change": "기대에서 제외",
+   "reason": "'…도 신청 가능' 같은 허용 문구는 판정에 필요한 제한 조건이 아님",
+   "evidence": "재입학생, 복학생도 신청 가능"
+  },
+  {
+   "idx": "9058",
+   "code": "LV",
+   "change": "기대에서 제외",
+   "reason": "'…도 신청 가능' 같은 허용 문구는 판정에 필요한 제한 조건이 아님",
+   "evidence": "서울 소재 대학교 재(휴)학생 (재학·휴학 모두 대상)"
+  },
+  {
+   "idx": "9141",
+   "code": "OVS -> SLOC",
+   "change": "코드 변경",
+   "reason": "입학허가가 아니라 학교 소재지(중국) 조건",
+   "evidence": "한국 국적자로, 중국 대학교 or 대학원 입학예정자, 재학생"
+  }
+ ],
+ "_정정 안내": "시험 추출 20건 결과를 원문과 대조하면서 제 분류 오류를 정정한 내역입니다(근거 문장 포함). 시험하지 않은 41건은 같은 기준(부모만 거주 / 허용 문구)으로 아직 전수 점검하지 않았고, 거주 조건(RES)만 전체 61건을 점검했습니다."
+}

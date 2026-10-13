@@ -1,0 +1,951 @@
+{
+ "_설명": "항목 사전: 학생 항목과 공고 조건 항목을 한 곳에서 정의합니다. 항목을 추가·수정하면 학생 입력 라벨, 후속 질문, 공고 구조화 프롬프트의 '항목 사전' 부분이 같이 바뀝니다. 저장하면 로드할 때 자동 검증하고, 오류가 있으면 줄 번호 없이 항목 번호와 이유를 알려 줍니다.",
+ "_필드": "code 코드(영문 대문자) / label 학생 입력 라벨 / aliases 동의어 / tier 1필수·2권장·3선택 / kind·source·type 종류 / question 학생에게 묻는 문구 / profile_field 학생 프로필 필드 / notice_path 연결되는 공고 조건 필드 / op·custom 비교 방식(custom 은 코드로 만든 비교 함수 이름) / special_code 신분 코드 / detect_hints 증분 보강 때 사전에 없던 조건을 찾는 키워드(정규식) / enabled false 면 끄기",
+ "version": 1,
+ "items": [
+  {
+   "code": "GL",
+   "label": "직전학기 평점",
+   "aliases": [
+    "직전 학기 평점",
+    "직전학기평점",
+    "지난 학기 평점",
+    "지난학기 평점"
+   ],
+   "group": "성적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "gpa",
+   "profile_field": "gpa_last",
+   "notice_path": "gpa.min",
+   "op": "custom",
+   "custom": "gpa",
+   "detect_hints": [
+    "직전\\s*학기",
+    "평점|학점\\s*평균|성적"
+   ],
+   "description": "gpa.min / gpa.scale / gpa.basis=LAST_SEMESTER (만점은 공고에 적힌 대로, 병기되면 4.5 기준)"
+  },
+  {
+   "code": "LTERM",
+   "label": "직전학기",
+   "aliases": [
+    "직전 학기"
+   ],
+   "group": "성적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "term",
+   "profile_field": "gpa_last_term",
+   "description": "직전학기가 몇 학기인지 (예: 2026-1). 성적이 오래되었는지 확인하는 데 씀"
+  },
+  {
+   "code": "CR",
+   "label": "직전학기 취득학점",
+   "aliases": [
+    "직전학기 이수학점",
+    "직전학기 학점"
+   ],
+   "group": "성적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "number",
+   "range": [
+    0,
+    40
+   ],
+   "profile_field": "credits_last",
+   "notice_path": "credits.min_last_semester",
+   "op": "gte",
+   "detect_hints": [
+    "\\d+\\s*학점\\s*(이상|이수|취득)",
+    "취득\\s*학점|이수\\s*학점"
+   ],
+   "description": "credits.min_last_semester (직전학기에 취득한 학점 하한)"
+  },
+  {
+   "code": "GC",
+   "label": "누적 평점",
+   "aliases": [
+    "누적평점",
+    "전체 평점",
+    "전체 평균"
+   ],
+   "group": "성적",
+   "tier": 2,
+   "kind": "student",
+   "source": "school_db",
+   "type": "gpa",
+   "profile_field": "gpa_cumulative",
+   "notice_path": "gpa.min",
+   "op": "custom",
+   "custom": "gpa",
+   "detect_hints": [
+    "누적",
+    "전체\\s*(학기|학년|성적|평균)"
+   ],
+   "description": "gpa.min / gpa.scale / gpa.basis=CUMULATIVE (전체·누적·전체 학년 평균)"
+  },
+  {
+   "code": "GN",
+   "label": "학기별 성적",
+   "aliases": [
+    "학기별 평점"
+   ],
+   "group": "성적",
+   "tier": 2,
+   "kind": "student",
+   "source": "school_db",
+   "type": "history",
+   "profile_field": "term_history",
+   "notice_path": "gpa.terms",
+   "op": "custom",
+   "custom": "gpa_terms",
+   "detect_hints": [
+    "직전\\s*\\d+\\s*(개\\s*)?학기",
+    "최근\\s*(1년|\\d+\\s*학기)",
+    "\\d+\\s*개\\s*학기\\s*평균"
+   ],
+   "description": "gpa.basis=LAST_N + gpa.terms (직전 N개 학기·최근 1년 평균. 학기별 평점과 학점 이력으로 계산)"
+  },
+  {
+   "code": "SP",
+   "label": "직전학기 백분위",
+   "aliases": [
+    "백분위",
+    "직전학기 백분율",
+    "직전학기 백분율 점수",
+    "직전학기 100점 환산"
+   ],
+   "group": "성적",
+   "tier": 2,
+   "kind": "student",
+   "source": "school_db",
+   "type": "number",
+   "range": [
+    0,
+    100
+   ],
+   "profile_field": "gpa_percent",
+   "notice_path": "gpa.min",
+   "op": "custom",
+   "custom": "gpa",
+   "detect_hints": [
+    "백분위",
+    "\\d+\\s*점\\s*(이상|이내)",
+    "100\\s*점"
+   ],
+   "description": "gpa.scale=100 (백분위·100점제 기준)"
+  },
+  {
+   "code": "GCP",
+   "label": "누적 백분위",
+   "aliases": [
+    "전체 백분위",
+    "누적 100점 환산",
+    "전체 100점 환산"
+   ],
+   "group": "성적",
+   "tier": 2,
+   "kind": "student",
+   "source": "school_db",
+   "type": "number",
+   "range": [
+    0,
+    100
+   ],
+   "profile_field": "gpa_cumulative_percent",
+   "question": "누적(전체) 성적의 100점 환산 점수(백분위)는 몇 점인가요?",
+   "detect_hints": [
+    "전체\\\\s*(학기|학년|성적|평균).*(백분위|100\\\\s*점)",
+    "누적.*(백분위|100\\\\s*점)"
+   ],
+   "description": "공고의 전체(누적) 평점 기준이 100점제일 때 비교하는 누적 100점 환산 점수 (직전학기 백분위와 다른 값)"
+  },
+  {
+   "code": "YEAR",
+   "label": "학년",
+   "group": "학기·학적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "int",
+   "range": [
+    1,
+    6
+   ],
+   "profile_field": "grade",
+   "notice_path": "grades",
+   "op": "in",
+   "detect_hints": [
+    "[1-6]\\s*학년"
+   ],
+   "description": "grades (대상 학년 목록)",
+   "aliases": [
+    "현재 학년",
+    "몇 학년",
+    "재학 학년"
+   ]
+  },
+  {
+   "code": "SEM",
+   "label": "이수학기",
+   "aliases": [
+    "이수 학기",
+    "등록 학기 수"
+   ],
+   "group": "학기·학적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "int",
+   "range": [
+    0,
+    20
+   ],
+   "profile_field": "semesters_completed",
+   "notice_path": "completed_terms.min",
+   "op": "custom",
+   "custom": "completed_terms",
+   "detect_hints": [
+    "\\d+\\s*개?\\s*학기\\s*(이상|이하|이수|이내)",
+    "학기째"
+   ],
+   "description": "completed_terms.min / completed_terms.max (몇 학기를 이수했는지)"
+  },
+  {
+   "code": "SLEFT",
+   "label": "남은 학기",
+   "aliases": [
+    "잔여학기",
+    "잔여 학기"
+   ],
+   "group": "학기·학적",
+   "tier": 2,
+   "kind": "derived",
+   "source": "derived",
+   "type": "int",
+   "range": [
+    0,
+    20
+   ],
+   "profile_field": "remaining_semesters",
+   "notice_path": "remaining_terms.min",
+   "op": "custom",
+   "custom": "remaining_terms",
+   "detect_hints": [
+    "잔여\\s*학기|남은\\s*학기"
+   ],
+   "description": "remaining_terms.min / remaining_terms.max (졸업까지 남은 학기, 이수학기에서 계산)"
+  },
+  {
+   "code": "GRD",
+   "label": "졸업학기 여부",
+   "aliases": [
+    "졸업학기"
+   ],
+   "group": "학기·학적",
+   "tier": 2,
+   "kind": "derived",
+   "source": "derived",
+   "type": "bool",
+   "profile_field": "final_semester",
+   "notice_path": "enrollment.excluded_status",
+   "op": "custom",
+   "custom": "enrollment",
+   "detect_hints": [
+    "졸업\\s*(예정|학기|유예)"
+   ],
+   "description": "enrollment.excluded_status 의 졸업예정·졸업학기 (이수학기에서 계산, 학적 값 우선)"
+  },
+  {
+   "code": "LV",
+   "label": "학적상태",
+   "aliases": [
+    "학적 상태"
+   ],
+   "group": "학기·학적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "enum",
+   "enum": [
+    "재학",
+    "휴학",
+    "등록휴학"
+   ],
+   "profile_field": "status",
+   "notice_path": "enrollment.required_status",
+   "op": "custom",
+   "custom": "enrollment",
+   "detect_hints": [
+    "휴학|복학|재학"
+   ],
+   "description": "enrollment.required_status / enrollment.excluded_status (재학·휴학 등 학적 상태만)"
+  },
+  {
+   "code": "GRAD",
+   "label": "과정",
+   "aliases": [
+    "학위과정",
+    "입학과정구분"
+   ],
+   "group": "학기·학적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "enum",
+   "enum": [
+    "학사",
+    "석사",
+    "박사"
+   ],
+   "profile_field": "level",
+   "notice_path": "target_levels",
+   "op": "in",
+   "detect_hints": [
+    "대학원|석사|박사"
+   ],
+   "description": "target_levels (UNIV=학사, GRAD=석·박사)"
+  },
+  {
+   "code": "ENT",
+   "label": "입학년도",
+   "aliases": [
+    "입학 년도"
+   ],
+   "group": "학기·학적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "int",
+   "range": [
+    1990,
+    2100
+   ],
+   "profile_field": "entry_year",
+   "notice_path": "entry_years",
+   "op": "in",
+   "detect_hints": [
+    "입학\\s*(년도|연도)",
+    "신입생"
+   ],
+   "description": "entry_years / new_student_only (신입생 대상이거나 특정 입학년도 대상)"
+  },
+  {
+   "code": "TRF",
+   "label": "입학구분",
+   "aliases": [
+    "편입 여부"
+   ],
+   "group": "학기·학적",
+   "tier": 2,
+   "kind": "student",
+   "source": "school_db",
+   "type": "enum",
+   "enum": [
+    "신입학",
+    "편입학"
+   ],
+   "profile_field": "admission_type",
+   "notice_path": "transfer.mode",
+   "op": "custom",
+   "custom": "transfer",
+   "detect_hints": [
+    "편입"
+   ],
+   "description": "transfer.mode (편입생 처리: 제외, 편입 전 학교 성적 사용, 성적 면제 등)"
+  },
+  {
+   "code": "DEG",
+   "label": "학위 소지 여부",
+   "aliases": [
+    "학위 소지"
+   ],
+   "group": "학기·학적",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "question": "이미 학사(또는 석사) 학위를 가지고 있나요?",
+   "profile_field": "degree_held",
+   "notice_path": "prerequisites",
+   "op": "custom",
+   "custom": "prerequisite",
+   "detect_hints": [
+    "학위\\s*(소지|취득)",
+    "졸업\\s*\\(?예정\\)?\\s*자"
+   ],
+   "description": "prerequisites type=DEGREE_HELD (학위 소지·졸업(예정)자 조건)"
+  },
+  {
+   "code": "MAJ",
+   "label": "학과",
+   "aliases": [
+    "학과명",
+    "전공",
+    "소속 학과"
+   ],
+   "group": "학기·학적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "text",
+   "profile_field": "major",
+   "notice_path": "major_groups",
+   "op": "custom",
+   "custom": "major",
+   "detect_hints": [
+    "전공|학과|계열|이공|공학|의학|간호"
+   ],
+   "description": "major_groups (전공 계열 표준 코드) + majors (학과 이름 문구)"
+  },
+  {
+   "code": "MAJG",
+   "label": "학과 계열",
+   "aliases": [
+    "계열",
+    "전공 계열",
+    "학과계열"
+   ],
+   "group": "학기·학적",
+   "tier": 2,
+   "kind": "student",
+   "source": "school_db",
+   "type": "enum",
+   "enum": [
+    "인문",
+    "사회",
+    "자연",
+    "공학",
+    "의약",
+    "예체능",
+    "교육",
+    "농림"
+   ],
+   "enum_codes": [
+    "HUMANITIES",
+    "SOCIAL",
+    "NATURAL",
+    "ENGINEERING",
+    "MEDICAL",
+    "ARTS_PE",
+    "EDUCATION",
+    "AGRICULTURE"
+   ],
+   "question": "학과가 속한 계열은 무엇인가요?",
+   "profile_field": "major_group",
+   "detect_hints": [
+    "계열|공학|인문|자연|의학|예체능"
+   ],
+   "description": "학과가 속한 계열 (공고의 major_groups 와 비교. 학교 시스템에 이미 분류된 계열을 그대로 전달한다. 표시 이름은 학교 분류에 맞게 enum 에서 바꿀 수 있고 enum_codes 가 표준 코드와 연결한다)"
+  },
+  {
+   "code": "RES",
+   "label": "본인 주민등록",
+   "aliases": [
+    "주민등록 기준지",
+    "주민등록지"
+   ],
+   "group": "지역",
+   "tier": 1,
+   "kind": "student",
+   "source": "student",
+   "type": "place",
+   "question": "주민등록상 시·도와 시·군·구는 어디인가요? (예: 경기도 수원시)",
+   "profile_field": "residence_sido/residence_sigungu",
+   "notice_path": "region.requirements",
+   "op": "custom",
+   "custom": "region",
+   "detect_hints": [
+    "거주|주민\\s*등록|전입|주소지"
+   ],
+   "description": "region.requirements type=RESIDENCE_SELF (본인 주민등록 거주지, 시·군·구 단위)"
+  },
+  {
+   "code": "RESP",
+   "label": "부모 주민등록",
+   "aliases": [
+    "부모님 주민등록",
+    "부모님 주소",
+    "부모 거주지",
+    "부모님 거주지"
+   ],
+   "group": "지역",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "place",
+   "question": "부모님 주민등록상 시·도와 시·군·구는 어디인가요?",
+   "profile_field": "parent_residence_sido/parent_residence_sigungu",
+   "notice_path": "region.requirements",
+   "op": "custom",
+   "custom": "region",
+   "detect_hints": [
+    "(부모|보호자|부\\s*or\\s*모|친권자).{0,10}(거주|주민)"
+   ],
+   "description": "region.requirements type=RESIDENCE_PARENT (부모·보호자 주민등록 거주지)"
+  },
+  {
+   "code": "RESY",
+   "label": "거주 기간",
+   "aliases": [
+    "거주기간"
+   ],
+   "group": "지역",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "bucket",
+   "enum": [
+    "1년 미만",
+    "1~3년",
+    "3년 이상"
+   ],
+   "question": "해당 지역에 거주한 기간은 어느 정도인가요?",
+   "profile_field": "residence_years",
+   "notice_path": "region.requirements[].min_years",
+   "op": "gte",
+   "detect_hints": [
+    "\\d+\\s*년\\s*(이상|이내)?\\s*(계속\\s*)?거주",
+    "거주\\s*기간"
+   ],
+   "description": "region.requirements[].min_years (해당 지역 거주 기간 하한)"
+  },
+  {
+   "code": "HSL",
+   "label": "졸업 고교 소재지",
+   "aliases": [
+    "졸업 고등학교 소재지"
+   ],
+   "group": "지역",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "place",
+   "question": "졸업한 고등학교는 어느 시·도, 시·군·구에 있나요?",
+   "profile_field": "hs_sido/hs_sigungu",
+   "notice_path": "region.requirements",
+   "op": "custom",
+   "custom": "region",
+   "detect_hints": [
+    "졸업\\s*학교|고등학교\\s*(졸업|출신)|출신\\s*(고|학교)"
+   ],
+   "description": "region.requirements type=GRADUATED_SCHOOL (졸업한 고등학교가 있는 시·군·구)"
+  },
+  {
+   "code": "SLOC",
+   "label": "학교 소재지",
+   "aliases": [
+    "학교 소재"
+   ],
+   "group": "지역",
+   "tier": 1,
+   "kind": "school",
+   "source": "school_fixed",
+   "type": "place",
+   "profile_field": "school_sido/school_sigungu",
+   "notice_path": "region.requirements",
+   "op": "custom",
+   "custom": "region",
+   "detect_hints": [
+    "소재|소재지|수도권|비수도권"
+   ],
+   "description": "region.requirements type=SCHOOL_LOCATION (재학 중인 학교의 소재지, 수도권 여부)"
+  },
+  {
+   "code": "INC",
+   "label": "소득구간",
+   "aliases": [
+    "소득분위",
+    "학자금 지원구간"
+   ],
+   "group": "소득·신분",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "int",
+   "range": [
+    0,
+    10
+   ],
+   "sensitive": true,
+   "question": "한국장학재단 학자금 지원구간(소득분위)은 몇 구간인가요?",
+   "profile_field": "income_bracket",
+   "notice_path": "income.max_bracket",
+   "op": "custom",
+   "custom": "income",
+   "detect_hints": [
+    "소득\\s*(분위|구간)",
+    "\\d+\\s*(분위|구간)\\s*이하",
+    "학자금\\s*지원\\s*구간"
+   ],
+   "description": "income.max_bracket (한국장학재단 학자금 지원구간·소득분위 이내) + income.basis/bracket_term"
+  },
+  {
+   "code": "BASIC",
+   "label": "기초생활수급자",
+   "aliases": [
+    "기초수급자"
+   ],
+   "group": "소득·신분",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "기초생활수급자에 해당하나요?",
+   "profile_field": "is_basic_livelihood",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "BASIC_LIVELIHOOD",
+   "detect_hints": [
+    "기초\\s*(생활)?\\s*수급",
+    "수급자"
+   ],
+   "description": "special_groups code=BASIC_LIVELIHOOD"
+  },
+  {
+   "code": "NEAR",
+   "label": "차상위계층",
+   "aliases": [
+    "차상위"
+   ],
+   "group": "소득·신분",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "차상위계층에 해당하나요?",
+   "profile_field": "is_near_poor",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "NEAR_POOR",
+   "detect_hints": [
+    "차상위"
+   ],
+   "description": "special_groups code=NEAR_POOR"
+  },
+  {
+   "code": "DIS",
+   "label": "장애(본인 또는 가족)",
+   "aliases": [
+    "장애"
+   ],
+   "group": "소득·신분",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "본인 또는 가족 중 장애가 있는 분이 있나요?",
+   "profile_field": "special_codes",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "DISABLED",
+   "detect_hints": [
+    "장애"
+   ],
+   "description": "special_groups code=DISABLED (scope=SELF 본인, FAMILY 가족)"
+  },
+  {
+   "code": "SPAR",
+   "label": "한부모 가정",
+   "aliases": [
+    "한부모"
+   ],
+   "group": "소득·신분",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "한부모 가정에 해당하나요?",
+   "profile_field": "is_single_parent",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "SINGLE_PARENT",
+   "detect_hints": [
+    "한부모|조손|소년소녀"
+   ],
+   "description": "special_groups code=SINGLE_PARENT"
+  },
+  {
+   "code": "DEF",
+   "label": "북한이탈주민",
+   "aliases": [
+    "새터민",
+    "탈북민"
+   ],
+   "group": "소득·신분",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "북한이탈주민(새터민)에 해당하나요?",
+   "profile_field": "special_codes",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "DEFECTOR",
+   "detect_hints": [
+    "북한\\s*이탈|새터민|탈북"
+   ],
+   "description": "special_groups code=DEFECTOR"
+  },
+  {
+   "code": "MUL",
+   "label": "다문화 가정",
+   "aliases": [
+    "다문화"
+   ],
+   "group": "소득·신분",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "다문화 가정에 해당하나요?",
+   "profile_field": "special_codes",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "MULTICULTURAL",
+   "detect_hints": [
+    "다문화"
+   ],
+   "description": "special_groups code=MULTICULTURAL"
+  },
+  {
+   "code": "VET",
+   "label": "국가유공자(본인·자녀)",
+   "aliases": [
+    "국가유공자",
+    "보훈"
+   ],
+   "group": "소득·신분",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "국가유공자(본인 또는 자녀)에 해당하나요?",
+   "profile_field": "special_codes",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "VETERAN",
+   "detect_hints": [
+    "국가\\s*유공|보훈|독립\\s*유공"
+   ],
+   "description": "special_groups code=VETERAN"
+  },
+  {
+   "code": "MCH",
+   "label": "다자녀 가정",
+   "aliases": [
+    "다자녀"
+   ],
+   "group": "소득·신분",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "sensitive": true,
+   "question": "다자녀 가정에 해당하나요?",
+   "profile_field": "special_codes",
+   "notice_path": "special_groups",
+   "op": "custom",
+   "custom": "special",
+   "special_code": "MULTI_CHILD",
+   "detect_hints": [
+    "다자녀|3\\s*자녀"
+   ],
+   "description": "special_groups code=MULTI_CHILD"
+  },
+  {
+   "code": "SPECIAL",
+   "label": "해당 항목",
+   "aliases": [
+    "해당 신분"
+   ],
+   "group": "소득·신분",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "list",
+   "sensitive": true,
+   "question": "해당하는 항목을 모두 골라 주세요.",
+   "profile_field": "special_codes",
+   "description": "신분 항목(special_code 가 있는 항목들)을 한 줄로 받는 라벨: 해당 없음 / 답하지 않음 / 항목 이름 나열"
+  },
+  {
+   "code": "AGE",
+   "label": "만 나이",
+   "aliases": [
+    "나이",
+    "연령"
+   ],
+   "group": "인적",
+   "tier": 2,
+   "kind": "student",
+   "source": "student",
+   "type": "int",
+   "range": [
+    0,
+    100
+   ],
+   "question": "만 나이는 몇 살인가요?",
+   "profile_field": "age",
+   "notice_path": "age.max",
+   "op": "custom",
+   "custom": "age",
+   "detect_hints": [
+    "만\\s*\\d+\\s*세",
+    "\\d+\\s*세\\s*(이하|이상|미만)"
+   ],
+   "description": "age.min / age.max (만 나이 제한)"
+  },
+  {
+   "code": "GEN",
+   "label": "성별",
+   "group": "인적",
+   "tier": 3,
+   "kind": "student",
+   "source": "school_db",
+   "type": "enum",
+   "enum": [
+    "남",
+    "여"
+   ],
+   "question": "성별을 선택해 주세요.",
+   "profile_field": "gender",
+   "notice_path": "gender",
+   "op": "in",
+   "detect_hints": [
+    "여학생|남학생|여자|남자|여성|남성"
+   ],
+   "description": "gender (M/F, 특정 성별 대상일 때)"
+  },
+  {
+   "code": "NAT",
+   "label": "국적",
+   "group": "인적",
+   "tier": 1,
+   "kind": "student",
+   "source": "school_db",
+   "type": "enum",
+   "enum": [
+    "내국인",
+    "외국인",
+    "재외동포"
+   ],
+   "profile_field": "nationality",
+   "notice_path": "nationality",
+   "op": "in",
+   "detect_hints": [
+    "국적|외국인|재외\\s*동포|유학생"
+   ],
+   "description": "nationality (내국인·외국인·재외동포 구분)"
+  },
+  {
+   "code": "LANG",
+   "label": "어학 성적",
+   "aliases": [
+    "어학"
+   ],
+   "group": "인적",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "list",
+   "question": "보유한 모든 어학 성적(시험 이름과 점수·등급)이 있나요? 독일어 등은 B1처럼 등급으로 적어 주세요.",
+   "profile_field": "language_scores",
+   "notice_path": "language_requirements",
+   "op": "custom",
+   "custom": "language",
+   "detect_hints": [
+    "TOEIC|토익|TOEFL|토플|OPIc|오픽|TEPS|텝스|HSK|JLPT|TOPIK|어학"
+   ],
+   "description": "language_requirements (어학 시험과 기준 점수·등급)"
+  },
+  {
+   "code": "NSA",
+   "label": "국가장학금 신청 여부",
+   "aliases": [
+    "국가장학금 신청"
+   ],
+   "group": "인적",
+   "tier": 3,
+   "kind": "student",
+   "source": "student",
+   "type": "bool",
+   "question": "이번 학기 국가장학금을 신청했나요?",
+   "profile_field": "national_scholarship_applied",
+   "notice_path": "prerequisites",
+   "op": "custom",
+   "custom": "prerequisite",
+   "detect_hints": [
+    "국가장학금.{0,12}신청",
+    "국가장학금\\s*(1차|2차)",
+    "지원구간\\s*산정"
+   ],
+   "description": "prerequisites type=NATIONAL_SCHOLARSHIP_APPLIED / BRACKET_CALCULATED"
+  },
+  {
+   "code": "SCH_TYPE",
+   "label": "학교 종류",
+   "aliases": [
+    "학교종류"
+   ],
+   "group": "학교",
+   "tier": 1,
+   "kind": "school",
+   "source": "school_fixed",
+   "type": "enum",
+   "enum": [
+    "일반대학",
+    "전문대학",
+    "원격대학",
+    "기타"
+   ],
+   "profile_field": "school_type",
+   "notice_path": "school.types",
+   "op": "custom",
+   "custom": "school",
+   "detect_hints": [
+    "4년제|전문대|사이버|방송통신|사내대학|농업계"
+   ],
+   "description": "school.types / school.excluded_types (4년제·전문대·사이버·방송통신·사내대학 제외 등)"
+  },
+  {
+   "code": "SPART",
+   "label": "학교 참여 사업",
+   "aliases": [
+    "참여 사업"
+   ],
+   "group": "학교",
+   "tier": 2,
+   "kind": "school",
+   "source": "school_fixed",
+   "type": "list",
+   "profile_field": "school_programs",
+   "notice_path": "school.programs",
+   "op": "in",
+   "detect_hints": [
+    "참여\\s*대학|지원\\s*대학",
+    "국가장학금\\s*지원\\s*대학"
+   ],
+   "description": "school.programs (국가장학금·지역인재장학금·주거안정장학금 참여대학 여부)"
+  }
+ ]
+}

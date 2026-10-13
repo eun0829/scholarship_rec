@@ -1,0 +1,35 @@
+{
+  "_설명": "외부02(드림스폰) 수집 설정. 코드 수정 없이 여기서 바꿉니다. 비밀번호/계정은 넣지 말고 python set_secret.py DREAMSPON_ID / DREAMSPON_PASSWORD 로 저장하세요.",
+  "base_url": "https://www.dreamspon.com",
+  "list_path": "/scholarship/list.html",
+  "view_path": "/scholarship/view.html",
+  "login_path": "/process/checkuser.html",
+  "download_path": "/process/fileDown.html",
+
+  "_ordby설명": "목록 상태 필터: 0=기본(전체보기), 1=모집중, 2=마감임박, 3=모집예정, 4=모집완료, 5=업로드순. 여러 개를 합쳐서 idx 로 중복 제거합니다.",
+  "ordby": [1, 2, 3],
+  "max_pages": 15,
+  "delay_sec": 2.0,
+  "timeout_sec": 30,
+
+  "include_kinds": ["장학금"],
+  "include_tags": ["대학생"],
+  "exclude_states": ["모집완료"],
+  "max_attachments": 10,
+  "use_summary_images": false,
+
+  "_접수방법설명": "접수방법 문구(공백 제거 후 부분일치)로 신청 방식을 정합니다. SCHOOL 이 먼저 검사됩니다. 어느 쪽도 아니면 AI 가 판단합니다.",
+  "apply_type_keywords": {
+    "SCHOOL": ["학교경유", "학교추천", "학교장추천", "대학경유", "대학추천", "소속학교추천", "학과추천"],
+    "DIRECT": ["온라인", "직접접수", "직접신청", "이메일", "홈페이지", "우편접수", "방문접수"]
+  },
+
+  "_지원대상설명": "지원대상 문구에서 학교급(UNIV/GRAD/HIGH/MIDDLE/ELEM)을 찾는 키워드. 대학원생이 먼저 검사됩니다.",
+  "target_keywords": {
+    "GRAD": ["대학원"],
+    "UNIV": ["대학생", "전문대", "대학교", "대학"],
+    "HIGH": ["고등학생", "고교", "고등학교"],
+    "MIDDLE": ["중학생", "중학교", "중등"],
+    "ELEM": ["초등학생", "초등학교", "초등"]
+  }
+}

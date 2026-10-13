@@ -1,0 +1,110 @@
+{
+  "elig": {
+    "schema_version": 3,
+    "registry_version": 1,
+    "processed_items": [
+      "GL",
+      "LTERM",
+      "CR",
+      "GC",
+      "GN",
+      "SP",
+      "GCP",
+      "YEAR",
+      "SEM",
+      "SLEFT",
+      "GRD",
+      "LV",
+      "GRAD",
+      "ENT",
+      "TRF",
+      "DEG",
+      "MAJ",
+      "MAJG",
+      "RES",
+      "RESP",
+      "RESY",
+      "HSL",
+      "SLOC",
+      "INC",
+      "BASIC",
+      "NEAR",
+      "DIS",
+      "SPAR",
+      "DEF",
+      "MUL",
+      "VET",
+      "MCH",
+      "SPECIAL",
+      "AGE",
+      "GEN",
+      "NAT",
+      "LANG",
+      "NSA",
+      "SCH_TYPE",
+      "SPART"
+    ],
+    "category": "INFO",
+    "scholarship_name": null,
+    "foundation": "한국장학재단",
+    "apply_type": "UNKNOWN",
+    "apply_start": null,
+    "apply_end": null,
+    "org_deadline": null,
+    "recruit_count": null,
+    "amount": null,
+    "apply_how": null,
+    "target_levels": [
+      "UNIV"
+    ],
+    "grades": [],
+    "enrollment": {
+      "required_status": [],
+      "excluded_status": [],
+      "min_remaining_semesters": null,
+      "notes": null
+    },
+    "gpa": {
+      "min": null,
+      "scale": null,
+      "basis": "UNKNOWN",
+      "alternatives": [],
+      "notes": null
+    },
+    "credits": {
+      "min_last_semester": null,
+      "min_completed_semesters": null,
+      "notes": null
+    },
+    "income": {
+      "max_bracket": null,
+      "eligible_types": [],
+      "notes": null
+    },
+    "region": {
+      "residence": [],
+      "school_location": [],
+      "notes": null
+    },
+    "majors": [],
+    "nationality": null,
+    "special_status": [],
+    "other_conditions": [],
+    "variants": [],
+    "exclusions": [],
+    "documents": [],
+    "selection": {
+      "method": null,
+      "priority": []
+    },
+    "summary": "2027학년도 1학기부터 학자금 지원구간이 10개 구간에서 5개 구간(가~마)으로 개편됨을 알리는 안내"
+  },
+  "review": {
+    "uncertain": [],
+    "evidence": {
+      "category": "이미지"
+    },
+    "issues": [],
+    "attachment_problems": []
+  }
+}

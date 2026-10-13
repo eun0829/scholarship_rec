@@ -1,0 +1,140 @@
+{
+ "idx": "9098",
+ "title": "사랑의 날개 장애인 장학 (2026년)",
+ "state": "모집마감",
+ "org": "사회복지법인 사랑의 날개",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9098",
+ "data": {
+  "category": "OUT",
+  "scholarship_name": "사랑의 날개 장애인 장학",
+  "foundation": "사회복지법인 사랑의 날개",
+  "apply_type": "SCHOOL",
+  "apply_start": "2026-06-01",
+  "apply_end": "2026-07-01",
+  "org_deadline": null,
+  "recruit_count": "10명",
+  "amount": "최대 100만원",
+  "apply_how": "우편 접수(서울 강남구 사회복지법인 사랑의 날개), 학교장·센터장 추천 필요",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "저소득 계층 우대",
+   "basis": "NARRATIVE"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "경제적 부담으로 학업에 어려움이 있는 자"
+  ],
+  "variants": [],
+  "exclusions": [
+   "본 법인의 장학금 기수혜자 선발 제외"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": [
+    "국민기초생활대상자, 차상위, 저소득 계층 우대"
+   ]
+  },
+  "summary": "장애인 대학생 대상, 학교장·센터장 추천 필요, 최대 100만원, 10명 선발 (7/1 마감)",
+  "uncertain": [
+   {
+    "field": "apply_type",
+    "reason": "추천(학교장·센터장)은 필요하나 접수는 재단에 우편 접수로 안내되어 학교 경유 여부가 불분명함",
+    "level": "verify"
+   },
+   {
+    "field": "apply_end",
+    "reason": "신청기간 종료일 하나만 있고 학교 제출 기한과 재단 접수 마감의 구분이 없음",
+    "level": "note"
+   }
+  ],
+  "special_groups": [
+   {
+    "code": "DISABLED",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   }
+  ],
+  "school": {
+   "excluded_types": [
+    "CYBER",
+    "OPEN_UNIV",
+    "COMPANY_UNIV"
+   ]
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRINCIPAL",
+    "OTHER"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "PRIOR_SAME",
+    "text": "본 법인의 장학금 기수혜자 선발 제외"
+   }
+  ],
+  "obligations": [
+   "오프라인 장학금 전달식 참여 가능한 자"
+  ],
+  "review_criteria": [
+   "학업이 우수하고 봉사정신이 투철하여 사회 기여에 꿈이 있는 자",
+   "학업에 대한 의지가 강하고 나눔 실천의 의지를 자기소개서에 구체적으로 표현한 자"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "경제적 부담으로 학업에 어려움이 있는 자",
+    "section": "기타조건",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "자기소개서에 나눔 실천 의지를 구체적으로 표현",
+    "section": "기타조건",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

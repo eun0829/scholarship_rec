@@ -1,0 +1,126 @@
+{
+ "idx": "9144",
+ "title": "이공계 국가우수장학 (2026년 2학기)",
+ "state": "모집마감",
+ "org": "한국장학재단",
+ "url": "https://www.dreamspon.com/scholarship/view.html?idx=9144",
+ "data": {
+  "category": "NATIONAL",
+  "scholarship_name": "이공계 국가우수장학 (2026년 2학기)",
+  "foundation": "한국장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-07-27",
+  "apply_end": "2026-08-20",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "매 학기 등록금 전액 (입학금·수업료 항목만 인정)",
+  "apply_how": "한국장학재단 온라인 접수",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [
+   3
+  ],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 87.0,
+   "scale": 100.0,
+   "basis": "LAST_N",
+   "alternatives": [
+    {
+     "min": 3.5,
+     "scale": 4.5
+    },
+    {
+     "min": 3.3,
+     "scale": 4.3
+    }
+   ],
+   "notes": "직전 2년간(1~2학년) 4개 학기 종합평균 백분위 87점 이상 또는 평점 3.5/4.5(3.3/4.3) 이상",
+   "terms": 4,
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [
+   "공학계열",
+   "자연계열"
+  ],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "신규장학생으로 선발된 3학년 진급 재학생"
+  ],
+  "variants": [],
+  "exclusions": [
+   "타 외부장학재단, 기관에서 학자금을 지원받는 자 선발제외"
+  ],
+  "documents": [
+   "이공계열 활동내역서"
+  ],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "신규장학생으로 선발된 이공계(공학·자연) 3학년 진급 재학생 대상 등록금 전액 지원 장학금",
+  "uncertain": [
+   {
+    "field": "gpa",
+    "reason": "백분위 87점 기준과 평점 3.5/4.5(3.3/4.3) 기준 중 하나를 충족하면 되는 것으로 보이나 '4개 학기 종합평균' 계산 방식은 공고문 확인 필요",
+    "level": "note"
+   },
+   {
+    "field": "apply_type",
+    "reason": "한국장학재단 온라인 접수이나 '신규장학생으로 선발된' 대상의 선발 절차(학교 추천 여부)는 본문에 명시되지 않음",
+    "level": "verify"
+   }
+  ],
+  "major_groups": [
+   "ENGINEERING",
+   "NATURAL"
+  ],
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_ANY",
+    "text": "타 외부장학재단, 기관에서 학자금을 지원받는 자 선발제외"
+   }
+  ],
+  "obligations": [
+   "졸업 후 장학금 수혜기간만큼 이공계에 진학·취업·창업하여 의무적으로 근무"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "신규장학생으로 선발된 3학년 진급 재학생",
+    "section": "지원대상",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "이공계열 활동내역서 제출",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}
