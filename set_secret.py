@@ -31,8 +31,11 @@ LABELS = {
     "DB_PASSWORD": "저장 DB 비밀번호",
     "EXT01_DB_PASSWORD": "홈페이지 DB 비밀번호 (홈페이지 DB 가 저장 DB 와 같으면 입력하지 않아도 됨)",
     "AI_API_KEY": "AI API 키",
+    "API_KEY": "추천 API 키 (포털이 X-API-Key 헤더로 보내는 값. 길고 무작위인 값을 쓰세요)",
     "DREAMSPON_ID": "드림스폰 로그인 아이디(이메일). 수집 전용 계정 권장",
     "DREAMSPON_PASSWORD": "드림스폰 로그인 비밀번호",
+    "OPENAI_API_KEY": "OpenAI API 키 (챗봇 색인용 임베딩)",
+    "PINECONE_API_KEY": "Pinecone API 키 (챗봇 색인 저장소)",
 }
 
 
@@ -96,22 +99,25 @@ def show_credits(settings: Settings, fetch: Optional[Callable] = None) -> bool:
     return True
 
 
-def show_models(settings: Settings, fetch: Optional[Callable] = None) -> bool:
+def show_models(settings: Settings, fetch: Optional[Callable] = None, model_type: str = "llm") -> bool:
     from scholarship.common.ai import gateway
     if not gateway.is_gateway(settings.ai_base_url):
         print("[건너뜀] 모델 목록 조회는 게이트웨이(AI_BASE_URL)를 쓸 때만 가능합니다.")
         return False
     try:
-        models = (fetch or gateway.fetch_models)(settings.ai_base_url, settings.ai_api_key)
+        if fetch:
+            models = fetch(settings.ai_base_url, settings.ai_api_key)
+        else:
+            models = gateway.fetch_models(settings.ai_base_url, settings.ai_api_key, "" if model_type == "all" else model_type)
     except Exception as e:
         print("[실패] 모델 목록 조회: {}".format(str(e).replace(settings.ai_api_key, "****")))
         return False
     ids = [str(m.get("id")) for m in models if m.get("id")]
     mark = "  <- 현재 AI_MODEL" 
-    print("[모델] {}개 (현재 AI_MODEL={})".format(len(ids), settings.ai_model))
+    print("[모델] 종류={} {}개 (현재 AI_MODEL={})".format(model_type, len(ids), settings.ai_model))
     for i in ids:
         print("  {}{}".format(i, mark if i == settings.ai_model else ""))
-    if settings.ai_model not in ids:
+    if settings.ai_model not in ids and model_type == "llm":
         print("  ※ 현재 AI_MODEL 이 목록에 없습니다. 위 id 중 하나로 .env 의 AI_MODEL 을 바꾸세요.")
     return True
 
@@ -209,8 +215,9 @@ def main(argv=None) -> int:
     ap.add_argument("--test-db", action="store_true", help="저장된 값으로 DB 접속 테스트")
     ap.add_argument("--test-ai", action="store_true", help="저장된 키로 AI 를 짧게 1회 호출해서 확인 (토큰 몇 개 소모)")
     ap.add_argument("--test-dreamspon", action="store_true", help="드림스폰 목록/로그인/상세 읽기 확인 (계정은 DREAMSPON_ID/PASSWORD)")
+    ap.add_argument("--model-type", default="llm", help="--models 에서 볼 모델 종류 (기본 llm, 임베딩은 embedding, 전부는 all)")
     ap.add_argument("--credits", action="store_true", help="(게이트웨이) 크레딧 잔액 조회")
-    ap.add_argument("--models", action="store_true", help="(게이트웨이) 이 키로 쓸 수 있는 LLM 모델 목록")
+    ap.add_argument("--models", action="store_true", help="(게이트웨이) 이 키로 쓸 수 있는 모델 목록 (기본: LLM)")
     ap.add_argument("--env", default=".env", help=".env 경로 (--test-db / --test-ai 에서 사용)")
     a = ap.parse_args(argv)
     path = Path(a.file) if a.file else ss.default_path()
@@ -247,7 +254,7 @@ def main(argv=None) -> int:
                     ok_credit = show_credits(st)
                     bad = (a.credits and not ok_credit) or bad       # --test-ai 에서의 크레딧 조회 실패는 참고용
             if a.models:
-                bad = (not (st.ai_api_key and show_models(st))) or bad
+                bad = (not (st.ai_api_key and show_models(st, model_type=a.model_type))) or bad
             return 1 if bad else 0
 
         updates = {}

@@ -5,6 +5,7 @@
 사용 예
   python run_ext01.py                         # 최근 30일, 전체 처리
   python run_ext01.py --no-ai --dump-dir out  # AI 없이 수집/추출까지만 (서버 환경 점검용)
+  python run_ext01.py --days 365 --new 20     # 시험용: 저장된 글은 빼고 새 글 20건
   python run_ext01.py --only 153666 --force   # 특정 글만 다시 처리
   python run_ext01.py --dry-run --dump-dir out  # DB 저장 없이 (AI 호출은 함) 결과 확인
 """
@@ -25,6 +26,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="외부01 장학공지 수집/추출/저장")
     ap.add_argument("--days", type=int, default=30, help="최근 N일 (기본 30)")
     ap.add_argument("--limit", type=int, help="앞에서 N건만 처리 (테스트용)")
+    ap.add_argument("--new", type=int, help="시험용: 이미 저장된 글은 빼고 새 글 N건만 처리 (--days 를 넓혀 함께 사용. 예: --days 365 --new 20)")
     ap.add_argument("--only", nargs="+", help="지정한 글번호만 처리")
     ap.add_argument("--force", action="store_true", help="이미 저장된 글도 다시 처리 (글번호/제목 건너뛰기 무시)")
     ap.add_argument("--update-changed", action="store_true", help="이미 완료된 글의 내용이 바뀌었으면 다시 처리 (기본: 글번호가 있으면 건너뜀)")
@@ -98,7 +100,7 @@ def main() -> int:
                                                settings.oracle_client_lib))
         pipe = Pipeline(settings, adapter, repo, ai, force=a.force,
                         dump_dir=Path(a.dump_dir) if a.dump_dir else None)
-        summ = pipe.run(days=a.days, limit=a.limit, only=a.only)
+        summ = pipe.run(days=a.days, limit=a.limit, only=a.only, new=a.new)
         return 1 if summ.failed and summ.failed == summ.total else 0
     except Exception as e:                       # 접속 실패 등 시작 단계 오류는 원인 안내만 출력 (비밀 값은 가림)
         msg = str(e)

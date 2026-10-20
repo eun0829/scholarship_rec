@@ -1,0 +1,296 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "153587",
+ "title": "2026년도 하반기 (재)논산시장학회 장학생 선발 안내",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-10-30",
+ "summary": "논산시 1년 이상 거주 가정의 2026년 대학 신입생에게 생활비 150만원을 지급합니다.",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/153587/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2026년도 하반기 재단법인 논산시장학회 장학생",
+  "foundation": "재단법인 논산시장학회",
+  "apply_type": "HYBRID",
+  "apply_start": "2026-09-28",
+  "apply_end": "2026-10-30",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "학업장려 1인 150만원(생활비)",
+  "apply_how": "방문 또는 등기우편 접수(논산시청 인구청년교육과), 지역대학진학은 총장·학장 추천",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "충청남도 논산시"
+     ],
+     "min_years": 1,
+     "years_basis": "공고일 기준 계속 주민등록"
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "충청남도 논산시"
+     ],
+     "min_years": 1,
+     "years_basis": "공고일 기준 계속 주민등록"
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [
+   {
+    "name": "학업장려",
+    "amount": "1인 150만원(생활비)",
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [
+     "2003년 1월 1일 이후 출생자 중 공고일 기준 고등학교 졸업 학력 취득 후 5년 미경과"
+    ],
+    "apply_type": "DIRECT",
+    "entry_years": [
+     2026
+    ],
+    "transfer": {
+     "mode": "EXCLUDED"
+    },
+    "documents": [
+     "장학금 신청서 및 개인정보 동의서",
+     "주민등록표 등본 또는 초본",
+     "가족관계증명서(본인과 부·모 주소가 다른 경우)",
+     "입출금 통장 사본",
+     "입학일자가 기재된 재학증명서",
+     "고등학교 졸업증명서(2003년 출생자)"
+    ]
+   },
+   {
+    "name": "지역대학진학",
+    "amount": null,
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ALL",
+     "requirements": [
+      {
+       "type": "SCHOOL_LOCATION",
+       "areas": [
+        "충청남도 논산시"
+       ]
+      }
+     ]
+    },
+    "other_conditions": [
+     "논산시 관내 대학교(2년제 포함)의 신입생 및 특성화 학과생"
+    ],
+    "apply_type": "SCHOOL"
+   }
+  ],
+  "exclusions": [
+   "신입생 장학금은 상반기 미신청자에 한해 신청 가능",
+   "상반기 논산시장학회 장학금 수령자 제외",
+   "신입생 장학금 지급은 1인 1회만 가능(재입학 또는 편입 시 지급 불가)",
+   "(재)논산시장학회 내부 장학금 중복 지급 불가(1인 1건)"
+  ],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "논산시 1년 이상 거주 가정의 2026년 대학 신입생에게 생활비 150만원을 지급합니다.",
+  "school": {
+   "types": [
+    "UNIV4",
+    "COLLEGE"
+   ],
+   "excluded_types": [
+    "CYBER",
+    "OPEN_UNIV"
+   ]
+  },
+  "deadline_kind": "FOUNDATION",
+  "exclusion_items": [
+   {
+    "type": "PRIOR_SAME",
+    "text": "신입생 장학금은 상반기 미신청자에 한해 신청 가능"
+   },
+   {
+    "type": "PRIOR_SAME",
+    "text": "상반기 논산시장학회 장학금 수령자 제외"
+   },
+   {
+    "type": "PRIOR_SAME",
+    "text": "신입생 장학금 지급은 1인 1회만 가능(재입학 또는 편입 시 지급 불가)"
+   },
+   {
+    "type": "OTHER",
+    "text": "(재)논산시장학회 내부 장학금 중복 지급 불가(1인 1건)"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "학업장려: 2003년 1월 1일 이후 출생자 중 공고일 기준 고등학교 졸업 학력 취득 후 5년 미경과",
+    "section": "지원자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "지역대학진학: 논산시 관내 대학교(2년제 포함)의 신입생 및 특성화 학과생",
+    "section": "신청·접수방법",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "지역대학진학: 대학교 총장/학장 추천",
+    "section": "신청·접수방법",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "대학원대학교, 대학원, 외국대학 제외",
+    "section": "제외대상",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "평생교육법에 의한 학점은행제 교육원 및 전문학교 제외(전공대학 신입생은 신청 가능)",
+    "section": "제외대상",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "생활비를 지원받는 특수학교(경찰대, 육·해·공군사관학교, 3사관학교, 간호사관학교) 제외",
+    "section": "제외대상",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "기타 특수한 경우 재단법인 논산시장학회 이사회를 통해 결정",
+    "section": "제외대상",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

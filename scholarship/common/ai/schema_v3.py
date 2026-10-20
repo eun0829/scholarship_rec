@@ -65,6 +65,7 @@ def _build_template_v3() -> Dict[str, Any]:
         "language_requirements": [], "prerequisites": [],
         "recommendation": {"required": None, "from": []}, "deadline_kind": None,
         "exclusion_items": [], "obligations": [], "review_criteria": [], "unmodeled_conditions": [],
+        "evaluation": [], "recommender": None, "procedure": [], "criteria": [],
     })
     return t
 
@@ -79,7 +80,9 @@ LIST_ITEM_KEYS: Dict[str, tuple] = {
     "language_requirements": ("exam", "min_score", "level"),
     "prerequisites": ("type", "text"),
     "exclusion_items": ("type", "text"),
-    "unmodeled_conditions": ("text", "section", "source", "kind"),
+    "unmodeled_conditions": ("text", "section", "source", "kind", "label"),
+    "evaluation": ("item", "percent"),
+    "procedure": ("name", "when"),
 }
 
 
@@ -345,14 +348,53 @@ def unmodeled(raw, extra: List[Dict[str, str]], issue) -> List[Dict[str, str]]:
         if len(out) >= MAX_UNMODELED:
             dropped += 1
             continue
-        out.append({"text": text, "section": _cut(_str(d.get("section")), 30) or "", "source": _cut(_str(d.get("source")), 30) or "",
-                    "kind": _enum(d.get("kind"), UNMODELED_KINDS) or "ELIGIBILITY"})
+        item = {"text": text, "section": _cut(_str(d.get("section")), 30) or "", "source": _cut(_str(d.get("source")), 30) or "",
+                "kind": _enum(d.get("kind"), UNMODELED_KINDS) or "ELIGIBILITY"}
+        label = _cut(_str(d.get("label")), 12)
+        if label:
+            item["label"] = label                                       # 선택: 화면의 조건 이름 (없으면 코드가 문장에서 주제를 고른다)
+        out.append(item)
     if dropped:
         issue("unmodeled_conditions", "사전에 없는 조건이 {}개를 넘어 {}개를 저장하지 못함".format(MAX_UNMODELED, dropped))
     return out
 
 
 # ------------------------------------------------------------------ 최상위 / 유형(variants)
+MAX_EVALUATION = 6
+MAX_PROCEDURE = 6
+
+
+def evaluation(raw, issue=None, prefix: str = "evaluation") -> List[Dict[str, Any]]:
+    """선발 평가 비율 [{item, percent}]. 합이 100(±1)이 아니면 잘못 읽은 값이므로 버린다 (표시하면 오해를 부른다)."""
+    out: List[Dict[str, Any]] = []
+    for x in raw if isinstance(raw, list) else []:
+        d = _d(x)
+        item, pct = _cut(_str(d.get("item")), 12), _num(d.get("percent"))
+        if item and pct is not None and 0 < pct <= 100 and all(item != o["item"] for o in out):
+            out.append({"item": item, "percent": _clean(pct)})
+    out = out[:MAX_EVALUATION]
+    if out and abs(sum(o["percent"] for o in out) - 100) > 1:
+        if issue:
+            issue(prefix, "평가 비율의 합이 100이 아니어서 버림: {}".format(sum(o["percent"] for o in out)))
+        return []
+    return out
+
+
+def procedure(raw) -> List[Dict[str, Any]]:
+    """선발 진행 절차 [{name, when}] (접수 -> 심사 -> 면접 -> 발표 ...). 공고에 있는 것만 최대 6단계."""
+    out: List[Dict[str, Any]] = []
+    for x in raw if isinstance(raw, list) else []:
+        d = _d(x) if isinstance(x, dict) else {"name": x}
+        name = _cut(_str(d.get("name")), 20)
+        if name and all(name != o["name"] for o in out):
+            item = {"name": name}
+            when = _cut(_str(d.get("when")), 30)
+            if when:
+                item["when"] = when
+            out.append(item)
+    return out[:MAX_PROCEDURE]
+
+
 def apply_v3(obj: Dict[str, Any], out: Dict[str, Any], issue, extra: List[Dict[str, str]]) -> None:
     """v3 추가 키를 정규화해서 out 에 넣는다 (값이 있는 키만)."""
     def sink(text, kind="ELIGIBILITY", section=""):
@@ -413,6 +455,19 @@ def apply_v3(obj: Dict[str, Any], out: Dict[str, Any], issue, extra: List[Dict[s
         if v:
             out[k] = v
 
+    ev = evaluation(obj.get("evaluation"), issue)
+    if ev:
+        out["evaluation"] = ev
+    rcm = _cut(_str(obj.get("recommender")), 30)
+    if rcm:
+        out["recommender"] = rcm
+    pc = procedure(obj.get("procedure"))
+    if pc:
+        out["procedure"] = pc
+    cr = _short_list(obj.get("criteria"), 4, 40)
+    if cr:
+        out["criteria"] = cr                                           # 선발 기준 (우선순위·심사 방식, 공통)
+
     um = unmodeled(obj.get("unmodeled_conditions"), extra, issue)
     if um:
         out["unmodeled_conditions"] = um
@@ -464,6 +519,22 @@ def variant_extra(it: Dict[str, Any], v: Dict[str, Any], issue, pfx: str) -> Dic
     tm = _enum(_d(it.get("transfer")).get("mode"), TRANSFER_MODES)
     if tm:
         out["transfer"] = {"mode": tm}
+    docs = []
+    for x in it.get("documents") or []:
+        t = _cut(_str(x), 80)
+        if t and t not in docs:
+            docs.append(t)
+    if docs:
+        out["documents"] = docs[:12]                                   # 이 유형만 내는 제출서류
+    ev = evaluation(it.get("evaluation"), issue, pfx + ".evaluation")
+    if ev:
+        out["evaluation"] = ev                                         # 이 유형의 평가 비율
+    rcm = _cut(_str(it.get("recommender")), 30)
+    if rcm:
+        out["recommender"] = rcm                                       # 이 유형의 추천자
+    cr = _short_list(it.get("criteria"), 4, 40)
+    if cr:
+        out["criteria"] = cr                                           # 이 유형의 선발 기준
     if extra:
         v["other_conditions"] = list(v["other_conditions"]) + [e["text"] for e in extra]
     return out

@@ -46,6 +46,10 @@ class VariantResult:
     apply_start: Optional[str] = None                        # 유형별 신청 시작·마감 (공고가 유형마다 다르게 적은 경우)
     apply_end: Optional[str] = None
     preferences: List[Dict[str, Any]] = field(default_factory=list)    # 이 유형의 우대 조건 (v3)
+    documents: List[str] = field(default_factory=list)                 # 이 유형만 내는 제출서류 (v3)
+    evaluation: List[Dict[str, Any]] = field(default_factory=list)     # 이 유형의 평가 비율 [{item, percent}] (v3)
+    recommender: Optional[str] = None                                  # 이 유형의 추천자 (v3)
+    criteria: List[str] = field(default_factory=list)                  # 이 유형의 선발 기준 (v3)
 
     @property
     def to_confirm(self) -> List[str]:
@@ -75,7 +79,15 @@ class Evaluation:
 
     @property
     def passed(self) -> List[str]:
-        return [c.message for c in self.common if c.status == PASS]
+        return [c.message for c in self.common if c.status == PASS and c.key != "self"]
+
+    @property
+    def self_confirm(self) -> List[str]:
+        """학생이 신청할 때 스스로 확인하는 조건 (판정에 영향 없음). 유형별 문장은 '유형 - 문장'."""
+        out = [c.message.replace("본인 확인: ", "", 1) for c in self.common if c.key == "self"]
+        for v in self.matched_variants:
+            out += ["{} - {}".format(v.name, c.message.replace("본인 확인: ", "", 1)) for c in v.checks if c.key == "self"]
+        return list(dict.fromkeys(out))
 
     @property
     def matched_variants(self) -> List[VariantResult]:
@@ -334,6 +346,20 @@ def _place_status(items: List[str], sido: Optional[str], sigungu: Optional[str])
 
 
 _ALT_QUALIFIER = re.compile(r"자녀|부모|가족|배우자|친족|출신|졸업|모교|고등학교")
+_ALT_PARENT = re.compile(r"자녀|부모|가족|친족")
+_ALT_SCHOOL = re.compile(r"출신|졸업|모교|고등학교")
+
+
+def _alt_route_statuses(res: List[str], notes: str, p: StudentProfile) -> List[str]:
+    """본인 거주지 말고 공고가 허용하는 대체 요건마다 학생이 해당하는지 (PASS/FAIL/UNKNOWN). 입력받지 않은 요건(배우자 등)은 UNKNOWN."""
+    routes: List[str] = []
+    if _ALT_PARENT.search(notes):
+        routes.append(_place_status(res, p.parent_residence_sido, p.parent_residence_sigungu))
+    if _ALT_SCHOOL.search(notes):
+        routes.append(_place_status(res, p.hs_sido, p.hs_sigungu))
+    if re.search(r"배우자", notes):
+        routes.append(UNKNOWN)
+    return routes
 
 
 def check_region(rg: Dict[str, Any], p: StudentProfile, scope: str) -> List[Check]:
@@ -346,8 +372,12 @@ def check_region(rg: Dict[str, Any], p: StudentProfile, scope: str) -> List[Chec
         unknown_msg = ("세부 거주지(읍·면·동·리) 확인 필요 (필요: {})" if all(vocab.classify_place(i)[0] == "OTHER" for i in res)
                        else "거주지 정보 부족 (필요: {})")
         if st == FAIL and alt:
-            out.append(Check("region", UNKNOWN, "본인 주민등록 거주지는 다르지만 부모·자녀 거주나 출신 학교 같은 대체 요건이 있을 수 있어 확인 필요 "
-                             "(필요: {} / 안내: {})".format(" / ".join(res), notes), scope))
+            routes = _alt_route_statuses(res, notes, p)
+            if routes and all(s == FAIL for s in routes):                       # 대체 요건(부모 거주지·출신 고교)을 모두 따져 봐도 맞지 않으면 미달
+                out.append(Check("region", FAIL, "주민등록 거주지 조건 미달 (필요: {} · 부모 거주지·출신 고교도 해당 없음)".format(" / ".join(res)), scope))
+            else:                                                               # 하나라도 맞거나 정보가 없으면 확인 필요 (자격 있는 학생을 미달로 숨기지 않는다)
+                out.append(Check("region", UNKNOWN, "본인 주민등록 거주지는 다르지만 부모·자녀 거주나 출신 학교 같은 대체 요건이 있을 수 있어 확인 필요 "
+                                 "(필요: {} / 안내: {})".format(" / ".join(res), notes), scope))
         else:
             out.append(Check("region", st, {PASS: "주민등록 거주지 해당 ({})", FAIL: "주민등록 거주지 조건 미달 (필요: {})",
                                             UNKNOWN: unknown_msg}[st].format(" / ".join(res)), scope))
@@ -378,9 +408,25 @@ def check_nationality(nat: Optional[str], p: StudentProfile, scope: str) -> List
     return [Check("nationality", PASS if ok else FAIL, "국적 조건 {} ({})".format("해당" if ok else "미해당", nat), scope)]
 
 
+# 공고가 학과 대신 '공학계열', '이공계'처럼 계열 이름을 적은 경우: 학생의 계열 코드(major_group)와 비교한다. 해당하면 충족, 아니면 기존처럼 확인 필요
+# (계열 이름의 범위가 공고마다 달라 '대상 아님'으로 단정하지 않는다).
+_GROUP_WORDS = {"공학": ("ENGINEERING",), "이공": ("ENGINEERING", "NATURAL"), "자연": ("NATURAL",), "이학": ("NATURAL",), "의약": ("MEDICAL",), "의학": ("MEDICAL",),
+                "의과": ("MEDICAL",), "보건": ("MEDICAL",), "인문": ("HUMANITIES",), "사회": ("SOCIAL",), "인문사회": ("HUMANITIES", "SOCIAL"), "예체능": ("ARTS_PE",),
+                "예술": ("ARTS_PE",), "체육": ("ARTS_PE",), "교육": ("EDUCATION",), "농림": ("AGRICULTURE",), "농업": ("AGRICULTURE",), "농생명": ("AGRICULTURE",)}
+_GROUP_ENTRY = re.compile(r"^\s*(.+?)\s*(?:계열|계)\s*$")
+
+
+def _entry_groups(entry: str) -> Tuple[str, ...]:
+    m = _GROUP_ENTRY.match(entry or "")
+    return _GROUP_WORDS.get(re.sub(r"\s+", "", m.group(1)), ()) if m else ()
+
+
 def check_majors(majors: List[str], p: StudentProfile, scope: str) -> List[Check]:
     if not majors:
         return []
+    group_hit = [m for m in majors if p.major_group and p.major_group in _entry_groups(m)]
+    if group_hit:
+        return [Check("major", PASS, "학과 계열 해당 ({})".format(", ".join(majors)), scope)]
     if p.major is None:
         return [Check("major", UNKNOWN, "학과 정보 없음 (공고 대상: {})".format(", ".join(majors)), scope)]
     hit = any(_norm_words(m) in _norm_words(p.major) or _norm_words(p.major) in _norm_words(m) for m in majors)
@@ -394,7 +440,7 @@ def check_text_conditions(special: List[str], others: List[str], exclusions: Lis
         out.append(Check("special", UNKNOWN if hit is None else (PASS if hit else FAIL),
                          "특수 신분 {}: {}".format("해당" if hit else ("확인 필요" if hit is None else "미해당"), s), scope))
     for o in others:
-        out.append(Check("other", UNKNOWN, "확인 필요: {}".format(o), scope))
+        out.append(_self_check(o, scope) or Check("other", UNKNOWN, "확인 필요: {}".format(o), scope))
     for ex in exclusions:
         tags = vocab.status_tags(ex) - {vocab.ENROLLED}
         if tags:
@@ -402,8 +448,14 @@ def check_text_conditions(special: List[str], others: List[str], exclusions: Lis
         elif re.search(r"등록금", ex) and re.search(r"면제|자부담금이?\s*없", ex):
             out.append(Check("exclusion", _inv(p.tuition_fully_waived), "등록금 전액 면제자 제외", scope))
         else:
-            out.append(Check("exclusion", UNKNOWN, "제외 조건 확인: {}".format(ex), scope))
+            out.append(_self_check(ex, scope) or Check("exclusion", UNKNOWN, "제외 조건 확인: {}".format(ex), scope))
     return out
+
+
+def _self_check(text: str, scope: str) -> Optional[Check]:
+    """학생이 신청할 때 스스로 확인하는 문장(징계 이력, 중복 수혜, 서류 제출 가능 등)은 충족 판정을 막지 않는다 (config/self_attest_rules.json)."""
+    from . import self_attest
+    return Check("self", PASS, "본인 확인: {}".format(text), scope) if self_attest.match(text) else None
 
 
 # ================================================================== 구형식 보정
@@ -501,7 +553,10 @@ def _finish(elig: Dict[str, Any], common: List[Check], variant_checks, defer) ->
             checks = [_defer(c) if (c.status == FAIL and c.key in defer) else c for c in checks]
         checks = _uniq(checks)
         results.append(VariantResult(name=name, verdict=_verdict(checks), amount=v.get("amount"), checks=checks,
-                                     apply_start=v.get("apply_start"), apply_end=v.get("apply_end")))
+                                     apply_start=v.get("apply_start"), apply_end=v.get("apply_end"),
+                                     documents=[d for d in v.get("documents") or [] if isinstance(d, str) and d.strip()],
+                                     evaluation=[e for e in v.get("evaluation") or [] if isinstance(e, dict)], recommender=v.get("recommender"),
+                                     criteria=[c for c in v.get("criteria") or [] if isinstance(c, str) and c.strip()]))
     ev.variants = results
     alive = [r for r in results if r.verdict != NO_MATCH]
     if not alive:

@@ -1,0 +1,175 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9236",
+ "title": "제 29회 두을장학",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-09-30",
+ "summary": "26-2학기 기준 국내 4년제 1학년 2학기 재학 여대생, 26년 1학기 15학점 이상·3.5/4.5 이상, 등록금 전액 지원",
+ "url": "https://buly.kr/CsmLZCZ",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "제29기 두을장학생",
+  "foundation": "두을장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-09-30",
+  "org_deadline": null,
+  "recruit_count": "30명",
+  "amount": "2학년 1학기~졸업 시까지 등록금 전액 + 학기당 자기계발비 90만원",
+  "apply_how": "두을장학재단 홈페이지 온라인 지원서 작성 및 구비서류 PDF 업로드",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [
+   1
+  ],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 3.5,
+   "scale": 4.5,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [],
+   "notes": "26년 정규 1학기 성적 기준",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": 15.0,
+   "min_completed_semesters": null,
+   "notes": "26년 정규 1학기 총 15학점 이상 이수"
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": "내국인",
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [],
+  "documents": [
+   "대학교 재학증명서",
+   "대학교 성적증명서",
+   "가족관계증명서 또는 등본",
+   "학자금 지원구간 통지서"
+  ],
+  "selection": {
+   "method": "1차 서류전형 합격자에 한해 2차 면접 실시",
+   "priority": [
+    "학자금 지원구간",
+    "전공(이공계)",
+    "입상경력",
+    "봉사활동",
+    "어학등급 등 가점"
+   ]
+  },
+  "summary": "26-2학기 기준 국내 4년제 1학년 2학기 재학 여대생, 26년 1학기 15학점 이상·3.5/4.5 이상, 등록금 전액 지원",
+  "gender": "F",
+  "school": {
+   "types": [
+    "UNIV4"
+   ],
+   "excluded_types": [
+    "CYBER",
+    "OPEN_UNIV"
+   ]
+  },
+  "recommendation": {
+   "required": false,
+   "from": []
+  },
+  "deadline_kind": "FOUNDATION",
+  "obligations": [
+   "상·하반기 워크숍 참여"
+  ],
+  "review_criteria": [
+   "두을장학재단의 인재상에 공감하며 차세대 여성지도자가 되기를 희망하는 자"
+  ],
+  "procedure": [
+   {
+    "name": "1차 서류전형"
+   },
+   {
+    "name": "2차 면접"
+   },
+   {
+    "name": "합격발표"
+   }
+  ],
+  "criteria": [
+   "학자금 지원구간, 전공(이공계), 입상경력, 봉사활동, 어학등급 등에 따"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "2학년 1학기~졸업 시까지 등록금 전액 (학점 및 활동평가 후 계속지급 평가)",
+    "section": "선발혜택",
+    "source": "이미지",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "1차 서류전형 합격자에 한하여 2차 면접을 실시합니다",
+    "section": "기타안내",
+    "source": "이미지",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

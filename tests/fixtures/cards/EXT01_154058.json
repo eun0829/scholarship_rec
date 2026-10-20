@@ -1,0 +1,224 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "154058",
+ "title": "2027년도 한국지도자육성장학재단 일반장학생 선발 안내",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-11-03",
+ "summary": "대학 추천으로 3학년 1학기 등록예정, 전체 85점 이상 학생 대상 등록금 또는 학기당 350만원 지원",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/154058/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2027년도 한국지도자육성장학재단 일반장학생",
+  "foundation": "한국지도자육성장학재단",
+  "apply_type": "SCHOOL",
+  "apply_start": "2026-10-16",
+  "apply_end": "2026-11-03",
+  "org_deadline": "2026-11-10",
+  "recruit_count": "100명 이내",
+  "amount": "택1: 등록금(수업료) 전액 또는 학업지원금 학기당 350만원 (최대 2년·4개학기)",
+  "apply_how": "통합정보시스템 학사행정>장학>학과선발장학신청에서 신청·파일 업로드, 학교 추천 후 재단 우편 접수",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [
+   2,
+   3
+  ],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "휴학"
+   ],
+   "min_remaining_semesters": null,
+   "notes": "27년도 1학기 휴학예정자는 추천 제외"
+  },
+  "gpa": {
+   "min": 85.0,
+   "scale": 100.0,
+   "basis": "CUMULATIVE",
+   "alternatives": [],
+   "notes": "전체학기 백분율 성적",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": 12.0,
+   "min_completed_semesters": null,
+   "notes": "매 정규학기 12학점 이상 이수"
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": "내국인",
+  "special_status": [],
+  "other_conditions": [
+   "학칙에 의한 징계사실(학사징계 포함)이 없는 자",
+   "전문대학에 한해 3학년 지원자가 없을 경우 2학년 1학기 등록예정자 추천가능",
+   "학자금지원제한대학은 추천대상교에서 제외"
+  ],
+  "variants": [],
+  "exclusions": [
+   "등록금 지원 유형: 타 장학금으로 등록금 전액 수혜 시 지원중단"
+  ],
+  "documents": [
+   "장학생 지원서",
+   "지도교수 추천서",
+   "자기소개서",
+   "개인정보 수집동의서",
+   "의무사항 참여동의서",
+   "소속대학 성적증명서",
+   "대학의 공개선발 증빙서류",
+   "우대사항 증빙서류(선택)"
+  ],
+  "selection": {
+   "method": "대학추천 → 서류심사 → 면접심사 → 최종선발",
+   "priority": [
+    "리더십활동 유경험자·특별재능 보유자 가산점"
+   ]
+  },
+  "summary": "대학 추천으로 3학년 1학기 등록예정, 전체 85점 이상 학생 대상 등록금 또는 학기당 350만원 지원",
+  "school": {
+   "types": [
+    "UNIV4",
+    "COLLEGE"
+   ]
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PROFESSOR",
+    "DEAN"
+   ]
+  },
+  "deadline_kind": "FOUNDATION",
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "등록금 지원 유형: 타 장학금으로 등록금 전액 수혜 시 지원중단"
+   }
+  ],
+  "obligations": [
+   "리더십연수 연 1회(1~2월) 참여 및 소감문 제출",
+   "멘토링 등 대외활동 참여",
+   "면접심사 불참 시 자동 자격상실"
+  ],
+  "review_criteria": [
+   "우대(입학 후 취득분): 대한민국인재상, 대통령상·국무총리상, 장관·광역단체장상, 전국규모 공모전 입상, 총학생회장·부회장"
+  ],
+  "procedure": [
+   {
+    "name": "서류심사 합격자 발표",
+    "when": "11/24"
+   },
+   {
+    "name": "면접심사",
+    "when": "11/28"
+   },
+   {
+    "name": "최종합격자 발표",
+    "when": "12/04"
+   }
+  ],
+  "criteria": [
+   "서류심사 시 우대사항 가산점 부여"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "학칙에 의한 징계사실(학사징계 포함)이 없는 자",
+    "section": "자격조건",
+    "source": "첨부6",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "전문대학에 한해 3학년 지원자가 없을 경우 2학년 1학기 등록예정자 추천가능",
+    "section": "자격조건",
+    "source": "첨부6",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "학자금지원제한대학은 추천대상교에서 제외",
+    "section": "지원절차",
+    "source": "첨부8",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "지원학기에 편입학 예정인 학생은 지원 불가",
+    "section": "지원자격",
+    "source": "첨부8",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "가·나 유형 중 하나만 선택, 동시지원 및 지원 후 유형변경 불가",
+    "section": "장학금 유형",
+    "source": "첨부6",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "최대 2년(정규 4개학기), 정규학기 초과 미지원, 학적변동 시 지급종료 가능",
+    "section": "지원기간",
+    "source": "첨부6",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "지원자 개별 접수 불가, 대학에서 보낸 추천서류에 한해 접수",
+    "section": "접수방법",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

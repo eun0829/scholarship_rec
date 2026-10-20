@@ -1,0 +1,924 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9210",
+ "title": "춘천시 봄내장학 (2026년 하반기)",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-10-07",
+ "summary": "춘천시 1년 이상 거주 고·대학생 대상 봄내장학, 유형별 자격·추천자 상이, 10/7 마감",
+ "url": "http://ccbomnae.or.kr/user/sub5/sub5-1.php?id=&form=read.php&num=222",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "춘천시 봄내장학 (2026년 하반기)",
+  "foundation": "(재)춘천인재육성장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-28",
+  "apply_end": "2026-10-07",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "대학생 최대 100만원 (유형별 상이)",
+  "apply_how": "구글폼 신청+서류 방문·우편(애향은 주소지 행정복지센터), 추천서 필요",
+  "target_levels": [
+   "MIDDLE",
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "휴학"
+   ],
+   "min_remaining_semesters": null,
+   "notes": "대학생: 휴학생·정규학기 초과등록 학생 신청 불가"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "소득구간 기준 없음, 평가비율에 생활수준 포함",
+   "basis": "NARRATIVE"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "유형별로 거주기준이 달라 유형에 기재"
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "대학교 신입생의 경우, 대학수학능력시험 성적(9등급 기준). 수능 미응시자는 고3 2학기 내신 성적"
+  ],
+  "variants": [
+   {
+    "name": "애향-저소득자녀(손)",
+    "amount": null,
+    "target_levels": [
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [],
+    "special_groups": [
+     {
+      "code": "BASIC_LIVELIHOOD",
+      "scope": "SELF",
+      "mode": "REQUIRED"
+     },
+     {
+      "code": "BASIC_LIVELIHOOD",
+      "scope": "FAMILY",
+      "mode": "REQUIRED"
+     },
+     {
+      "code": "NEAR_POOR",
+      "scope": "SELF",
+      "mode": "REQUIRED"
+     },
+     {
+      "code": "NEAR_POOR",
+      "scope": "FAMILY",
+      "mode": "REQUIRED"
+     },
+     {
+      "code": "SINGLE_PARENT",
+      "scope": "SELF",
+      "mode": "REQUIRED"
+     },
+     {
+      "code": "SINGLE_PARENT",
+      "scope": "FAMILY",
+      "mode": "REQUIRED"
+     }
+    ],
+    "documents": [
+     "기초생활수급·차상위·한부모가정·조부모가정 등 증명서류"
+    ],
+    "evaluation": [
+     {
+      "item": "성적",
+      "percent": 40
+     },
+     {
+      "item": "생활수준",
+      "percent": 50
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "읍면동장"
+   },
+   {
+    "name": "애향-통리반장자녀",
+    "amount": null,
+    "target_levels": [
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [
+     "공고일 현재 이·통·반장으로 2년 이상 재직자 본인 또는 자녀"
+    ],
+    "documents": [
+     "통리반장 재직증명서"
+    ],
+    "evaluation": [
+     {
+      "item": "통리반장 경력",
+      "percent": 20
+     },
+     {
+      "item": "성적",
+      "percent": 30
+     },
+     {
+      "item": "생활수준",
+      "percent": 40
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "읍면동장"
+   },
+   {
+    "name": "애향-시정유공 본인·자녀",
+    "amount": null,
+    "target_levels": [
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [
+     "시장·강원도지사·중앙부처 장의 포상을 받은 후 1년이 경과하지 않은 본인 또는 자녀(시·도청·중앙부처 내부직원 수상 제외)"
+    ],
+    "documents": [
+     "포상 증빙자료"
+    ],
+    "evaluation": [
+     {
+      "item": "성적",
+      "percent": 40
+     },
+     {
+      "item": "생활수준",
+      "percent": 50
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "읍면동장"
+   },
+   {
+    "name": "애향-환경공원 주변자녀",
+    "amount": null,
+    "target_levels": [
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시 혈동2리",
+        "강원특별자치도 춘천시 팔미3리",
+        "강원특별자치도 춘천시 증2리"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시 혈동2리",
+        "강원특별자치도 춘천시 팔미3리",
+        "강원특별자치도 춘천시 증2리"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [],
+    "evaluation": [
+     {
+      "item": "성적",
+      "percent": 40
+     },
+     {
+      "item": "생활수준",
+      "percent": 50
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "읍면동장"
+   },
+   {
+    "name": "성적우수",
+    "amount": null,
+    "target_levels": [
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 4.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [],
+    "evaluation": [
+     {
+      "item": "성적",
+      "percent": 70
+     },
+     {
+      "item": "생활수준",
+      "percent": 20
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장·학장·학교장"
+   },
+   {
+    "name": "특기",
+    "amount": null,
+    "target_levels": [
+     "MIDDLE",
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [
+     "공고일로부터 1년 이내 광역시·도 단위 대회 1위 또는 국제·전국대회 3위 이상 입상자(단체전은 단체 추천 1인)"
+    ],
+    "documents": [
+     "1년 이내 수상실적 증빙(수상자 성명 기재 상장)"
+    ],
+    "evaluation": [
+     {
+      "item": "수상성적",
+      "percent": 70
+     },
+     {
+      "item": "생활수준",
+      "percent": 20
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장·학장·학교장"
+   },
+   {
+    "name": "주소이전",
+    "amount": null,
+    "target_levels": [
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "UNKNOWN",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 0.25,
+       "years_basis": "공고일 현재 3개월 이상 1년 미만"
+      },
+      {
+       "type": "SCHOOL_LOCATION",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ]
+      }
+     ]
+    },
+    "other_conditions": [
+     "타 지역 학생으로 공고일 현재 3개월(90일) 이상~1년(365일) 미만 춘천시로 주소 이전, 최대 1회 지급"
+    ],
+    "evaluation": [
+     {
+      "item": "성적",
+      "percent": 50
+     },
+     {
+      "item": "생활수준",
+      "percent": 40
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장·학장·학교장"
+   },
+   {
+    "name": "원격대학",
+    "amount": "최대 50만원",
+    "target_levels": [
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [
+     "방송대학·통신대학·방송통신대학 및 사이버대학 재학생"
+    ],
+    "evaluation": [
+     {
+      "item": "성적",
+      "percent": 40
+     },
+     {
+      "item": "생활수준",
+      "percent": 50
+     },
+     {
+      "item": "봉사",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장·학장·학교장"
+   },
+   {
+    "name": "세인트존스대학교",
+    "amount": "500만원",
+    "target_levels": [
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 3
+      },
+      {
+       "type": "GRADUATED_SCHOOL",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ]
+      }
+     ]
+    },
+    "other_conditions": [
+     "세인트존스대학교 입학생 및 재학생"
+    ],
+    "recommender": "학교장"
+   },
+   {
+    "name": "자원봉사 우수",
+    "amount": null,
+    "target_levels": [
+     "MIDDLE",
+     "HIGH",
+     "UNIV"
+    ],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "강원특별자치도 춘천시"
+       ],
+       "min_years": 1
+      }
+     ]
+    },
+    "other_conditions": [
+     "최소봉사시간(26년 상반기) 대학생 50시간"
+    ],
+    "evaluation": [
+     {
+      "item": "봉사",
+      "percent": 100
+     }
+    ],
+    "recommender": "학교장"
+   }
+  ],
+  "exclusions": [
+   "직전학기(26년 상반기) 본 재단 장학생의 경우 신청 불가 (저소득유형 예외)",
+   "타 장학금 또는 재단 장학금 간 중복신청 불가",
+   "장학금 지원을 받는 동안 등록금 범위를 초과하여 중복 지원 불가(서약서)"
+  ],
+  "documents": [
+   "지원신청서·신청인 서약서",
+   "장학금 수혜여부 확인서·개인정보 동의서",
+   "지원대상자 추천서",
+   "주민등록초본(최근 5년 주소이력)",
+   "가족관계증명서",
+   "재학증명서",
+   "등록금 납부고지서 또는 영수증(대학생)",
+   "직전학기 성적증명서",
+   "부모 건강보험료 납부확인서",
+   "보통예금 통장사본",
+   "봉사활동 확인서(봉사 반영자)"
+  ],
+  "selection": {
+   "method": "유형별 평가비율에 따른 서류 심사",
+   "priority": [
+    "동점 시 생활수준이 어려운 사람 우선"
+   ]
+  },
+  "summary": "춘천시 1년 이상 거주 고·대학생 대상 봄내장학, 유형별 자격·추천자 상이, 10/7 마감",
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRESIDENT",
+    "DEAN",
+    "PRINCIPAL",
+    "OTHER"
+   ]
+  },
+  "deadline_kind": "FOUNDATION",
+  "exclusion_items": [
+   {
+    "type": "PRIOR_RECENT",
+    "text": "직전학기(26년 상반기) 본 재단 장학생의 경우 신청 불가 (저소득유형 예외)"
+   },
+   {
+    "type": "CONCURRENT_ANY",
+    "text": "타 장학금 또는 재단 장학금 간 중복신청 불가"
+   },
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "장학금 지원을 받는 동안 등록금 범위를 초과하여 중복 지원 불가(서약서)"
+   }
+  ],
+  "obligations": [
+   "자격 상실·허위 서류·1학기 이상 학업 미계속 시 선발 취소 및 장학금 반납"
+  ],
+  "procedure": [
+   {
+    "name": "서류 심사"
+   },
+   {
+    "name": "선발결과 개별연락",
+    "when": "2026년 11월 중"
+   },
+   {
+    "name": "장학증서 수여(수여식 또는 우편)"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "26년 2학기 납부금(등록금)을 전액 면제받은 학생, 휴학생, 정규학기 초과등록 학생 신청 불가",
+    "section": "선발개요(대학생)",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "성적 비교 산출이 곤란한 경우, 신청 불가(학점은행제, 시간제 등)",
+    "section": "선발개요(대학생)",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "26년 2학기 납부금(등록금)을 일부 면제 또는 지원받는 경우, 실제 납부액(자부담금)에 해당하는 금액만 지급",
+    "section": "선발개요(대학생)",
+    "source": "첨부1",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "대학교 신입생의 경우, 대학수학능력시험 성적(9등급 기준). 수능 미응시자는 고3 2학기 내신 성적",
+    "section": "선발개요(대학생)",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "통리반장 자녀: 공고일 현재 이·통·반장으로 2년 이상 재직자 본인 또는 자녀",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "시정유공 본인·자녀: 시장·강원도지사·중앙부처 장의 포상을 받은 후 1년이 경과하지 않은 본인 또는 자녀(시·도청·중앙부처 내부직원 수상 제외)",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "특기: 공고일로부터 1년 이내 광역시·도 단위 대회 1위 또는 국제·전국대회 3위 이상 입상자(단체전은 단체 추천 1인)",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "주소이전: 타 지역 학생으로 공고일 현재 3개월(90일) 이상~1년(365일) 미만 춘천시로 주소 이전, 최대 1회 지급",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "원격대학: 방송대학·통신대학·방송통신대학 및 사이버대학 재학생",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "세인트존스대학교: 세인트존스대학교 입학생 및 재학생",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "자원봉사 우수: 최소봉사시간(26년 상반기) 대학생 50시간",
+    "section": "선발기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

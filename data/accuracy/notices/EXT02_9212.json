@@ -1,0 +1,240 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9212",
+ "title": "문주장학재단 AI·ICT 인재장학 (2026년 하반기)",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-08",
+ "summary": "서초구 1년 이상 거주 AI·ICT 전공 2학년 이상 대학생 30명, 2학기 등록금 전액 지원",
+ "url": "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=411317&cbIdx=57",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "문주장학재단 AI·ICT 인재장학 (2026년 하반기)",
+  "foundation": "문주장학재단 (서초구)",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-21",
+  "apply_end": "2026-10-08",
+  "org_deadline": null,
+  "recruit_count": "30명",
+  "amount": "2026년 2학기 등록금 전액 (타 등록금성 장학금 수령액 제외 차액 지급)",
+  "apply_how": "서초구청 교육지원과 교육정책팀 방문 또는 등기우편 접수 (마감일 18시 도착분)",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [
+   2,
+   3,
+   4
+  ],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": "2026년 2학기 기준 2학년 이상 학부 재학생"
+  },
+  "gpa": {
+   "min": 3.0,
+   "scale": 4.5,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [
+    {
+     "min": 3.0,
+     "scale": 4.3
+    }
+   ],
+   "notes": "직전학기 평균평점 B0 이상"
+  },
+  "credits": {
+   "min_last_semester": 12.0,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "선발 점수에 학자금 지원구간 반영(20%), 미제출 시 10분위 간주",
+   "basis": "BRACKET"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "서울특별시 서초구"
+     ],
+     "min_years": 1,
+     "years_basis": "접수 마감일(2026-10-08) 기준"
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "서울특별시 서초구"
+     ],
+     "min_years": 1,
+     "years_basis": "접수 마감일(2026-10-08) 기준"
+    }
+   ]
+  },
+  "majors": [
+   "AI, 빅데이터 등 ICT 관련 전공"
+  ],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "등록금성 장학금 수령액이 있으면 차액 지급, 실 납부금액 100만원 미만 시 지원 대상 제외",
+   "1가구당 1명으로 한정"
+  ],
+  "documents": [
+   "장학생 선발 신청서",
+   "개인정보 동의서",
+   "본인 주민등록 등본",
+   "본인 주민등록 초본(주소변동내역 5년)",
+   "2026년 2학기 재학증명서",
+   "직전학기 성적증명서",
+   "2026년 2학기 등록금 납부확인서",
+   "2026년 2학기 장학금 수혜(비수혜) 확인서",
+   "한국장학재단 학자금 지원구간 통지서",
+   "통장사본",
+   "부 또는 모 주민등록 초본(본인 비거주 시)",
+   "가족관계증명서(본인 비거주 시)"
+  ],
+  "selection": {
+   "method": "학업성적(80%)+소득수준(20%) 합산 고득점자 순 선발",
+   "priority": [
+    "동점 시 소득수준→학업성적→수강학점 순"
+   ]
+  },
+  "summary": "서초구 1년 이상 거주 AI·ICT 전공 2학년 이상 대학생 30명, 2학기 등록금 전액 지원",
+  "completed_terms": {
+   "min": 2
+  },
+  "major_groups": [
+   "ENGINEERING"
+  ],
+  "school": {
+   "excluded_types": [
+    "OPEN_UNIV"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "등록금성 장학금 수령액이 있으면 차액 지급, 실 납부금액 100만원 미만 시 지원 대상 제외"
+   },
+   {
+    "type": "OTHER",
+    "text": "1가구당 1명으로 한정"
+   }
+  ],
+  "obligations": [
+   "장학증서 전달식 필수 참석(2026-11-02 예정)"
+  ],
+  "evaluation": [
+   {
+    "item": "학업성적",
+    "percent": 80
+   },
+   {
+    "item": "소득수준",
+    "percent": 20
+   }
+  ],
+  "procedure": [
+   {
+    "name": "선발자 발표",
+    "when": "2026년 10월 중"
+   },
+   {
+    "name": "장학증서 전달식",
+    "when": "11/2 오후 예정"
+   }
+  ],
+  "criteria": [
+   "기존 장학생 미선발자를 우선 선발할 수 있음"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "주민등록상 해외이주 신고자, 영주권자 제외",
+    "section": "지원자격",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "등록금 면제 대학 제외(포스텍, 카이스트 등)",
+    "section": "지원자격",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "학점은행제, 평생교육기관 등은 제외",
+    "section": "지원자격",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "제출 서류는 공고일 이후 발급된 서류의 원본만 인정",
+    "section": "유의사항",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "서류 미비자는 심사 대상에서 제외",
+    "section": "유의사항",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

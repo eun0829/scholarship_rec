@@ -1,0 +1,223 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "153613",
+ "title": "[마감]2026학년도 2학기 어학우수장학금 신청 안내",
+ "category": "IN",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-14",
+ "summary": "5학기 이상 등록한 재학생 대상 어학우수장학금, 선착순 지급이며 예산 소진으로 조기 마감됨",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/153613/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "IN",
+  "scholarship_name": "2026학년도 2학기 어학우수장학금",
+  "foundation": "커뮤니케이션교육센터",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-10-13",
+  "apply_end": "2026-10-14",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "등급별 40~200만원(장려 40·우수 100·최우수2 150·최우수1 200), 재학 중 최대 200만원",
+  "apply_how": "통합정보시스템 어학장학신청 + 졸업어학자격인정신청 동시 등록, 선착순",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "휴학",
+    "수료",
+    "졸업",
+    "학사학위취득유예",
+    "졸업연기(0학점 재학생)"
+   ],
+   "min_remaining_semesters": null,
+   "notes": "신청학기 등록금 완납자만 해당(미납·분납 제외), 계약학과 포함"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "5학기이상 등록한 학(과)부 학적상태기준, 재학생",
+   "최초신청 : 3학년 1학기",
+   "장려 기준: TOEIC 750 또는 OPIc IM2 또는 TOEIC Speaking IM2/120, JPT 750, JLPT N1 100점, 신HSK 5급 195점, TOPIK 5급(외국인전형 유학생) 이상",
+   "편입생 이전 학교 학기도 인정되나, 성적은 본교 학적 취득 이후 성적만 인정됨"
+  ],
+  "variants": [],
+  "exclusions": [
+   "본교 외국어성적우수(신입생) 장학금 수혜자는 신청할 수 없음",
+   "동일 등급 신청 및 지급 불가"
+  ],
+  "documents": [
+   "공인어학시험 성적서(유효기간 내, 진위확인 가능)"
+  ],
+  "selection": {
+   "method": "예산 범위 내 선착순 지급, 센터 성적검증(승인) 후 학생지원팀 재검증",
+   "priority": [
+    "선착순"
+   ]
+  },
+  "summary": "5학기 이상 등록한 재학생 대상 어학우수장학금, 선착순 지급이며 예산 소진으로 조기 마감됨",
+  "transfer": {
+   "mode": "ALLOWED"
+  },
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "본교 외국어성적우수(신입생) 장학금 수혜자는 신청할 수 없음"
+   },
+   {
+    "type": "PRIOR_SAME",
+    "text": "동일 등급 신청 및 지급 불가"
+   }
+  ],
+  "procedure": [
+   {
+    "name": "센터 성적검증(승인)"
+   },
+   {
+    "name": "학생지원팀 재검증·지급",
+    "when": "2027년 1~2월 중"
+   }
+  ],
+  "criteria": [
+   "예산 범위 내 선착순 지급"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "5학기이상 등록한 학(과)부 학적상태기준, 재학생",
+    "section": "대상",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "최초신청 : 3학년 1학기",
+    "section": "대상",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "재학생이라도 신청 당시 등록금 미납 혹은 분납상태인 경우 제외",
+    "section": "장학금 제외",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "장려 기준: TOEIC 750 또는 OPIc IM2 또는 TOEIC Speaking IM2/120, JPT 750, JLPT N1 100점, 신HSK 5급 195점, TOPIK 5급(외국인전형 유학생) 이상",
+    "section": "수혜기준",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "편입생 이전 학교 학기도 인정되나, 성적은 본교 학적 취득 이후 성적만 인정됨",
+    "section": "대상",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "재학기간 동안 1인 최대 2백만원 지급(비연속식)",
+    "section": "유의사항",
+    "source": "첨부1",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "동일 신청기간 동안 중복신청 불가",
+    "section": "유의사항",
+    "source": "첨부1",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "기 수혜대상이 상위 등급의 장학금 신청 시 차액만 지급함",
+    "section": "장학금액 및 지급방법",
+    "source": "첨부1",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "졸업어학자격 미합격 상태에서 신청 시 신청 메뉴에서 어학자격부여 동시 신청",
+    "section": "유의사항",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "성적서 발급번호/QR코드/인증서 번호가 없거나 미리보기·인식 불가 성적서는 반려",
+    "section": "반려 기준",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "장학금은 학적에 등록되어 있는 계좌정보로 입금",
+    "section": "계좌번호 등록 방법",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

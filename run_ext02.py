@@ -54,6 +54,9 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="외부02 드림스폰 수집/추출/저장")
     ap.add_argument("--limit", type=int, help="앞에서 N건만 처리 (마감 임박순, 테스트용)")
     ap.add_argument("--only", nargs="+", help="지정한 글번호(idx)만 처리")
+    ap.add_argument("--recent", type=int, help="시험용: 마감 지난 글까지 포함해 최근 등록순으로 이미 저장된 글을 뺀 새 글 N건 (--include-closed 와 함께)")
+    ap.add_argument("--pages", type=int, nargs="+", help="시험용: 사이트 목록(list.html?page=N)의 이 쪽들만 대상으로 한다 (예: --pages 5 6). 마감 글까지 보려면 --include-closed 와 함께")
+    ap.add_argument("--include-closed", action="store_true", help="시험용: 마감/모집완료 글도 대상에 넣는다 (운영 배치에서는 쓰지 않음)")
     ap.add_argument("--force", action="store_true", help="이미 저장된 글도 다시 처리")
     ap.add_argument("--refresh", action="store_true", help="저장된 글도 상세를 다시 읽어 변경(신청기간)을 확인 (로그인 필요)")
     ap.add_argument("--update-changed", action="store_true", help="이미 완료된 글의 내용이 바뀌었으면 다시 처리 (기본: 건너뜀)")
@@ -85,10 +88,18 @@ def main(argv=None) -> int:
         settings.skip_same_title = False
     cfg = Ext02Config.load()
 
+    if a.recent and not a.include_closed:
+        print("오류: --recent 는 --include-closed 와 함께 쓰세요 (마감 지난 글까지 최근순으로 고르는 시험용 옵션)", file=sys.stderr)
+        return 2
     if a.list_only:
-        adapter = Ext02Adapter(settings, cfg)
+        adapter = Ext02Adapter(settings, cfg, recent=a.recent, include_closed=a.include_closed, pages=a.pages)
         try:
-            rows = adapter.crawl_list()
+            rows = adapter.collect_recent_rows() if a.recent else (adapter.crawl_pages(adapter.pages) if a.pages else adapter.crawl_list())
+            if a.recent:
+                sel = adapter.select(rows)[:a.recent]
+                print(format_list(rows, sel, cfg))
+                print("\n(저장 여부는 DB 를 봐야 알 수 있어 여기서는 빼지 않았습니다. 실제 실행 때 이미 저장된 글은 건너뛰고 새 글 {}건을 채웁니다)".format(a.recent))
+                return 0 if rows else 1
             print(format_list(rows, adapter.select(rows), cfg))
             return 0 if rows else 1
         finally:
@@ -117,9 +128,10 @@ def main(argv=None) -> int:
             from scholarship.common import db
             repo = OracleRepository(db.connect(settings.db_user, settings.db_password, settings.db_dsn, settings.oracle_client_lib))
         adapter = Ext02Adapter(settings, cfg, known_state=repo.get_notice_state, refresh=a.refresh, force=a.force,
-                               limit=a.limit, only=a.only)
+                               limit=a.limit, only=a.only,
+                               recent=a.recent, include_closed=a.include_closed, pages=a.pages)
         pipe = Pipeline(settings, adapter, repo, ai, force=a.force, dump_dir=Path(a.dump_dir) if a.dump_dir else None)
-        summ = pipe.run(limit=a.limit, only=a.only)
+        summ = pipe.run(limit=a.limit or a.recent, only=a.only)
         return 1 if summ.failed and summ.failed == summ.total else 0
     except LoginError as e:
         msg = str(e)

@@ -19,3 +19,8 @@ openpyxl>=3.0
 Pillow>=9.0
 # tests
 pytest>=7.0
+# recommend API server (6-B)
+fastapi>=0.110
+uvicorn>=0.27
+# API tests (starlette TestClient)
+httpx>=0.24

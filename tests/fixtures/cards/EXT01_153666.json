@@ -1,0 +1,217 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "153666",
+ "title": "2026년 우양재단 동행 장학생 모집 안내",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-18",
+ "summary": "가족 질병·장애 돌봄과 학업을 병행하는 저소득 대학생 11명에게 100만원 지원, 10/18까지 신청",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/153666/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2026년 우양재단 동행 장학생(가족돌봄청년)",
+  "foundation": "우양재단",
+  "apply_type": "DIRECT",
+  "apply_start": null,
+  "apply_end": "2026-10-18",
+  "org_deadline": null,
+  "recruit_count": "11명",
+  "amount": "1인당 1,000,000원",
+  "apply_how": "신청서 작성 및 서류 구비 후 우양재단 홈페이지 공지의 구글폼으로 제출",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "휴학",
+    "졸업",
+    "초과학기",
+    "학점은행제"
+   ],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 2.0,
+   "eligible_types": [
+    "국민기초생활수급자",
+    "차상위계층",
+    "학자금 지원구간 2구간 이내"
+   ],
+   "notes": "2026년 2학기 기준",
+   "basis": "BRACKET",
+   "bracket_term": "CURRENT_TERM"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "직계가족(부모·조부모·형제자매)의 질병·건강 문제로 돌봄과 학업을 병행하며 생계에 어려움을 겪는 자",
+   "돌봄 대상 가족: 장기요양등급(1~5등급, 인지지원등급)자, 중증장애인, 장기 치료·돌봄이 필요한 정신질환자 중 하나",
+   "돌봄 대상 가족과 신청자 본인의 주민등록상 주소지가 동일해야 함",
+   "국내 정규 4년제 대학 또는 2~3년제 전문대학 재학생"
+  ],
+  "variants": [],
+  "exclusions": [
+   "현재 우양재단 장학금 수혜자 신청 불가"
+  ],
+  "documents": [
+   "장학금신청서+자기소개서+개인정보동의서",
+   "주민등록등본",
+   "재학증명서",
+   "성적증명서",
+   "수급자증명서 또는 차상위계층증명서 또는 학자금지원구간통지서",
+   "가족 돌봄 증빙서류"
+  ],
+  "selection": {
+   "method": "가족 돌봄 상황, 경제적 어려움, 학업 영향, 학생의 자립 의지를 종합 심사",
+   "priority": [
+    "돌봄 대상 가족이 2인 이상인 경우",
+    "동일 조건 시 신규 신청자"
+   ]
+  },
+  "summary": "가족 질병·장애 돌봄과 학업을 병행하는 저소득 대학생 11명에게 100만원 지원, 10/18까지 신청",
+  "special_groups": [
+   {
+    "code": "OTHER",
+    "scope": "FAMILY",
+    "mode": "REQUIRED",
+    "text": "질병·장애 가족 돌봄"
+   }
+  ],
+  "school": {
+   "types": [
+    "UNIV4",
+    "COLLEGE"
+   ],
+   "excluded_types": [
+    "CYBER"
+   ]
+  },
+  "recommendation": {
+   "required": false,
+   "from": []
+  },
+  "deadline_kind": "FOUNDATION",
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "현재 우양재단 장학금 수혜자 신청 불가 (기존 수혜자는 신청 가능)"
+   }
+  ],
+  "review_criteria": [
+   "가족 돌봄 상황과 경제적 어려움, 학업 영향, 학생의 자립 의지 종합 심사"
+  ],
+  "procedure": [
+   {
+    "name": "합격자 발표",
+    "when": "2026-10-30"
+   },
+   {
+    "name": "장학금 지급",
+    "when": "2026년 11월 1주 예정"
+   }
+  ],
+  "criteria": [
+   "돌봄 대상 가족이 2인 이상이면 우선 선발",
+   "동일 조건이면 신규 신청자 우선"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "직계가족(부모·조부모·형제자매)의 질병·건강 문제로 돌봄과 학업을 병행하며 생계에 어려움을 겪는 자",
+    "section": "지원자격",
+    "source": "이미지",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "돌봄 대상 가족: 장기요양등급(1~5등급, 인지지원등급)자, 중증장애인, 장기 치료·돌봄이 필요한 정신질환자 중 하나",
+    "section": "지원자격",
+    "source": "이미지",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "돌봄 대상 가족과 신청자 본인의 주민등록상 주소지가 동일해야 함",
+    "section": "지원자격",
+    "source": "이미지",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "한 가정당 1명만 신청 가능",
+    "section": "지원자격",
+    "source": "이미지",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "국내 정규 4년제 대학 또는 2~3년제 전문대학 재학생",
+    "section": "지원자격",
+    "source": "이미지",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

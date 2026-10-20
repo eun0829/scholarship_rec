@@ -181,7 +181,8 @@
    "notice_path": "grades",
    "op": "in",
    "detect_hints": [
-    "[1-6]\\s*학년"
+    "[1-6]\\s*학년",
+    "최종\\s*학년"
    ],
    "description": "grades (대상 학년 목록)",
    "aliases": [
@@ -212,7 +213,9 @@
    "custom": "completed_terms",
    "detect_hints": [
     "\\d+\\s*개?\\s*학기\\s*(이상|이하|이수|이내)",
-    "학기째"
+    "학기째",
+    "학사\\s*\\d+\\s*년\\s*(이상|을|이상을)?\\s*(이수|마쳐|마친|수료)",
+    "\\d+\\s*학년\\s*(을\\s*)?(수료|마친|마쳐)"
    ],
    "description": "completed_terms.min / completed_terms.max (몇 학기를 이수했는지)"
   },
@@ -331,7 +334,8 @@
    "op": "in",
    "detect_hints": [
     "입학\\s*(년도|연도)",
-    "신입생"
+    "신입생",
+    "신입생(만|에게?만|에\\s*한|으로\\s*한|\\s*대상)"
    ],
    "description": "entry_years / new_student_only (신입생 대상이거나 특정 입학년도 대상)"
   },

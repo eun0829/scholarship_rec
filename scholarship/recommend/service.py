@@ -18,9 +18,15 @@ from ..common.registry import load_registry
 from . import matcher
 from .matcher import is_v2
 from .dedupe import merge_candidates
+from . import feasibility as F
+from . import feasibility_ai as FAI
+from . import feasibility_rules as FR
+from . import condition_summary as CS
+from . import present as P_
 from .followup import MAX_QUESTIONS, MAX_ROUNDS, build_follow_up
 from .result_format import RESULT_VERSION                       # 결과 JSON 형식 버전 (정의와 호환 규칙은 result_format.py)
 from .student_text import parse_student_text
+from .present import KIND_LABEL, NOTE as PRESENT_NOTE, SYMBOL as PRESENT_SYMBOL, WARN as PRESENT_WARN, split_message
 from .table import render_table, truncate
 from .matcher import CONDITIONAL, MATCH, NO_MATCH, UNKNOWN
 from ..common.ai.schema_v3 import SCHOOL_PROGRAMS
@@ -40,7 +46,9 @@ def _warnings(c: Dict[str, Any], today: date, days_left: int, urgent_days: int) 
     def add(code, msg):
         w.append({"code": code, "message": msg})
 
-    if days_left == 0:
+    if days_left < 0:
+        add("CLOSED", "마감이 지난 공고입니다 (시험용 전체 조회)")
+    elif days_left == 0:
         add("LAST_DAY", "오늘 마감입니다")
     elif days_left <= urgent_days:
         add("URGENT", "마감까지 {}일 남았습니다".format(days_left))
@@ -111,10 +119,15 @@ def evaluation_fields(ev: matcher.Evaluation, today: Optional[date] = None) -> D
         "to_confirm": ev.to_confirm,
         "matched_variants": [{"name": v.name, "verdict": v.verdict, "verdict_label": VERDICT_LABEL[v.verdict], "amount": v.amount,
                               "apply_start": v.apply_start, "apply_end": v.apply_end, "expired": bool(iso and v.apply_end and v.apply_end < iso),
-                              "preferences": v.preferences, "to_confirm": v.to_confirm}
+                              "preferences": v.preferences, "to_confirm": v.to_confirm, "documents": v.documents,
+                              **({"evaluation": v.evaluation} if v.evaluation else {}), **({"recommender": v.recommender} if v.recommender else {}),
+                              **({"criteria": v.criteria} if v.criteria else {})}
                              for v in ev.matched_variants],
-        "unmatched_variants": [{"name": v.name, "reason": v.fails[0] if v.fails else ""} for v in ev.variants if v.verdict == NO_MATCH],
+        "unmatched_variants": [{"name": v.name, "reason": v.fails[0] if v.fails else "", "amount": v.amount, **({"reasons": list(v.fails)} if len(v.fails) > 1 else {}),
+                                **({"evaluation": v.evaluation} if v.evaluation else {}), **({"criteria": v.criteria} if v.criteria else {})}
+                               for v in ev.variants if v.verdict == NO_MATCH],
         "passed": ev.passed,
+        "self_confirm": ev.self_confirm,
         "fail_reasons": ev.fail_reasons,
         "assumptions": ev.assumptions,
         # 판정(충족·조건부·미달)에 영향을 주지 않고 따로 표시하는 항목
@@ -161,7 +174,39 @@ def _item(c: Dict[str, Any], ev: matcher.Evaluation, today: date, days_left: int
         "schema_version": 3 if matcher.is_v3(elig) else (2 if is_v2(elig) else 1), "status": c.get("status"),
     }
     d.update(evaluation_fields(ev, today))
+    sel = _selection_info(elig)
+    if sel:
+        d["selection_info"] = sel                                            # 선택 필드: 선발 방식·진행 절차 (공통 값, 있을 때만)
+    labels = [{"text": u["text"], "label": u["label"]} for u in elig.get("unmodeled_conditions") or []
+              if isinstance(u, dict) and u.get("label") and u.get("text") and u.get("kind") in ("ELIGIBILITY", "EXCLUSION")]
+    if labels:
+        d["condition_labels"] = labels                                       # 선택 필드: 문장 조건의 짧은 이름 (화면의 조건 묶음 이름으로 쓴다)
+    d["benefit"] = _benefit(d)                                               # 선택 필드: 혜택 구역용 (기존 amount, notes 는 그대로)
     return d
+
+
+def _selection_info(elig: Dict[str, Any]) -> Dict[str, Any]:
+    """공고 공통의 선발 정보. 평가 비율·추천자는 유형별 값이 있으면 matched_variants 에 따로 담고, 여기에는 공통(최상위) 값만 둔다."""
+    out: Dict[str, Any] = {}
+    if elig.get("evaluation"):
+        out["evaluation"] = elig["evaluation"]
+    if elig.get("recommender"):
+        out["recommender"] = elig["recommender"]
+    if elig.get("procedure"):
+        out["procedure"] = elig["procedure"]
+    if elig.get("criteria"):
+        out["criteria"] = elig["criteria"]
+    return out
+
+
+def _benefit(d: Dict[str, Any]) -> Dict[str, Any]:
+    return {"amount": d.get("amount"),
+            "variants": [{"type": v["name"], "amount": v["amount"]} for v in d.get("matched_variants") or [] if v.get("amount")],
+            "limits": [n["text"] for n in d.get("notes") or [] if n.get("kind") == "BENEFIT_LIMIT"]}
+
+
+EXCLUDED_DETAIL_KEYS = ("summary", "apply_start", "apply_end", "days_left", "benefit", "passed", "self_confirm", "fail_reasons", "to_confirm", "matched_variants", "unmatched_variants",
+                        "prerequisites", "preferences", "school_programs", "notes", "warnings", "assumptions", "selection_info", "condition_labels")
 
 
 def _unknown_count(it: Dict[str, Any]) -> int:
@@ -170,12 +215,28 @@ def _unknown_count(it: Dict[str, Any]) -> int:
 
 
 class Recommender:
-    def __init__(self, source, settings: Optional[Settings] = None):
+    def __init__(self, source, settings: Optional[Settings] = None, feasibility_ai=None, condition_summarizer=None):
         self.source = source
         self.s = settings or Settings()
+        self._rules = FR.load_rules(self.s.feasibility_rules_file or None)                  # 실현 가능성 규칙 (config/feasibility_rules.json). 잘못되면 여기서 바로 알린다
+        FR.use(self._rules)
+        self._summ = condition_summarizer if condition_summarizer is not None else CS.build(self.s, self._rules)      # 조건이 많은 조건부 건 요약 (AI 없으면 코드 묶기)
+        self._fai = feasibility_ai if feasibility_ai is not None else FAI.build(self.s, rules=self._rules)       # 조건부 건 보조 라벨 (없으면 규칙값만)
 
     def recommend(self, profile_data: Dict[str, Any], today: Optional[date] = None) -> Dict[str, Any]:
         return self._assemble(*self._evaluate_all(profile_data, today))
+
+    def evaluate_selected(self, profile_data: Dict[str, Any], ids, today: Optional[date] = None) -> Dict[str, Dict[str, Any]]:
+        """고른 공고만 판정 결과 요약을 돌려준다 (챗봇이 '시스템 판정'으로 쓴다). {공고 id: {title, url, + evaluation_fields}}.
+        추천 목록에서 빠지는 공고(마감·검수 대기·분류 밖)는 결과에 없다. 병합된 이전 공고의 id 로 물어도 대표 공고의 결과를 준다."""
+        today, built, p, raw, n_filtered, cands, evals = self._evaluate_all(profile_data, today)
+        want = set(ids)
+        out: Dict[str, Dict[str, Any]] = {}
+        for c, ev in evals:
+            mine = {notice_id(c)} | {"{}:{}".format(c.get("src_cd"), m.get("src_id")) for m in c.get("merged_from") or [] if isinstance(m, dict)}
+            for nid in mine & want:
+                out[nid] = {"title": c.get("title"), "url": c.get("origin_url"), **evaluation_fields(ev, today)}
+        return out
 
     def _evaluate_all(self, profile_data: Dict[str, Any], today: Optional[date] = None):
         """프로필로 모든 후보 공고를 판정한다. 후속 질문과 변화 비교가 평가 객체(Evaluation)를 쓸 수 있게 결과 조립과 나눠 둔다."""
@@ -183,14 +244,17 @@ class Recommender:
         built = build_profile(profile_data, self.s.default_gpa_scale)       # ProfileError 는 호출자에게 전달
         p = built.profile
         self._fill_school_defaults(p)
-        raw = self.source.list_candidates(today)
+        raw = self.source.list_candidates(date(2000, 1, 1) if self.s.recommend_include_closed else today)     # 시험용: 마감 지난 공고까지 전체
 
         allowed = set(self.s.recommend_categories)
         cands = [c for c in raw if (c.get("category") is None or c.get("category") in allowed) and c.get("elig")]
         if not self.s.recommend_include_need_review:
             cands = [c for c in cands if c.get("status") != "NEED_REVIEW"]
-        cands = [c for c in cands if c.get("apply_end") and (c["apply_end"] - today).days >= self.s.recommend_min_days_left]
-        cands = [c for c in cands if not is_marked_closed(c)]                 # 제목에 [마감] 표시가 붙은 공고는 신청 기간이 남아 있어도 뺀다
+        if self.s.recommend_include_closed:
+            cands = [c for c in cands if c.get("apply_end")]
+        else:
+            cands = [c for c in cands if c.get("apply_end") and (c["apply_end"] - today).days >= self.s.recommend_min_days_left]
+            cands = [c for c in cands if not is_marked_closed(c)]                 # 제목에 [마감] 표시가 붙은 공고는 신청 기간이 남아 있어도 뺀다
         n_filtered = len(cands)
         if self.s.recommend_dedupe:
             cands = merge_candidates(cands)
@@ -210,10 +274,13 @@ class Recommender:
             elif ev.verdict == CONDITIONAL:
                 cond.append(it)
             else:
-                excluded.append({"id": notice_id(c), "src_cd": c.get("src_cd"), "src_id": c.get("src_id"), "title": c.get("title"), "url": c.get("origin_url"),
-                                 "reasons": ev.fail_reasons[:3]})
+                ex = {"id": notice_id(c), "src_cd": c.get("src_cd"), "src_id": c.get("src_id"), "title": c.get("title"), "url": c.get("origin_url"),
+                      "reasons": ev.fail_reasons[:3]}
+                if self.s.recommend_excluded_detail:                           # 선택 필드: 미달 카드에도 요약·혜택·조건을 보여 주기 위한 재료
+                    ex.update({k: it.get(k) for k in EXCLUDED_DETAIL_KEYS if k in it})
+                excluded.append(ex)
         match.sort(key=lambda x: (x["days_left"], x["src_id"] or ""))
-        cond.sort(key=lambda x: (_unknown_count(x), x["days_left"], x["src_id"] or ""))
+        self._rank_conditional(cond, p)
         k = self.s.recommend_max_results
         return {
             "result_version": RESULT_VERSION,
@@ -225,6 +292,41 @@ class Recommender:
             "recommended": match[:k], "conditional": cond[:k], "excluded": excluded,
         }
 
+
+    def _rank_conditional(self, cond: List[Dict[str, Any]], p=None) -> None:
+        """조건부 건에 실현 가능성 라벨(feasibility)을 붙이고 쉬운 순으로 정렬한다. AI 는 규칙이 못 정한 문구만 맡고, 실패하면 규칙값으로 간다."""
+        ai: Dict[str, Any] = {}
+        majors = F.majors_for(self._rules, getattr(p, "major_group", None), self.s.recommend_school_majors)
+        if self._fai is not None and cond:
+            try:
+                ai = self._fai.lookup(F.unresolved(cond, self._rules, majors))
+            except Exception:
+                ai = {}
+        for it in cond:
+            it["_f"] = F.feasibility_of(it, self._rules, majors, ai)
+        cond.sort(key=lambda x: (x["_f"]["_sort"], _unknown_count(x), x["days_left"], x["src_id"] or ""))
+        for it in cond:
+            f = it.pop("_f")
+            it["feasibility"] = {"level": f["level"], "label": f["label"], "reason": f["reason"], "source": f["source"]}
+        self._summarize_conditions(cond, majors)
+
+    def _summarize_conditions(self, cond: List[Dict[str, Any]], majors) -> None:
+        """확인할 조건 행이 많은 조건부 건에 condition_summary(선택 필드)를 붙인다. 표시 쪽이 같은 행 순서를 다시 계산해 인덱스로 가리킨다."""
+        jobs, rows_of = [], {}
+        for it in cond:
+            rows = P_.condition_table(it, P_.confirm_groups(it))["open"]
+            if len(rows) >= self.s.condition_summary_min_rows:
+                jobs.append((it["id"], rows))
+                rows_of[it["id"]] = rows
+        if not jobs:
+            return
+        try:
+            got = self._summ.summarize_many(jobs, majors)
+        except Exception:
+            got = {}
+        for it in cond:
+            if it["id"] in got:
+                it["condition_summary"] = got[it["id"]]
 
     # ------------------------------------------------------------------ 5단계: 후속 질문과 이어 답하기 (서버는 상태를 저장하지 않는다)
     def recommend_step(self, profile_data: Dict[str, Any], answers: Optional[Dict[str, Any]] = None, answers_text: Optional[str] = None,
@@ -324,6 +426,12 @@ def side_lines(prerequisites: List[Dict[str, Any]], preferences: List[Dict[str, 
 def _variant_label(v: Dict[str, Any]) -> str:
     end = v.get("apply_end")
     return "{}({}{})".format(v["name"], v["verdict_label"], (", ~" + end[5:] + (" 마감 지남" if v.get("expired") else "")) if end else "")
+def _confirm_line(msg: str, variant: Optional[str] = None) -> str:
+    """목록 출력의 확인 항목 한 줄: `□ 확인 필요: …`, `▲ 제외 조건: …`, 유형별이면 `□ [유형] 확인 필요: …` (앞머리 `?` 대신 기호)."""
+    kind, text = split_message(msg)
+    return "{} {}{}: {}".format(PRESENT_SYMBOL[kind], "[{}] ".format(variant) if variant else "", KIND_LABEL[kind], text)
+
+
 def format_text(result: Dict[str, Any], show_excluded: bool = False) -> str:
     L: List[str] = []
     c = result["counts"]
@@ -347,9 +455,9 @@ def format_text(result: Dict[str, Any], show_excluded: bool = False) -> str:
                 L.append("    해당 가능 유형: " + ", ".join(_variant_label(v) for v in it["matched_variants"]))
             if it["unmatched_variants"]:
                 L.append("    미달 유형: " + ", ".join(v["name"] for v in it["unmatched_variants"]))
-            lines = ["? " + m for m in it["to_confirm"]]
+            lines = [_confirm_line(m) for m in it["to_confirm"]]
             for v in it["matched_variants"]:
-                lines += ["? [{}] {}".format(v["name"], m) for m in v["to_confirm"]]
+                lines += [_confirm_line(m, v["name"]) for m in v["to_confirm"]]
             for m in lines[:6]:
                 L.append("    " + m)
             if len(lines) > 6:
@@ -358,9 +466,9 @@ def format_text(result: Dict[str, Any], show_excluded: bool = False) -> str:
             for line in side_lines(it.get("prerequisites") or [], prefs, it.get("school_programs") or [], it.get("notes") or []):
                 L.append("    " + line)
             for a in it.get("assumptions") or []:
-                L.append("    ※ 가정: " + a)
+                L.append("    {} 가정: {}".format(PRESENT_SYMBOL[PRESENT_NOTE], a))
             for w in it["warnings"]:
-                L.append("    ! " + w["message"])
+                L.append("    {} {}".format(PRESENT_SYMBOL[PRESENT_WARN], w["message"]))
             if it.get("url"):
                 L.append("    원문: " + it["url"])
 

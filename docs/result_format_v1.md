@@ -59,14 +59,20 @@
 | `best_variant` | 객체 또는 null | 가장 가까운 유형 `{name, verdict, verdict_label}` (충족 유형 우선, 없으면 조건부 유형 중 확인 항목이 가장 적은 것). 유형이 없거나 미달이면 `null`. 선택 필드 |
 | `tier`, `tier_label` | 문자열 | 추천 등급. `HIGH`(지원 가능성 높음: 충족 유형이 있고 공통 확인 항목 없음) / `PARTIAL`(일부 확인 필요: 충족 유형은 있으나 공통 확인 항목이 남음) / `CHECK`(확인 필요: 조건부) / `NONE`(해당 없음: 미달). 선택 필드 |
 | `to_confirm` | 문자열 배열 | 확인이 필요한 판정 항목 (사람이 읽는 문장) |
-| `matched_variants` | 배열 | 해당할 수 있는 유형: `name`, `verdict`, `amount`, `apply_end`(유형별 마감), `expired`(유형 마감이 지났는가), `preferences` |
-| `unmatched_variants` | 배열 | 해당하지 않는 유형과 이유 |
+| `matched_variants` | 배열 | 해당할 수 있는 유형: `name`, `verdict`, `amount`, `apply_end`(유형별 마감), `expired`(유형 마감이 지났는가), `preferences`, `documents`(이 유형만 내는 서류), `evaluation`(이 유형의 평가 비율 `[{item, percent}]`, 선택), `recommender`(이 유형의 추천자, 선택), `criteria`(이 유형의 선발 기준 문장 목록, 선택) |
+| `unmatched_variants` | 배열 | 해당하지 않는 유형과 이유 (`name`, `reason`, `amount`, `reasons`(미달 사유가 둘 이상일 때 전체 목록, 선택), `evaluation`·`criteria`(선택)) |
 | `prerequisites` | 배열 | 선행 조건 (판정에 영향 없음). `type`: `NATIONAL_SCHOLARSHIP_APPLIED`(국가장학금 신청), `BRACKET_CALCULATED`(지원구간 산정), `DEGREE_HELD`(학위 소지), `ADMISSION_OFFER`, `EXCHANGE_SELECTED`, `OTHER`. `status`: `MET` 충족 / `TODO` 신청 필요 / `UNMET` 미충족 / `UNKNOWN` 확인 필요 |
 | `preferences` | 배열 | 우대 조건. `applies`: `true` 해당 / `false` 해당 없음 / `null` 모름 |
 | `school_programs` | 배열 | 학교 참여 사업. `program`: `NATIONAL_SCHOLARSHIP`(국가장학금), `LOCAL_TALENT`(지역인재), `HOUSING_STABILITY`(주거안정). `school`: `PARTICIPATES` 본교 참여 / `NOT` 미참여 / `UNKNOWN` 설정 없음 |
 | `notes` | 배열 | 확인 사항: 중복수혜 제한, 선발 후 의무, 심사 기준, 추천, 절차 |
+| `benefit` | 객체 (선택) | 혜택 구역용: `amount`(지원 금액·내용), `variants`(유형별 `type`·`amount`), `limits`(혜택 제한 문구). 포털이 안 써도 된다 |
+| `feasibility` | 객체 (선택, 조건부 건) | 일반 학생 기준 충족 가능성 보조 라벨: `level`(NORMAL·HARD·VERY_HARD), `label`(보통·어려움·매우 어려움), `reason`, `source`(rule·ai·default). 판정에는 영향 없고 조건부 목록이 쉬운 순으로 정렬된다 |
+| `condition_summary` | 객체 (선택, 조건부 건) | 확인할 조건이 많을 때의 요약: `source`(ai·rule), `groups`(`title`·`summary`·`quote`(원문 발췌)·`level`·`kind`(confirm·exclude)·`rows`(요약한 조건 행 번호)). 판정에는 영향 없고, 원문 조건(`to_confirm`)은 그대로 있다 |
 | `assumptions` | 문자열 배열 | 판정에 쓴 가정 (예: 공고에 평점 만점이 없어 4.5로 가정) |
 | `passed`, `fail_reasons` | 문자열 배열 | 충족한 판정 항목 / 미달 사유 |
+| `self_confirm` | 문자열 배열 | 학생이 신청할 때 스스로 확인하는 조건(징계 이력, 중복 수혜, 서류 제출 가능 등). 판정에는 영향이 없다. 기준: `config/self_attest_rules.json` |
+| `condition_labels` | 객체 배열 | 선택 필드. 문장 조건의 짧은 이름 `[{text, label}]` (공고 추출 때 AI 가 붙인 것, 있을 때만). 화면의 조건 묶음 이름으로 쓴다. |
+| `selection_info` | 객체 | 선택 필드. 공고 공통의 선발 정보 (공고에 적혀 있을 때만): `evaluation`(평가 비율 `[{item, percent}]`, 합 100), `recommender`(추천자), `procedure`(진행 절차 `[{name, when}]`, 최대 6단계), `criteria`(선발 기준 문장 목록, 최대 4개). 유형마다 다른 평가 비율·추천자·선발 기준은 `matched_variants` 안에 있다 |
 | `scholarship_name`, `foundation`, `summary`, `amount`, `apply_how`, `org_deadline`, `status` | | 공고의 이름·재단·요약·금액·신청 방법·재단 마감일·처리 상태 (표시용) |
 | `schema_version`, `merged_from` | | 공고 구조화 버전(1·2·3), 같은 장학으로 묶은 다른 글 |
 | `warnings` | 배열 | 안내 (`code`, `message`): 마감 임박, 추천서 필요, 검수 대기 등 |

@@ -36,8 +36,41 @@
 | 메서드·경로 | 용도 |
 |---|---|
 | `POST /v1/recommend` | 판정과 후속 질문 (1차와 이어 답하는 호출 모두) |
-| `GET /v1/health` | 상태 점검 (공고 목록 갱신 시각 포함) — 6-B 에서 구현 |
-| `GET /v1/meta` | API·결과 형식 버전, 질문 한도 — 6-B 에서 구현 |
+| `POST /v1/chat` | 공고 질문 챗봇 (기본 꺼짐, 아래 [공고 질문 챗봇](#공고-질문-챗봇)). 판정은 바꾸지 않고 공고 원문을 근거로 설명한다 |
+| `GET /v1/health` | 상태 점검 (공고 목록 갱신 시각·건수 포함). **키 없이** 부른다 (감시용, 학생 정보 없음). `ok` / `degraded`(DB 장애로 이전 목록 사용 중) / `down`(503) |
+| `GET /v1/meta` | API·결과 형식 버전, 질문 한도, 본문 크기 한도, 추천 대상 공고 구분 |
+| `GET /v1/openapi.json` | 이 계약의 OpenAPI 파일 |
+
+## 서버 실행과 운영 설정
+
+```
+pip install fastapi uvicorn
+python set_secret.py API_KEY                 # 포털과 나눌 길고 무작위인 키 (포털 서버의 설정에도 같은 값을 둔다)
+python run_api.py --host 0.0.0.0 --port 8000
+```
+시험할 때는 DB 없이 `python run_api.py --results-dir out_v3 --no-key --demo` 로 띄우고 브라우저에서 `http://127.0.0.1:8000/demo` 를 연다 (`--demo` 는 127.0.0.1 에서만 켜진다).
+
+| 설정(.env) | 기본 | 뜻 |
+|---|---|---|
+| `API_KEY` | (없음) | 비밀 값. 없으면 서버가 시작하지 않는다 (`API_REQUIRE_KEY=false` 는 개발용) |
+| `API_MAX_BODY_BYTES` | 262144 | 요청 본문 최대 크기. 넘으면 `413` |
+| `API_CACHE_SECONDS` | 300 | 공고 목록을 DB 에서 다시 읽는 간격 (요청마다 읽지 않는다) |
+| `API_STALE_SECONDS` | 21600 | DB 가 끊겼을 때 이 시간까지는 마지막 목록으로 계속 응답 (`health` 는 `degraded`). 그 뒤에는 `503 UNAVAILABLE` |
+| `API_ENABLE_DEMO` | false | `/demo` 시험 화면 (인증이 없어 개발용에서만) |
+| `CHAT_ENABLED` | false | 공고 질문 챗봇. 켜면 학생 질문마다 AI 를 부른다 (`AI_API_KEY` 필요). 꺼져 있으면 `/v1/chat` 은 `404 CHAT_DISABLED` |
+| `CHAT_MODEL` | (`AI_MODEL`) | 챗봇이 쓸 모델 |
+| `CHAT_MAX_TOKENS` / `CHAT_TIMEOUT` | 3500 / 60 | 답변 최대 토큰 / AI 응답을 기다리는 최대 초 |
+| `CHAT_MAX_CONCURRENT` | 4 | 동시에 처리하는 질문 수. 넘으면 `429 BUSY` |
+| `CHAT_CONTEXT_CHARS` | 30000 | AI 에 보내는 공고 원문 최대 글자 수 |
+| `CHAT_CACHE_SECONDS` | 3600 | 같은 첫 질문의 답을 다시 쓰는 시간 (대화가 이어지는 질문은 쓰지 않음) |
+| `RAG_ENABLED` | false | 챗봇이 색인 검색(OpenAI 임베딩 + Pinecone)을 쓴다. 하루 한 번 `python run_build_rag_index.py` 로 색인을 만든다. 키·주소가 없거나 호출이 실패하면 예전 방식(원문을 그 자리에서 골라 보내기)으로 답한다 |
+| `RAG_EMBED_MODEL` / `RAG_EMBED_DIMS` | text-embedding-3-large / 1024 | 임베딩 모델과 차원. Pinecone 색인(지표 cosine)을 만들 때의 차원과 같아야 한다 |
+| `RAG_TOP_K` / `RAG_TIMEOUT` | 6 / 15 | 질문마다 꺼내는 원문 조각 수 / 임베딩·검색을 기다리는 최대 초 |
+| `PINECONE_HOST` / `PINECONE_NAMESPACE` | (없음) / scholarship | Pinecone 색인 주소(콘솔에서 확인) / 네임스페이스 |
+| `OPENAI_API_KEY` / `PINECONE_API_KEY` | - | `.env` 에 적지 않고 `python set_secret.py OPENAI_API_KEY` 처럼 저장한다. `OPENAI_API_KEY` 가 없으면 AI 게이트웨이를 쓸 때 `AI_API_KEY` 와 `AI_BASE_URL`(`.../v1/gateway`, 끝의 `/claude` 는 뗌)로 임베딩을 호출한다 |
+| `RAG_BASE_URL` | (자동) | 임베딩 API 주소. 비우면 `OPENAI_API_KEY` 가 있을 때 OpenAI, 없으면 `AI_BASE_URL` 의 게이트웨이 |
+
+프로세스 하나로 실행한다. 로그에는 요청 번호, 상태, 처리 시간, 판정 건수만 남고 입력값과 예외 메시지는 남지 않는다.
 
 ## 요청 본문
 
@@ -138,6 +171,35 @@
 | `SERVER_CONFIG` | 500 | 서버 환경설정 오류 | 관리자에게 알린다 (재시도해도 같다) |
 | `INTERNAL` | 500 | 서버 내부 오류 | 잠시 후 한 번 재시도, 계속되면 관리자에게 알린다 |
 | `UNAVAILABLE` | 503 | 공고 DB를 읽을 수 없음 | 잠시 후 재시도 |
+| `CHAT_DISABLED` | 404 | 챗봇 기능이 꺼져 있음 | 챗봇 화면을 숨긴다 |
+| `NOT_FOUND` | 404 | 첨부파일 다운로드: 열려 있는 공고에 연결된 파일이 아니거나 서버에 파일이 없음 | 다운로드 링크를 숨긴다 |
+| `BUSY` | 429 | 동시에 처리하는 질문이 많음 | 잠시 후 재시도 |
+| `CHAT_UNAVAILABLE` | 503 | AI 응답 실패 (추천 API 는 영향 없음) | "지금은 답변할 수 없습니다"를 보여 주고 카드는 그대로 둔다 |
+
+## 공고 질문 챗봇
+
+추천 카드(충족·조건부)를 보여 준 화면에서 학생이 공고에 대해 묻고 답을 받는다. **판정은 계속 코드가 하며 챗봇은 판정을 바꾸지 못한다.**
+공고 본문과 첨부 파일에서 뽑아 둔 텍스트(`SCHOLARSHIP_NOTICE.BODY_TEXT`, `SCHOLARSHIP_NOTICE_FILE.EXTRACT_TEXT`)를 근거로 설명한다.
+
+| 단계 | 요청 | AI 가 받는 것 |
+|---|---|---|
+| A | `share_results` 없음/false | 질문, 공고 원문 발췌. **학생 정보 없음** (`profile` 을 보내도 읽지 않는다) |
+| B | `share_results: true` + `profile` | A 에 더해, 서버가 `profile` 로 다시 계산한 **판정 요약**(판정, 충족한 조건, 확인 필요, 미달 사유, 유형별 결과). `profile` 원본은 보내지 않는다. 요약 문구에 성적·학기 같은 값이 일부 들어갈 수 있으므로 학생 동의를 받은 뒤에만 쓴다 |
+
+```json
+{"request_id": "r1", "question": "제출 서류가 뭐예요?", "notice_ids": ["EXT01:153381", "EXT02:9227"], "focus": "EXT01:153381",
+ "history": [{"role": "user", "text": "..."}, {"role": "assistant", "text": "..."}], "share_results": false}
+```
+응답은 `answer`(문장 끝의 `[1]` 은 `citations[].n`), `citations`(원문에서 그대로 가져온 `quote`, `source`=본문/첨부N/시스템 판정), `followups`, `notices`, `warnings`, `outcome` 이다.
+
+- `focus` 를 보내면(질문 대상 `notice_ids` 안의 공고) **그 공고 한 건에 대해서만** 답한다. 다른 공고의 원문은 가져오지도 않는다. 보내지 않으면 `notice_ids` 전체에서 질문과 가까운 공고(최대 3건)를 고른다.
+- 원본 첨부파일: 인용이 첨부파일에서 나왔고 서버(NAS)에 원본이 있으면 `citations[].file`({seq, name, ext, size})과 `source_files`([{notice_id, title, file}])가 붙는다 (선택 필드). 화면에는 `공고명 > 파일명` 으로 보여 주고, 포털 서버가 `GET /v1/notices/{notice_id}/files/{file.seq}` (API 키 필요)를 대신 불러 파일을 사용자에게 전달한다. 키를 브라우저에 두지 않는다. 열려 있는 공고에 연결된 파일만, NAS 기준 폴더 안의 실제 파일만 내려주며 파일 경로는 응답에 싣지 않는다. 파일이 없거나 허용되지 않으면 `404 NOT_FOUND`.
+- `outcome`: `answered`(원문 인용으로 뒷받침된 답) / `not_found`(원문에 없음) / `out_of_scope`(장학금과 무관) / `ungrounded`(근거를 확인하지 못함). 뒤의 셋은 **서버가 정한 고정 문구**이고 AI 의 문장은 쓰지 않는다.
+- 서버는 AI 가 낸 인용이 실제 원문에 있는지 확인하고 없는 인용은 버린다. 유효한 인용이 하나도 없으면 답을 내보내지 않는다. 답변의 숫자가 원문에 없으면 `warnings` 와 답변 끝에 안내를 붙인다.
+- 공고 원문·질문·대화 기록 안의 지시문은 데이터로만 취급한다. 질문의 주민번호·전화·이메일·학번 꼴은 가려서 AI 에 보낸다.
+- 서버는 질문·답변·대화·학생 정보를 저장하지 않고 로그에도 남기지 않는다. 대화 기록은 포털이 보관했다가 `history`(최근 6개 이하)로 보낸다.
+- 포털 화면에서 지킬 것: 동의 문구(AI 에 질문과 판정 요약이 전달됨, 철회 방법), 질문에 개인정보를 적지 않도록 안내, `disclaimer` 표시, 인용(`citations`)과 원문 링크 표시.
+- AI 에 학생 정보가 전달되는 B 단계를 운영하기 전에 학교 개인정보 담당 부서와 AI 사업자 계약(학습 미사용, 보관 기간)을 확인한다.
 
 ## 연동 시험
 

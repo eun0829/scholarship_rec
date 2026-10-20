@@ -8,6 +8,7 @@ from scholarship.common.ai.schema import normalize
 from scholarship.common.config import Settings
 from scholarship.recommend import matcher as M
 from scholarship.recommend import matcher_v3 as V
+from scholarship.recommend import vocab
 from scholarship.recommend.matcher import CONDITIONAL, FAIL, MATCH, NO_MATCH, PASS, UNKNOWN
 from scholarship.recommend.profile import ProfileError, StudentProfile, build_profile
 from scholarship.recommend.service import Recommender, format_text
@@ -970,11 +971,14 @@ def test_special_at_the_top_and_income_inside_a_variant_are_combined_like_the_sa
 
 
 def test_special_pushed_into_variants_still_applies_to_variants_without_income():
-    ev = M.evaluate(cross_notice(), prof(level="HIGH", special_codes=[], special_complete=True))
-    high = next(v for v in ev.variants if v.name == "고등학생")
-    assert [c.status for c in high.checks if c.key == "special"] == [FAIL] and high.verdict == NO_MATCH            # 소득이 없는 유형은 신분을 그대로 적용
-    ok = M.evaluate(cross_notice(), prof(level="HIGH", special_codes=["SINGLE_PARENT"], special_complete=True))
-    assert next(v for v in ok.variants if v.name == "고등학생").verdict == MATCH
+    # 중·고등학생만 대상인 유형은 저장 전에 빠지므로, 소득이 없는 유형은 대학원 유형으로 확인한다
+    n = notice(special_groups=[{"code": "BASIC_LIVELIHOOD", "mode": "REQUIRED"}, {"code": "SINGLE_PARENT", "mode": "REQUIRED"}],
+               variants=[{"name": "대학원생", "target_levels": ["GRAD"]}, {"name": "대학생", "target_levels": ["UNIV"], "income": {"max_bracket": 6}}])
+    ev = M.evaluate(n, prof(level="GRAD", special_codes=[], special_complete=True))
+    grad = next(v for v in ev.variants if v.name == "대학원생")
+    assert [c.status for c in grad.checks if c.key == "special"] == [FAIL] and grad.verdict == NO_MATCH            # 소득이 없는 유형은 신분을 그대로 적용
+    ok = M.evaluate(n, prof(level="GRAD", special_codes=["SINGLE_PARENT"], special_complete=True))
+    assert next(v for v in ok.variants if v.name == "대학원생").verdict == MATCH
 
 
 def test_special_stays_common_without_an_income_bound_in_any_variant_or_when_income_is_common():
@@ -1147,11 +1151,14 @@ def test_conditions_prefixed_with_a_failed_variant_name_are_dropped_from_the_com
     assert not any("담임교사" in t for t in ev.to_confirm) and any("재단 홈페이지" in t for t in ev.to_confirm)
 
 
-def test_conditions_prefixed_with_a_variant_that_is_not_failed_stay_in_the_common_confirms():
+def test_conditions_prefixed_with_a_variant_move_into_that_variant_and_keep_it_conditional():
     n = notice(target_levels=["UNIV"], other_conditions=["Ⅱ유형: 대학별 선발 기준에 따름"],
                variants=[dict(name="Ⅰ유형", target_levels=["UNIV"]), dict(name="Ⅱ유형", other_conditions=["대학별 기준"])])
     ev = M.evaluate(n, prof(level="UNIV"))
-    assert any("대학별 선발 기준" in t for t in ev.to_confirm)          # 조건부 유형의 문장은 공통 판정을 보수적으로 유지
+    by = {v.name: v for v in ev.variants}
+    assert by["Ⅰ유형"].verdict == MATCH                                               # 다른 유형의 문장이 Ⅰ유형까지 조건부로 만들지 않는다
+    assert by["Ⅱ유형"].verdict == CONDITIONAL and any("대학별 선발 기준" in c.message for c in by["Ⅱ유형"].checks)   # 문장은 해당 유형에 그대로 남는다
+    assert not any("대학별 선발 기준" in t for t in ev.to_confirm)
 
 
 def test_short_withdrawal_exclusion_is_passed_for_an_enrolled_student():
@@ -1181,3 +1188,84 @@ def test_language_cefr_messages_and_unknown_language():
     assert c.message == "어학 요건 충족 (독일어(유럽언어기준 CEFR) B2 (필요: 독일어(유럽언어기준 CEFR) B1 이상))"       # '이상 이상' 으로 겹치지 않는다
     assert one(M.evaluate(lang_notice({"exam": "CEFR", "level": "B1"}), prof(language_scores={"독일어": 4.0})), "language").status == UNKNOWN   # 어느 언어인지 모름
     assert one(M.evaluate(lang_notice({"exam": "HSK", "level": "5급 이상"}), prof(language_scores={"HSK": 4.0})), "language").message == "어학 요건 미달 (HSK 4 (필요: HSK 5급 이상))"
+
+
+# ================================================================== 이미 판정한 조건과 겹치는 문장 조건 (153808 '국내 4년제 대학 재학생', 9235 '학사 2년 이상')
+def _confirm_texts(ev):
+    return [c.message for c in ev.common if c.key == "other"]
+
+
+def test_sentence_that_repeats_a_judged_condition_is_not_a_confirm_item():
+    n = notice(target_levels=["UNIV"], school={"types": ["UNIV4"]}, other_conditions=["국내 4년제 대학 재학생", "졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 의지"])
+    ev = M.evaluate(n, prof(school_type="GENERAL", level="UNIV"))
+    assert _confirm_texts(ev) == ["확인 필요: 졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 의지"] and ev.verdict == CONDITIONAL
+
+
+def test_only_repeating_sentence_lets_a_fully_judged_notice_match():
+    n = notice(target_levels=["UNIV"], school={"types": ["UNIV4"]}, other_conditions=["국내 4년제 대학 재학생"])
+    assert M.evaluate(n, prof(school_type="GENERAL", level="UNIV")).verdict == MATCH
+
+
+def test_sentence_stays_when_the_structured_value_is_missing_or_it_restricts():
+    assert _confirm_texts(M.evaluate(notice(other_conditions=["국내 4년제 대학 재학생"]), prof(level="UNIV"))) == ["확인 필요: 국내 4년제 대학 재학생"]      # 구조화 학교급 없음
+    n = notice(target_levels=["UNIV"], other_conditions=["대학 재학생 중 휴학생 제외", "대학 재학생이며 상반기 장학금 미수령자"])
+    assert len(_confirm_texts(M.evaluate(n, prof(level="UNIV")))) == 2
+
+
+def test_terms_sentence_is_dropped_only_with_a_completed_terms_value():
+    s = "장학금 수혜 시점에 학사 2년 이상을 마쳐야 하며"
+    assert _confirm_texts(M.evaluate(notice(completed_terms={"min": 4}, other_conditions=[s]), prof(semesters_completed=7))) == []
+    assert _confirm_texts(M.evaluate(notice(other_conditions=[s]), prof(semesters_completed=7))) == ["확인 필요: " + s]
+
+
+def test_variant_sentence_uses_the_variant_and_common_values():
+    n = notice(target_levels=["UNIV"], variants=[{"name": "A", "target_levels": ["UNIV"], "other_conditions": ["대학 재학생", "상반기 미수령자"]}])
+    ev = M.evaluate(n, prof(level="UNIV"))
+    texts = [c.message for v in ev.variants for c in v.checks if c.key == "other"]
+    assert texts == ["확인 필요: 상반기 미수령자"]
+
+
+# ================================================================== '4년제' 기간 오탐, '정규 학기 이내 졸업예정' 문장
+def yoonyoung(**kw):
+    return notice(region={"school_location": ["서울특별시", "경기도", "인천광역시"], "notes": "서울·경기·인천 소재 4년제 대학"},
+                  other_conditions=["정규 학기 이내 졸업예정"], **kw)
+
+
+def keys_of(ev, status):
+    return [c for c in ev.to_confirm]
+
+
+@pytest.mark.parametrize("text", ["서울·경기·인천 소재 4년제 대학", "4년제 대학 재학생", "2년제 이상", "전문대 3년제"])
+def test_n_year_school_type_is_not_a_residence_duration(text):
+    assert vocab.durations(text) == []
+
+
+@pytest.mark.parametrize("text, months", [("주민등록 1년 이상", [12]), ("3개월 이상 거주", [3]), ("4년 이상 거주", [48])])
+def test_real_durations_are_still_found(text, months):
+    assert vocab.durations(text) == months
+
+
+def test_four_year_university_note_no_longer_asks_for_residence_period_and_regular_terms_are_computed():
+    p = prof(school_sido="경기도", semesters_completed=5, admission_type="NEW")
+    ev = M.evaluate(yoonyoung(), p)
+    assert not any("거주 기간" in m or "정규 학기" in m for m in ev.to_confirm), ev.to_confirm
+    assert any("정규 학기 이내 졸업예정 해당 (이수 5학기, 정규 8학기)" in m for m in ev.passed)
+
+
+@pytest.mark.parametrize("done, extra, want", [(5, {}, "pass"), (7, {}, "pass"), (8, {}, "confirm"), (9, {}, "fail"), (None, {}, "confirm"),
+                                               (5, {"graduation_deferred": True}, "fail")])
+def test_regular_term_sentence_is_judged_conservatively(done, extra, want):
+    kw = dict(school_sido="경기도", admission_type="NEW", **extra)
+    if done is not None:
+        kw["semesters_completed"] = done
+    ev = M.evaluate(yoonyoung(), prof(**kw))
+    asked = any("정규 학기 이내 졸업예정" in m for m in ev.to_confirm)
+    passed = any("정규 학기 이내 졸업예정 해당" in m for m in ev.passed)
+    failed = any("정규 학기 이내 졸업예정 미달" in m for m in ev.fail_reasons)
+    assert {"pass": passed, "confirm": asked, "fail": failed}[want] and [passed, asked, failed].count(True) == 1
+
+
+def test_other_sentences_with_regular_terms_stay_as_confirm_items():
+    n = notice(other_conditions=["정규 학기 이내 졸업예정이며 평점 3.0 이상", "정규 학기 이내 졸업예정 단, 휴학 제외"])
+    ev = M.evaluate(n, prof(semesters_completed=5, admission_type="NEW"))
+    assert len([m for m in ev.to_confirm if "정규 학기" in m]) == 2

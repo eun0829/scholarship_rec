@@ -1,0 +1,171 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "153808",
+ "title": "2027년 대산장학생 선발 안내",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-11-11",
+ "summary": "국내 4년제 2학년 2학기 이상, 누계 평점 3.5/4.5 이상 농업리더 지망생 대상 등록금 전액 지원",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/153808/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2027년도 대산장학생(농업리더장학생)",
+  "foundation": "대산농촌재단",
+  "apply_type": "DIRECT",
+  "apply_start": null,
+  "apply_end": "2026-11-11",
+  "org_deadline": null,
+  "recruit_count": "5명",
+  "amount": "등록금 전액(최대 4학기) + 농업 선진지 연수·전문가 멘토링",
+  "apply_how": "지원서를 이메일(dsa@dsa.or.kr)로 제출, 서류전형 합격자는 면접 시 2차 서류 제출",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 3.5,
+   "scale": 4.5,
+   "basis": "CUMULATIVE",
+   "alternatives": [
+    {
+     "min": 3.3,
+     "scale": 4.3
+    }
+   ],
+   "notes": "직전 학기까지 누계 평균 평점",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "국내 4년제 대학 2학년 2학기 이상 재학생",
+   "졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 투철한 의지와 실천 계획을 세운 학생"
+  ],
+  "variants": [],
+  "exclusions": [],
+  "documents": [
+   "대산농업리더장학생 지원서",
+   "재학증명서(2차)",
+   "성적증명서(2차)",
+   "가족관계증명서(2차)",
+   "영농현황 자료(2차, 해당자)",
+   "영농교육 수료증명서(2차, 해당자)"
+  ],
+  "selection": {
+   "method": "1단계 서류심사, 2단계 면접심사",
+   "priority": [
+    "영농기반이 있는 영농희망자",
+    "농학계열 재학생"
+   ]
+  },
+  "summary": "국내 4년제 2학년 2학기 이상, 누계 평점 3.5/4.5 이상 농업리더 지망생 대상 등록금 전액 지원",
+  "special_groups": [
+   {
+    "code": "OTHER",
+    "scope": "SELF",
+    "mode": "PREFERRED",
+    "text": "영농기반 영농희망자"
+   }
+  ],
+  "school": {
+   "types": [
+    "UNIV4"
+   ]
+  },
+  "procedure": [
+   {
+    "name": "서류심사"
+   },
+   {
+    "name": "면접심사",
+    "when": "11/27(금) 예정"
+   }
+  ],
+  "criteria": [
+   "영농기반이 있는 영농희망자 우대",
+   "농학계열 재학생 우대"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "국내 4년제 대학 2학년 2학기 이상 재학생",
+    "section": "지원자격",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 투철한 의지와 실천 계획을 세운 학생",
+    "section": "지원자격",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

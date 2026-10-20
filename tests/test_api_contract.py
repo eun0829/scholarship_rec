@@ -77,7 +77,8 @@ def test_unknown_top_level_keys_are_ignored_with_a_warning():
 def test_the_error_body_shape_and_status_codes():
     e = R.ApiError("INVALID_REQUEST", "m", [{"field": "round", "message": "x"}])
     assert e.body("r1") == {"error": {"code": "INVALID_REQUEST", "message": "m", "fields": [{"field": "round", "message": "x"}], "request_id": "r1"}} and e.body()["error"]["request_id"] is None
-    assert R.ERROR_CODES == {"INVALID_REQUEST": 400, "INVALID_PROFILE": 400, "UNAUTHORIZED": 401, "PAYLOAD_TOO_LARGE": 413, "SERVER_CONFIG": 500, "INTERNAL": 500, "UNAVAILABLE": 503}
+    assert R.ERROR_CODES == {"INVALID_REQUEST": 400, "INVALID_PROFILE": 400, "UNAUTHORIZED": 401, "PAYLOAD_TOO_LARGE": 413, "SERVER_CONFIG": 500, "INTERNAL": 500, "UNAVAILABLE": 503,
+                               "CHAT_DISABLED": 404, "NOT_FOUND": 404, "BUSY": 429, "CHAT_UNAVAILABLE": 503}
 
 
 # ================================================================== 프로필: 틀린 키만 빼고 판정
@@ -256,10 +257,10 @@ def collect_refs(o, out):
 def test_openapi_structure_security_and_references():
     s = spec()
     assert s["openapi"] == "3.1.0" and s["components"]["securitySchemes"]["ApiKey"] == {"type": "apiKey", "in": "header", "name": "X-API-Key"} and s["security"] == [{"ApiKey": []}]
-    assert set(s["paths"]) == {"/v1/recommend", "/v1/health", "/v1/meta"}
+    assert set(s["paths"]) == {"/v1/recommend", "/v1/chat", "/v1/health", "/v1/meta", "/v1/notices/{notice_id}/files/{seq}"}
     assert set(s["paths"]["/v1/recommend"]["post"]["responses"]) == {"200", "400", "401", "413", "500", "503"}
     ops = [op["operationId"] for p in s["paths"].values() for op in p.values()]
-    assert sorted(ops) == ["health", "meta", "recommend"]
+    assert sorted(ops) == ["chat", "health", "meta", "noticeFile", "recommend"]
     refs = collect_refs(s, set())
     assert refs and all(r.startswith("#/components/schemas/") and r.rsplit("/", 1)[-1] in s["components"]["schemas"] for r in refs), sorted(refs)
     assert "$defs" not in json.dumps(s)

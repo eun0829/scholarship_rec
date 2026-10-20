@@ -1,0 +1,215 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9218",
+ "title": "윤영문화재단 장학 (2026년 2학기)",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-10-08",
+ "summary": "서울·경기·인천 4년제 대학 재학생 대상, 평점 3.5/4.5 이상, 학기당 200만원 생활비성 장학금",
+ "url": "https://yoonyoung.org/bbs/board.php?bo_table=notice&wr_id=23",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "윤영문화재단 장학 (2026년 2학기)",
+  "foundation": "윤영문화재단",
+  "apply_type": "SCHOOL",
+  "apply_start": "2026-09-28",
+  "apply_end": "2026-10-08",
+  "org_deadline": "2026-10-08",
+  "recruit_count": "30명",
+  "amount": "학기별 200만원 (생활비성)",
+  "apply_how": "학교 경유 접수: 대학이 자체 선발 후 재단에 우편 제출",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 3.5,
+   "scale": 4.5,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [
+    {
+     "min": 3.3,
+     "scale": 4.3
+    }
+   ],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": 12.0,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "재정적 도움이 필요한 대학생",
+   "basis": "NARRATIVE"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null,
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "SCHOOL_LOCATION",
+     "areas": [
+      "서울특별시",
+      "경기도",
+      "인천광역시"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": "내국인",
+  "special_status": [],
+  "other_conditions": [
+   "정규 학기 이내 졸업예정인 대학생 (추가학기 지원불가)",
+   "최소 한 학기 성적증명이 있어야 함",
+   "계속장학생은 재단이 선발한 계속장학생 후보 중에서 추천"
+  ],
+  "variants": [],
+  "exclusions": [
+   "윤영문화재단 장학생에 선발된 적이 없는 대학생",
+   "생활비성 장학금, 등록금성 장학금과 중복수혜 가능"
+  ],
+  "documents": [
+   "장학생 신청서",
+   "자기소개서",
+   "지도교수 추천서",
+   "성적증명서",
+   "경제상황 증빙서류",
+   "주민등록등본 또는 가족관계증명서",
+   "장학생 서약서",
+   "개인정보 수집·이용 동의서"
+  ],
+  "selection": {
+   "method": "대학이 서류 기반으로 재정 필요도·성장 가능성·인성을 평가해 자체 선발 후 재단에 추천",
+   "priority": [
+    "사회적 배려 대상자",
+    "경제적 약자"
+   ]
+  },
+  "summary": "서울·경기·인천 4년제 대학 재학생 대상, 평점 3.5/4.5 이상, 학기당 200만원 생활비성 장학금",
+  "transfer": {
+   "mode": "EXCLUDED"
+  },
+  "special_groups": [
+   {
+    "code": "OTHER",
+    "scope": "SELF",
+    "mode": "PREFERRED",
+    "text": "사회적 배려 대상자"
+   }
+  ],
+  "school": {
+   "types": [
+    "UNIV4"
+   ]
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PROFESSOR"
+   ]
+  },
+  "deadline_kind": "SCHOOL_VARIES",
+  "exclusion_items": [
+   {
+    "type": "PRIOR_SAME",
+    "text": "윤영문화재단 장학생에 선발된 적이 없는 대학생"
+   },
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "생활비성 장학금, 등록금성 장학금과 중복수혜 가능"
+   }
+  ],
+  "review_criteria": [
+   "다양한 문화예술 분야의 인재로 성장할 가능성",
+   "재정 지원 필요도, 성장 가능성, 인성"
+  ],
+  "criteria": [
+   "사회적 배려 대상자·경제적 약자 우선 선발",
+   "필요시 대학담당자 면접"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "정규 학기 이내 졸업예정인 대학생 (추가학기 지원불가)",
+    "section": "신청자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "최소 한 학기 성적증명이 있어야 함",
+    "section": "신청자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "모든 서류는 최근 3개월 이내 발급된 서류로 제출",
+    "section": "신청서류 안내",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "계속장학생은 재단이 선발한 계속장학생 후보 중에서 추천",
+    "section": "계속장학생 지원 자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

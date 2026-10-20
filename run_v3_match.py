@@ -23,6 +23,7 @@ from scholarship.common.config import Settings, bootstrap, parse_categories
 from scholarship.common.secret_store import SecretFileError
 from scholarship.recommend import matcher
 from scholarship.recommend.profile import ProfileError, build_profile
+from scholarship.recommend.present import format_cards
 from scholarship.recommend.service import VERDICT_LABEL, Recommender, detail_table, evaluation_fields, format_table, format_text, side_lines
 from scholarship.recommend.student_text import format_parse_report, parse_student_text
 from scholarship.common.ai import schema
@@ -147,6 +148,8 @@ def _follow_up(a, settings, data, notices) -> int:
         return 2
     if a.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
+    elif a.format == "card":
+        print(format_cards(result, True, width=a.width or None))
     elif a.format == "list":
         print(format_text(result, True))
     else:
@@ -166,7 +169,7 @@ def main(argv=None) -> int:
     ap.add_argument("--detail", nargs="+", metavar="IDX", help="지정한 공고의 모든 판정 항목과 이유를 출력")
     ap.add_argument("--today", help="기준일 YYYY-MM-DD (유형별 마감이 지났는지 표시. 기본: 오늘)")
     ap.add_argument("--json", action="store_true", help="JSON 으로 출력")
-    ap.add_argument("--format", choices=("table", "md", "list"), default="table", help="출력 모양: table(표, 기본) / md(마크다운 표) / list(목록)")
+    ap.add_argument("--format", choices=("table", "md", "list", "card"), default="table", help="출력 모양: table(표, 기본) / md(마크다운 표) / list(목록) / card(건별 카드)")
     ap.add_argument("--width", type=int, default=0, help="표의 최대 폭 (기본: 터미널 폭, 알 수 없으면 120)")
     ap.add_argument("--follow-up", action="store_true", help="후속 질문(풀어 주는 공고 수 순)을 함께 출력 (run_recommend.py 와 같은 5단계 기능, 마감 필터 없음)")
     ap.add_argument("--answers", help="후속 질문에 답한 파일 (`라벨: 값` 줄). 답을 넣기 전·후를 비교해 변화를 출력 (--profile-text 는 지금까지의 입력)")

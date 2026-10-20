@@ -1,0 +1,129 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9235",
+ "title": "DAAD 독일 섬머코스 장학",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-30",
+ "summary": "독일어 B1 이상 대학생·대학원생 대상 DAAD 독일 섬머코스 장학 (수강료·숙소·용돈·여행경비 지원)",
+ "url": "https://www.niied.go.kr/web/main/nid/niied_board/5845",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "DAAD 독일 섬머코스 장학",
+  "foundation": "DAAD(주한 독일고등교육진흥원)",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-16",
+  "apply_end": "2026-10-30",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "어학 강좌 수강료·숙소, 용돈 475유로, 여행경비 1,735유로, 보험 지원",
+  "apply_how": "온라인 접수 (daad-korea.org)",
+  "target_levels": [
+   "UNIV",
+   "GRAD"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": "수혜 시점에 대학 등록 필요"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "장학금 수혜 시점에 학사 2년 이상을 마쳐야 하며 대학에 등록되어 있어야 함"
+  ],
+  "variants": [],
+  "exclusions": [],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": []
+  },
+  "summary": "독일어 B1 이상 대학생·대학원생 대상 DAAD 독일 섬머코스 장학 (수강료·숙소·용돈·여행경비 지원)",
+  "language_requirements": [
+   {
+    "exam": "독일어(유럽언어기준)",
+    "level": "B1 이상"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "장학금 수혜 시점에 학사 2년 이상을 마쳐야 하며 대학에 등록되어 있어야 함",
+    "section": "지원대상",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

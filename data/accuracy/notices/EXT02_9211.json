@@ -1,0 +1,563 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9211",
+ "title": "대전시 인재육성장학 (2026년 하반기)",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-10-07",
+ "summary": "대전청년내일재단 하반기 장학: 대전 거주·소재 대학생 성취·과학·외국인 유학생 장학, 학교(총)장 추천 필요",
+ "url": "https://buly.kr/FAgLvDP",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "대전시 인재육성장학 (2026년 하반기)",
+  "foundation": "대전청년내일재단",
+  "apply_type": "HYBRID",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-10-07",
+  "org_deadline": null,
+  "recruit_count": "790명",
+  "amount": "유형별 상이 (대학생 150만~200만원)",
+  "apply_how": "대전청년포털 온라인 신청 + 학교(총)장 추천서 필요, 외국인 유학생은 학교 경유",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "휴학",
+    "자퇴",
+    "졸업유예",
+    "수료"
+   ],
+   "min_remaining_semesters": null,
+   "notes": "최종 발표일 기준 재학 상태여야 함"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": "유형별 기준 상이"
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [
+   {
+    "name": "성취 장학(대전 소재 대학)",
+    "amount": "150만원",
+    "target_levels": [],
+    "gpa": {
+     "min": 3.5,
+     "scale": 4.5,
+     "basis": "CUMULATIVE",
+     "alternatives": [
+      {
+       "min": 3.3,
+       "scale": 4.3
+      }
+     ],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "UNKNOWN",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "대전광역시"
+       ],
+       "min_years": 1,
+       "years_basis": "공고일(2026-09-01) 기준 계속 거주"
+      },
+      {
+       "type": "SCHOOL_LOCATION",
+       "areas": [
+        "대전광역시"
+       ]
+      }
+     ]
+    },
+    "other_conditions": [
+     "대전 외 지역 소재 국내 대학 재학, 추천 필요"
+    ],
+    "apply_start": "2026-09-01",
+    "apply_end": "2026-10-08",
+    "nationality": "내국인",
+    "completed_terms": {
+     "min": 2
+    },
+    "documents": [
+     "장학생 추천서",
+     "주민등록등본",
+     "성적증명서",
+     "자격증·공인어학성적 증빙"
+    ],
+    "evaluation": [
+     {
+      "item": "학업성적",
+      "percent": 80
+     },
+     {
+      "item": "자격증",
+      "percent": 10
+     },
+     {
+      "item": "어학",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장·단과대학장",
+    "criteria": [
+     "동점 시 학업성적 → 어학 → 고학년 순"
+    ]
+   },
+   {
+    "name": "성취 장학(타지역 소재 대학)",
+    "amount": "150만원",
+    "target_levels": [],
+    "gpa": {
+     "min": 3.5,
+     "scale": 4.5,
+     "basis": "CUMULATIVE",
+     "alternatives": [
+      {
+       "min": 3.3,
+       "scale": 4.3
+      }
+     ],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ANY",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "대전광역시"
+       ],
+       "min_years": 1,
+       "years_basis": "공고일(2026-09-01) 기준 계속 거주"
+      },
+      {
+       "type": "RESIDENCE_PARENT",
+       "areas": [
+        "대전광역시"
+       ],
+       "min_years": 1,
+       "years_basis": "공고일(2026-09-01) 기준 계속 거주"
+      }
+     ]
+    },
+    "other_conditions": [
+     "대전 외 지역 소재 국내 대학 재학, 추천 필요"
+    ],
+    "apply_start": "2026-09-01",
+    "apply_end": "2026-10-08",
+    "nationality": "내국인",
+    "completed_terms": {
+     "min": 2
+    },
+    "documents": [
+     "장학생 추천서",
+     "주민등록등본(본인 또는 대전 거주 부모)",
+     "성적증명서",
+     "자격증·공인어학성적 증빙",
+     "가족관계증명서(부모 등본 제출 시)"
+    ],
+    "evaluation": [
+     {
+      "item": "학업성적",
+      "percent": 80
+     },
+     {
+      "item": "자격증",
+      "percent": 10
+     },
+     {
+      "item": "어학",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장·단과대학장",
+    "criteria": [
+     "동점 시 학업성적 → 어학 → 고학년 순"
+    ]
+   },
+   {
+    "name": "외국인 유학생",
+    "amount": "150만원",
+    "target_levels": [],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "CUMULATIVE",
+     "alternatives": [
+      {
+       "min": 2.8,
+       "scale": 4.3
+      }
+     ],
+     "notes": null,
+     "scale_stated": true
+    },
+    "credits": {
+     "min_last_semester": 12.0,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "ALL",
+     "requirements": [
+      {
+       "type": "SCHOOL_LOCATION",
+       "areas": [
+        "대전광역시"
+       ]
+      }
+     ]
+    },
+    "other_conditions": [
+     "대전 소재 대학 정규 학부과정 재학, 총장 추천 대상자만 온라인 신청 (개별 신청 불가)"
+    ],
+    "apply_start": "2026-09-01",
+    "apply_end": "2026-09-23",
+    "apply_type": "SCHOOL",
+    "nationality": "외국인",
+    "documents": [
+     "성적증명서",
+     "TOPIK Ⅱ 성적표",
+     "총장 일괄 추천서(학교 제출)",
+     "학과장·지도교수 개별 추천서(학교 제출)"
+    ],
+    "evaluation": [
+     {
+      "item": "학업성적",
+      "percent": 60
+     },
+     {
+      "item": "TOPIK Ⅱ",
+      "percent": 30
+     },
+     {
+      "item": "추천서",
+      "percent": 10
+     }
+    ],
+    "recommender": "총장",
+    "criteria": [
+     "대전 자매·우호도시 출신 유학생 우선",
+     "동점 시 학업성적 → TOPIK Ⅱ → 고학년 순"
+    ]
+   },
+   {
+    "name": "과학 장학",
+    "amount": "200만원",
+    "target_levels": [],
+    "gpa": {
+     "min": null,
+     "scale": null,
+     "basis": "UNKNOWN",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": null,
+     "eligible_types": [],
+     "notes": null
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null,
+     "mode": "UNKNOWN",
+     "requirements": [
+      {
+       "type": "RESIDENCE_SELF",
+       "areas": [
+        "대전광역시"
+       ],
+       "min_years": 1,
+       "years_basis": "공고일(2026-09-08) 기준 계속 거주"
+      },
+      {
+       "type": "SCHOOL_LOCATION",
+       "areas": [
+        "대전광역시"
+       ]
+      },
+      {
+       "type": "GRADUATED_SCHOOL",
+       "areas": [
+        "대전광역시"
+       ]
+      }
+     ]
+    },
+    "other_conditions": [
+     "대전 소재 4년제 대학 2026 신입생(1학년), 자연과학·공과계열 학과(부)",
+     "고교 수학·과학 과목 일반고 석차 3등급 이내 21단위 이상(과학고 5등급 이내, 영재학교 B- 이상)"
+    ],
+    "apply_start": "2026-09-15",
+    "apply_end": "2026-10-07",
+    "nationality": "내국인",
+    "major_groups": [
+     "ENGINEERING",
+     "NATURAL"
+    ],
+    "entry_years": [
+     2026
+    ],
+    "documents": [
+     "장학생 추천서",
+     "고등학교 졸업증명서",
+     "고교 학교생활기록부(3개년)",
+     "주민등록초본",
+     "경제상황 증빙서류(해당자)"
+    ],
+    "evaluation": [
+     {
+      "item": "고교학업성적",
+      "percent": 100
+     }
+    ],
+    "recommender": "총장·단과대학장",
+    "criteria": [
+     "동점 시 기초생활수급자 > 차상위계층 > 거주기간 순"
+    ]
+   }
+  ],
+  "exclusions": [
+   "2026년 재단 상반기 장학생으로 선발된 자는 하반기 장학금 신청 및 선발 불가",
+   "과학 장학: 재단 하반기 장학금 간 중복 신청 불가, 중복 신청 시 서류탈락"
+  ],
+  "documents": [
+   "장학금 지원 신청서",
+   "개인정보 수집·이용·제공 및 조회 동의서",
+   "서약서",
+   "재학증명서",
+   "본인 명의 통장 사본"
+  ],
+  "selection": {
+   "method": "유형별 평가 기준에 따른 서류심사 선발, 학교별 최대 선발인원 한도",
+   "priority": []
+  },
+  "summary": "대전청년내일재단 하반기 장학: 대전 거주·소재 대학생 성취·과학·외국인 유학생 장학, 학교(총)장 추천 필요",
+  "school": {
+   "excluded_types": [
+    "CYBER",
+    "OPEN_UNIV"
+   ]
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRESIDENT",
+    "DEAN"
+   ]
+  },
+  "deadline_kind": "FOUNDATION",
+  "exclusion_items": [
+   {
+    "type": "PRIOR_RECENT",
+    "text": "2026년 재단 상반기 장학생으로 선발된 자는 하반기 장학금 신청 및 선발 불가"
+   },
+   {
+    "type": "OTHER",
+    "text": "과학 장학: 재단 하반기 장학금 간 중복 신청 불가, 중복 신청 시 서류탈락"
+   }
+  ],
+  "obligations": [
+   "증서 수여식 장학생 전원 필수 참석",
+   "서약서: 허위 사실 시 장학금 반환, 재단 행사 성실 참여",
+   "과학 장학: 수혜 후 비이공계 전공 진급 시 자격 박탈 및 기지급 장학금 전액 반환"
+  ],
+  "procedure": [
+   {
+    "name": "서류심사 및 평가",
+    "when": "2026년 10~11월"
+   },
+   {
+    "name": "최종 발표",
+    "when": "2026년 12월"
+   },
+   {
+    "name": "증서 수여식 및 장학금 지급",
+    "when": "2026년 12월"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "징계(정학 이상) 처분 또는 학교폭력예방법 제17조 제1항 제4~9호 징계를 받은 자 제외",
+    "section": "선발 제외사항",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "형사처벌(처분)을 받거나 사회적 물의를 일으킨 경우 제외",
+    "section": "선발 제외사항",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "장학금을 받기 위한 허위 기재 등 사실이 밝혀진 때 제외",
+    "section": "선발 제외사항",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "교육부 비인가 학교 재학 중인 자 제외",
+    "section": "선발 제외사항",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "초과학기생(정규학기 초과 등록자) 제외 (성취 대학생·외국인 유학생)",
+    "section": "선발 제외사항",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "외국인 유학생: 재외한국인 제외",
+    "section": "선발 제외사항",
+    "source": "첨부4",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "성취 장학(타지역 소재 대학): 대전 외 지역 소재 국내 대학 재학, 추천 필요",
+    "section": "신청자격",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "외국인 유학생: 대전 소재 대학 정규 학부과정 재학, 총장 추천 대상자만 온라인 신청 (개별 신청 불가)",
+    "section": "신청자격",
+    "source": "첨부4",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "과학 장학: 대전 소재 4년제 대학 2026 신입생(1학년), 자연과학·공과계열 학과(부)",
+    "section": "신청자격",
+    "source": "첨부5",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "과학 장학: 고교 수학·과학 과목 일반고 석차 3등급 이내 21단위 이상(과학고 5등급 이내, 영재학교 B- 이상)",
+    "section": "신청자격",
+    "source": "첨부5",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "재단 장학금은 1인 1년 1회에 한하여 선발",
+    "section": "기타사항",
+    "source": "첨부2",
+    "kind": "BENEFIT_LIMIT"
+   }
+  ]
+ }
+}

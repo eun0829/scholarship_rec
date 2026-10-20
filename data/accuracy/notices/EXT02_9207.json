@@ -1,0 +1,156 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9207",
+ "title": "동산장학회 이공계 새터민 장학",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-09-02",
+ "summary": "이공계 전공 새터민(탈북민가족) 대학생 대상, 학과장 추천, 최대 800만원 지급",
+ "url": "https://buly.kr/D3hG8Cv",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "동산장학회 이공계 새터민 장학",
+  "foundation": "동산장학회",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-08-03",
+  "apply_end": "2026-09-02",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "최대 800만원 (2회 분할 지급)",
+  "apply_how": "우편 접수 (동산장학회, 학과장 추천)",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": "2026년 2학기 재학 예정"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [
+   "이공계 (공대, 자연대, 농대 우대)"
+  ],
+  "nationality": null,
+  "special_status": [
+   "탈북민가족(새터민)"
+  ],
+  "other_conditions": [
+   "성적이 우수하고 생활 환경이 어려운 자"
+  ],
+  "variants": [],
+  "exclusions": [],
+  "documents": [],
+  "selection": {
+   "method": null,
+   "priority": [
+    "공대·자연대·농대 전공자 우대"
+   ]
+  },
+  "summary": "이공계 전공 새터민(탈북민가족) 대학생 대상, 학과장 추천, 최대 800만원 지급",
+  "special_groups": [
+   {
+    "code": "DEFECTOR",
+    "scope": "FAMILY",
+    "mode": "REQUIRED"
+   }
+  ],
+  "major_groups": [
+   "ENGINEERING",
+   "NATURAL",
+   "AGRICULTURE"
+  ],
+  "recommendation": {
+   "required": true,
+   "from": [
+    "DEAN"
+   ]
+  },
+  "review_criteria": [
+   "긍정적인 사고와 자신의 미래에 대한 강한 비전을 가진 자"
+  ],
+  "recommender": "학과장",
+  "unmodeled_conditions": [
+   {
+    "text": "성적이 우수하고 생활 환경이 어려운 자",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "직전학기의 성적을 참조하여 다음 학기 지원 여부 결정",
+    "section": "장학혜택",
+    "source": "본문",
+    "kind": "BENEFIT_LIMIT"
+   }
+  ]
+ }
+}

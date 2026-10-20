@@ -19,7 +19,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from . import file_role
+from . import file_role, major_filter
 from .ai.prompt import Section, build_payload
 from .ai.runner import run_extraction
 from .ai.schema import SCHEMA_VERSION, SCHEMA_VERSION_V3
@@ -60,6 +60,7 @@ class Summary:
     deactivated: int = 0
     period_updated: int = 0           # 신청기간만 바뀐 글 (AI 호출 없이 날짜만 갱신)
     skipped_stub: int = 0             # 상세를 조회하지 못해 건너뜀 (저장된 적 없는 글)
+    skipped_major: int = 0            # 공학과 무관한 계열(농업·예체능) 전용이라 AI 추출 전에 건너뜀
     input_tokens: int = 0
     output_tokens: int = 0
     att_ok: int = 0
@@ -67,7 +68,7 @@ class Summary:
     att_skipped: int = 0
 
     def line(self) -> str:
-        return ("대상 {total}건 | 변경없음 {unchanged} | 건너뜀(내용변경) {skipped_changed} | 건너뜀(제목중복) {skipped_title} | "
+        return ("대상 {total}건 | 변경없음 {unchanged} | 건너뜀(내용변경) {skipped_changed} | 건너뜀(제목중복) {skipped_title} | 건너뜀(계열) {skipped_major} | "
                 "추출완료 {extracted} | 확인필요 {need_review} | "
                 "수집만 {collected_only} | 실패 {failed} | 비활성화 {deactivated} | 기간갱신 {period_updated} | 상세미조회 {skipped_stub} | "
                 "첨부 성공 {att_ok} / 실패 {att_failed} / 건너뜀 {att_skipped} | 토큰 입력 {input_tokens:,} / 출력 {output_tokens:,}"
@@ -97,7 +98,7 @@ class Pipeline:
         return self._registry
 
     # ================================================================== 실행
-    def run(self, days: int = 30, limit: Optional[int] = None, only: Optional[List[str]] = None) -> Summary:
+    def run(self, days: int = 30, limit: Optional[int] = None, only: Optional[List[str]] = None, new: Optional[int] = None) -> Summary:
         if self.ai is not None and self.s.ai_schema_version >= SCHEMA_VERSION_V3:
             self.registry()                       # 잘못된 항목 사전이면 AI 를 한 번도 부르기 전에 멈춘다 (공고마다 크레딧이 낭비되는 것을 막음)
         notices = self.adapter.fetch_notices(days)
@@ -108,6 +109,9 @@ class Pipeline:
         all_ids = {n.src_id for n in notices}
         if only:
             notices = [n for n in notices if n.src_id in set(only)]
+        if new:                                          # 시험용: 이미 저장된 글(완료)은 빼고 새 글 N건만 (--limit 는 목록 앞에서 자르므로 저장된 글이 섞인다)
+            notices = [n for n in notices if (self.repo.get_notice_state(self.src_cd, n.src_id) or {}).get("status_cd") not in ("EXTRACTED", "NEED_REVIEW")][:new]
+            limit = limit or new                         # 일부만 본 목록이라 사라진 글 정리는 하지 않는다
         if limit:
             notices = notices[:limit]
         summ = Summary(total=len(notices))
@@ -141,6 +145,14 @@ class Pipeline:
                     log.info("원본에서 사라진 글 %d건 비활성화: %s", len(missing), missing[:10])
         log.info("[%s] %s", self.src_cd, summ.line())
         return summ
+
+    def major_skip_reason(self, title: str, body_text: str) -> Optional[str]:
+        if not getattr(self.s, "major_exclude", True):
+            return None
+        rules = getattr(self, "_major_rules", None)
+        if rules is None:
+            rules = self._major_rules = major_filter.load_rules(getattr(self.s, "major_exclude_file", None))
+        return major_filter.skip_reason(title, body_text, rules)
 
     # ================================================================== 공고 1건
     def process_notice(self, n: SourceNotice, summ: Summary) -> str:
@@ -193,6 +205,12 @@ class Pipeline:
             base["apply_end"] = _to_date(h["apply_end"])
             if h.get("apply_start"):
                 base["apply_start"] = _to_date(h["apply_start"])
+        reason = self.major_skip_reason(title, body_text)
+        if reason:                                                      # 공학과 무관한 계열 전용: AI 를 부르지 않고 사유와 함께 남긴다 (후보에서는 빠짐)
+            base.update(status_cd="SKIPPED_MAJOR", use_yn="N", uncertain_json=json.dumps({"skipped": reason}, ensure_ascii=False))
+            self.repo.upsert_notice(self.src_cd, n.src_id, base)
+            summ.skipped_major += 1
+            return "SKIPPED_MAJOR ({})".format(reason)
         self.repo.upsert_notice(self.src_cd, n.src_id, base)
 
         mode = self.s.ext02_attach_to_ai if self.src_cd == "EXT02" else "guide_and_form"     # 외부01 은 기존 동작 유지

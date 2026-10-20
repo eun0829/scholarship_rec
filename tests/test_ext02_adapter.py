@@ -350,3 +350,28 @@ def test_config_loading_and_env_override(monkeypatch, tmp_path):
     monkeypatch.setenv("EXT02_BASE_URL", "http://localhost:9999/")
     c2 = Ext02Config.load(f)
     assert (c2.ordby, c2.max_pages, c2.include_tags, c2.base_url) == ([2], 3, ["대학생", "전문대"], "http://localhost:9999")
+
+
+def test_recent_mode_includes_closed_orders_by_idx_and_skips_saved(make):
+    rows = [ROW("10", state="모집완료", dday=-5), ROW("11", dday=-1, state="모집완료"), ROW("12"), ROW("13", tags=("장학금", "고등학생")), ROW("14", state="모집완료", dday=-9)]
+    known = lambda src, idx: {"status_cd": "EXTRACTED"} if idx == "14" else None
+    srv, ad = make(list_pages={(5, 1): list_html(rows)}, known=known, recent=2, include_closed=True)
+    assert [r.idx for r in ad.select(ad.collect_recent_rows())] == ["14", "12", "11", "10"]       # 마감 포함, 최근 등록순, 고등학생은 제외
+    assert ad.deactivation_safe is False                                                        # 일부만 본 목록이라 사라진 글 정리 안 함
+    ad._notice_or_stub = lambda r: r.idx
+    assert ad.fetch_notices(30) == ["12", "11"]                                                  # 저장된 14 는 빼고 새 글 2건
+    plain = make(rows=rows)[1]
+    assert [r.idx for r in plain.select(plain.crawl_list())] == ["12"]                          # 운영 기본 동작은 그대로
+
+
+def test_pages_option_reads_only_the_given_list_pages(make):
+    pages = {(0, 1): list_html([ROW("1")], max_page=6), (0, 5): list_html([ROW("5"), ROW("55", tags=("장학금", "고등학생"))], max_page=6),
+             (0, 6): list_html([ROW("6", state="모집완료")], max_page=6)}
+    srv, ad = make(list_pages=pages, cfg_over={"ordby": [0]})
+    ad.pages = [5, 6]
+    rows = ad.crawl_pages(ad.pages)
+    assert sorted(r.idx for r in rows) == ["5", "55", "6"] and ad.deactivation_safe is False
+    assert [r[2].get("page") for r in srv.requests if r[1] == "/scholarship/list.html"] == ["5", "6"]
+    assert [r.idx for r in ad.select(rows)] == ["5"]                       # 고등학생·모집완료는 기본 거름에서 빠진다
+    ad.include_closed = True
+    assert sorted(r.idx for r in ad.select(rows)) == ["5", "6"]

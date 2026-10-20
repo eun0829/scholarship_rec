@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional, Tuple
 CATEGORIES = ("OUT", "IN", "NATIONAL", "LOAN", "INFO", "ETC")
 APPLY_TYPES = ("SCHOOL", "DIRECT", "UNKNOWN")
 LEVELS = ("ELEM", "MIDDLE", "HIGH", "UNIV", "GRAD")
+PRE_COLLEGE_LEVELS = ("ELEM", "MIDDLE", "HIGH")      # 대학 이전 학교급 (이 학교급만 대상인 유형은 저장하지 않음)
 GPA_BASIS = ("LAST_SEMESTER", "CUMULATIVE", "EITHER", "UNKNOWN")
 UNCERTAIN_LEVELS = ("verify", "note")          # verify = 값이 틀렸거나 빠졌을 수 있어 사람이 확인 / note = 단순 참고
 KNOWN_SCALES = (4.5, 4.3, 4.0, 5.0, 100.0)
@@ -227,7 +228,7 @@ def _norm_region(rg, v3: bool = False, issue=None, prefix: str = "region", sink=
     return out
 
 
-def _norm_variants(raw, top_gpa: Dict[str, Any], top_levels: List[str], issue, v3: bool = False) -> List[Dict[str, Any]]:
+def _norm_variants(raw, top_gpa: Dict[str, Any], top_levels: List[str], issue, v3: bool = False, dropped: Optional[List[str]] = None) -> List[Dict[str, Any]]:
     """유형별 조건. 최상위 값 = 모든 유형 공통, 유형의 값 = 공통에 '추가로' 요구되는 조건(null/빈 값 = 추가 조건 없음).
     유형의 target_levels 가 비어 있으면 최상위와 같다는 뜻이다."""
     out: List[Dict[str, Any]] = []
@@ -250,6 +251,10 @@ def _norm_variants(raw, top_gpa: Dict[str, Any], top_levels: List[str], issue, v
         pfx = "variants[{}]".format(len(out))
         raw_levels = _strs(it.get("target_levels"))
         v_levels = [x for x in raw_levels if x in LEVELS]
+        if v3 and v_levels and all(x in PRE_COLLEGE_LEVELS for x in v_levels):
+            if dropped is not None:
+                dropped.append(name)                                  # 중·고등학생만 대상인 유형은 대학생 추천에 쓰지 않으므로 저장하지 않는다
+            continue
         if len(v_levels) != len(raw_levels):
             issue(pfx + ".target_levels", "알 수 없는 학교급 제거: {}".format([x for x in raw_levels if x not in LEVELS]))
         extra = [x for x in v_levels if top_levels and x not in top_levels]
@@ -268,7 +273,7 @@ def _norm_variants(raw, top_gpa: Dict[str, Any], top_levels: List[str], issue, v
             issue(pfx + ".gpa", "공통 성적 기준({})이 유형 '{}'의 기준({})보다 높음 - 최상위 값이 유형별 값을 섞은 것인지 확인".format(
                 tg["min"], name, vg["min"]))
         out.append(v)
-    if len(out) == 1:
+    if len(out) == 1 and not dropped:
         issue("variants", "유형이 1개뿐임 - 유형이 둘 이상일 때만 variants 를 쓰므로 최상위 항목에 적는 것이 맞는지 확인")
     return out
 
@@ -365,7 +370,10 @@ def normalize(obj: Any, posted: Optional[date] = None, source_text: str = "",
     for k in ("majors", "special_status", "other_conditions", "exclusions", "documents"):
         out[k] = _strs(obj.get(k))
     out["apply_how"] = _str(obj.get("apply_how"))
-    out["variants"] = _norm_variants(obj.get("variants"), out["gpa"], out["target_levels"], issue, v3)
+    dropped_variants: List[str] = []
+    out["variants"] = _norm_variants(obj.get("variants"), out["gpa"], out["target_levels"], issue, v3, dropped_variants)
+    if dropped_variants:
+        out["dropped_variants"] = dropped_variants                      # 저장 전에 뺀 중·고등학생 대상 유형 이름 (기록용)
     sel = _d(obj.get("selection"))
     out["selection"] = {"method": _str(sel.get("method")), "priority": _strs(sel.get("priority"))}
     out["summary"] = _str(obj.get("summary")) or ""
@@ -386,6 +394,8 @@ def normalize(obj: Any, posted: Optional[date] = None, source_text: str = "",
     if v3:
         from . import schema_v3
         schema_v3.apply_v3(obj, out, issue, moved)
+        from ..variant_scope import attach_prefixed_conditions
+        out = attach_prefixed_conditions(out)                           # '유형명: 조건' 문장은 저장 전에 그 유형의 조건으로
 
     issues.extend(weekday_issues(source_text, posted))
     return out, issues

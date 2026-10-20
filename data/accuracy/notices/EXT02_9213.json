@@ -1,0 +1,191 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9213",
+ "title": "강원인재원 브랜드장학",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-10-08",
+ "summary": "강원도 내 대학(원) 재학·휴학생 및 강원학사생 대상 해외 탐방 경비 최대 300만원 지원",
+ "url": "https://injae.gwd.go.kr/injae/community/notice?seq=2962",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2026년 「강원·세종건설·신디자인랩」 브랜드장학금 하반기",
+  "foundation": "강원인재원",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-11",
+  "apply_end": "2026-10-08",
+  "org_deadline": null,
+  "recruit_count": "15명",
+  "amount": "해외 탐방 경비 1인 최대 300만원",
+  "apply_how": "서류 구비 후 이메일(injae1.gwd@gmail.com) 접수",
+  "target_levels": [
+   "UNIV",
+   "GRAD"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학",
+    "휴학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": "학부 재학·휴학, 대학원은 석사, 강원학사생 포함"
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "도내 학생은 1년 이상 도내 거주 필요, 강원학사생은 학사 거주 여부 확인",
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "SCHOOL_LOCATION",
+     "areas": [
+      "강원특별자치도"
+     ]
+    },
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "강원특별자치도"
+     ],
+     "min_years": 1
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "학과전공을 연계한 주제로 탐방계획서 제출"
+  ],
+  "variants": [],
+  "exclusions": [],
+  "documents": [
+   "신청서",
+   "탐방계획서",
+   "개인정보 수집 및 이용동의서",
+   "재학증명서",
+   "휴학증명서",
+   "주민등록초본",
+   "강원학사 재사증명서"
+  ],
+  "selection": {
+   "method": "1차 탐방계획서 서류심사, 2차 PT 발표 심사",
+   "priority": []
+  },
+  "summary": "강원도 내 대학(원) 재학·휴학생 및 강원학사생 대상 해외 탐방 경비 최대 300만원 지원",
+  "recommendation": {
+   "required": false,
+   "from": []
+  },
+  "deadline_kind": "FOUNDATION",
+  "obligations": [
+   "장학금 수여식 참석(불참 시 미지급)",
+   "성과공유회 참석",
+   "해외 탐방 성과 동영상 및 결과보고서 제출",
+   "계획 미이행 시 지원금 반환(반환 각서 작성)"
+  ],
+  "review_criteria": [
+   "1차: 지원동기·목적, 주제의 적합성, 계획구체성, 성장가능성, 예산계획의 적정성",
+   "2차: 목표의식·준비성, 창의성·도전성·포용성, 기대효과, 사회공헌·환류"
+  ],
+  "procedure": [
+   {
+    "name": "1차 서류합격자 발표",
+    "when": "10/23"
+   },
+   {
+    "name": "2차 PT 발표 심사",
+    "when": "11/2"
+   },
+   {
+    "name": "최종합격자 공고",
+    "when": "11/9"
+   },
+   {
+    "name": "장학금 수여식 및 지급",
+    "when": "11/18"
+   }
+  ],
+  "criteria": [
+   "1차 합산점 상위 40명 내외 선발",
+   "2차 PT 발표 후 최종 15명 내외 선발"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "단체봉사·선교 등 탐방 목적과 다른 활동 시 선발 및 비용 지원 불가",
+    "section": "개요",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "학과전공을 연계한 주제로 탐방계획서 제출",
+    "section": "선발 세부내역",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

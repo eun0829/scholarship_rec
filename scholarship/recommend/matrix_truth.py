@@ -370,7 +370,11 @@ def r9195(f: Facts, j: Judge) -> None:                      # 국가장학금: �
     if f.enrolled is False:
         j.fail("재학 중인 학생 대상 (휴학 제외)")
     j.tri(f.income_le(9), "학자금 지원 9구간 이내")
-    j.doubt("국가장학금Ⅱ유형(대학별)·지역인재장학금(입학성적) 선발 기준")
+    # Ⅰ유형(국가 기준)을 확실히 충족하면 대학별 기준(Ⅱ유형·지역인재)은 그 학생에게 필요 없다.
+    # Ⅰ유형: 직전학기 80점(수급자·차상위 70점), 신입생·편입생·재입학생과 장애인은 성적·학점 면제
+    type1 = tri_or(f.new_student, f.special("DISABLED"), f.percent_ge(80), tri_and(f.special("BASIC_LIVELIHOOD", "NEAR_POOR"), f.percent_ge(70)))
+    if type1 is not True:
+        j.doubt("국가장학금Ⅱ유형(대학별)·지역인재장학금(입학성적) 선발 기준")
 
 
 def r9210(f: Facts, j: Judge) -> None:                      # 춘천시 봄내장학: 본인 or 부모 1년 이상 거주 (주소이전·세인트존스대 예외), 유형별 조건은 공고문

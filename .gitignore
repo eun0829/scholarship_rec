@@ -43,6 +43,12 @@ files.txt
 # 생성 결과 JSON
 result*.json
 
+# Claude Code 개인 설정
+.claude/settings.local.json
+.claude/hooks/
+
 # OS 파일
 .DS_Store
 Thumbs.db
+dump_*/
+pytest_out.txt

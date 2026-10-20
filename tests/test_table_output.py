@@ -78,7 +78,7 @@ def test_deadline_cell_shows_warnings_and_unmatched_variants_are_listed(tmp_path
     assert "10-07 (D-1)" in t and "마감 임박" in t and "추천서 필요" in t and "검수 대기" in t                      # 마감 열에 경고가 함께 보인다
     flat = " ".join(t.replace("|", " ").split())
     assert "애향-저소득(충족)" in flat and "미달 유형: 애향-통리반장" in flat                                          # 해당 가능 유형과 미달 유형이 같은 칸에 나뉘어 표시된다
-    assert "[원문 링크]" not in t                                                                           # 결과 폴더에는 원문 주소가 없다
+    assert "[원문 링크]" in t and "/bbs/tukorea/374/" in t                                                   # 결과 폴더에서도 글번호로 만든 원문 주소가 나온다
 
 
 def test_width_option_limits_every_line(result):
@@ -191,21 +191,26 @@ def test_run_v3_match_width_option(capsys, trial, student):
     assert max(display_width(l) for l in table_lines(out)) <= 90
 
 
-def test_run_recommend_default_is_a_table_and_list_md_json_are_available(tmp_path, capsys):
+def test_run_recommend_default_is_a_card_view_and_table_list_md_json_are_available(tmp_path, capsys):
     d = tmp_path / "out"
     d.mkdir()
     _results_dir(d)
     prof_file = _profile_file(tmp_path, "chuncheon_low_gpa_lowincome.json")
     base = ["--profile", prof_file, "--results-dir", str(d), "--today", "2026-10-06", "--env", str(tmp_path / "none.env")]
     assert run_recommend.main(base) == 0
+    card = capsys.readouterr().out
+    assert "=== 장학금 추천 결과 (기준일 2026-10-06) ===" in card and "[한눈에 보기]" in card and "▶ " in card and "조건부 1/1" in card   # 기본은 건별 카드
+    assert "? " not in card and "\n    ! " not in card                                                              # 옛 기호(?, !)는 쓰지 않는다
+    assert run_recommend.main(base + ["--format", "table"]) == 0
     table = capsys.readouterr().out
     assert "=== 장학금 추천 결과 (기준일 2026-10-06) ===" in table and "| 글번호 | 장학금" in table and "+====" in table and "해당 가능 유형:" not in table
     assert run_recommend.main(base + ["--format", "md"]) == 0
     assert "| --- |" in capsys.readouterr().out
     assert run_recommend.main(base + ["--format", "list"]) == 0
     assert "해당 가능 유형:" in capsys.readouterr().out
-    assert run_recommend.main(base + ["--width", "75"]) == 0
-    assert max(display_width(l) for l in table_lines(capsys.readouterr().out)) <= 75
+    assert run_recommend.main(base + ["--format", "table", "--width", "75"]) == 0
+    out75 = capsys.readouterr().out
+    assert max(display_width(l) for l in table_lines(out75[:out75.index("[원문 링크]")])) <= 75                   # 주소 표는 주소를 자르지 않으므로 제외
     assert run_recommend.main(base + ["--json"]) == 0
     assert json.loads(capsys.readouterr().out)["counts"]["conditional"] == 1
 

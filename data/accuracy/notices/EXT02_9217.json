@@ -1,0 +1,278 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9217",
+ "title": "인천시 SK행복 장학",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-08",
+ "summary": "인천 서구 일부 동 거주 고교생·대학생 중 가정형편·성적 충족자 선발, 1인 100만원",
+ "url": "https://www.seohae.go.kr/open_content/main/bbs/bbsMsgDetail.do?msg_seq=30393&bcd=notice",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2026년도 하반기 SK행복 장학생",
+  "foundation": "재단법인 인천인재평생교육진흥원",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-10",
+  "apply_end": "2026-10-08",
+  "org_deadline": null,
+  "recruit_count": "68명",
+  "amount": "1인당 100만원",
+  "apply_how": "진흥원 홈페이지 [장학사업-장학금 지원신청]에서 온라인 신청",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "휴학",
+    "수료"
+   ],
+   "min_remaining_semesters": null,
+   "notes": "정규학기 재학생만 대상, 재수생 제외"
+  },
+  "gpa": {
+   "min": 2.5,
+   "scale": 4.5,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [
+    {
+     "min": 2.3,
+     "scale": 4.3
+    }
+   ],
+   "notes": "대학생 기준. 편입 후 첫학기는 편입 전 학교 직전학기 성적",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": 12.0,
+   "min_completed_semesters": null,
+   "notes": "장학금 지급 직전학기 기준, 4학년은 9학점"
+  },
+  "income": {
+   "max_bracket": 6.0,
+   "eligible_types": [
+    "기초생활수급자",
+    "차상위계층",
+    "한부모가정",
+    "중증장애인",
+    "학자금 지원구간 6구간 이내"
+   ],
+   "notes": "대학생은 본인 또는 부모가 특수계층이거나 본인 지원구간 6구간 이내",
+   "basis": "BRACKET",
+   "bracket_term": "CURRENT_TERM"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "공고일 기준 본인 또는 부모의 주민등록 주소지",
+   "mode": "ANY",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "인천광역시 서구 신현원창동",
+      "인천광역시 서구 석남1동",
+      "인천광역시 서구 석남2동",
+      "인천광역시 서구 석남3동",
+      "인천광역시 서구 가정1동",
+      "인천광역시 서구 가좌1동",
+      "인천광역시 서구 가좌2동",
+      "인천광역시 서구 가좌3동"
+     ]
+    },
+    {
+     "type": "RESIDENCE_PARENT",
+     "areas": [
+      "인천광역시 서구 신현원창동",
+      "인천광역시 서구 석남1동",
+      "인천광역시 서구 석남2동",
+      "인천광역시 서구 석남3동",
+      "인천광역시 서구 가정1동",
+      "인천광역시 서구 가좌1동",
+      "인천광역시 서구 가좌2동",
+      "인천광역시 서구 가좌3동"
+     ]
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "동일연도 인천인재평생교육진흥원 장학금 중복 선발 불가",
+   "전년도, 동일연도 진흥원 해외 프로그램(연수, 배낭연수, 봉사) 장학생은 선발 제외"
+  ],
+  "documents": [
+   "장학생 지원신청서",
+   "자기소개서",
+   "재학증명서",
+   "주민등록초본",
+   "가정형편 증빙서류(해당자)",
+   "직전학기 성적증명서",
+   "보통예금통장 사본"
+  ],
+  "selection": {
+   "method": "접수 → 서류심사 → 장학생 선발심사위원회 심의 → 확정",
+   "priority": []
+  },
+  "summary": "인천 서구 일부 동 거주 고교생·대학생 중 가정형편·성적 충족자 선발, 1인 100만원",
+  "transfer": {
+   "mode": "USE_PREV_SCHOOL"
+  },
+  "special_groups": [
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "FAMILY",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "FAMILY",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "SINGLE_PARENT",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "SINGLE_PARENT",
+    "scope": "FAMILY",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "DISABLED",
+    "scope": "SELF",
+    "mode": "REQUIRED"
+   },
+   {
+    "code": "DISABLED",
+    "scope": "FAMILY",
+    "mode": "REQUIRED"
+   }
+  ],
+  "recommendation": {
+   "required": false,
+   "from": []
+  },
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "동일연도 인천인재평생교육진흥원 장학금 중복 선발 불가"
+   },
+   {
+    "type": "OTHER",
+    "text": "전년도, 동일연도 진흥원 해외 프로그램(연수, 배낭연수, 봉사) 장학생은 선발 제외"
+   }
+  ],
+  "review_criteria": [
+   "자기소개서"
+  ],
+  "evaluation": [
+   {
+    "item": "가정형편",
+    "percent": 60
+   },
+   {
+    "item": "성적",
+    "percent": 40
+   }
+  ],
+  "procedure": [
+   {
+    "name": "서류심사",
+    "when": "10/12~11/20"
+   },
+   {
+    "name": "선발심사위원회 심의",
+    "when": "11/27 예정"
+   },
+   {
+    "name": "결과발표",
+    "when": "12/4 예정"
+   },
+   {
+    "name": "장학금 지급",
+    "when": "12/16 예정"
+   }
+  ],
+  "criteria": [
+   "동점자는 가정형편 → 성적 고득점 순",
+   "전년도 재단 장학생·한가정 동시지원자는 후순위"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "휴학생/재수생/수료생/초과학기 재학생 등은 선발심사에서 제외",
+    "section": "지원자격",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "장학금 2개 종 이상 동시 지원 불가",
+    "section": "선발원칙",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   }
+  ]
+ }
+}

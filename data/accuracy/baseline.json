@@ -1,0 +1,1555 @@
+{
+ "decided_rate": 0.6419,
+ "invariants": [],
+ "lint": {
+  "EXT01:152156": [
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 만 39세 이하로 미혼인 자"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 만 39세 이하로 미혼인 자"
+   }
+  ],
+  "EXT01:152340": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "중학생 성적우수: 2026년 1학기 국어·영어·수학·사회·과학 중 4과목 이상 A 성취도"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "중학생 공통: 2026년 1학기 국어·영어·수학·사회·과학 중 3과목 이상 A 성취도"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 성적우수: 5과목 모두 2등급 이내 또는 A 성취도 과목 단위 합계 18 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 공통: 5과목 모두 3등급 이내 또는 A 성취도 과목 단위 합계 15 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "초등학생 예·체능 특기자: 선수 등록 및 경력 확인이 가능한 초등학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "중학생 성적우수: 2026년 1학기 국어·영어·수학·사회·과학 중 4과목 이상 A 성취도"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "중학생 공통: 2026년 1학기 국어·영어·수학·사회·과학 중 3과목 이상 A 성취도"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 성적우수: 5과목 모두 2등급 이내 또는 A 성취도 과목 단위 합계 18 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 공통: 5과목 모두 3등급 이내 또는 A 성취도 과목 단위 합계 15 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "초등학생 예·체능 특기자: 선수 등록 및 경력 확인이 가능한 초등학생"
+   }
+  ],
+  "EXT01:152502": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적우수(검정고시 청소년): 2026년 중졸·고졸 검정고시 최종 합격자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "희망: 고등학생 2026년 1학기 이수과목 50% 이상이 5등급 이상(9등급제)/3등급 이상(5등급제)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 광역시·도 단위대회 우승자 또는 전국규모 이상 대회 3위 이상 입상자(공고일 기준 2년 이내)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 선발분야 예술, 체육, 문학, 기능 등"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "달서구체육회 특기: 체육 분야 초·중·고등학생, 광역시·도 단위대회 우승 또는 전국규모 이상 대회 3위 이상(1년 이내)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적우수(검정고시 청소년): 2026년 중졸·고졸 검정고시 최종 합격자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "희망: 고등학생 2026년 1학기 이수과목 50% 이상이 5등급 이상(9등급제)/3등급 이상(5등급제)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 광역시·도 단위대회 우승자 또는 전국규모 이상 대회 3위 이상 입상자(공고일 기준 2년 이내)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 선발분야 예술, 체육, 문학, 기능 등"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "달서구체육회 특기: 체육 분야 초·중·고등학생, 광역시·도 단위대회 우승 또는 전국규모 이상 대회 3위 이상(1년 이내)"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[성적우수(검정고시 청소년)] 유형에 구조 조건이 없음"
+   }
+  ],
+  "EXT01:152513": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 무상교육대상자: 직전학기 성적 교내 상위 10% (유상교육대상자는 성적무관)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 무상교육대상자: 직전학기 성적 교내 상위 10% (유상교육대상자는 성적무관)"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[대학생] 평점 2.0 의 만점이 없음"
+   }
+  ],
+  "EXT01:152536": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "우수장학금: 울산시 소재 고등학교 졸업자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "다자녀장학금: 울산시 소재 고등학교 졸업자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "다자녀장학금: 휴학중인 학생 및 국외 대학교 재학 중인 학생은 대학에 재학 중인 학생 수에서 제외됨"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "생활장학금: 울산시 소재 대학에 재학 중인 학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재능장학금: 시 소재 초·중·고·대학교 재학생 단, 대학생의 경우 타지역 재학생도 가능"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재능장학금: 공고일로부터 2년이내 광역시·도 단위 대회 또는 전국규모 이상 대회 3위 이상 입상자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재능장학금: 단체 수상의 경우 대표 1명만 신청 가능"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 울산시 소재 고등학교·대학 졸업(예정)이거나 2026년도에 졸업하여 정착하고 있는 학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 공고일 기준 울산소재 동일 사업장(5인 이상)에서 계속하여 3개월 이상 근무한 자, 대기업 취업자 제외"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 공고일 기준 근로형태가 정규직 또는 계약기간이 1년 이상인 근로자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 고등학교 졸업(예정)자는 국어·영어·수학 전체학기 평균 4등급 이내, 검정고시 평균 70점 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "우수장학금: 울산시 소재 고등학교 졸업자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "다자녀장학금: 울산시 소재 고등학교 졸업자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "다자녀장학금: 휴학중인 학생 및 국외 대학교 재학 중인 학생은 대학에 재학 중인 학생 수에서 제외됨"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "생활장학금: 울산시 소재 대학에 재학 중인 학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재능장학금: 시 소재 초·중·고·대학교 재학생 단, 대학생의 경우 타지역 재학생도 가능"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재능장학금: 공고일로부터 2년이내 광역시·도 단위 대회 또는 전국규모 이상 대회 3위 이상 입상자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재능장학금: 단체 수상의 경우 대표 1명만 신청 가능"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 울산시 소재 고등학교·대학 졸업(예정)이거나 2026년도에 졸업하여 정착하고 있는 학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 공고일 기준 울산소재 동일 사업장(5인 이상)에서 계속하여 3개월 이상 근무한 자, 대기업 취업자 제외"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 공고일 기준 근로형태가 정규직 또는 계약기간이 1년 이상인 근로자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역정착청년인재장학금: 고등학교 졸업(예정)자는 국어·영어·수학 전체학기 평균 4등급 이내, 검정고시 평균 70점 이상"
+   }
+  ],
+  "EXT01:152595": [
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 윤하: 학과명에 물리·천문 포함, 6구간 이하, 백분위 80점·12학점 이상, 신입·편입 제외, 잔여 1학기 이상"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 2. 공수 김용호: 저소득층 및 사회적 배려계층 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 공수 김용호: 4년제, 6구간 이하, 백분위 80점·12학점 이상, 인재육성 프로그램('27년 1월) 참가 가능자, 잔여 2학기 이상"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 3. 국민건강보험공단 강원인재(유형1): 강원특별자치도 소재 저소득 대학생(원주시 제외)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 4. 국민건강보험공단 강원인재(유형2): 원주시 소재 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 8. 상미당 행복한 장학금: 전국 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 9. 연암장학회: 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 11. 키움증권: 전국 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 13. 한국가스공사LnG(유형1): 전국 저소득 대학생(대구광역시 제외)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 14. 한국가스공사LnG(유형2): 대구광역시 소재 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 16. 한국교직원공제회: 저소득 사범대학(교육대, 교원대 포함) 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 17. 한국토지주택공사: LH 임대주택 거주 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 18. iM사회공헌재단: 대구·경북 지역 소재 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 윤하: 학과명에 물리·천문 포함, 6구간 이하, 백분위 80점·12학점 이상, 신입·편입 제외, 잔여 1학기 이상"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 2. 공수 김용호: 저소득층 및 사회적 배려계층 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 공수 김용호: 4년제, 6구간 이하, 백분위 80점·12학점 이상, 인재육성 프로그램('27년 1월) 참가 가능자, 잔여 2학기 이상"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 3. 국민건강보험공단 강원인재(유형1): 강원특별자치도 소재 저소득 대학생(원주시 제외)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 4. 국민건강보험공단 강원인재(유형2): 원주시 소재 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 8. 상미당 행복한 장학금: 전국 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 9. 연암장학회: 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 11. 키움증권: 전국 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 13. 한국가스공사LnG(유형1): 전국 저소득 대학생(대구광역시 제외)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 14. 한국가스공사LnG(유형2): 대구광역시 소재 저소득 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 16. 한국교직원공제회: 저소득 사범대학(교육대, 교원대 포함) 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 17. 한국토지주택공사: LH 임대주택 거주 대학생"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 18. iM사회공헌재단: 대구·경북 지역 소재 저소득 대학생"
+   }
+  ],
+  "EXT01:152687": [
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 대한민국 국적자로 최종학력이 고졸인 자(전문학사 취득자는 신·편입 시 취득 전 재직 2년 별도 충족 시 가능)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 대한민국 국적자로 최종학력이 고졸인 자(전문학사 취득자는 신·편입 시 취득 전 재직 2년 별도 충족 시 가능)"
+   }
+  ],
+  "EXT01:152953": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 지원대상은 관외 대학교 재학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 학교 기숙사 또는 본인/부모 명의의 학교 인근 월세거주자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 계약기간 최소 3개월 이상 필수, 종료된 계약서(묵시적 계약 포함) 불인정"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 직전 학기를 학점은행제 등으로 이수 시 고3 2학기 성적(내신 6등급 이내)으로 대체"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "공익인재: 최근 3년간 100시간 이상 봉사활동으로 공익 창출에 기여한 자(1365·VMS 등록 실적)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재외동포 자녀지원: 본인 또는 부모가 재외동포(F-4)사증을 발급받은 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "iHUG 인천도시공사: 부모 또는 본인의 주민등록 주소지가 인천도시공사 임대주택(영구, 국민임대 및 매입임대)인 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 지원대상은 관외 대학교 재학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 학교 기숙사 또는 본인/부모 명의의 학교 인근 월세거주자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 계약기간 최소 3개월 이상 필수, 종료된 계약서(묵시적 계약 포함) 불인정"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "관외대학 거주비 지원: 직전 학기를 학점은행제 등으로 이수 시 고3 2학기 성적(내신 6등급 이내)으로 대체"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "공익인재: 최근 3년간 100시간 이상 봉사활동으로 공익 창출에 기여한 자(1365·VMS 등록 실적)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "재외동포 자녀지원: 본인 또는 부모가 재외동포(F-4)사증을 발급받은 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "iHUG 인천도시공사: 부모 또는 본인의 주민등록 주소지가 인천도시공사 임대주택(영구, 국민임대 및 매입임대)인 자"
+   }
+  ],
+  "EXT01:152956": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "가족장학금: 형제/자매 또는 직계가족 2명 이상이 본교 학부에 재학 중인 경우"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "희망나눔장학금: 장애학생인 재학생, 장애등급 판정자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "가족장학금: 형제/자매 또는 직계가족 2명 이상이 본교 학부에 재학 중인 경우"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "희망나눔장학금: 장애학생인 재학생, 장애등급 판정자"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[국가유공자(자녀)] 평점 1.6 의 만점이 없음"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[재직교직원자녀] 평점 2.5 의 만점이 없음"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[가족장학금] 평점 2.5 의 만점이 없음"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[희망나눔] 평점 1.6 의 만점이 없음"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[다문화] 평점 2.6 의 만점이 없음"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[새터민] 평점 1.6 의 만점이 없음"
+   }
+  ],
+  "EXT01:153082": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   }
+  ],
+  "EXT01:153206": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   }
+  ],
+  "EXT01:153357": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생: 담임교사 특별추천 학생(기초생활수급자·차상위계층이 아니어도 담임교사가 추천)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생: 담임교사 특별추천 학생(기초생활수급자·차상위계층이 아니어도 담임교사가 추천)"
+   }
+  ],
+  "EXT01:153381": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "애향-통리반장: 공고일 현재 이·통·반장으로 2년 이상 재직자 본인 또는 자녀"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "애향-시정유공: 시장·도지사·중앙부처 장 포상 후 1년 미경과한 본인 또는 자녀(내부직원 제외)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "애향-환경공원: 환경공원 주변(혈동2리, 팔미3리, 증2리) 거주자 본인 또는 자녀"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 공고일부터 1년 이내 광역시·도 대회 1위 또는 국제·전국대회 3위 이상 입상자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "주소이전: 타 지역 학생으로 춘천시 전입 3개월 이상~1년 미만, 최대 1회 지급"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "원격대학: 방송대학·통신대학·방송통신대학 및 사이버대학 재학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "세인트존스대학교: 세인트존스대학교 입학생 및 재학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "자원봉사 우수: 최소봉사시간(26년 상반기) 대학생 50시간, 중·고등학생 30시간"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적향상: 관내 고등학교 재학생으로 성적이 향상되어 학교장이 추천한 사람"
+   },
+   {
+    "code": "HIGH_SCHOOL_TEXT",
+    "detail": "고등학생 성적: 성적우수 평균 2등급 이하, 통리반장 등 5등급 이하, 고교학점제 성적우수 1.04·그 외 2.81 이하"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "애향-통리반장: 공고일 현재 이·통·반장으로 2년 이상 재직자 본인 또는 자녀"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "애향-시정유공: 시장·도지사·중앙부처 장 포상 후 1년 미경과한 본인 또는 자녀(내부직원 제외)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "애향-환경공원: 환경공원 주변(혈동2리, 팔미3리, 증2리) 거주자 본인 또는 자녀"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 공고일부터 1년 이내 광역시·도 대회 1위 또는 국제·전국대회 3위 이상 입상자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "주소이전: 타 지역 학생으로 춘천시 전입 3개월 이상~1년 미만, 최대 1회 지급"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "원격대학: 방송대학·통신대학·방송통신대학 및 사이버대학 재학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "세인트존스대학교: 세인트존스대학교 입학생 및 재학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "자원봉사 우수: 최소봉사시간(26년 상반기) 대학생 50시간, 중·고등학생 30시간"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적향상: 관내 고등학교 재학생으로 성적이 향상되어 학교장이 추천한 사람"
+   },
+   {
+    "code": "HIGH_SCHOOL_TEXT",
+    "detail": "고등학생 성적: 성적우수 평균 2등급 이하, 통리반장 등 5등급 이하, 고교학점제 성적우수 1.04·그 외 2.81 이하"
+   }
+  ],
+  "EXT01:153587": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역대학진학 장학금: 논산시 관내 대학교(2년제 포함)의 신입생 및 특성화 학과생, 대학교 총장/학장 추천"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역대학진학 장학금: 선발 조건은 공고문 확인"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "취업장려 장학금: 관내 고등학교 재학생 중 관내 중소·중견 기업 취업자 및 취업예정자, 학교장 추천"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역대학진학 장학금: 논산시 관내 대학교(2년제 포함)의 신입생 및 특성화 학과생, 대학교 총장/학장 추천"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "지역대학진학 장학금: 선발 조건은 공고문 확인"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "취업장려 장학금: 관내 고등학교 재학생 중 관내 중소·중견 기업 취업자 및 취업예정자, 학교장 추천"
+   }
+  ],
+  "EXT01:153907": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 2026.1.1~6.30 전국규모 이상 대회 3위권 이내 입상(단체 입상 제외)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "나비: 특성화고등학교 재학 중인 고등학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "나비: 자격증 3개 이상 취득자(취득기간 2025.9.1~2026.8.31)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 2026.1.1~6.30 전국규모 이상 대회 3위권 이내 입상(단체 입상 제외)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "나비: 특성화고등학교 재학 중인 고등학생"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "나비: 자격증 3개 이상 취득자(취득기간 2025.9.1~2026.8.31)"
+   }
+  ],
+  "EXT02:9113": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "디딤돌: 등록금(실수업료 전액)을 국가장학금으로 감면받는 자, 남은 7개 학기도 수혜 가능해야 함"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "디딤돌: 등록금(실수업료 전액)을 국가장학금으로 감면받는 자, 남은 7개 학기도 수혜 가능해야 함"
+   }
+  ],
+  "EXT02:9120": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대학생: 2개 학기 이상 성적증명서 제출이 가능한 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "석사/석박통합: 1개 학기 이상 성적증명서 제출이 가능한 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "박사: 입학 예정자 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "석사/석박통합: 석사(석박통합) & 학부 각각 전체 평점 4.0/4.5 (3.7/4.3) 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "박사: 석사 & 박사 각각 전체 평점 4.0/4.5 (3.7/4.3) 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대학생: 26-1학기 등록금 전액을 교내·외 장학금으로 해결"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "석사/석박통합, 박사: 26-1학기 등록금 전액을 교내·외 장학금 or 연구 or 조교비 or 연구실 근로비로 해결"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대학생: 2개 학기 이상 성적증명서 제출이 가능한 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "석사/석박통합: 1개 학기 이상 성적증명서 제출이 가능한 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "박사: 입학 예정자 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "석사/석박통합: 석사(석박통합) & 학부 각각 전체 평점 4.0/4.5 (3.7/4.3) 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "박사: 석사 & 박사 각각 전체 평점 4.0/4.5 (3.7/4.3) 이상"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대학생: 26-1학기 등록금 전액을 교내·외 장학금으로 해결"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "석사/석박통합, 박사: 26-1학기 등록금 전액을 교내·외 장학금 or 연구 or 조교비 or 연구실 근로비로 해결"
+   }
+  ],
+  "EXT02:9124": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "유학생 : 대학생에 한하며 외국 대학교 재학생 및 입학예정자(※ 대학원생 지원불가)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "유학생 : 대학생에 한하며 외국 대학교 재학생 및 입학예정자(※ 대학원생 지원불가)"
+   }
+  ],
+  "EXT02:9140": [
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[체육인] 유형에 구조 조건이 없음"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[장애체육인] 유형에 구조 조건이 없음"
+   }
+  ],
+  "EXT02:9143": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대학생·청년일반: 국내 및 해외 대학에 재학(휴학) 중인 청년 또는 고등학생·청소년을 제외한 19세 이상 34세 이하 청년"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대학생·청년일반: 국내 및 해외 대학에 재학(휴학) 중인 청년 또는 고등학생·청소년을 제외한 19세 이상 34세 이하 청년"
+   }
+  ],
+  "EXT02:9146": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "복지장학생: 증명서 발급 가능한 사람만 해당, 법정 한부모는 여성가족부 지정 대상자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "복지장학생: 증명서 발급 가능한 사람만 해당, 법정 한부모는 여성가족부 지정 대상자"
+   }
+  ],
+  "EXT02:9156": [
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 1학년 (학점은행제 35학점 이하)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[공통] 1학년 (학점은행제 35학점 이하)"
+   }
+  ],
+  "EXT02:9158": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "월정김용복: 선발 조건은 공고문 확인"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "희망장학: 선발 조건은 공고문 확인"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "월정김용복: 선발 조건은 공고문 확인"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "희망장학: 선발 조건은 공고문 확인"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[월정김용복] 유형에 구조 조건이 없음"
+   }
+  ],
+  "EXT02:9163": [
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[신입생] 유형에 구조 조건이 없음"
+   }
+  ],
+  "EXT02:9178": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적우수 외국인 유학생: 관내 소재 대학교의 추천에 의함(개인 신청 받지 않음)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적우수 일반 고등학생: 1~2학년 평균 2.0등급 이내, 3학년 평균 3.0등급 이내(2026년 1학기)"
+   },
+   {
+    "code": "HIGH_SCHOOL_TEXT",
+    "detail": "저소득·다자녀·다문화·대안학교 고등학생: 1~2학년 평균 4.0등급 이내, 3학년 6.0등급 이내"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 시·도 단위 이상 주관 전국대회 입상자 또는 전남광주통합특별시 대회 3위 이내, 학교장 추천"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "봉사·선행·효행: 사회봉사·선행·효행 우수자로 학교장 또는 단체장 이상 추천(공고일 1년 이내), 대학생 해당 없음"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "창업·아이디어·AI: 중앙부처, 대학, 기업, 기관 주관 전국대회 입상자(3위 이내, 공고일 1년 이내)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "다자녀 가구: 자녀 수가 2명 이상인 다자녀 가구"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대안학교: 학교설립 교육감 인가, 등급 환산 성적증명서 발급 가능한 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "학교밖청소년: 고등학교 졸업학력 검정고시 합격자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적우수 외국인 유학생: 관내 소재 대학교의 추천에 의함(개인 신청 받지 않음)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "성적우수 일반 고등학생: 1~2학년 평균 2.0등급 이내, 3학년 평균 3.0등급 이내(2026년 1학기)"
+   },
+   {
+    "code": "HIGH_SCHOOL_TEXT",
+    "detail": "저소득·다자녀·다문화·대안학교 고등학생: 1~2학년 평균 4.0등급 이내, 3학년 6.0등급 이내"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "특기: 시·도 단위 이상 주관 전국대회 입상자 또는 전남광주통합특별시 대회 3위 이내, 학교장 추천"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "봉사·선행·효행: 사회봉사·선행·효행 우수자로 학교장 또는 단체장 이상 추천(공고일 1년 이내), 대학생 해당 없음"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "창업·아이디어·AI: 중앙부처, 대학, 기업, 기관 주관 전국대회 입상자(3위 이내, 공고일 1년 이내)"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "다자녀 가구: 자녀 수가 2명 이상인 다자녀 가구"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "대안학교: 학교설립 교육감 인가, 등급 환산 성적증명서 발급 가능한 자"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "학교밖청소년: 고등학교 졸업학력 검정고시 합격자"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[특기] 유형에 구조 조건이 없음"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[창업·아이디어·AI] 유형에 구조 조건이 없음"
+   }
+  ],
+  "EXT02:9195": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "국가장학금Ⅱ유형 : 대학별 선발 기준에 따름"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "국가장학금Ⅱ유형 : 대학별 선발 기준에 따름"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[국가장학금Ⅱ유형] 유형에 구조 조건이 없음"
+   },
+   {
+    "code": "VARIANT_EMPTY",
+    "detail": "[지역인재장학금] 유형에 구조 조건이 없음"
+   }
+  ],
+  "EXT02:9210": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[애향-환경공원주변자녀] 환경공원 주변(혈동2리·팔미3리·증2리) 거주자 본인 또는 자녀"
+   },
+   {
+    "code": "HIGH_SCHOOL_TEXT",
+    "detail": "관내 고등학교 재학생, 성적 향상으로 학교장 추천"
+   }
+  ],
+  "EXT02:9211": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   },
+   {
+    "code": "STRUCTURABLE_TEXT",
+    "detail": "[성취(고등학생)] 직전 2개 학기 종합 내신: 9등급제 2.99 이내, 5등급제 1.99 이내, 학점제 3.3 이상(4.3 만점)"
+   }
+  ],
+  "EXT02:9212": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   }
+  ],
+  "EXT02:9213": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   }
+  ],
+  "EXT02:9217": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   }
+  ],
+  "EXT02:9218": [
+   {
+    "code": "OLD_SCHEMA",
+    "detail": "schema_version 2 (v3 로 다시 추출하면 더 많은 조건을 구조로 얻음)"
+   }
+  ],
+  "EXT02:9227": [
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 무상교육대상자: 직전학기 성적 교내 상위 10%"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 유상교육대상자: 성적무관"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 무상교육대상자: 직전학기 성적 교내 상위 10%"
+   },
+   {
+    "code": "PREFIX_IN_COMMON",
+    "detail": "고등학생 유상교육대상자: 성적무관"
+   },
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[대학생] 평점 2.0 의 만점이 없음"
+   }
+  ],
+  "EXT02:9237": [
+   {
+    "code": "GPA_NO_SCALE",
+    "detail": "[공통] 평점 3.6 의 만점이 없음"
+   }
+  ]
+ },
+ "per_notice": [
+  {
+   "notice": "EXT01:152156",
+   "title": "2026년 2학기 2차 주거안정장학금 신청 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1210,
+   "no": 245,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152229",
+   "title": "(중요)2026학년도 2학기 국가장학금 2차 신청 안내(~9.9(수) 18시.)",
+   "total": 1455,
+   "match": 0,
+   "cond": 1345,
+   "no": 110,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152340",
+   "title": "2026년도 손태희장학재단 장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 676,
+   "no": 779,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152465",
+   "title": "2026년 2학기 통영시 대학생 등록금 전액 지원사업 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 5,
+   "no": 1450,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152493",
+   "title": "2026년도 3차 (재)안산인재육성재단 산업체노동자장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 45,
+   "no": 1410,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152502",
+   "title": "2026년도 하반기 (재)달서인재육성장학재단 장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 225,
+   "no": 1230,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152513",
+   "title": "2026년 선원가족 장학생 모집 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1270,
+   "no": 185,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152536",
+   "title": "2026년 하반기 울산연구원 장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 235,
+   "no": 1220,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152583",
+   "title": "2026년 2학기 중소기업 취업연계 장학금(희망사다리Ⅰ유형) 신규장학생 학생신청 기간 공지",
+   "total": 1455,
+   "match": 0,
+   "cond": 1015,
+   "no": 440,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152595",
+   "title": "2026년 2학기 푸른등대 기부장학금 신청 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1270,
+   "no": 185,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152687",
+   "title": "2026년 2학기 고졸 후학습자 장학금(희망사다리 Ⅱ유형) 신규장학생 신청 공고",
+   "total": 1455,
+   "match": 0,
+   "cond": 1260,
+   "no": 195,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152820",
+   "title": "2026년도 (재)수림재단 제13회 동교인재상 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1076,
+   "no": 379,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152953",
+   "title": "2026년도 하반기 (재)인천인재평생교육진흥원 장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 280,
+   "no": 1175,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152956",
+   "title": "2026학년도 2학기 교내장학금(학비감면) 신청 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 865,
+   "no": 590,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:152965",
+   "title": "2026학년도 인송문화재단 인송장학생 선발 안내",
+   "total": 1455,
+   "match": 20,
+   "cond": 733,
+   "no": 702,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153082",
+   "title": "2026년 대전청년내일재단 하반기 인재육성장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 5,
+   "no": 1450,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153206",
+   "title": "2026년 고속도로 장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1240,
+   "no": 215,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153357",
+   "title": "2026년 하나장학생 선발 안내",
+   "total": 1455,
+   "match": 445,
+   "cond": 395,
+   "no": 615,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153381",
+   "title": "2026년 하반기 (재)춘천인재육성장학재단 봄내장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 670,
+   "no": 785,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153382",
+   "title": "2026년 2학기 고졸 후학습자 장학금(희망사다리 Ⅱ유형) 신규장학생 신청 기간 연장 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1260,
+   "no": 195,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153587",
+   "title": "2026년도 하반기 (재)논산시장학회 장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 40,
+   "no": 1415,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153607",
+   "title": "2026년 하반기 성취장학생(대학생) 선발계획 안내(기간연장)",
+   "total": 1455,
+   "match": 0,
+   "cond": 162,
+   "no": 1293,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153613",
+   "title": "[마감]2026학년도 2학기 어학우수장학금 신청 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1010,
+   "no": 445,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153666",
+   "title": "2026년 우양재단 동행 장학생 모집 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 1255,
+   "no": 200,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153808",
+   "title": "2027년 대산장학생 선발 안내",
+   "total": 1455,
+   "match": 0,
+   "cond": 428,
+   "no": 1027,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153907",
+   "title": "2026년 하반기 은평구민 장학생 선발 안내",
+   "total": 1455,
+   "match": 15,
+   "cond": 25,
+   "no": 1415,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT01:153930",
+   "title": "2026학년도 2학기 3차 국가근로장학금 학생신청기간 안내",
+   "total": 1455,
+   "match": 1105,
+   "cond": 165,
+   "no": 185,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9113",
+   "title": "산학협동재단 장학생 모집",
+   "total": 1455,
+   "match": 0,
+   "cond": 328,
+   "no": 1127,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9115",
+   "title": "호반장학재단 호반장학",
+   "total": 1455,
+   "match": 540,
+   "cond": 0,
+   "no": 915,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9117",
+   "title": "포스코비전장학생 모집",
+   "total": 1455,
+   "match": 0,
+   "cond": 45,
+   "no": 1410,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9120",
+   "title": "제 17기 OK배정장학금",
+   "total": 1455,
+   "match": 0,
+   "cond": 292,
+   "no": 1163,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9122",
+   "title": "굿패밀리복지재단 굿패밀리장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 1375,
+   "no": 80,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9123",
+   "title": "한돈 미래인재 장학생 선발",
+   "total": 1455,
+   "match": 0,
+   "cond": 1375,
+   "no": 80,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9124",
+   "title": "횡성군 열정키움장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 230,
+   "no": 1225,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9128",
+   "title": "무지개장학 [전북 장애인 지원] (2026년 하반기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 10,
+   "no": 1445,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9140",
+   "title": "문화체육관광부 국외유학 교육지원금",
+   "total": 1455,
+   "match": 0,
+   "cond": 30,
+   "no": 1425,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9141",
+   "title": "이영주한중인재양성장학재단 장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 464,
+   "no": 991,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9142",
+   "title": "롯데 43기 희망장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 185,
+   "no": 1270,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9143",
+   "title": "2026 대한민국 인재상",
+   "total": 1455,
+   "match": 0,
+   "cond": 50,
+   "no": 1405,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9144",
+   "title": "이공계 국가우수장학 (2026년 2학기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 655,
+   "no": 800,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9146",
+   "title": "울주군 대학생 장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 130,
+   "no": 1325,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9154",
+   "title": "정읍시민장학재단 우수인재장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 235,
+   "no": 1220,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9156",
+   "title": "충남재능키움 장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 55,
+   "no": 1400,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9157",
+   "title": "보건장학회 학업지원 장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 28,
+   "no": 1427,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9158",
+   "title": "월정김용복 장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 1375,
+   "no": 80,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9163",
+   "title": "인천광역시 중소기업 노동자 자녀 장학금 지원사업",
+   "total": 1455,
+   "match": 0,
+   "cond": 315,
+   "no": 1140,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9164",
+   "title": "해양나눔재단 장학 (2026년)",
+   "total": 1455,
+   "match": 1095,
+   "cond": 135,
+   "no": 225,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9169",
+   "title": "심명문화재단 장학 (2026년 추가선발)",
+   "total": 1455,
+   "match": 515,
+   "cond": 135,
+   "no": 805,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9177",
+   "title": "영동군민장학회 향토장학금 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 80,
+   "no": 1375,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9178",
+   "title": "광주광역시 동구 인재육성장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 230,
+   "no": 1225,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9181",
+   "title": "원덕읍 향토장학 (2026년)",
+   "total": 1455,
+   "match": 0,
+   "cond": 115,
+   "no": 1340,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9195",
+   "title": "국가장학금 (2026년 2학기 2차)",
+   "total": 1455,
+   "match": 0,
+   "cond": 1210,
+   "no": 245,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9196",
+   "title": "한국장학재단 주거안정장학금 (2026년 2학기 2차)",
+   "total": 1455,
+   "match": 0,
+   "cond": 1315,
+   "no": 140,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9207",
+   "title": "동산장학회 이공계 새터민 장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 135,
+   "no": 1320,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9210",
+   "title": "춘천시 봄내장학 (2026년 하반기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 1310,
+   "no": 145,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9211",
+   "title": "대전시 인재육성장학 (2026년 하반기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 722,
+   "no": 733,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9212",
+   "title": "문주장학재단 AI·ICT 인재장학 (2026년 하반기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 25,
+   "no": 1430,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9213",
+   "title": "강원인재원 브랜드장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 0,
+   "no": 1455,
+   "flag": "ALL_NO",
+   "top_fail": "주민등록 거주지 조건 미달 (필요: 강원특별자치도)"
+  },
+  {
+   "notice": "EXT02:9217",
+   "title": "인천시 SK행복 장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 960,
+   "no": 495,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9218",
+   "title": "윤영문화재단 장학 (2026년 2학기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 399,
+   "no": 1056,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9227",
+   "title": "선원가족장학 (2026년 하반기)",
+   "total": 1455,
+   "match": 0,
+   "cond": 1270,
+   "no": 185,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9235",
+   "title": "DAAD 독일 섬머코스 장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 465,
+   "no": 990,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9236",
+   "title": "제 29회 두을장학",
+   "total": 1455,
+   "match": 52,
+   "cond": 8,
+   "no": 1395,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9237",
+   "title": "안중근의사숭모회 장학생 모집",
+   "total": 1455,
+   "match": 260,
+   "cond": 0,
+   "no": 1195,
+   "flag": "",
+   "top_fail": ""
+  },
+  {
+   "notice": "EXT02:9239",
+   "title": "삼원장학재단 장학",
+   "total": 1455,
+   "match": 0,
+   "cond": 12,
+   "no": 1443,
+   "flag": "NEVER_MATCH",
+   "top_fail": ""
+  }
+ ],
+ "coverage": 0.716
+}

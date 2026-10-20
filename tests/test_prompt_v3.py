@@ -237,8 +237,24 @@ def test_v3_prompt_reads_promotion_grades_as_a_range(v3):
     for needle in ("진급", "grades 에 [N-1, N] 을 모두 적습니다", "'3학년 진급 재학생' -> grades [2, 3]", "범위를 좁히지 말고 넓게 적습니다"):
         assert needle in rule[0], needle
     nums = [int(l.split(".")[0]) for l in v3.splitlines() if re.match(r"^\d+\. ", l)]
-    assert nums == list(range(1, 36))                                                                       # 규칙 번호가 1~35 로 빠짐없이 이어진다
+    assert nums == list(range(1, 38))  # 규칙 번호가 1~37 으로 빠짐없이 이어진다
+    sel = [l for l in v3.splitlines() if l.startswith("36. ")]
+    assert len(sel) == 1 and all(w in sel[0] for w in ("evaluation", "recommender", "procedure", "합이 100"))        # 선발 정보 규칙
 
 
 def test_prompt_rule_numbers_referenced_in_the_text_still_exist(v3):
     assert "다만 규칙 25~34 의 항목" in v3 and [l for l in v3.splitlines() if l.startswith("34. ")] and [l for l in v3.splitlines() if l.startswith("25. ")]
+
+
+def test_term_and_variant_scope_rules_are_in_the_prompt():
+    v3 = system_prompt_v3()
+    assert "학사 2년 이상" in v3 and "completed_terms.min 4" in v3 and "new_student_only" in v3          # 학기 변환 예
+    assert "수혜 시점" in v3 and "변환하지 않고" in v3                                                     # 나중 시점 기준은 바꾸지 않는다
+    assert "그 유형의 other_conditions" in v3 and "variants 의 name 과 같은 말" in v3                       # 유형 전용 문장은 유형 안에
+
+
+
+def test_variant_table_rule_is_in_the_prompt():
+    v3 = system_prompt_v3()
+    assert "유형별로 정리한 표" in v3 and "표의 행 하나를 유형 하나" in v3                                      # 표가 있으면 행 = 유형
+    assert "첨부 표를 따르고" in v3 and "다른 유형의 값을 가져오지 않습니다" in v3 and "12행을 넘거나" in v3        # 충돌·빈 칸·너무 많은 행 처리

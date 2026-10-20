@@ -144,7 +144,7 @@ def test_prompt_value_confirm_and_skip():
 
 def test_cli_interactive_flow(tmp_path, monkeypatch):
     f = str(tmp_path / "s.env")
-    answers = iter(["pw1", "pw1", "", "sk-key", "", ""])              # DB_PASSWORD(2회) / EXT01 건너뜀 / AI 키 / 드림스폰 ID·비밀번호 건너뜀
+    answers = iter(["pw1", "pw1", "", "sk-key", "", "", "", "", ""])      # DB_PASSWORD(2회) / EXT01 건너뜀 / AI 키 / 추천 API 키 건너뜀 / 드림스폰 ID·비밀번호 건너뜀 / OpenAI·Pinecone 키 건너뜀
     monkeypatch.setattr(set_secret.getpass, "getpass", lambda prompt="": next(answers))
     assert set_secret.main(["--file", f]) == 0
     assert ss.read(f) == {"DB_PASSWORD": "pw1", "AI_API_KEY": "sk-key"}

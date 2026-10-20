@@ -1,0 +1,172 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9239",
+ "title": "삼원장학재단 장학",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-09-30",
+ "summary": "4년제 시각디자인·판화 전공 3~4학년 재학생 대상, 지원구간 7구간 이내·최근 1년 평균 B+ 이상 장학금",
+ "url": "https://buly.kr/8842wZz",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "삼원장학생 제24기 후기(2026년 2학기)",
+  "foundation": "삼원장학재단",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-09-30",
+  "org_deadline": null,
+  "recruit_count": "44명",
+  "amount": "100만원",
+  "apply_how": "우편(마감일 소인분까지 유효) 또는 방문 접수, 삼원장학재단 김대호 팀장",
+  "target_levels": [
+   "UNIV"
+  ],
+  "grades": [
+   3,
+   4
+  ],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 3.5,
+   "scale": 4.5,
+   "basis": "LAST_N",
+   "alternatives": [],
+   "notes": "최근 1년 평균성적 B+학점 이상(3.5/4.5)",
+   "terms": 2,
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 7.0,
+   "eligible_types": [
+    "학자금 지원구간"
+   ],
+   "notes": "2026년 2학기 기준 7구간 이내",
+   "basis": "BRACKET",
+   "bracket_term": "CURRENT_TERM"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [
+   "시각디자인",
+   "판화학과"
+  ],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "기업체 학술연수 및 입사 조건부 장학금을 받는 자 선발 제외"
+  ],
+  "documents": [
+   "삼원장학생 선발원서",
+   "자기소개 및 학업계획서",
+   "주민등록등본 또는 가족관계증명서",
+   "학자금 지원구간 통지서",
+   "성적증명서",
+   "통장사본",
+   "개인정보 수집·이용·제공 동의서"
+  ],
+  "selection": {
+   "method": "1차 서류전형, 2차 면접전형(필요 시)",
+   "priority": []
+  },
+  "summary": "4년제 시각디자인·판화 전공 3~4학년 재학생 대상, 지원구간 7구간 이내·최근 1년 평균 B+ 이상 장학금",
+  "major_groups": [
+   "ARTS_PE"
+  ],
+  "school": {
+   "types": [
+    "UNIV4"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "OTHER",
+    "text": "기업체 학술연수 및 입사 조건부 장학금을 받는 자 선발 제외"
+   }
+  ],
+  "obligations": [
+   "장학금 수령 학기에는 휴학 불가(휴학 시 반환), 2026.10.30까지 재학증명서 제출",
+   "장학생 관리업무 및 동호회 활동 협력, 변경사항 고지 및 졸업 후 취업·활동 조사 협조"
+  ],
+  "review_criteria": [
+   "자기소개서(학업계획, 진로계획 등)",
+   "공모전 수상내역 가점(시각디자인·판화 공모전, 최근 2년 이내)"
+  ],
+  "procedure": [
+   {
+    "name": "1차 서류전형"
+   },
+   {
+    "name": "2차 면접전형(필요 시)"
+   },
+   {
+    "name": "장학생 발표",
+    "when": "10/22"
+   },
+   {
+    "name": "장학금 지급",
+    "when": "10/23 예정"
+   }
+  ]
+ }
+}

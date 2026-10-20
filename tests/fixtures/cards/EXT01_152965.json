@@ -1,0 +1,221 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "152965",
+ "title": "2026학년도 인송문화재단 인송장학생 선발 안내",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-25",
+ "summary": "학교 추천으로 인송문화재단 장학생 200만원 지원, 성적 80점 이상·8분위 이내 재학생 대상",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/152965/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "인송문화재단 인송장학생",
+  "foundation": "인송문화재단",
+  "apply_type": "SCHOOL",
+  "apply_start": "2026-09-04",
+  "apply_end": "2026-10-25",
+  "org_deadline": "2026-11-06",
+  "recruit_count": "3",
+  "amount": "1인당 200만원 (1년분, 2026-2학기에 전액 지급)",
+  "apply_how": "통합정보시스템 학과선발장학신청에서 신청 및 서류 파일 업로드 (학교 경유)",
+  "target_levels": [
+   "UNIV",
+   "GRAD"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [
+    "졸업학기"
+   ],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 80.0,
+   "scale": 100.0,
+   "basis": "EITHER",
+   "alternatives": [],
+   "notes": "직전학기 평점평균 또는 전학기 평균 중 유리한 성적 제출",
+   "scale_stated": true
+  },
+  "credits": {
+   "min_last_semester": 12.0,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": 8.0,
+   "eligible_types": [
+    "학자금 지원구간"
+   ],
+   "notes": null,
+   "basis": "BRACKET",
+   "bracket_term": "CURRENT_TERM"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [],
+  "variants": [],
+  "exclusions": [
+   "교외장학금(타재단,기업,지자체) 수혜자 지원불가",
+   "생활비 교내장학금 51만원 이상 수혜자 지원불가",
+   "국가장학금 및 교내 장학금, 근로, 봉사장학금, 전체대상장학금만 중복수혜 가능",
+   "추천 선발 후 지급 시까지 타 장학금 수혜 시 자격상실 (인송장학금 수령 이후는 가능)"
+  ],
+  "documents": [
+   "장학원서",
+   "총장 또는 학장 추천서",
+   "직전학기 성적증명서",
+   "한국장학재단 소득분위확인서",
+   "개인정보 수집·이용 동의서",
+   "학습계획서"
+  ],
+  "selection": {
+   "method": "학교추천 → 인송문화재단 장학생선발심사위원회 심의 → 최종선발 (11월 중순)",
+   "priority": []
+  },
+  "summary": "학교 추천으로 인송문화재단 장학생 200만원 지원, 성적 80점 이상·8분위 이내 재학생 대상",
+  "completed_terms": {
+   "min": 1
+  },
+  "remaining_terms": {
+   "min": 2
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRESIDENT",
+    "DEAN"
+   ]
+  },
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_ANY",
+    "text": "교외장학금(타재단,기업,지자체) 수혜자 지원불가"
+   },
+   {
+    "type": "CONCURRENT_LIVING",
+    "text": "생활비 교내장학금 51만원 이상 수혜자 지원불가"
+   },
+   {
+    "type": "OTHER",
+    "text": "국가장학금 및 교내 장학금, 근로, 봉사장학금, 전체대상장학금만 중복수혜 가능"
+   },
+   {
+    "type": "OTHER",
+    "text": "추천 선발 후 지급 시까지 타 장학금 수혜 시 자격상실 (인송장학금 수령 이후는 가능)"
+   }
+  ],
+  "obligations": [
+   "장학금 수혜기간(1년) 중 계속 학업 권고",
+   "2027-1학기에도 재학 권고"
+  ],
+  "review_criteria": [
+   "어려운 가정환경에서도 학구열이 높고 성적이 우수한 자",
+   "학습계획서"
+  ],
+  "procedure": [
+   {
+    "name": "학교 추천"
+   },
+   {
+    "name": "재단 선발심사위원회 심의"
+   },
+   {
+    "name": "최종선발",
+    "when": "11월 중순"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "장학금 수혜기간 중 졸업, 휴학, 자퇴, 학칙에 의한 징계처분 등으로 학업을 중단 시 결격 (상급학교 진학은 제외)",
+    "section": "지원 결격사유",
+    "source": "본문",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "본 장학금 지급 자격요건을 상실한 경우 (80점 미만 성적 미달 등)",
+    "section": "지원 결격사유",
+    "source": "본문",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "장학사업의 취지 및 학생의 본분에 어긋나는 행위를 한 경우",
+    "section": "지원 결격사유",
+    "source": "본문",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "개별신청 불가, 학교신청으로 재단에 등기접수하므로 학교제출기한에 맞게 제출",
+    "section": "신청방법 및 유의사항",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "구비서류 누락시 선발되지 않음 (각 서류는 파일로 업로드)",
+    "section": "신청방법 및 유의사항",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "추천자로 최종선발된 학생에 한해 원본제출 요청 예정",
+    "section": "유의사항",
+    "source": "본문",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

@@ -126,7 +126,7 @@ def nationality_kind(text: Optional[str]) -> Optional[str]:
 
 
 # ------------------------------------------------------------------ 거주 기간 표현
-_DURATION = re.compile(r"(\d+)\s*(년|개월)")
+_DURATION = re.compile(r"(\d+)\s*(년(?!\s*제)|개월)")                    # '4년제 대학' 의 4년은 기간이 아니다
 
 
 def durations(text: Optional[str]):

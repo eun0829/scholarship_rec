@@ -1,0 +1,247 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "152513",
+ "title": "2026년 선원가족 장학생 모집 안내",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-23",
+ "summary": "선원 및 가족 중 대학생(직전학기 평점 2.0 이상) 대상, 등록금 본인부담액 최대 350만원 지원",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/152513/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2026년 2학기 선원가족 장학사업",
+  "foundation": "한국선원복지고용센터",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-10-23",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "고등학생 120만원 / 대학생 본인 부담액 기준 최대 350만원 (우선순위 1~6순위는 실비 전액)",
+  "apply_how": "방문·우편 접수(부산 한국선원복지고용센터), 소정양식 서류 제출",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 2.0,
+   "scale": null,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [],
+   "notes": "대학생만 해당, 신입생은 성적 무관",
+   "scale_stated": false
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "2025년 선원 월평균임금 이하, 선원가족 중 2인 이상 재학 시 10% 가산",
+   "basis": "WAGE_REF"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "선원법 제3조 적용선박에 승선 및 하선한 선원 및 그 가족",
+   "선원가족 범위: 본인, 배우자, 부모, 자녀 (손자·손녀 직접 부양, 형제 생계 책임 시 선원이 세대주이고 부모가 없을 때 포함)",
+   "총 승무경력 3년 이상으로 하선 후 1년 이내 (연근해어선 부원은 1년 이상)"
+  ],
+  "variants": [],
+  "exclusions": [
+   "대학생: 1학기 등록금 범위를 초과하여 사내 학자금 및 타 기관 장학금을 지원 받는 경우",
+   "학비(수업료)를 면제 받는 경우",
+   "이중지원으로 인한 불이익(장학금 반환)이 발생하지 않도록 주의"
+  ],
+  "documents": [
+   "장학생선발신청서(학생용)",
+   "장학생선발신청서(사업장확인용)",
+   "개인정보 수집·이용 및 제공 동의서",
+   "서약서",
+   "월평균급여 증명서류(근로소득원천징수영수증)",
+   "승무경력증명서(연근해어선 부원)",
+   "가족관계증명서",
+   "재학증명서",
+   "등록금 납부내역서",
+   "성적증명서"
+  ],
+  "selection": {
+   "method": "선발순위에 따라 선발, 동일순위는 월평균급여↓·선발횟수↓·승선경력↑·고학년 순",
+   "priority": [
+    "순직선원 유가족",
+    "장해선원 가족",
+    "기초수급자 선원가족",
+    "차상위계층 선원가족",
+    "다자녀가정 셋째 이상 선원가족",
+    "한부모가정 선원가족",
+    "신규 신청 선원가족",
+    "20년 이상 장기 승선 선원가족",
+    "그 밖의 선원가족"
+   ]
+  },
+  "summary": "선원 및 가족 중 대학생(직전학기 평점 2.0 이상) 대상, 등록금 본인부담액 최대 350만원 지원",
+  "waivers": [
+   {
+    "when": {
+     "student": [
+      "NEW_STUDENT"
+     ]
+    },
+    "skip": [
+     "gpa"
+    ]
+   }
+  ],
+  "special_groups": [
+   {
+    "code": "DISABLED",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "MULTI_CHILD",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "SINGLE_PARENT",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   }
+  ],
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "대학생: 1학기 등록금 범위를 초과하여 사내 학자금 및 타 기관 장학금을 지원 받는 경우"
+   },
+   {
+    "type": "OTHER",
+    "text": "학비(수업료)를 면제 받는 경우"
+   },
+   {
+    "type": "OTHER",
+    "text": "이중지원으로 인한 불이익(장학금 반환)이 발생하지 않도록 주의"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "선원법 제3조 적용선박에 승선 및 하선한 선원 및 그 가족",
+    "section": "선발대상",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "선원가족 범위: 본인, 배우자, 부모, 자녀 (손자·손녀 직접 부양, 형제 생계 책임 시 선원이 세대주이고 부모가 없을 때 포함)",
+    "section": "선발대상",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "총 승무경력 3년 이상으로 하선 후 1년 이내 (연근해어선 부원은 1년 이상)",
+    "section": "승무경력",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "선원법(제3조) 적용 제외 선박(5톤 미만 비항해선, 항내 전용선, 20톤 미만 어선 등) 승선자 제외",
+    "section": "선발제외대상",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "선박소유자",
+    "section": "선발제외대상",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "관공선 선원 (단, 선원관리업체 위탁(용역)계약으로 승선중인 선원은 제외)",
+    "section": "선발제외대상",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "당해 연도 학생당 2회 선발 가능",
+    "section": "신청기간",
+    "source": "첨부2",
+    "kind": "BENEFIT_LIMIT"
+   },
+   {
+    "text": "재학증명서·성적증명서는 반드시 원본 제출 (PDF 발급 문서 출력 시 사본)",
+    "section": "제출서류",
+    "source": "첨부2",
+    "kind": "PROCEDURE"
+   }
+  ]
+ }
+}

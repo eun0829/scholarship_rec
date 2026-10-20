@@ -32,15 +32,16 @@ _HEAD = """당신은 대학 장학금 공고에서 신청 자격요건을 구조
 13. target_levels 는 공고가 대상으로 하는 학교급을 모두 적습니다 (ELEM, MIDDLE, HIGH, UNIV, GRAD 중에서만). 이 서비스의 대상(대학생)이 아니어도 공고에 나온 학교급을 빼지 않습니다.
 14. 지역 조건은 region.requirements 에 요건 하나씩 적습니다. 항목: {\"type\", \"areas\", \"min_years\", \"years_basis\"}.
    - type: RESIDENCE_SELF=본인 주민등록 거주지, RESIDENCE_PARENT=부모·보호자 주민등록 거주지, GRADUATED_SCHOOL=졸업한 중·고등학교 소재지, SCHOOL_LOCATION=재학 학교 소재지, PARENT_WORKPLACE=부모 근무지, ACTUAL_RESIDENCE=실거주·학교 인근 거주 증빙
-   - areas: 표준 지명으로 적습니다 (예: \"경기도 수원시\", \"서울특별시 성북구\", \"비수도권\"). 읍·면·동 단위 조건은 그 이름 그대로 적습니다.
+   - areas: 표준 지명으로 적습니다 (예: \"경기도 수원시\", \"서울특별시 성북구\", \"비수도권\"). 읍·면·동 단위 조건은 그 이름 그대로 적되, 공고의 다른 곳(주소, 기관 소재지, 같은 문단)에서 시·도와 시·군·구를 알 수 있으면 앞에 붙입니다 (예: \"인천광역시 서구 신현원창동\"). 동 이름만 있고 상위 지역을 알 수 없으면 동 이름만 적습니다.
    - \"본인 or 부모\"처럼 주체가 '또는'이면 RESIDENCE_SELF 와 RESIDENCE_PARENT 요건을 각각 적고 region.mode 를 ANY 로, 모두 충족해야 하면 ALL 로 적습니다 (요건이 하나뿐이면 mode 는 생략).
    - min_years 는 거주 기간 하한(년)입니다. years_basis 는 기준이 특이할 때만(예: \"고교 졸업일 기준\") 40자 이내로 적습니다.
+   - 거주지·학교 소재지·졸업 고교 소재지에 관한 조건은 문장으로 other_conditions·unmodeled_conditions 에 적지 말고 반드시 requirements 에 구조로 적습니다 (구조로 적어야 코드가 학생 지역과 비교해 맞지 않으면 미달로 판정합니다). 읍·면·동 목록도 areas 에 그대로 적습니다.
    - 지역 제한이 없으면 requirements 는 빈 배열입니다. region.residence / region.school_location 은 비워 둡니다.
 15. 구역 머리말에 \"일부만 추출됨\"이라는 안내가 있으면 그 문서에는 빠진 조건이 있을 수 있으므로, 찾지 못한 핵심 항목(마감일, 성적, 소득 등)은 추측하지 말고 uncertain 에 \"문서 일부만 제공됨\"으로 기록합니다.
 16. summary 는 학생이 읽을 한 줄 요약(80자 이내)입니다.
 17. income.eligible_types 는 서로 '또는' 관계인 선택지 목록입니다. income.max_bracket 은 그 중 '학자금 지원구간(소득분위)' 선택지에만 적용되는 숫자입니다 (예: \"수급자, 차상위, 지원구간 2구간 이내 중 하나\" -> eligible_types 3개, max_bracket 2). income.basis 는 BRACKET=학자금 지원구간·소득분위, MEDIAN_PERCENT=기준중위소득 %(max_median_percent), ASSET=재산 기준(max_asset_krw, 원), WAGE_REF=특정 직종 평균임금 같은 기준, NARRATIVE='경제적 어려움' 같은 서술 중 하나이고, bracket_term 은 구간 산정 기준 학기가 적혀 있을 때 CURRENT_TERM(이번 학기)/LAST_TERM(직전 학기)로 적습니다.
 18. enrollment.required_status / excluded_status 에는 재학·휴학·졸업 같은 학적 상태만 적고, 학기 수·등록금 납부·성적 같은 조건은 해당하는 다른 항목에 적습니다.
-19. [항목 사전]에 없는 자격·제외·제한 조건은 모두 unmodeled_conditions 에 한 건씩 적습니다. 항목: {\"text\": 공고 문구를 가능한 한 그대로(120자 이내), \"section\": 그 문구가 있던 항목 이름(예: 신청자격, 장학혜택, 접수방법, 지원대상), \"source\": \"본문\"/\"첨부1\"/\"이미지\", \"kind\": ELIGIBILITY=신청 자격, EXCLUSION=제외·중복수혜 제한, BENEFIT_LIMIT=혜택 기간·횟수 제한, PROCEDURE=절차·서류, OBLIGATION=선발 후 의무, REVIEW=인재상·서술·에세이 같은 심사 기준}. 하나도 빠뜨리지 않습니다. 다만 규칙 25~34 의 항목(waivers, special_groups, prerequisites, exclusion_items, obligations, review_criteria 등)에 해당하는 조건은 그 항목에 적고, 어느 항목에도 맞지 않는 조건만 여기에 적습니다. 사전 항목에 이미 담은 조건은 반복해서 적지 않고, other_conditions 는 비워 둡니다 (코드가 채웁니다). 신청 자격이 아니라 "선택 사항(예: 방학 집중근로 프로그램 참여)을 원하면 신청 기간 안에 신청해야 한다"는 식의 신청 방법·기간 안내는 자격 조건이 아니므로 kind 를 PROCEDURE 로 적습니다.
+19. [항목 사전]에 없는 자격·제외·제한 조건은 모두 unmodeled_conditions 에 한 건씩 적습니다. 항목: {\"text\": 공고 문구를 가능한 한 그대로(120자 이내), \"section\": 그 문구가 있던 항목 이름(예: 신청자격, 장학혜택, 접수방법, 지원대상), \"source\": \"본문\"/\"첨부1\"/\"이미지\", \"label\": 조건 이름 10자 이내(예: 승무경력, 부양 가족, 소득·재산, 거주 기간, 졸업 요건), \"kind\": ELIGIBILITY=신청 자격, EXCLUSION=제외·중복수혜 제한, BENEFIT_LIMIT=혜택 기간·횟수 제한, PROCEDURE=절차·서류, OBLIGATION=선발 후 의무, REVIEW=인재상·서술·에세이 같은 심사 기준}. 하나도 빠뜨리지 않습니다. 지원자격·신청자격 목록은 항목(글머리표) 하나하나를 구조화 필드나 unmodeled_conditions 중 한 곳에 반드시 반영합니다. 학생 정보와 비교할 수 없는 서술형 항목(예: \"졸업 후 농업계에 종사하며 농업리더로 성장하겠다는 의지와 실천 계획을 세운 학생\")도 건너뛰지 말고 kind REVIEW 로 문구 그대로 적습니다. 다만 규칙 25~34 의 항목(waivers, special_groups, prerequisites, exclusion_items, obligations, review_criteria 등)에 해당하는 조건은 그 항목에 적고, 어느 항목에도 맞지 않는 조건만 여기에 적습니다. 사전 항목에 이미 담은 조건은 반복해서 적지 않고, other_conditions 는 비워 둡니다 (코드가 채웁니다). 신청 자격이 아니라 "선택 사항(예: 방학 집중근로 프로그램 참여)을 원하면 신청 기간 안에 신청해야 한다"는 식의 신청 방법·기간 안내는 자격 조건이 아니므로 kind 를 PROCEDURE 로 적습니다.
 20. uncertain 에는 항목마다 field 와 level 을 적습니다.
    - field: apply_start, apply_end, org_deadline, category, apply_type, target_levels, enrollment, gpa, credits, income, region, majors, special_groups, unmodeled_conditions, exclusions, amount, documents, selection 중 하나 (그 밖은 \"other\")
    - level: \"verify\" = 값이 틀렸거나 빠졌을 수 있어 사람이 원문을 확인해야 하는 경우만. \"note\" = 학생이 알아야 하는 참고 사항만 (일정 변경 가능성, 분류 판단 근거 같은 것은 적지 않습니다).
@@ -50,6 +51,7 @@ _HEAD = """당신은 대학 장학금 공고에서 신청 자격요건을 구조
    - 이 서비스는 대학생·대학원생 추천용입니다. 고등학생 같은 다른 학교급 전용 조건의 불일치나 모호함은 uncertain 에 적지 않습니다 (조건 자체는 빠뜨리지 말고 variants 등에 그대로 추출).
    형식 예: {\"field\": \"gpa\", \"reason\": \"기준표 글자가 깨져 세부 점수를 읽지 못함\", \"level\": \"verify\"}
 21. 장학금 안에 자격 조건이 서로 다른 '유형'이 둘 이상 있으면(예: 애향·성적우수·특기, 일반·저소득 트랙) variants 에 유형별로 적습니다.
+   - 유형이 둘 이상이면 먼저 본문과 첨부에서 유형별로 정리한 표(예: 구분·대상·금액·선발 기준·제출서류 열이 있는 표)를 찾습니다. 표가 있으면 표의 행 하나를 유형 하나로 삼고, 같은 행의 대상 자격·금액·선발 기준(criteria)·평가 비율(evaluation)·추천자(recommender)·제출서류(documents)는 그 유형에 적습니다. 표 밖의 공통 안내(신청 방법, 모든 유형에 공통인 제외 조건)만 최상위에 적습니다. 본문과 첨부 표의 값이 다르면 첨부 표를 따르고 uncertain 에 값이 다르다고 적습니다. 표의 칸이 비어 있거나 '해당 없음'이면 그 유형에는 값을 적지 않고 다른 유형의 값을 가져오지 않습니다. 표의 '비고' 칸 문장이 어느 유형 것인지 분명하지 않으면 최상위 other_conditions 에 둡니다. 표가 12행을 넘거나 행마다 자격을 나누기 어려우면 억지로 나누지 않습니다.
    - 최상위 값은 '모든 유형에 공통'인 조건입니다. 유형마다 다른 항목(예: 성적 기준)은 최상위에서 null 또는 빈 값으로 두고 유형별 값을 variants 에 적습니다.
    - variants 의 값은 공통 조건에 '추가로' 요구되는 조건입니다. null/빈 값은 그 유형에 추가 조건이 없다는 뜻입니다.
    - 유형 이름은 공고의 명칭 그대로 짧게, 유형은 최대 12개입니다. 유형이 하나뿐이거나 유형이 달라도 신청 자격이 같으면 variants 는 빈 배열입니다.
@@ -57,7 +59,11 @@ _HEAD = """당신은 대학 장학금 공고에서 신청 자격요건을 구조
    - 유형 이름이 대상의 국적·신분을 뜻하면(예: 외국인 유학생, 다자녀, 수급자, 북한이탈주민) 그 조건을 해당 유형의 nationality 또는 special_groups 에도 적습니다. 유형의 선발 조건이 본문에 있는데 구조 항목에 담을 수 없으면 '유형 이름: 조건 원문'을 unmodeled_conditions 에 적고, 조건이 본문에 없고 공고문에만 있으면 '유형 이름: 선발 조건은 공고문 확인'이라고 적습니다.
    - 등급(장려/우수/최우수 등)처럼 금액이나 점수 기준만 다르고 신청 자격이 같으면 variants 로 나누지 말고, 가장 낮은 등급의 기준을 unmodeled_conditions 에, 등급별 금액을 amount 에 요약합니다.
    - variants 안에서는 값이 없는 키를 적지 않습니다. 유형별로 gpa, credits, income, region(requirements 포함), special_groups, nationality, gender, age, completed_terms, remaining_terms, major_groups, entry_years, transfer, apply_start, apply_end, apply_type 을 적을 수 있습니다 (마감이나 신청 방식이 유형마다 다르면 그 유형에 적음).
-   - 특정 학교급만 대상인 유형(예: 고등학생 대상 유형)은 그 유형의 target_levels 에 적습니다 (생략하면 최상위와 같음). 최상위 target_levels 는 모든 유형의 학교급을 합친 값입니다.
+   - 한 유형에만 해당하는 문장은 최상위 other_conditions(모든 유형 공통)에 적지 않고 그 유형의 other_conditions 에 적습니다. 어느 유형 것인지 알 수 있게 '유형 이름: 조건' 꼴로 적은 문장은 시스템이 해당 유형으로 옮기므로, 유형 이름은 variants 의 name 과 같은 말로 씁니다.
+   - 중학생·고등학생만 대상인 유형(예: 고등학생 대상 성적향상 장학금)은 variants 에 적지 않습니다 (대학생 추천에 쓰지 않음). 대학생도 대상인 유형은 그 유형의 target_levels 에 적습니다 (생략하면 최상위와 같음). 최상위 target_levels 는 고등학생 유형까지 포함한 모든 유형의 학교급을 합친 값으로 적습니다.
+   - 한 공고가 서로 다른 장학금 여러 개를 한 번에 모집하면 장학금 하나가 유형 하나입니다. 각 유형의 평점·소득·지역 기준은 그 유형에 구조로 적고, 같은 내용을 other_conditions 나 unmodeled_conditions 에 '유형명: …' 문장으로 반복하지 않습니다.
+   - 최상위 amount(대표 금액)에는 모든 유형에 공통인 금액이나 전체 범위만 적고 유형별 금액을 나열하지 않습니다 (summary 에도 유형별 금액을 나열하지 않습니다). 유형마다 금액이 다르면 그 유형의 amount 에 적고, 제출서류가 유형마다 다르면 그 유형의 documents(서류 이름 목록)에 적습니다. 최상위 documents 에는 모든 유형이 내는 서류만 적습니다.
+   - 고등학생 등 대학생·대학원생이 아닌 학교급에만 해당하는 기준(예: 고교 내신 등급)은 문장으로 적지 않습니다. 그 학교급은 target_levels 로만 나타내고, 대학생·대학원생 기준만 구조 항목에 적습니다.
    형식 예: {\"name\": \"성적우수\", \"amount\": \"최대 100만원\", \"gpa\": {\"min\": 4.0, \"scale\": 4.5, \"basis\": \"LAST_SEMESTER\"}, \"credits\": {\"min_last_semester\": 12}}
    {\"name\": \"성적향상\", \"target_levels\": [\"HIGH\"], \"apply_end\": \"2026-10-20\"}
 22. apply_how 에는 신청 방법과 접수처를 한 줄(80자 이내)로 적습니다 (예: \"구글폼 + 서류 우편·방문 접수, 학교 총장 추천서 필요\").
@@ -71,7 +77,7 @@ _REGISTRY_HEAD = """
 
 _TAIL = """
 [v3 추가 항목 - 값이 있는 것만 적고, 없으면 키를 생략합니다]
-25. 학기·학적: completed_terms{min,max}=이수한 학기 수 범위, remaining_terms{min,max}=졸업까지 남은 학기 범위(예: 잔여학기 2학기 이하 -> max 2), entry_years=대상 입학년도 목록, new_student_only=신입생만 대상이면 true, transfer.mode=EXCLUDED(편입생 제외)/USE_PREV_SCHOOL(편입 전 학교 성적 사용)/NO_GPA_REQUIRED(성적 면제)/ALLOWED. 학년·학기 조건은 grades 에 적고, 이수학기로의 변환이 확실하지 않으면 completed_terms 는 비우고 원문을 unmodeled_conditions 에 적습니다.
+25. 학기·학적: completed_terms{min,max}=이수한 학기 수 범위, remaining_terms{min,max}=졸업까지 남은 학기 범위(예: 잔여학기 2학기 이하 -> max 2), entry_years=대상 입학년도 목록, new_student_only=신입생만 대상이면 true, transfer.mode=EXCLUDED(편입생 제외)/USE_PREV_SCHOOL(편입 전 학교 성적 사용)/NO_GPA_REQUIRED(성적 면제)/ALLOWED. 학년·학기 조건은 grades 에 적고, 이수학기로의 변환이 확실하지 않으면 completed_terms 는 비우고 원문을 unmodeled_conditions 에 적습니다. 변환 예: '학사 2년 이상 이수·수료'·'4학기 이상 이수' -> completed_terms.min 4 (1년=2학기), '신입생에 한함'·'신입생만' -> new_student_only true (그 문장은 other_conditions 에 다시 적지 않음). 단, 신청 시점이 아니라 수혜·파견·입학 같은 나중 시점 기준('수혜 시점에 학사 2년 이상')이면 지금의 이수학기와 같지 않으므로 변환하지 않고 원문 그대로 둡니다. '최종 학년'·'졸업예정자'처럼 졸업까지 남은 학기를 알아야 하는 조건은 remaining_terms 로 바꿀 수 있을 때만 바꾸고, 아니면 원문 그대로 둡니다. 한 유형에만 해당하는 '신입생 한함'은 최상위 new_student_only 가 아니라 그 유형의 new_student_only 에 적습니다.
 26. waivers: [{\"when\": {\"student\": [NEW_STUDENT|TRANSFER|REENTRY|RETURNING], \"special\": [신분 코드]}, \"skip\": [gpa|credits|income|region]}] - 특정 학생에게 조건을 적용하지 않을 때 (예: \"신입·편입·재입학생은 성적 조건 미적용\").
 27. special_groups: [{\"code\", \"scope\", \"mode\"}]. code: BASIC_LIVELIHOOD(기초생활수급), NEAR_POOR(차상위), SINGLE_PARENT(한부모), DISABLED(장애), DEFECTOR(북한이탈주민), MULTICULTURAL(다문화), VETERAN(국가유공자), MULTI_CHILD(다자녀), WORKER_CHILD(근로자 자녀), OTHER(text 에 15자 이내 설명). scope: SELF=본인, FAMILY=가족·보호자. mode: 해당해야만 신청할 수 있으면 REQUIRED, '우대'·'가산점'·'우선 선발'이면 PREFERRED. REQUIRED 신분이 여러 개이면 '하나만 해당해도 됨'으로 해석합니다 (모두 해당해야 하면 unmodeled_conditions 에 문구를 그대로 적습니다).
 28. gender=특정 성별만 대상일 때 M 또는 F. age{min,max}=만 나이 (예: 만 39세 이하 -> max 39, 만 30세 미만 -> max 29).
@@ -82,6 +88,9 @@ _TAIL = """
 33. recommendation: {\"required\": true/false, \"from\": [PROFESSOR(지도교수), PRESIDENT(총장), PRINCIPAL(학교장), DEAN(학장·학과장), AGENCY(기관·단체장), OTHER]}. deadline_kind: 대학마다 추천 마감일이 다르면 SCHOOL_VARIES(예: \"대학별 추천 마감일까지\"), 재단 마감 하나뿐이면 FOUNDATION.
 34. exclusion_items: [{\"type\": CONCURRENT_LIVING(생활비성 장학금 중복 제한)/CONCURRENT_TUITION(등록금성·등록금 범위 중복 제한)/CONCURRENT_ANY(타 장학금 중복 불가)/PRIOR_SAME(해당 재단·사업 과거 수혜자 제외)/PRIOR_RECENT(직전학기·최근 N년 수혜자 제외)/OTHER, \"text\": 공고 문구}]. obligations: 선발 후 의무(수여식 참석, 봉사, 보고서, 졸업 후 의무 종사 등) 문자열 목록. review_criteria: 심사 참고 기준(인재상, 에세이 주제 등) 문자열 목록. 이것들은 자격 조건이 아니므로 unmodeled_conditions 에 다시 적지 않습니다. '※ 중복수혜 : 가능/일부 가능/정보없음'처럼 요약 표기만 있는 줄은 조건이 아니므로 exclusion_items 나 unmodeled_conditions 에 적지 않습니다 ('불가'이거나 금액·학기 같은 구체적인 제한이 있을 때만 적습니다).
 35. 대상 학년이 'N학년 진급(예정) 재학생'처럼 진급 시점으로 적혀 있으면 현재 학년과 진급 후 학년이 모두 대상일 수 있으므로 grades 에 [N-1, N] 을 모두 적습니다 (예: '3학년 진급 재학생' -> grades [2, 3]). 학년을 한 가지로 확정할 수 없으면 범위를 좁히지 말고 넓게 적습니다.
+36. 선발 정보(공고에 적힌 것만, 없으면 키를 생략): evaluation: 평가 비율 [{\"item\": \"성적\", \"percent\": 40}, {\"item\": \"생활수준\", \"percent\": 50}, {\"item\": \"봉사\", \"percent\": 10}] (합이 100이어야 하며 항목은 최대 6개). recommender: 추천자(예: 읍면동장, 총장·학장, 학교장) 12자 안팎. 유형마다 비율·추천자가 다르면 각 유형(variants)에 적고, 유형이 없으면 최상위에 적습니다. 표로 된 '제출서류'가 유형별로 나뉘어 있으면 공통 documents 에 합치지 말고 해당 유형의 documents 에 적습니다. procedure: 선발 진행 절차 [{\"name\": \"서류 접수\", \"when\": \"10/7까지\"}, {\"name\": \"서류 심사\"}, {\"name\": \"면접\", \"when\": \"11월 중\"}, {\"name\": \"결과 발표\"}] 최대 6단계, name 20자·when 30자 이내. 접수 기간·제출 서류는 procedure 에 반복하지 않고, 심사·면접·발표·수여처럼 공고에 단계로 적힌 것만 순서대로 적습니다 (일정이 없으면 when 생략, 절차가 없으면 procedure 생략). criteria: 선발 기준(누가 우선 선발되는지·심사 방식, 공고에 적힌 것만) [\"성적 우수자 우선\", \"소득분위 낮은 순\", \"면접 70점 이상\"] 최대 4개, 각 40자 이내. 평가 비율과 같은 내용은 반복하지 않고, 유형마다 다르면 각 유형(variants)에 적습니다 (없으면 criteria 생략)
+
+37. 제목에 대상이나 자격 조건이 명시되어 있으면(예: \"이공계 새터민 장학\", \"○○구민 장학생\", \"대학원생 연구장학\", \"다자녀 가정\") 본문이나 첨부에 같은 말이 없어도 그 조건을 해당 구조 항목(target_levels, major_groups, special_groups, region.requirements 등)에 적고, 맞는 항목이 없으면 unmodeled_conditions 에 source \"제목\" 으로 적습니다. 본문·첨부와 충돌하면 본문 기준을 따르고 uncertain 에 적습니다. 장학금 이름에 붙은 일반 수식어(예: 동행, 희망, 미래)는 조건이 아닙니다.
 
 [출력 형식 - 키와 구조를 정확히 지키세요 (v3 추가 키는 값이 없으면 생략 가능)]
 """

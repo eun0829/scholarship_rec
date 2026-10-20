@@ -392,3 +392,30 @@ def test_marked_closed_notice_is_dropped_even_when_the_deadline_is_still_ahead()
     ok, gone = cand(1, elig(scholarship_name="열린 장학")), cand(2, elig(scholarship_name="닫힌 장학"), title="[마감]닫힌 장학")
     ids = [x["src_id"] for x in run([ok, gone])["conditional"] + run([ok, gone])["recommended"]]
     assert "1" in ids and "2" not in ids
+
+
+def test_include_closed_judges_every_notice_in_the_db_for_testing():
+    past = cand(8, elig(scholarship_name="지난 장학"), apply_end=date(2026, 9, 1))
+    live = cand(9, elig(scholarship_name="진행 장학"))
+    stub = Stub([past, live])
+    normal = Recommender(stub, Settings()).recommend({"level": "UNIV", "status": "ENROLLED"}, today=TODAY)
+    assert normal["counts"]["after_filter"] == 1
+    s = Settings()
+    s.recommend_include_closed = True
+    r = Recommender(stub, s).recommend({"level": "UNIV", "status": "ENROLLED"}, today=TODAY)
+    ids = [x["src_id"] for x in r["recommended"] + r["conditional"]]
+    assert sorted(ids) == ["8", "9"]
+    closed = [x for x in r["recommended"] + r["conditional"] if x["src_id"] == "8"][0]
+    assert closed["days_left"] < 0 and any(w["code"] == "CLOSED" for w in closed["warnings"])
+
+
+def test_excluded_items_carry_optional_detail_and_keep_old_keys():
+    e = elig(scholarship_name="경기 장학", summary="요약 문장", amount="연 200만원", region={"school_location": ["시흥시"]})
+    r = run([cand(1, e)], profile={"level": "UNIV", "school_sigungu": "천안시"})
+    x = r["excluded"][0]
+    assert x["reasons"][0].startswith("학교 소재지 조건 미달") and x["src_id"] == "1" and x["url"]               # 기존 키는 그대로
+    assert x["summary"] == "요약 문장" and x["benefit"]["amount"] == "연 200만원" and x["fail_reasons"] and "passed" in x and x["apply_end"]
+    s = Settings()
+    s.recommend_excluded_detail = False
+    y = run([cand(1, e)], profile={"level": "UNIV", "school_sigungu": "천안시"}, settings=s)["excluded"][0]
+    assert set(y) == {"id", "src_cd", "src_id", "title", "url", "reasons"}

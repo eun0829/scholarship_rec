@@ -1,0 +1,253 @@
+{
+ "src_cd": "EXT02",
+ "src_id": "9227",
+ "title": "선원가족장학 (2026년 하반기)",
+ "category": "OUT",
+ "status": "NEED_REVIEW",
+ "apply_end": "2026-10-23",
+ "summary": "선원 및 가족 중 고등학생·대학생 대상 장학금, 대학생은 직전학기 평점 2.0 이상, 소득은 선원월평균임금 이하",
+ "url": "https://buly.kr/1RHFe54",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "선원가족장학 (2026년 하반기)",
+  "foundation": "한국선원복지고용센터",
+  "apply_type": "DIRECT",
+  "apply_start": "2026-09-01",
+  "apply_end": "2026-10-23",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": "고등학생 120만원 / 대학생 본인 부담액 기준 최대 350만원",
+  "apply_how": "방문 또는 우편 접수 (한국선원복지고용센터 복지지원팀, 부산 중구)",
+  "target_levels": [
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [
+    "재학"
+   ],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": 2.0,
+   "scale": null,
+   "basis": "LAST_SEMESTER",
+   "alternatives": [],
+   "notes": "대학생 직전학기 성적 평균 2.0 이상",
+   "scale_stated": false
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": "2025년도 선원월평균임금 이하(한국선원통계연보 기준). 선원가족 중 2인 이상 고교·대학 재학 시 기준금액 10% 가산",
+   "basis": "WAGE_REF"
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": null
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "선원법 제3조 적용선박에 승선 및 하선한 선원 및 그 가족(본인, 배우자, 부모, 자녀)",
+   "승무경력 총 3년 이상으로 하선 후 1년 이내 (연근해어선 부원은 1년 이상)",
+   "선원이 손자·손녀를 직접 부양할 경우 포함 (부모가 없는 경우에 한함)",
+   "고등학생 직전학기 성적: 유상교육대상자 성적무관, 무상교육대상자 교내 상위 10%"
+  ],
+  "variants": [],
+  "exclusions": [
+   "대학생 1학기 등록금 범위를 초과하여 사내 학자금 및 타 기관 장학금을 지원받는 경우 제외",
+   "고등학생 연간 120만원 이상 사내 학자금 및 타 기관 장학금을 지원받는 경우 제외",
+   "학비(수업료)를 면제 받는 경우 제외"
+  ],
+  "documents": [
+   "장학생선발신청서(학생용)",
+   "장학생선발신청서(사업장확인용)",
+   "개인정보 수집·이용 및 제공 동의서",
+   "서약서",
+   "월평균급여증명서류(2025년도 근로소득원천징수영수증)",
+   "승무경력증명서(연근해어선 부원)",
+   "가족관계증명서",
+   "재학증명서",
+   "등록금 납부내역서 또는 교육비 납입증명서",
+   "성적증명서(대학생)"
+  ],
+  "selection": {
+   "method": "순직·장해·수급자 등 선발순위에 따라 선발, 동순위는 월평균급여 낮은 순 등",
+   "priority": [
+    "순직선원 유가족",
+    "장해선원 가족",
+    "기초수급자",
+    "차상위계층",
+    "다자녀가정 셋째 이상",
+    "한부모가정",
+    "신규 신청",
+    "20년 이상 장기 승선"
+   ]
+  },
+  "summary": "선원 및 가족 중 고등학생·대학생 대상 장학금, 대학생은 직전학기 평점 2.0 이상, 소득은 선원월평균임금 이하",
+  "special_groups": [
+   {
+    "code": "OTHER",
+    "scope": "FAMILY",
+    "mode": "PREFERRED",
+    "text": "순직선원 유가족"
+   },
+   {
+    "code": "DISABLED",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "BASIC_LIVELIHOOD",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "NEAR_POOR",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "MULTI_CHILD",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "SINGLE_PARENT",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   }
+  ],
+  "recommendation": {
+   "required": false,
+   "from": []
+  },
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "대학생 1학기 등록금 범위를 초과하여 사내 학자금 및 타 기관 장학금을 지원받는 경우 제외"
+   },
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "고등학생 연간 120만원 이상 사내 학자금 및 타 기관 장학금을 지원받는 경우 제외"
+   },
+   {
+    "type": "OTHER",
+    "text": "학비(수업료)를 면제 받는 경우 제외"
+   }
+  ],
+  "procedure": [
+   {
+    "name": "서류 접수",
+    "when": "9/1~10/23"
+   },
+   {
+    "name": "선발",
+    "when": "11월 중"
+   }
+  ],
+  "criteria": [
+   "선발순위: 순직선원 유가족 > 장해선원 가족 > 수급자 > 차상위 순",
+   "동순위: 월평균급여 낮은 순, 선발횟수 적은 순, 승선경력 많은 순, 고"
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "선원법 제3조 적용선박에 승선 및 하선한 선원 및 그 가족(본인, 배우자, 부모, 자녀)",
+    "section": "신청자격",
+    "source": "첨부2",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "승무경력 총 3년 이상으로 하선 후 1년 이내 (연근해어선 부원은 1년 이상)",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "선원이 손자·손녀를 직접 부양할 경우 포함 (부모가 없는 경우에 한함)",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "선원법 제3조 적용 제외 선박(5톤 미만 비항해선, 호수·강·항내 항행선, 20톤 미만 어선 등) 승선자 제외",
+    "section": "선발제외 대상",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "선박소유자, 관공선 선원 제외 (선원관리업체 위탁계약 승선 선원은 제외 대상 아님)",
+    "section": "선발제외 대상",
+    "source": "첨부2",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "고등학생 직전학기 성적: 유상교육대상자 성적무관, 무상교육대상자 교내 상위 10%",
+    "section": "신청자격",
+    "source": "본문",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "선발횟수: 당해 연도 학생당 2회 가능",
+    "section": "신청기간",
+    "source": "첨부2",
+    "kind": "BENEFIT_LIMIT"
+   }
+  ]
+ }
+}

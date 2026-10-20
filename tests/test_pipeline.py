@@ -488,3 +488,38 @@ def test_single_variant_issue_sends_notice_to_review(settings, fixture_dir):
     rec = repo.notices[("EXT01", "1001")]
     assert rec["status_cd"] == "NEED_REVIEW"
     assert any(i["field"] == "variants" for i in json.loads(rec["uncertain_json"])["issues"])
+
+
+def test_new_option_skips_saved_notices_and_takes_new_ones(settings, fixture_dir):
+    ns = [notice(fixture_dir, "text", str(i), posted=IN_WINDOW, title="공고 {}".format(i)) for i in (1, 2, 3, 4)]
+    ad = FakeAdapter(ns[:2])
+    pipe, repo = make_pipe(settings, ad, FakeAI(GOOD))
+    pipe.run()                                                  # 1, 2 는 이미 저장됨
+    ad.notices = ns
+    summ = pipe.run(new=1)                                      # 새 글 1건만 (저장된 1, 2 는 세지 않음)
+    assert summ.total == 1 and ("EXT01", "3") in repo.notices and ("EXT01", "4") not in repo.notices
+    ad.notices = ns[:3]                                         # 일부만 본 목록이라 사라진 글(2) 정리는 하지 않는다
+    pipe.run(new=5)
+    assert repo.notices[("EXT01", "2")]["use_yn"] == "Y"
+
+
+# ------------------------------------------------------------------ 계열(농업·예체능) 전용 공고는 AI 를 부르지 않고 건너뜀
+def test_major_only_notice_is_skipped_before_ai_and_kept_with_reason(settings, fixture_dir):
+    skipped = notice(fixture_dir, "text", sid="3001", title="2026 농업계열 대학생 장학생 모집")
+    kept = notice(fixture_dir, "text", sid="3002", title="이공계 새터민 장학")
+    ai = FakeAI(GOOD)
+    pipe, repo = make_pipe(settings, FakeAdapter([skipped, kept]), ai)
+    s = pipe.run(days=30)
+    rec = repo.notices[("EXT01", "3001")]
+    assert rec["status_cd"] == "SKIPPED_MAJOR" and rec["use_yn"] == "N" and "농업" in rec["uncertain_json"]
+    assert repo.notices[("EXT01", "3002")]["status_cd"] == "EXTRACTED"
+    assert len(ai.calls) == 1 and s.skipped_major == 1 and "건너뜀(계열) 1" in s.line()
+
+
+def test_major_filter_can_be_turned_off(settings, fixture_dir):
+    settings.major_exclude = False
+    n = notice(fixture_dir, "text", sid="3003", title="2026 농업계열 대학생 장학생 모집")
+    ai = FakeAI(GOOD)
+    pipe, repo = make_pipe(settings, FakeAdapter([n]), ai)
+    pipe.run(days=30)
+    assert repo.notices[("EXT01", "3003")]["status_cd"] == "EXTRACTED" and len(ai.calls) == 1

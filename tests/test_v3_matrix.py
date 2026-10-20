@@ -163,7 +163,7 @@ GOLDEN = [
     ("s11", "9217", "시흥", YES, ""), ("s12", "9217", "시흥", NO, "대상 동"), ("s13", "9217", "시흥", NO, "대상 동"), ("s14", "9217", "시흥", UNSURE, "그리고"),
     ("s15", "9181", "시흥", YES, ""), ("s16", "9181", "시흥", NO, "원덕읍"), ("s17", "9178", "시흥", UNSURE, "유형별"), ("s18", "9178", "시흥", NO, "본인과 부모"),
     ("s20", "9141", "시흥", NO, "중국"), ("s01", "9141", "유성", NO, "중국"),
-    ("s21", "9195", "시흥", NO, "휴학"), ("s28", "9195", "시흥", NO, "대학생 대상"), ("s01", "9195", "시흥", UNSURE, "국가장학금Ⅱ유형"),
+    ("s21", "9195", "시흥", NO, "휴학"), ("s28", "9195", "시흥", NO, "대학생 대상"), ("s01", "9195", "시흥", YES, ""), ("s08", "9195", "시흥", YES, ""),     # 국가 기준 Ⅰ유형을 확실히 충족하면 대학별 기준 유형은 필요 없다 (신입생은 성적 면제)
     ("s23", "9144", "시흥", UNSURE, "진급"), ("s01", "9144", "시흥", NO, "학년 4"), ("s24", "9144", "시흥", UNSURE, "선발된"), ("s21", "9144", "시흥", NO, "재학생"),
     ("s26", "9120", "시흥", UNSURE, "등록금"), ("s29", "9120", "시흥", NO, "2학기 이상 남음"), ("s01", "9120", "시흥", NO, "2학기 이상 남음"),
     ("s23", "9237", "시흥", YES, ""), ("s24", "9237", "시흥", YES, ""), ("s27", "9237", "시흥", UNSURE, "평균 3.6"), ("s01", "9237", "시흥", NO, "이수 7학기"), ("s29", "9237", "시흥", NO, "이수 8학기"),
@@ -235,7 +235,7 @@ def test_the_matrix_exercises_every_notice_with_different_truths(pairs):
         assert c[NO] > 0, idx
         if idx != "9141":                                                                                          # 9141 은 중국 소재 대학 한정이라 국내 학교의 모든 학생이 미달
             assert c[UNSURE] + c[YES] > 0, idx
-    assert {idx for idx, c in cov.items() if c[YES] > 0} == {"9058", "9096", "9181", "9217", "9237"}              # 충족이 나오는 공고
+    assert {idx for idx, c in cov.items() if c[YES] > 0} == {"9058", "9096", "9181", "9195", "9217", "9237"}              # 충족이 나오는 공고
 
 
 def test_engine_never_rejects_a_student_the_truth_cannot_rule_out_except_the_accepted_case(pairs):
@@ -289,7 +289,7 @@ ENGINE_FILES = ("matcher.py", "matcher_v3.py", "conditions_v3.py", "places.py")
 # 판정에 쓰지 않고 표시·저장만 하는 필드 (이유를 적어 둔다). 여기에 없는 필드는 엔진 코드가 읽어야 한다.
 NOT_JUDGED = {"scholarship_name": "이름", "foundation": "재단", "summary": "요약", "apply_start": "신청 기간(서비스가 처리)", "apply_end": "신청 기간(서비스가 처리)", "org_deadline": "재단 마감(서비스가 처리)",
               "apply_how": "신청 방법", "apply_type": "신청 유형", "amount": "금액", "recruit_count": "선발 인원", "documents": "제출서류(확인 사항)", "uncertain": "AI 의 불확실 표시(서비스 경고)",
-              "category": "공고 분류(서비스 필터)", "selection": "선발 방법", "evidence": "AI 가 인용한 근거 문구(검수용)", "deadline_kind": "추천 마감 종류(안내용)"}
+              "category": "공고 분류(서비스 필터)", "selection": "선발 방법", "procedure": "선발 진행 절차(표시용)", "evaluation": "선발 평가 비율(표시용)", "criteria": "선발 기준(표시용)", "recommender": "추천자(표시용)", "evidence": "AI 가 인용한 근거 문구(검수용)", "deadline_kind": "추천 마감 종류(안내용)"}
 SUBFIELDS_NOT_JUDGED = {("gpa", "scale_stated"): "만점 표기 여부(가정 안내용)", ("income", "bracket_term"): "구간 산정 학기"}
 
 

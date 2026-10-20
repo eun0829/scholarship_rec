@@ -6,7 +6,7 @@
   python run_recommend.py --profile student.json                        # 저장 DB 의 공고로 (config/recommend_query.txt)
   python run_recommend.py --profile student.json --json > result.json   # 서비스 연동용 JSON
   python run_recommend.py --profile-text student.txt --results-dir out  # 학생 정보를 `라벨: 값` 텍스트로 (양식: python make_student_text.py --template)
-옵션: --today 2026-10-06 (기준일 지정), --show-excluded (미달 목록과 사유)
+옵션: --today 2026-10-06 (기준일 지정), --show-excluded (미달 목록과 사유), --format card|table|md|list (기본 card: 건마다 카드로 구분)
 """
 import argparse
 import json
@@ -17,6 +17,7 @@ from scholarship.common.config import Settings, bootstrap
 from scholarship.common.secret_store import SecretFileError
 from scholarship.recommend.file_source import FileSource
 from scholarship.recommend.profile import ProfileError
+from scholarship.recommend.present import format_cards
 from scholarship.recommend.service import Recommender, format_table, format_text
 from scholarship.recommend.student_text import format_parse_report, parse_student_text
 
@@ -35,7 +36,10 @@ def main(argv=None) -> int:
     ap.add_argument("--declined", default="", help="건너뛴 항목 코드를 쉼표로 (예: SPECIAL,AGE). 다시 묻지 않는다")
     ap.add_argument("--round", type=int, default=1, help="몇 번째 질문 회차인지 (최대 3회까지 묻는다)")
     ap.add_argument("--max-questions", type=int, default=5, help="한 번에 묻는 최대 질문 수")
-    ap.add_argument("--format", choices=("table", "md", "list"), default="table", help="출력 모양: table(표, 기본) / md(마크다운 표) / list(목록)")
+    ap.add_argument("--include-closed", action="store_true", help="시험용: 마감이 지난 공고까지 DB 전체를 대상으로 판정한다 (운영에서는 쓰지 않는다)")
+    ap.add_argument("--show-raw", action="store_true", help="card 출력에서 조건 요약 대신 전체 원문 조건 표를 보인다")
+    ap.add_argument("--show-met", action="store_true", help="card 출력에서 충족한 조건도 표에 펼친다 (기본은 한 줄로 접음)")
+    ap.add_argument("--format", choices=("card", "table", "md", "list"), default="card", help="출력 모양: card(건별 카드, 기본) / table(표) / md(마크다운 표) / list(목록)")
     ap.add_argument("--width", type=int, default=0, help="표의 최대 폭 (기본: 터미널 폭, 알 수 없으면 120)")
     ap.add_argument("--env", default=".env")
     ap.add_argument("--secret-file")
@@ -47,6 +51,8 @@ def main(argv=None) -> int:
         print("오류: {}".format(e), file=sys.stderr)
         return 2
     settings = Settings.from_env()
+    if a.include_closed:
+        settings.recommend_include_closed = True
     parse_report = None
     try:
         if a.profile_text:
@@ -99,7 +105,9 @@ def main(argv=None) -> int:
     if a.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
-        if a.format == "list":
+        if a.format == "card":
+            print(format_cards(result, a.show_excluded, width=a.width or None, show_met=a.show_met, show_raw=a.show_raw))
+        elif a.format == "list":
             print(format_text(result, a.show_excluded))
         else:
             print(format_table(result, a.show_excluded, style="md" if a.format == "md" else "ascii", width=a.width or None))

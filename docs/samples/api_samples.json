@@ -115,8 +115,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 11,
+     "match": 1,
+     "conditional": 10,
      "no_match": 9
     },
     "question_codes": [
@@ -128,8 +128,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 5,
+     "match": 1,
+     "conditional": 4,
      "no_match": 15
     },
     "rounds": 2,
@@ -301,8 +301,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 11,
+     "match": 2,
+     "conditional": 10,
      "no_match": 8
     },
     "question_codes": [
@@ -314,8 +314,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 5,
+     "match": 2,
+     "conditional": 4,
      "no_match": 14
     },
     "rounds": 2,
@@ -393,8 +393,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 11,
+     "match": 1,
+     "conditional": 10,
      "no_match": 9
     },
     "question_codes": [
@@ -406,8 +406,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 5,
+     "match": 1,
+     "conditional": 4,
      "no_match": 15
     },
     "rounds": 2,
@@ -529,8 +529,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 11,
+     "match": 2,
+     "conditional": 10,
      "no_match": 8
     },
     "question_codes": [
@@ -542,8 +542,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 4,
+     "match": 2,
+     "conditional": 3,
      "no_match": 15
     },
     "rounds": 2,
@@ -717,8 +717,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 10,
+     "match": 2,
+     "conditional": 9,
      "no_match": 9
     },
     "question_codes": [
@@ -731,8 +731,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 5,
+     "match": 2,
+     "conditional": 4,
      "no_match": 14
     },
     "rounds": 2,
@@ -799,8 +799,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 11,
+     "match": 1,
+     "conditional": 10,
      "no_match": 9
     },
     "question_codes": [
@@ -812,8 +812,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 5,
+     "match": 1,
+     "conditional": 4,
      "no_match": 15
     },
     "rounds": 2,
@@ -879,8 +879,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 11,
+     "match": 1,
+     "conditional": 10,
      "no_match": 9
     },
     "question_codes": [
@@ -892,8 +892,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 5,
+     "match": 1,
+     "conditional": 4,
      "no_match": 15
     },
     "rounds": 2,
@@ -1015,8 +1015,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 10,
+     "match": 1,
+     "conditional": 9,
      "no_match": 10
     },
     "question_codes": [
@@ -1028,8 +1028,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 4,
+     "match": 1,
+     "conditional": 3,
      "no_match": 16
     },
     "rounds": 2,
@@ -1222,8 +1222,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 7,
+     "match": 1,
+     "conditional": 6,
      "no_match": 13
     },
     "rounds": 2,
@@ -1537,8 +1537,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 10,
+     "match": 2,
+     "conditional": 9,
      "no_match": 9
     },
     "question_codes": [
@@ -1551,8 +1551,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 5,
+     "match": 2,
+     "conditional": 4,
      "no_match": 14
     },
     "rounds": 2,
@@ -1675,8 +1675,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 10,
+     "match": 2,
+     "conditional": 9,
      "no_match": 9
     },
     "question_codes": [
@@ -1689,8 +1689,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 5,
+     "match": 2,
+     "conditional": 4,
      "no_match": 14
     },
     "rounds": 2,
@@ -1813,8 +1813,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 11,
+     "match": 2,
+     "conditional": 10,
      "no_match": 8
     },
     "question_codes": [
@@ -1827,8 +1827,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 5,
+     "match": 2,
+     "conditional": 4,
      "no_match": 14
     },
     "rounds": 2,
@@ -1951,8 +1951,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 11,
+     "match": 1,
+     "conditional": 10,
      "no_match": 9
     },
     "question_codes": [
@@ -1965,8 +1965,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 4,
+     "match": 1,
+     "conditional": 3,
      "no_match": 16
     },
     "rounds": 2,
@@ -2089,8 +2089,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 10,
+     "match": 2,
+     "conditional": 9,
      "no_match": 9
     },
     "question_codes": [
@@ -2103,8 +2103,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 4,
+     "match": 2,
+     "conditional": 3,
      "no_match": 15
     },
     "rounds": 2,
@@ -2476,8 +2476,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 12,
+     "match": 1,
+     "conditional": 11,
      "no_match": 8
     },
     "question_codes": [
@@ -2489,8 +2489,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 6,
+     "match": 1,
+     "conditional": 5,
      "no_match": 14
     },
     "rounds": 2,
@@ -2612,8 +2612,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 11,
+     "match": 2,
+     "conditional": 10,
      "no_match": 8
     },
     "question_codes": [
@@ -2625,8 +2625,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 6,
+     "match": 2,
+     "conditional": 5,
      "no_match": 13
     },
     "rounds": 2,
@@ -2748,8 +2748,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 12,
+     "match": 2,
+     "conditional": 11,
      "no_match": 7
     },
     "question_codes": [
@@ -2761,8 +2761,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 6,
+     "match": 2,
+     "conditional": 5,
      "no_match": 13
     },
     "rounds": 2,
@@ -2902,8 +2902,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 4,
+     "match": 1,
+     "conditional": 3,
      "no_match": 16
     },
     "rounds": 2,
@@ -3024,8 +3024,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 1,
-     "conditional": 13,
+     "match": 2,
+     "conditional": 12,
      "no_match": 6
     },
     "question_codes": [
@@ -3037,8 +3037,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 1,
-     "conditional": 7,
+     "match": 2,
+     "conditional": 6,
      "no_match": 12
     },
     "rounds": 2,
@@ -3348,8 +3348,8 @@
    },
    "expected_first": {
     "counts": {
-     "match": 0,
-     "conditional": 11,
+     "match": 1,
+     "conditional": 10,
      "no_match": 9
     },
     "question_codes": [
@@ -3361,8 +3361,8 @@
    },
    "expected_final": {
     "counts": {
-     "match": 0,
-     "conditional": 5,
+     "match": 1,
+     "conditional": 4,
      "no_match": 15
     },
     "rounds": 2,

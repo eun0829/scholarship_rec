@@ -75,6 +75,11 @@ class Repository(ABC):
     def list_candidates(self, today: date) -> List[Dict[str, Any]]:
         """추천 후보: 사용 중, 교외, 추출 완료(EXTRACTED/NEED_REVIEW), 마감일이 오늘 이후인 공고 (build_candidate 형식)."""
 
+    def get_notice_texts(self, pairs) -> Dict[tuple, Dict[str, Any]]:
+        """챗봇이 근거로 쓰는 원문. {(src_cd, src_id): {"body": 본문, "files": [{"seq", "name", "role", "text"}]}}.
+        첨부는 텍스트를 뽑은 것만, 제외(EXCLUDED)로 분류된 것은 뺀다. 읽기 전용."""
+        return {}
+
     def close(self) -> None:
         pass
 
@@ -123,6 +128,19 @@ class MemoryRepository(Repository):
             if cand:
                 out.append(cand)
         return sorted(out, key=lambda x: x["apply_end"])
+
+    def get_notice_texts(self, pairs):
+        out = {}
+        for key in pairs:
+            r = self.notices.get(tuple(key))
+            if r is None or r.get("use_yn", "Y") != "Y":
+                continue
+            files = [{"seq": k[2], "name": f.get("org_file_nm") or "첨부", "role": f.get("role_cd") or "UNKNOWN", "text": f.get("extract_text") or "",
+                      "ext": f.get("file_ext") or "", "size": f.get("file_size") or 0, "nas_path": f.get("nas_path") or ""}
+                     for k, f in sorted(self.files.items(), key=lambda kv: kv[0][2]) if k[:2] == tuple(key) and f.get("extract_text")
+                     and (f.get("role_cd") or "UNKNOWN") != "EXCLUDED"]
+            out[tuple(key)] = {"body": r.get("body_text") or "", "files": files}
+        return out
 
     def find_ids_by_title(self, src_cd, title_norm, exclude_id):
         from .text_clean import normalize_title
@@ -249,6 +267,36 @@ class OracleRepository(Repository):
             cur.close()
         out = [c for c in (build_candidate(r) for r in rows) if c]
         return sorted(out, key=lambda x: x["apply_end"] or date.max)
+
+    @staticmethod
+    def _lob(v) -> str:
+        if v is None:
+            return ""
+        return v.read() if hasattr(v, "read") else str(v)
+
+    def get_notice_texts(self, pairs):
+        """읽기 전용. 공고 본문(BODY_TEXT)과 텍스트를 뽑은 첨부(EXTRACT_TEXT)를 공고마다 한 번씩 읽는다 (바인드 변수만 사용)."""
+        out = {}
+        cur = self.conn.cursor()
+        try:
+            for src_cd, src_id in pairs:
+                cur.execute("SELECT BODY_TEXT FROM SCHOLARSHIP_NOTICE WHERE SRC_CD = :c AND SRC_ID = :i AND USE_YN = 'Y'", c=src_cd, i=src_id)
+                row = cur.fetchone()
+                if row is None:
+                    continue
+                body = self._lob(row[0])
+                cur.execute("SELECT FILE_SEQ, ORG_FILE_NM, ROLE_CD, EXTRACT_TEXT, FILE_EXT, FILE_SIZE, NAS_PATH FROM SCHOLARSHIP_NOTICE_FILE "
+                            "WHERE SRC_CD = :c AND SRC_ID = :i AND EXTRACT_TEXT IS NOT NULL ORDER BY SORT_NO, FILE_SEQ", c=src_cd, i=src_id)
+                files = []
+                for seq, name, role, text, ext, size, nas in cur.fetchall():
+                    t = self._lob(text)
+                    if t.strip() and (role or "UNKNOWN") != "EXCLUDED":
+                        files.append({"seq": seq, "name": name or "첨부", "role": role or "UNKNOWN", "text": t,
+                                      "ext": ext or "", "size": size or 0, "nas_path": nas or ""})        # nas_path 는 서버 안에서만 쓰고 응답에 싣지 않는다
+                out[(src_cd, src_id)] = {"body": body, "files": files}
+        finally:
+            cur.close()
+        return out
 
     def find_ids_by_title(self, src_cd, title_norm, exclude_id):
         cur = self.conn.cursor()

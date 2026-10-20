@@ -1,0 +1,273 @@
+{
+ "src_cd": "EXT01",
+ "src_id": "153907",
+ "title": "2026년 하반기 은평구민 장학생 선발 안내",
+ "category": "OUT",
+ "status": "EXTRACTED",
+ "apply_end": "2026-10-28",
+ "summary": "은평구 2년 이상 거주 초·중·고·대학생 대상 은평구민장학재단 일반·특기·나비 장학생 선발",
+ "url": "https://www.tukorea.ac.kr/bbs/tukorea/374/153907/artclView.do",
+ "elig": {
+  "schema_version": 3,
+  "registry_version": 1,
+  "processed_items": [
+   "GL",
+   "LTERM",
+   "CR",
+   "GC",
+   "GN",
+   "SP",
+   "GCP",
+   "YEAR",
+   "SEM",
+   "SLEFT",
+   "GRD",
+   "LV",
+   "GRAD",
+   "ENT",
+   "TRF",
+   "DEG",
+   "MAJ",
+   "MAJG",
+   "RES",
+   "RESP",
+   "RESY",
+   "HSL",
+   "SLOC",
+   "INC",
+   "BASIC",
+   "NEAR",
+   "DIS",
+   "SPAR",
+   "DEF",
+   "MUL",
+   "VET",
+   "MCH",
+   "SPECIAL",
+   "AGE",
+   "GEN",
+   "NAT",
+   "LANG",
+   "NSA",
+   "SCH_TYPE",
+   "SPART"
+  ],
+  "category": "OUT",
+  "scholarship_name": "2026년 하반기 은평구민 장학생",
+  "foundation": "재단법인 은평구민장학재단",
+  "apply_type": "HYBRID",
+  "apply_start": "2026-10-12",
+  "apply_end": "2026-10-28",
+  "org_deadline": null,
+  "recruit_count": null,
+  "amount": null,
+  "apply_how": "등기우편·방문 접수(도착일 기준), 일반·특기는 학교 직인 추천 필요",
+  "target_levels": [
+   "ELEM",
+   "MIDDLE",
+   "HIGH",
+   "UNIV"
+  ],
+  "grades": [],
+  "enrollment": {
+   "required_status": [],
+   "excluded_status": [],
+   "min_remaining_semesters": null,
+   "notes": null
+  },
+  "gpa": {
+   "min": null,
+   "scale": null,
+   "basis": "UNKNOWN",
+   "alternatives": [],
+   "notes": null
+  },
+  "credits": {
+   "min_last_semester": null,
+   "min_completed_semesters": null,
+   "notes": null
+  },
+  "income": {
+   "max_bracket": null,
+   "eligible_types": [],
+   "notes": null
+  },
+  "region": {
+   "residence": [],
+   "school_location": [],
+   "notes": "학업 사유로 타 지역 거주 시 예외 인정(은평구 2년 이상 거주 확인 가능한 초본 및 입학일 확인 서류 추가 제출)",
+   "mode": "ALL",
+   "requirements": [
+    {
+     "type": "RESIDENCE_SELF",
+     "areas": [
+      "서울특별시 은평구"
+     ],
+     "min_years": 2,
+     "years_basis": "공고일 현재 주민등록 기준 계속 거주"
+    }
+   ]
+  },
+  "majors": [],
+  "nationality": null,
+  "special_status": [],
+  "other_conditions": [
+   "특기: 2026.1.1~6.30 전국규모 이상 대회 개인 3위권 이내 입상(단체 입상 제외)",
+   "나비: 특성화고등학교 재학 중인 고등학생",
+   "나비: 자격증 3개 이상 취득자(취득기간 2025.9.1~2026.8.31)",
+   "일반 장학생: 2026년 2학기 재학 중인 대학생"
+  ],
+  "variants": [
+   {
+    "name": "일반",
+    "amount": "최대 200만원(2026년 2학기 등록금, 등록금성 장학금 수령액 차액 지급)",
+    "target_levels": [
+     "UNIV"
+    ],
+    "gpa": {
+     "min": 3.0,
+     "scale": 4.5,
+     "basis": "LAST_SEMESTER",
+     "alternatives": [],
+     "notes": null
+    },
+    "credits": {
+     "min_last_semester": null,
+     "min_completed_semesters": null,
+     "notes": null
+    },
+    "income": {
+     "max_bracket": 8.0,
+     "eligible_types": [
+      "학자금 지원구간 8구간 이내"
+     ],
+     "notes": null,
+     "basis": "BRACKET",
+     "bracket_term": "CURRENT_TERM"
+    },
+    "region": {
+     "residence": [],
+     "school_location": [],
+     "notes": null
+    },
+    "other_conditions": [],
+    "apply_type": "HYBRID",
+    "documents": [
+     "신청서(별지1)",
+     "개인정보 수집·이용·제공 및 조회 동의서(별지4)",
+     "주민등록초본",
+     "주민등록등본",
+     "재학증명서",
+     "성적증명서",
+     "학자금 지원구간 통지서",
+     "등록금 납부 입증 서류",
+     "장학금 수혜 증명서",
+     "가점 대상 서류",
+     "통장 사본"
+    ],
+    "recommender": "대학 총장·학장·학생처장"
+   }
+  ],
+  "exclusions": [
+   "등록금성 장학금 중복 지원을 받은 경우 초과금액 반납 의무"
+  ],
+  "documents": [
+   "개인정보 수집·이용·제공 및 조회 동의서(별지4)",
+   "주민등록초본",
+   "통장 사본"
+  ],
+  "selection": {
+   "method": "장학생 선정심사위원회 심의에 따른 선발",
+   "priority": []
+  },
+  "summary": "은평구 2년 이상 거주 초·중·고·대학생 대상 은평구민장학재단 일반·특기·나비 장학생 선발",
+  "dropped_variants": [
+   "특기",
+   "나비"
+  ],
+  "special_groups": [
+   {
+    "code": "DISABLED",
+    "scope": "SELF",
+    "mode": "PREFERRED"
+   },
+   {
+    "code": "MULTICULTURAL",
+    "scope": "FAMILY",
+    "mode": "PREFERRED"
+   }
+  ],
+  "school": {
+   "excluded_types": [
+    "CYBER",
+    "OPEN_UNIV"
+   ]
+  },
+  "recommendation": {
+   "required": true,
+   "from": [
+    "PRESIDENT",
+    "DEAN",
+    "PRINCIPAL"
+   ]
+  },
+  "deadline_kind": "FOUNDATION",
+  "exclusion_items": [
+   {
+    "type": "CONCURRENT_TUITION",
+    "text": "등록금성 장학금 중복 지원을 받은 경우 초과금액 반납 의무"
+   }
+  ],
+  "obligations": [
+   "장학증서 수여식 참여",
+   "허위 사실 발견 시 선발 취소 및 장학금 환수"
+  ],
+  "procedure": [
+   {
+    "name": "서류 심사 및 선정심사위원회 심의"
+   },
+   {
+    "name": "결과 발표",
+    "when": "11월 중"
+   }
+  ],
+  "unmodeled_conditions": [
+   {
+    "text": "학점은행제, 사이버(원격)대학, 방송통신대학은 신청대상에서 제외",
+    "section": "기타 사항",
+    "source": "첨부1",
+    "kind": "EXCLUSION"
+   },
+   {
+    "text": "특기: 2026.1.1~6.30 전국규모 이상 대회 개인 3위권 이내 입상(단체 입상 제외)",
+    "section": "신청 자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "나비: 특성화고등학교 재학 중인 고등학생",
+    "section": "신청 자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "나비: 자격증 3개 이상 취득자(취득기간 2025.9.1~2026.8.31)",
+    "section": "신청 자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   },
+   {
+    "text": "기초생활수급자의 경우 학교 또는 한국장학재단 장학금을 우선 신청 바람",
+    "section": "기타 사항",
+    "source": "첨부1",
+    "kind": "PROCEDURE"
+   },
+   {
+    "text": "일반 장학생: 2026년 2학기 재학 중인 대학생",
+    "section": "신청 자격",
+    "source": "첨부1",
+    "kind": "ELIGIBILITY"
+   }
+  ]
+ }
+}

@@ -89,8 +89,9 @@ def test_9211_daejeon_variants_with_own_deadlines_and_apply_types():
     assert issues == []
     assert out["apply_type"] == "HYBRID"
     ends = {v["name"]: (v["apply_end"], v["apply_type"]) for v in out["variants"]}
-    assert ends == {"외국인 유학생": ("2026-09-23", "SCHOOL"), "성취(고등학생)": ("2026-09-23", "DIRECT"),
+    assert ends == {"외국인 유학생": ("2026-09-23", "SCHOOL"),
                     "성취(대학생)": ("2026-09-08", "DIRECT"), "과학": ("2026-10-07", "DIRECT")}               # 유형별 마감이 하나의 마감으로 뭉개지지 않음
+    assert out["dropped_variants"] == ["성취(고등학생)"]                                                     # 고등학생만 대상인 유형은 저장 전에 뺀다
 
 
 def test_9237_school_varies_deadline_and_unconvertible_term_condition():

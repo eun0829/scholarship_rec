@@ -92,8 +92,11 @@ class Ext02Adapter(SourceAdapter):
     def __init__(self, settings: Settings, cfg: Optional[Ext02Config] = None,
                  known_state: Optional[Callable[[str, str], Optional[Dict[str, Any]]]] = None,
                  refresh: bool = False, force: bool = False, limit: Optional[int] = None, only: Optional[List[str]] = None,
-                 today: Optional[date] = None, sleep: Callable[[float], None] = time.sleep):
+                 today: Optional[date] = None, sleep: Callable[[float], None] = time.sleep,
+                 recent: Optional[int] = None, include_closed: bool = False, pages: Optional[List[int]] = None):
         self.s = settings
+        self.pages = sorted({int(x) for x in pages or [] if int(x) >= 1})           # 시험용: 목록의 이 쪽들만 본다 (기본 정렬, 사이트 화면의 page= 번호)
+        self.recent, self.include_closed = recent, include_closed       # 시험용: 마감 지난 글 포함 최근 N건 (이미 저장된 글 제외). 운영 배치는 쓰지 않는다
         self.cfg = cfg or Ext02Config.load()
         self.known_state, self.refresh, self.force = known_state, refresh, force
         self.limit, self.only = limit, set(only or [])
@@ -216,6 +219,23 @@ class Ext02Adapter(SourceAdapter):
             log.warning("[EXT02] 목록이 비정상이라 사라진 글 비활성화를 건너뜁니다 (조회 %d건)", len(seen))
         return list(seen.values())
 
+    def crawl_pages(self, pages) -> List[P.ListRow]:
+        """시험용: 사이트 목록의 지정한 쪽(page=N, 기본 정렬)만 읽는다 (로그인 불필요). 일부만 본 목록이라 사라진 글 정리는 하지 않는다."""
+        seen: Dict[str, P.ListRow] = {}
+        for page in pages:
+            params: Dict[str, Any] = {"page": page} if page > 1 else {}
+            try:
+                r = self._get(self._url(self.cfg.list_path), params)
+            except DetailError as e:
+                log.warning("[EXT02] 목록 조회 실패 (page=%d): %s", page, e)
+                continue
+            rows = P.parse_list(r.text)
+            log.info("[EXT02] 목록 %d쪽: %d건", page, len(rows))
+            for row in rows:
+                seen.setdefault(row.idx, row)
+        self.deactivation_safe = False
+        return list(seen.values())
+
     def select(self, rows: List[P.ListRow]) -> List[P.ListRow]:
         c = self.cfg
         out = []
@@ -224,9 +244,11 @@ class Ext02Adapter(SourceAdapter):
                 continue
             if c.include_tags and not any(t in r.audiences for t in c.include_tags):
                 continue
-            if r.state in c.exclude_states or (r.dday is not None and r.dday < 0):
+            if not self.include_closed and (r.state in c.exclude_states or (r.dday is not None and r.dday < 0)):
                 continue
             out.append(r)
+        if self.include_closed:
+            return sorted(out, key=lambda r: -int(r.idx))                 # 최근 등록(idx 큰) 순
         return sorted(out, key=lambda r: (r.dday if r.dday is not None else 10 ** 6, -int(r.idx)))
 
     # ------------------------------------------------------------------ 상세 (로그인 필요)
@@ -253,7 +275,53 @@ class Ext02Adapter(SourceAdapter):
         st = self.known_state(self.src_cd, idx)
         return bool(st) and st.get("status_cd") in ("EXTRACTED", "NEED_REVIEW")
 
+    def collect_recent_rows(self) -> List[P.ListRow]:
+        """시험용 목록: 정렬 방식(ordby)을 바꿔 가며 마감·모집완료 글까지 모은다 (로그인 불필요). 대상은 select() 가 거른다."""
+        from .ext02_survey import collect_candidates
+        rows, _ = collect_candidates(self, [5, 4, 0], max(60, (self.recent or 0) * 4), self.cfg.include_kinds, self.cfg.include_tags, 30)
+        self.deactivation_safe = False                                  # 일부만 본 목록이므로 사라진 글 정리는 하지 않는다
+        return rows
+
+    def collect_rows_for(self, idxs) -> List[P.ListRow]:
+        """지정한 글번호(idx)를 목록에서 찾는다. 마감·모집완료 글은 기본 목록(ordby 1~3)에 없을 수 있어,
+        최근순 정렬(5, 4, 0)로 목록을 넓혀 가며 찾고 모두 찾으면 멈춘다 (로그인 불필요). 못 찾은 번호는 알려 준다."""
+        want = [str(i) for i in idxs]
+        found: Dict[str, P.ListRow] = {}
+        old_ob, old_pages = self.cfg.ordby, self.cfg.max_pages
+        try:
+            self.cfg.max_pages = max(old_pages, 30)
+            for ob in (5, 4, 0):
+                self.cfg.ordby = [ob]
+                for r in self.crawl_list():
+                    found.setdefault(r.idx, r)
+                if all(i in found for i in want):
+                    break
+        finally:
+            self.cfg.ordby, self.cfg.max_pages = old_ob, old_pages
+        self.deactivation_safe = False                                  # 일부만 본 목록이므로 사라진 글 정리는 하지 않는다
+        missing = [i for i in want if i not in found]
+        if missing:
+            log.warning("[EXT02] 목록에서 찾지 못한 글번호: %s (목록 범위를 벗어났거나 삭제된 글)", ", ".join(missing))
+        return [found[i] for i in want if i in found]
+
     def fetch_notices(self, days: int) -> List[SourceNotice]:
+        if self.pages:
+            rows = self.select(self.crawl_pages(self.pages))
+            log.info("[EXT02] 목록 %s쪽의 후보 %d건 (종류 %s, 대상 %s, 마감 포함=%s)", ",".join(map(str, self.pages)), len(rows),
+                     "/".join(self.cfg.include_kinds) or "전체", "/".join(self.cfg.include_tags) or "전체", self.include_closed)
+            if self.only:
+                rows = [r for r in rows if r.idx in self.only]
+            if self.limit:
+                rows = rows[:self.limit]
+            return [self._notice_or_stub(r) for r in rows]
+        if self.only and self.include_closed and not self.recent:
+            rows = self.collect_rows_for(sorted(self.only))               # 글번호를 직접 지정했으므로 종류·대상 거름은 적용하지 않는다
+            log.info("[EXT02] 지정한 글 %d / %d건을 목록에서 찾음 (마감 포함)", len(rows), len(self.only))
+            return [self._notice_or_stub(r) for r in rows]
+        if self.recent:
+            rows = [r for r in self.select(self.collect_recent_rows()) if not self._is_known_completed(r.idx)][:self.recent]     # 이미 저장된 글은 빼고 새 글 N건
+            log.info("[EXT02] 최근 새 글 %d건 (마감 포함=%s)", len(rows), self.include_closed)
+            return [self._notice_or_stub(r) for r in rows]
         rows = self.select(self.crawl_list())
         log.info("[EXT02] 목록 후보 %d건 (종류 %s, 대상 %s)", len(rows), "/".join(self.cfg.include_kinds) or "전체",
                  "/".join(self.cfg.include_tags) or "전체")
@@ -261,20 +329,19 @@ class Ext02Adapter(SourceAdapter):
             rows = [r for r in rows if r.idx in self.only]
         if self.limit:
             rows = rows[:self.limit]
-        out: List[SourceNotice] = []
-        for row in rows:
-            if self._is_known_completed(row.idx):
-                out.append(SourceNotice(src_cd=self.src_cd, src_id=row.idx, title=row.title, dept_nm=row.org, stub=True))
-                continue
-            try:
-                out.append(self._build_notice(row, self.fetch_detail(row.idx)))
-            except LoginError:
-                raise                                       # 로그인 문제는 전체 중단
-            except DetailError as e:
-                log.warning("[EXT02/%s] 상세 조회 실패 - 건너뜀: %s", row.idx, e)
-                self.failed_ids.append(row.idx)
-                out.append(SourceNotice(src_cd=self.src_cd, src_id=row.idx, title=row.title, dept_nm=row.org, stub=True))
-        return out
+        return [self._notice_or_stub(row) for row in rows]
+
+    def _notice_or_stub(self, row: P.ListRow) -> SourceNotice:
+        if self._is_known_completed(row.idx):
+            return SourceNotice(src_cd=self.src_cd, src_id=row.idx, title=row.title, dept_nm=row.org, stub=True)
+        try:
+            return self._build_notice(row, self.fetch_detail(row.idx))
+        except LoginError:
+            raise                                           # 로그인 문제는 전체 중단
+        except DetailError as e:
+            log.warning("[EXT02/%s] 상세 조회 실패 - 건너뜀: %s", row.idx, e)
+            self.failed_ids.append(row.idx)
+            return SourceNotice(src_cd=self.src_cd, src_id=row.idx, title=row.title, dept_nm=row.org, stub=True)
 
     def _build_notice(self, row: P.ListRow, d: P.Detail) -> SourceNotice:
         fields, hints = P.compose(d, row, self.today, self.cfg.target_keywords, self.cfg.apply_type_keywords)

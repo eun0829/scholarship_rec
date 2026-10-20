@@ -26,7 +26,8 @@ MAX_ROUND = 10
 MAX_QUESTIONS_LIMIT = 10
 REQUEST_ID = re.compile(r"^[A-Za-z0-9._-]{1,64}$")
 KNOWN_KEYS = ("request_id", "profile", "answers", "answers_text", "declined", "round", "max_questions", "today", "strict")
-ERROR_CODES = {"INVALID_REQUEST": 400, "INVALID_PROFILE": 400, "UNAUTHORIZED": 401, "PAYLOAD_TOO_LARGE": 413, "SERVER_CONFIG": 500, "INTERNAL": 500, "UNAVAILABLE": 503}
+ERROR_CODES = {"INVALID_REQUEST": 400, "INVALID_PROFILE": 400, "UNAUTHORIZED": 401, "PAYLOAD_TOO_LARGE": 413, "SERVER_CONFIG": 500, "INTERNAL": 500, "UNAVAILABLE": 503,
+               "CHAT_DISABLED": 404, "NOT_FOUND": 404, "BUSY": 429, "CHAT_UNAVAILABLE": 503}
 
 
 class ApiError(Exception):

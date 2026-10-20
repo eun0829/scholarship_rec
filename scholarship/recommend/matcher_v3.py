@@ -19,12 +19,14 @@ import re
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 from . import places, vocab
+from .redundant import _BLOCK, _PUNCT, drop_redundant
 from . import needs as needs_mod
 from .conditions_v3 import (apply_waivers, build_notes, build_preferences, build_prerequisites, build_school_programs, check_exclusions_v3, check_extras,
                             check_special_required, is_new_student, merge_special_income, waiver_effects)
 from .matcher import (CONDITIONAL, FAIL, MATCH, NO_MATCH, PASS, UNKNOWN, Check, Evaluation, _cmp_gpa, _combine_any, _defer, _finish, _uniq,
                       check_enrollment, check_grades, check_income, check_levels, check_majors, check_nationality, check_region, check_text_conditions)
 from .profile import StudentProfile
+from ..common.variant_scope import VARIANT_PREFIX, attach_prefixed_conditions, prefix_matches
 
 DEFAULT_REGULAR_TERMS = 8                 # 4년제 학사의 정규 학기 수
 ASSUMED_NOTICE_SCALE = 4.5                # 공고에 평점 만점이 없을 때의 가정 (결정 ②: 알리되 검수 사유로 삼지 않음)
@@ -432,12 +434,48 @@ def _variant_has_conditions(v: Dict[str, Any]) -> bool:
     return bool((v.get("transfer") or {}).get("mode"))
 
 
+_REGULAR_TERM = re.compile(r"정규\s*(?:\d+\s*)?학기\s*(?:이내|내)(?:에)?\s*(?:졸업\s*예정|졸업\s*가능|졸업)")
+_REGULAR_REST = ("예정자", "예정", "가능자", "가능", "재학생", "학생", "자", "인", "으로", "이며", "이고", "한", "에", "에서")
+
+
+def _is_regular_term_sentence(text: str) -> bool:
+    """'정규 학기 이내 졸업예정' 처럼 그 뜻만 담은 짧은 문장인가 (다른 조건이 섞였거나 부정·제한 표현이 있으면 아니다)."""
+    s = (text or "").strip()
+    if not s or _BLOCK.search(s) or not _REGULAR_TERM.search(s):
+        return False
+    rest = _REGULAR_TERM.sub("", s)
+    for w in _REGULAR_REST:
+        rest = rest.replace(w, "")
+    return _PUNCT.sub("", rest) == ""
+
+
+def regular_term_checks(texts: List[str], p: StudentProfile, regular_terms: int, scope: str) -> Tuple[List[Check], List[str]]:
+    """'정규 학기 이내 졸업예정' 문장은 이수학기로 계산한 정규학기 초과 여부로 판정한다 (모호하면 확인 필요 그대로).
+    p 는 derive_terms 를 거친 프로필: 초과 등록 False(이수학기 < 정규 학기 수)면 충족, True·졸업유예면 미달, 모르면 문장을 확인 항목으로 남긴다."""
+    out: List[Check] = []
+    rest: List[str] = []
+    for t in texts:
+        if not _is_regular_term_sentence(t):
+            rest.append(t)
+            continue
+        info = "이수 {}학기, 정규 {}학기".format(p.semesters_completed, regular_terms)
+        if p.extended_enrollment is False and not p.graduation_deferred and p.semesters_completed is not None:
+            out.append(Check("terms", PASS, "정규 학기 이내 졸업예정 해당 ({})".format(info), scope))
+        elif p.extended_enrollment is True or p.graduation_deferred:
+            out.append(Check("terms", FAIL, "정규 학기 이내 졸업예정 미달 ({}, 정규학기 초과 등록 또는 졸업유예)".format(info if p.semesters_completed is not None else "정규 {}학기".format(regular_terms)), scope))
+        else:
+            rest.append(t)
+    return out, rest
+
+
 def _uses_derived(elig: Dict[str, Any]) -> bool:
     """공고가 남은 학기·졸업학기 조건을 쓰는가 (그럴 때만 계산한 값을 썼다고 알린다)."""
     if any(isinstance(b, dict) and b.get("remaining_terms") for b in [elig] + list(elig.get("variants") or [])):
         return True
     en = elig.get("enrollment") or {}
     if en.get("min_remaining_semesters") is not None:
+        return True
+    if any(_is_regular_term_sentence(t) for b in [elig] + list(elig.get("variants") or []) if isinstance(b, dict) for t in b.get("other_conditions") or []):
         return True
     return any(vocab.GRADUATING in vocab.status_tags(ph) for ph in (en.get("required_status") or []) + (en.get("excluded_status") or []))
 
@@ -465,7 +503,18 @@ def check_grades_v3(elig: Dict[str, Any], p: StudentProfile, scope: str) -> List
     return out
 
 
-_VARIANT_PREFIX = re.compile(r"^\s*([^:：]{1,30}?)\s*[:：]\s*\S")
+_VARIANT_PREFIX = VARIANT_PREFIX
+_prefix_matches = prefix_matches                    # 규칙은 common/variant_scope.py (저장할 때와 같은 함수)
+
+# 고등학생 전용 문장: 대학생·대학원생 추천에서는 판정하지도 안내하지도 않는다.
+# 신입생·입학 관련 문장(예: '신입생 고교 내신')은 대학생에게도 뜻이 있을 수 있어 남긴다.
+_HIGH_SCHOOL_ONLY = re.compile(r"고등학생|고교생|고등학교\s*재학|고\s*[123]\s*(?:학년|학기)?[^가-힣]{0,4}.*내신|고등학교.*내신")
+_HS_KEEP = re.compile(r"대학생|대학원|신입|편입")
+
+
+def is_high_school_only(text: Any) -> bool:
+    t = text if isinstance(text, str) else ""
+    return bool(t) and bool(_HIGH_SCHOOL_ONLY.search(t)) and not _HS_KEEP.search(t)
 
 
 def drop_conditions_of_failed_variants(elig: Dict[str, Any], failed_names) -> Dict[str, Any]:
@@ -479,13 +528,41 @@ def drop_conditions_of_failed_variants(elig: Dict[str, Any], failed_names) -> Di
     keep = []
     for text in common:
         m = _VARIANT_PREFIX.match(text) if isinstance(text, str) else None
-        if m and re.sub(r"\s+", "", m.group(1)) in names:
+        if m and _prefix_matches(m.group(1), names):
             continue
         keep.append(text)
     return elig if len(keep) == len(common) else dict(elig, other_conditions=keep)
 
 
+def drop_high_school_conditions(elig: Dict[str, Any], drop_pre_college_variants: bool = True) -> Dict[str, Any]:
+    """공통·유형의 other_conditions, unmodeled_conditions, exclusions 에서 고등학생 전용 문장을 뺀다 (대학생·대학원생 추천용이므로)."""
+    def clean(d: Dict[str, Any]) -> Dict[str, Any]:
+        out = d
+        oc = d.get("other_conditions")
+        if oc and any(is_high_school_only(t) for t in oc):
+            out = dict(out, other_conditions=[t for t in oc if not is_high_school_only(t)])
+        um = d.get("unmodeled_conditions")
+        if um and any(isinstance(u, dict) and is_high_school_only(u.get("text")) for u in um):
+            out = dict(out, unmodeled_conditions=[u for u in um if not (isinstance(u, dict) and is_high_school_only(u.get("text")))])
+        return out
+
+    out = clean(elig)
+    vs = elig.get("variants")
+    if vs:
+        # 중·고등학생만 대상인 유형은 통째로 뺀다 (예전에 저장된 공고 처리. 새로 추출하는 공고는 저장 전에 이미 빠진다)
+        pre = [v for v in vs if isinstance(v, dict) and v.get("target_levels") and all(x in ("ELEM", "MIDDLE", "HIGH") for x in v["target_levels"])]
+        if drop_pre_college_variants and pre and len(pre) < len(vs):
+            vs = [v for v in vs if not any(v is q for q in pre)]
+            out = dict(out, variants=vs)
+        nv = [clean(v) if isinstance(v, dict) else v for v in vs]
+        if any(a is not b for a, b in zip(nv, vs)):
+            out = dict(out, variants=nv)
+    return out
+
+
 def evaluate_v3(elig: Dict[str, Any], p: StudentProfile, defer_keys=(), regular_terms: int = DEFAULT_REGULAR_TERMS) -> Evaluation:
+    elig = attach_prefixed_conditions(elig)                                                 # '유형명: 조건' 문장은 그 유형의 조건으로 (예전에 저장된 공고도 같은 규칙)
+    elig = drop_high_school_conditions(elig, p.level not in ("ELEM", "MIDDLE", "HIGH"))     # 중·고등학생 유형은 대학생·대학원생 판정에서만 뺀다 (옮겨진 고등학생 문장도 여기서 빠진다)
     ev = _evaluate_v3(elig, p, defer_keys, regular_terms)
     failed = [v.name for v in ev.variants if v.verdict == NO_MATCH]
     trimmed = drop_conditions_of_failed_variants(elig, failed)
@@ -512,7 +589,9 @@ def _evaluate_v3(elig: Dict[str, Any], p: StudentProfile, defer_keys=(), regular
     common += _sections(elig, p3, "공통", assumptions, top=True, skip_special=cross)
     common += check_nationality(elig.get("nationality"), p3, "공통")
     common += check_majors(elig.get("majors") or [], p3, "공통")
-    common += check_text_conditions([], elig.get("other_conditions") or [], [], p3, "공통")      # 자격 문장은 코드가 해석하지 않고 확인 항목으로
+    rt_common, others_common = regular_term_checks(drop_redundant(elig.get("other_conditions") or [], elig), p3, regular_terms, "공통")
+    common += rt_common
+    common += check_text_conditions([], others_common, [], p3, "공통")      # 자격 문장은 코드가 해석하지 않고 확인 항목으로 (이미 판정한 조건과 같은 뜻의 문장은 뺀다. '정규 학기 이내 졸업예정' 만 위에서 계산)
     common += excl_checks
     common += pending_checks(elig, "공통")
     common = apply_waivers(common, waived, maybe)
@@ -524,7 +603,9 @@ def _evaluate_v3(elig: Dict[str, Any], p: StudentProfile, defer_keys=(), regular
         checks: List[Check] = []
         checks += check_levels(v.get("target_levels") or [], p3, name)
         checks += _sections(v, p3, name, assumptions, top=False, parent_special=Check("special", parent_sp.status, parent_sp.message, name) if cross else None)
-        checks += check_text_conditions([], v.get("other_conditions") or [], [], p3, name)
+        rt_v, others_v = regular_term_checks(drop_redundant(v.get("other_conditions") or [], elig, v), p3, regular_terms, name)
+        checks += rt_v
+        checks += check_text_conditions([], others_v, [], p3, name)
         checks += pending_checks(v, name)
         if not _variant_has_conditions(v):
             checks.append(Check("other", UNKNOWN, "이 유형의 선발 조건이 공고 본문에 없음 (공고문 확인 필요)", name))
